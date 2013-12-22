@@ -17,7 +17,7 @@
     </comment>
     <comment Id="04e141a7-85fd-41e6-8fb9-3ce3931f7cfd">
       <elementDefinition Id="672ccbc0-d300-459a-a2e9-4ab864c5e7f9" />
-      <body>Le joueur souhaite lancer un attaque</body>
+      <body>Le joueur souhaite lancer une attaque</body>
       <annotatedElements>
         <decisionNodeMoniker Id="95908c88-ade7-445a-8204-1d2db036738b" LastKnownName="Decision1" />
       </annotatedElements>

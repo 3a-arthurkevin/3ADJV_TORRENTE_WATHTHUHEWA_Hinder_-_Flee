@@ -24,14 +24,14 @@
     </comment>
     <comment Id="69fa6837-cf23-4ea0-883f-7493982b6f48">
       <elementDefinition Id="39d2da6c-2901-46a5-b6fa-c481cefc9c9a" />
-      <body>Le joueur souhaite utiliser un objets</body>
+      <body>Le joueur souhaite utiliser un objet</body>
       <annotatedElements>
         <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
       </annotatedElements>
     </comment>
     <comment Id="a17c5553-0bbb-4716-920e-2b796f06aa09">
       <elementDefinition Id="2e732621-d3a4-47a2-b4b9-970d073caa63" />
-      <body>Le joueur souhaite lancer un attaque</body>
+      <body>Le joueur souhaite lancer une attaque</body>
       <annotatedElements>
         <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
       </annotatedElements>
@@ -66,7 +66,7 @@
     </comment>
     <comment Id="40fa3bbf-ece6-49ac-b3d3-2133e69489c9">
       <elementDefinition Id="b7f2860e-3d57-4ac2-94b7-8192693458bd" />
-      <body>Le joueur meut ou atteint 100% de la jauge de mutation</body>
+      <body>Le joueur meurt ou atteint 100% de la jauge de mutation</body>
       <annotatedElements>
         <decisionNodeMoniker Id="7f58af17-c957-4b5f-a551-68c951946424" LastKnownName="Decision2" />
       </annotatedElements>
