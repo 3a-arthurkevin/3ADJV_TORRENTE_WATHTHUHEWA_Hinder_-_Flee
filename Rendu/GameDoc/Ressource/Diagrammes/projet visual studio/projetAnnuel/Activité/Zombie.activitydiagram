@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c0aeceb0-8164-4967-af3d-009dade0de90" name="Zombie" linkedPackageId="9e7338d8-a299-4d2a-836b-e3479288d34c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="ff22c4bf-3fb4-4ccb-bc5b-241416209206">
+      <elementDefinition Id="ce7a019c-b3c5-476e-b3a2-b0bd8cd897f8" />
+      <body>Diagramme des déplacements</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="6e32e0cf-d531-49c7-9cad-19795e4fe43e" LastKnownName="Déplacement" />
+      </annotatedElements>
+    </comment>
+    <comment Id="55c76b74-0829-4849-8379-ffeb0dd17f31">
+      <elementDefinition Id="61ac823b-aa32-483c-813a-f7f4c140f5f0" />
+      <body>Diagramme des attaques</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="f298f089-fb61-402d-86fb-6570875e2f97" LastKnownName="Attaque" />
+      </annotatedElements>
+    </comment>
+    <comment Id="04e141a7-85fd-41e6-8fb9-3ce3931f7cfd">
+      <elementDefinition Id="672ccbc0-d300-459a-a2e9-4ab864c5e7f9" />
+      <body>Le joueur souhaite lancer un attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="95908c88-ade7-445a-8204-1d2db036738b" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="fac6dc8e-660e-4b3b-a39a-af5a5071127e">
+      <elementDefinition Id="6eb7e7bb-72a5-4eae-ae93-de7801649a6d" />
+      <body>Le joueur souhaite se déplacer</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="95908c88-ade7-445a-8204-1d2db036738b" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="46ba2ddc-3344-4dcc-a04d-6c2a96a22114">
+      <elementDefinition Id="25a24bf8-d78c-4d3b-996d-d3bf3bc637d5" />
+      <body>Le joueur reçoit une attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="95908c88-ade7-445a-8204-1d2db036738b" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="081d2544-683c-4194-ab0d-6d4d003b73c2" name="Zombie" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c6cefbe1-0741-4c6a-9b0f-dabe2a105716" />
+        <nodes>
+          <initialNode Id="5b67ab06-62fa-4b3c-8b7a-e682aa92a12f" name="Initial1" isLeaf="false">
+            <elementDefinition Id="1c1f435c-5dae-4b72-970f-1c003c9eee35" />
+            <flowNodeTargets>
+              <controlFlow Id="267d79c1-190f-47cd-84ed-49f8d29d470f" isLeaf="false">
+                <decisionNodeMoniker Id="95908c88-ade7-445a-8204-1d2db036738b" LastKnownName="Decision1" />
+                <elementDefinition Id="fed5d141-9455-41e3-94b4-801706e3c1bf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode Id="95908c88-ade7-445a-8204-1d2db036738b" name="Decision1" isLeaf="false">
+            <elementDefinition Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e" />
+            <flowNodeTargets>
+              <controlFlow Id="eef4dc0c-2611-4a6c-89d4-cb5e054df577" isLeaf="false">
+                <opaqueActionMoniker Id="f298f089-fb61-402d-86fb-6570875e2f97" LastKnownName="Attaque" />
+                <elementDefinition Id="cd7634b8-3f7b-48b3-8532-ce597f8ab0dc" />
+              </controlFlow>
+              <controlFlow Id="3a7a9c0f-fea2-4f65-9efa-d1b653938df7" isLeaf="false">
+                <opaqueActionMoniker Id="6e32e0cf-d531-49c7-9cad-19795e4fe43e" LastKnownName="Déplacement" />
+                <elementDefinition Id="556151e4-c4d0-4f99-bd25-6205f6c978c3" />
+              </controlFlow>
+              <controlFlow Id="d9630600-45e2-43ff-a0d2-009fffc2e702" isLeaf="false">
+                <opaqueActionMoniker Id="213b15a7-14b7-4e88-9e9e-64fd488f67c6" LastKnownName="Enlever des points de vie" />
+                <elementDefinition Id="2fc95811-3883-4d5c-ba22-5d9c80c30ba5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="6e32e0cf-d531-49c7-9cad-19795e4fe43e" name="Déplacement" isLeaf="false">
+            <elementDefinition Id="2e0967a7-dd1f-4187-bd2a-4dccda212939" />
+            <flowNodeTargets>
+              <controlFlow Id="1660fc93-c79d-431b-a526-99a5c9f7c7d8" isLeaf="false">
+                <mergeNodeMoniker Id="8f6b2785-d82f-4ceb-b10e-05250926b39d" LastKnownName="Merge2" />
+                <elementDefinition Id="8090ef90-9285-4081-bfa0-74e9173ac0c0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f298f089-fb61-402d-86fb-6570875e2f97" name="Attaque" isLeaf="false">
+            <elementDefinition Id="bd087f58-7733-4836-9c25-ac7d75aa21cb" />
+            <flowNodeTargets>
+              <controlFlow Id="21c6d34c-0812-4251-933a-920e92e14034" isLeaf="false">
+                <mergeNodeMoniker Id="8f6b2785-d82f-4ceb-b10e-05250926b39d" LastKnownName="Merge2" />
+                <elementDefinition Id="d312d69c-84fb-4bc5-8de9-923102084a10" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="8f6b2785-d82f-4ceb-b10e-05250926b39d" name="Merge2" isLeaf="false">
+            <elementDefinition Id="38b2a524-0ec0-4b40-8f90-8034fe71bece" />
+            <flowNodeTargets>
+              <controlFlow Id="168a5708-a410-4793-be51-1f3e55e40f19" isLeaf="false">
+                <activityFinalNodeMoniker Id="0c1075c5-4760-4493-8304-5cde3e59f011" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="73fb910e-8c07-4092-86b8-ebb7461be158" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode Id="f1608ea8-52b6-463f-a52d-7cab0951284a" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="7b02f2fe-4e3c-4733-b332-43cc14b70ef7" />
+          </activityFinalNode>
+          <activityFinalNode Id="0c1075c5-4760-4493-8304-5cde3e59f011" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="f4573770-9d22-465e-8de3-544f8fcafd45" />
+          </activityFinalNode>
+          <opaqueAction Id="213b15a7-14b7-4e88-9e9e-64fd488f67c6" name="Enlever des points de vie" isLeaf="false">
+            <elementDefinition Id="b8efa03f-5cd3-4ec2-bc6f-d74dd945a377" />
+            <flowNodeTargets>
+              <controlFlow Id="930cd09d-1f01-4344-85f3-a25fc20fc08c" isLeaf="false">
+                <mergeNodeMoniker Id="8f6b2785-d82f-4ceb-b10e-05250926b39d" LastKnownName="Merge2" />
+                <elementDefinition Id="ff900da6-a403-4234-8afc-a21469b97e60" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="9e7338d8-a299-4d2a-836b-e3479288d34c" name="projetAnnuel">
+    <elementDefinition Id="1cd13195-7a33-4be2-a0ae-a52654dc121e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e4bea175-1caf-4b15-967b-5d6a029cea65">
+        <profileInstance Id="a976369e-555a-4f31-8b86-100db69cc5f4" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1c47a42c-10f0-4588-aa9c-21a9b101a273">
+        <profileInstance Id="121e0043-ce59-42a4-b80d-e0f52d056b5e" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

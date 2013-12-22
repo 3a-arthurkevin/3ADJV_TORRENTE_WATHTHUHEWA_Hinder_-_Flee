@@ -22,58 +22,74 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
-    <Content Include="Attaque.activitydiagram">
+    <Content Include="Activité\Attaque.activitydiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Attaque.activitydiagram.layout">
+    <Content Include="Activité\Attaque.activitydiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Attaque.activitydiagram</DependentUpon>
+      <DependentUpon>Activité\Attaque.activitydiagram</DependentUpon>
     </Content>
-    <Content Include="Deplacement.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Deplacement.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Deplacement.activitydiagram</DependentUpon>
-    </Content>
-    <Content Include="Marchand.activitydiagram">
+    <Content Include="Activité\Deplacement.activitydiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Marchand.activitydiagram.layout">
+    <Content Include="Activité\Deplacement.activitydiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Marchand.activitydiagram</DependentUpon>
+      <DependentUpon>Activité\Deplacement.activitydiagram</DependentUpon>
     </Content>
-    <Content Include="Menu.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Menu.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Menu.activitydiagram</DependentUpon>
-    </Content>
-    <Content Include="Objet.activitydiagram">
+    <Content Include="Activité\Marchand.activitydiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Objet.activitydiagram.layout">
+    <Content Include="Activité\Marchand.activitydiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Objet.activitydiagram</DependentUpon>
+      <DependentUpon>Activité\Marchand.activitydiagram</DependentUpon>
     </Content>
-    <Content Include="Survivants.activitydiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Survivants.activitydiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>Survivants.activitydiagram</DependentUpon>
-    </Content>
-    <Content Include="hinder_-_flee.usecasediagram">
+    <Content Include="Activité\Menu.activitydiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="hinder_-_flee.usecasediagram.layout">
+    <Content Include="Activité\Menu.activitydiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>hinder_-_flee.usecasediagram</DependentUpon>
+      <DependentUpon>Activité\Menu.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activité\Objet.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activité\Objet.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activité\Objet.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activité\Partie.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activité\Partie.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activité\Partie.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activité\Survivants.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activité\Survivants.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activité\Survivants.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Activité\Zombie.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Activité\Zombie.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Activité\Zombie.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Cas d%27utilisation\hinder_-_flee.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Cas d%27utilisation\hinder_-_flee.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Cas d'utilisation\hinder_-_flee.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\projetAnnuel.uml">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Activité" />
+    <Folder Include="Cas d%27utilisation" />
   </ItemGroup>
 </Project>

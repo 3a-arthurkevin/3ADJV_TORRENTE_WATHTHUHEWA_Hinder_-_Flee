@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="1cd13195-7a33-4be2-a0ae-a52654dc121e"
   name="projetAnnuel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,6 +7,12 @@
     <comment
       Id="73be087a-e74f-4818-ad45-93dce5b7bfda">
       <body>Menu Principale</body>
+      <annotatedElements>
+        <initialNodeMoniker
+          Id="10cca796-7e35-430c-accc-bb69c78d54c9"
+          LastKnownName="Initial1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
     </comment>
     <comment
       Id="d35e3b24-0fd3-42d7-a1e7-adc244d9a3a4">
@@ -243,32 +249,12 @@
       </annotatedElements>
     </comment>
     <comment
-      Id="4a6c8740-0248-49e7-870c-225be364341f">
-      <body>Le joueur ne fait rien</body>
-      <annotatedElements>
-        <decisionNodeMoniker
-          Id="33af37ee-362e-488f-b123-3f7d2f48d60e"
-          LastKnownName="Decision8"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="e567e1cc-3352-4166-8d6d-da44ba975956">
       <body>Fin de la partie</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="21a282c8-65d7-409f-ba49-9af671402140"
           LastKnownName="Decision7"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="482d037b-a3a1-4911-bb3b-dc347749364a">
-      <body>Lancement de la partie</body>
-      <annotatedElements>
-        <initialNodeMoniker
-          Id="1ff6b1f4-8549-48b4-bbf1-78b94d8e1213"
-          LastKnownName="Initial1"
           LastKnownLocation="projetAnnuel.uml" />
       </annotatedElements>
     </comment>
@@ -299,46 +285,6 @@
         <opaqueActionMoniker
           Id="7a79be19-fd90-4e6d-ac38-d79e7b650d36"
           LastKnownName="Attaque"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="2f13c2be-693b-43a2-a6c8-4bbd1d105be0">
-      <body>Le joueur ne fait rien</body>
-      <annotatedElements>
-        <decisionNodeMoniker
-          Id="63921c07-3c37-490e-894a-b7657ae99686"
-          LastKnownName="Decision1"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="0046cfb1-1942-41dc-90f4-807915550817">
-      <body>Retour à l'état Idle</body>
-      <annotatedElements>
-        <mergeNodeMoniker
-          Id="7fb775d9-e224-4c32-bea2-6aa46db07dab"
-          LastKnownName="Merge3"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="71e2e9b5-60e4-4d5a-b4f2-98670f5ee510">
-      <body>Idle</body>
-      <annotatedElements>
-        <mergeNodeMoniker
-          Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
-          LastKnownName="Merge1"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
-      Id="df662228-defe-4838-aec8-b004c782569b">
-      <body>Idle</body>
-      <annotatedElements>
-        <mergeNodeMoniker
-          Id="57bcdb3f-ed5d-4b9c-bec0-68c2c09fda0d"
-          LastKnownName="Merge1"
           LastKnownLocation="projetAnnuel.uml" />
       </annotatedElements>
     </comment>
@@ -481,6 +427,444 @@
           LastKnownName="Marchand"
           LastKnownLocation="projetAnnuel.uml" />
       </annotatedElements>
+    </comment>
+    <comment
+      Id="61b60564-f9a1-4655-893f-8fa880658134">
+      <body>Le joueur appui sur le bouton quitter</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="b0c4f08f-6215-4fb9-a4e5-e6c9fed389e2"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="81b4e837-a911-46a3-9b23-5dce512f9717">
+      <body>Le joueur choisit un objet</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="6e86b094-72ed-48cc-bae7-e784ab5b4a75"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3d65d899-927b-47be-98f8-dd58bb815b4f">
+      <body>Le joueur accèpte la transaction</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="efb52de6-b18b-4fb9-be7d-23cb2317616e"
+          LastKnownName="Decision3"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ac4373fd-d406-48e5-87ac-f3c002a02414">
+      <body>Le joueur ne fait rien</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="6e86b094-72ed-48cc-bae7-e784ab5b4a75"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="64b14c67-1f25-4293-adfb-da6ba19c8528">
+      <body>Le joueur n'a pas assez d'argent</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="99af3cba-c4c1-4cd8-9198-044cdf978e37"
+          LastKnownName="Decision5"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="e7c2ceff-2ccb-4e72-83ad-79818fb7cd15">
+      <body>Le joueur clique sur Retour</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="6e86b094-72ed-48cc-bae7-e784ab5b4a75"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="334bfeba-d829-41d3-bb8a-b866427df20c">
+      <body>Le joueur clique sur le bouton Acheter</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="b0c4f08f-6215-4fb9-a4e5-e6c9fed389e2"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="27078e7d-bd4d-4003-be47-716c6fa4fd75">
+      <body>Le joueur clique sur le bouton Vendre</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="b0c4f08f-6215-4fb9-a4e5-e6c9fed389e2"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="346e6f8b-144e-4796-9f6d-466c4bea1ba6">
+      <body>Le joueur ne fait rien</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c8be5c2-84b3-4616-9c15-0aa013f1a5b1"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="a1f0ffcb-dfc7-43da-b9c6-1facb7719b4f">
+      <body>Le joueur clique sur Retour</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c8be5c2-84b3-4616-9c15-0aa013f1a5b1"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="cdc5f8bc-f297-415a-905c-9de2e44c04ab">
+      <body>Le joueur choisit l'objet qu'il veut vendre</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c8be5c2-84b3-4616-9c15-0aa013f1a5b1"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="0707dc2b-437e-4785-9a47-38e8d4e46207">
+      <body>Le joueur accepte la transaction</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c8e04823-f8cd-40de-ba14-8a5e493cf842"
+          LastKnownName="Decision6"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="f9937b2b-e23f-41fa-ba2a-efd484e706ae">
+      <body>Clique sur une cible</body>
+      <annotatedElements>
+        <mergeNodeMoniker
+          Id="7f085998-3e0e-4a24-b6fc-691eb42405c8"
+          LastKnownName="Merge2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="cfc1c9e9-3896-4e15-be6a-ccb58ba97e18">
+      <body>Cible à portée</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="f8ae6782-5b02-45c1-b50d-cfa6f9e12d97"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="60f34eb3-6850-4c48-95cd-8e8dc2b63f08">
+      <body>Le joueur clique sur la carte</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="24143347-3c3a-4da2-898d-56c6a9e563e5"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="11c00603-bd54-4e14-81bd-9f2b373ceb56">
+      <body>Attaque de zone</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="84a868cb-0aef-40ad-bec6-7e68e01f7db9"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ddd4a76f-9349-410f-9aa7-723d9be99112">
+      <body>Attaque mono cible</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="84a868cb-0aef-40ad-bec6-7e68e01f7db9"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="c89566ab-794e-4461-9a21-8b4028c8782d">
+      <body>Cible a portée ?</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c5275a7-b113-4c5c-83f3-fa11ae4d783b"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="14528493-9b3c-4eba-9880-67dbf7de8315">
+      <body>Non</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c5275a7-b113-4c5c-83f3-fa11ae4d783b"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="0d8de18c-8520-4caa-8596-71902da08b18">
+      <body>Le joueur clique sur la carte</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c5275a7-b113-4c5c-83f3-fa11ae4d783b"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="85734d6b-9ed3-45b5-9958-ba3ec8867785">
+      <body>Réussite du coup</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="d4034c4d-f5f9-4777-9ff9-6da2b81d3114"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="0cf81fb0-4efb-4034-8fad-3eff2d05408a">
+      <body>Oui</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="d4034c4d-f5f9-4777-9ff9-6da2b81d3114"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ca58d151-ce38-4789-ac95-ded22c55a52c">
+      <body>Clique sur la zone d'effet</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="c3fd9ce2-dab1-4d0b-ba07-9a10035ca7cb"
+          LastKnownName="Lancement de l'attaque"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3726f53e-90ea-45b0-b125-bc8c2de372d4">
+      <body>Zone valide</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4ce19ab1-f833-4988-8304-e1a457ea176b"
+          LastKnownName="Decision5"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8f2d1a1c-80a8-477e-8a17-e8915009ca30">
+      <body>Clique sur la cible</body>
+      <annotatedElements>
+        <mergeNodeMoniker
+          Id="50f5d3ba-53b6-45ae-997a-bcd539278f04"
+          LastKnownName="Merge2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="32f159e5-722b-4602-b44a-6d1f132e7e18">
+      <body>Oui</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="7c5275a7-b113-4c5c-83f3-fa11ae4d783b"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="bcbbc5b6-dd77-46d0-994d-e23bdfed8bf6">
+      <body>Le joueur reçoit une attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="63921c07-3c37-490e-894a-b7657ae99686"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="b7f2860e-3d57-4ac2-94b7-8192693458bd">
+      <body>Le joueur meut ou atteint 100% de la jauge de mutation</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="46920854-4193-4337-8019-d7ecd79fedfe"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="66bad794-d226-4aed-ac9a-fd24038ca7aa">
+      <body>Est un zombie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="23c069c7-6cb6-4fba-8e91-f8b066905fc8"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="92c4f861-e8c5-49f6-8b75-146547876a54">
+      <body>Le survivant a muté</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="edda0639-6201-4ef7-a3a2-13aad346acc9"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="e1d40baf-520b-4b16-b47f-6a31aeffbf61">
+      <body>L'autre joueur est encore en vie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="80a9e3a8-e747-46f2-9ac1-c95075fcc8f7"
+          LastKnownName="Decision3"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="cd4f9d79-02fc-4324-ad3c-a129f13a1989">
+      <body>Est mort</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="aaaaca38-95e6-4a60-a478-63bb85ef0e0e"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ef7a1a84-26d9-4b80-a67e-2a39fdf817c4">
+      <body>Le timer est lancé et terminé</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="ee8271bd-2e81-45bf-915e-655622bd90c9"
+          LastKnownName="Decision5"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="fc5193db-f3c9-4eb9-af1c-772ea991c298">
+      <body>Le timer est lancé et terminé</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="cc791316-bda7-4c1a-b9bf-4b4ada11bb69"
+          LastKnownName="Decision6"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="14b0885e-af86-43bb-a05e-5a73b2cefe9b">
+      <body>Est un zombie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="f2722d16-18e9-4307-96be-236b9536b5ac"
+          LastKnownName="Decision7"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="cb64d0c2-98b2-447b-9260-be1526aebba3">
+      <body>Le survivant a muté</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4c5919b3-7d93-4bce-a084-56797f00c8af"
+          LastKnownName="Decision9"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ff0b3579-2348-4513-b9b0-6ae9f20a23c9">
+      <body>L'autre joueur est encore en vie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="9adc8102-af5e-4beb-8dad-61fbe7e11276"
+          LastKnownName="Decision10"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="c820250d-f638-40a4-82be-b04d34732301">
+      <body>est mort</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="b9427e70-72c5-429a-a270-ddbaa9478fb7"
+          LastKnownName="Decision8"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ce7a019c-b3c5-476e-b3a2-b0bd8cd897f8">
+      <body>Diagramme des déplacements</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="2e0967a7-dd1f-4187-bd2a-4dccda212939"
+          LastKnownName="Déplacement"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="61ac823b-aa32-483c-813a-f7f4c140f5f0">
+      <body>Diagramme des attaques</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="bd087f58-7733-4836-9c25-ac7d75aa21cb"
+          LastKnownName="Attaque"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="672ccbc0-d300-459a-a2e9-4ab864c5e7f9">
+      <body>Le joueur souhaite lancer un attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="6eb7e7bb-72a5-4eae-ae93-de7801649a6d">
+      <body>Le joueur souhaite se déplacer</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="25a24bf8-d78c-4d3b-996d-d3bf3bc637d5">
+      <body>Le joueur reçoit une attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="85ea78b4-b9d0-48be-992e-63da642ce7dc">
+      <body>L'action Zombie correspond au diagramme d'activité Zombie</body>
+    </comment>
+    <comment
+      Id="0baa1a01-a23c-4c92-8a55-ac5129b5d5c2">
+      <body>L'action Survivant correspond elle aussi au diagramme Suvivant</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -1714,22 +2098,7 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="8826f4c2-b436-4bd9-8266-ee32d713039b"
-                isLeaf="false">
-                <mergeNodeMoniker
-                  Id="57bcdb3f-ed5d-4b9c-bec0-68c2c09fda0d"
-                  LastKnownName="Merge1"
-                  LastKnownLocation="projetAnnuel.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </initialNode>
-          <mergeNode
-            Id="57bcdb3f-ed5d-4b9c-bec0-68c2c09fda0d"
-            name="Merge1"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="e1fa7149-aa36-45cc-968e-d898d76a34b7"
+                Id="8a8bd6bc-383f-4ba7-a3be-49d7f156ed79"
                 isLeaf="false">
                 <decisionNodeMoniker
                   Id="63921c07-3c37-490e-894a-b7657ae99686"
@@ -1737,22 +2106,14 @@
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
             </flowNodeTargets>
-          </mergeNode>
+          </initialNode>
           <decisionNode
             Id="63921c07-3c37-490e-894a-b7657ae99686"
             name="Decision1"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="6ce9436b-2ee4-4bbb-a2e8-a70d0138384a"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="aae0870f-104a-43d4-80e2-a90defa3baaa"
-                  LastKnownName="Déplacement"
-                  LastKnownLocation="projetAnnuel.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="81604273-435c-4dbc-9a19-3a0459e09e1a"
+                Id="617acf14-e731-43da-a698-42e6ca006ca5"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="7a79be19-fd90-4e6d-ac38-d79e7b650d36"
@@ -1760,7 +2121,15 @@
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
               <controlFlow
-                Id="d08cfc2a-6143-4b8f-b355-2a7741a453d3"
+                Id="408b9dfa-2672-49c1-b0d8-74e5b4b45eb6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="aae0870f-104a-43d4-80e2-a90defa3baaa"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0f182d00-b0fe-45d8-a44e-1e513008150b"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="165c81f7-9a62-4ecb-846d-3b6d5b8b0f71"
@@ -1768,19 +2137,19 @@
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
               <controlFlow
-                Id="4cae1e77-ce77-4b90-a813-b36f29b105d9"
-                isLeaf="false">
-                <mergeNodeMoniker
-                  Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
-                  LastKnownName="Merge2"
-                  LastKnownLocation="projetAnnuel.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="5e177daf-7f52-494c-95df-76cf5fe56fde"
+                Id="dbe4c5ac-e568-4ffc-9c0a-3cf5c6e63ca4"
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="8474b131-d6bd-4dee-96a6-1787511f9d64"
                   LastKnownName="Marchand"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="8b1c47d1-de21-42d3-b82a-5c746bfb3491"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="46920854-4193-4337-8019-d7ecd79fedfe"
+                  LastKnownName="Decision2"
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1791,7 +2160,7 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="83d87487-33fc-49c8-939e-03386e345862"
+                Id="6d545956-238e-4846-a79e-9f3176150ce7"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
@@ -1806,7 +2175,7 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="21e757a4-a5a2-43cf-9970-eb1b6be2de9f"
+                Id="8b3c6eb9-e078-45dc-a4ff-8b80ce7d0da2"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
@@ -1821,7 +2190,7 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="fe3ba812-75b1-4d24-9609-68dd504a8133"
+                Id="b27021bd-7cc0-4ee5-8403-9d507d445205"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
@@ -1836,11 +2205,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="5a593dad-4c6a-40db-a8e6-7680afcd544e"
+                Id="c81daa93-6bc9-42fe-a6fd-9023ac3f110d"
                 isLeaf="false">
-                <mergeNodeMoniker
-                  Id="57bcdb3f-ed5d-4b9c-bec0-68c2c09fda0d"
-                  LastKnownName="Merge1"
+                <activityFinalNodeMoniker
+                  Id="3c6b7cd7-b629-4257-b85b-28a200270ab0"
+                  LastKnownName="ActivityFinal2"
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1851,7 +2220,7 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="08788242-3bc7-466e-8582-af34585740a5"
+                Id="fa0b4691-6112-4cbb-be2e-e79fd339538d"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
@@ -1860,6 +2229,120 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
+          <activityFinalNode
+            Id="f9903c03-8600-4fb5-b38c-cfa1a07b3579"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <decisionNode
+            Id="46920854-4193-4337-8019-d7ecd79fedfe"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="35a3339b-b53c-4083-ac2f-d291cf203e6d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8c7c9cc6-ba7e-4947-811a-720c739cd74b"
+                  LastKnownName="Mutation du survivant"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9f13c6ef-5fa7-44db-a5c4-ce654648be38"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="f51be9c2-643f-4993-81c7-c6ddb5485c70"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2eeee505-650b-496e-8461-62a661256ff2"
+            name="Augmentation de la barre de mutation"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f0229324-e25f-4b61-8a2d-fb05b733f60c"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="829c3607-a396-46a4-83ee-5ae28ecc53b6"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8c7c9cc6-ba7e-4947-811a-720c739cd74b"
+            name="Mutation du survivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4f8ec656-d9f8-43a0-bdff-ba40ac6d131d"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="3c6b7cd7-b629-4257-b85b-28a200270ab0"
+            name="ActivityFinal2"
+            isLeaf="false" />
+          <forkNode
+            Id="f51be9c2-643f-4993-81c7-c6ddb5485c70"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2f2c23d3-e26b-47c9-9907-0666805d1b47"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7a27b5aa-a92b-4925-9f24-45b5dd0ccce3"
+                  LastKnownName="Enlever des points de vie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="f7e30b46-7bc6-4f83-a86e-be3528ad1b03"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2eeee505-650b-496e-8461-62a661256ff2"
+                  LastKnownName="Augmentation de la barre de mutation"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="7a27b5aa-a92b-4925-9f24-45b5dd0ccce3"
+            name="Enlever des points de vie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a78b5319-68ac-43f6-a917-da52ba972363"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="829c3607-a396-46a4-83ee-5ae28ecc53b6"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="829c3607-a396-46a4-83ee-5ae28ecc53b6"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="23d9bde4-0e99-4a40-94b3-62ed61e7f647"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="b74e3502-b433-426d-a86b-9f98cc8935b7"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -1982,11 +2465,242 @@
           <initialNode
             Id="67863e71-49ef-4644-a044-d7c9360c8be2"
             name="Initial1"
-            isLeaf="false" />
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="17f07590-ee07-447c-8e2c-89ed9c7fc15d"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="84a868cb-0aef-40ad-bec6-7e68e01f7db9"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode
+            Id="84a868cb-0aef-40ad-bec6-7e68e01f7db9"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1a4428ae-bec0-4403-a64a-bdc17f66b7c7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="67364f64-c1c4-46f0-bcdc-1afe0d0aacb9"
+                  LastKnownName="Affiche la zone d'effet"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1e835ec8-4414-48ec-b45b-b149dcbf9a41"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a8889855-c93b-4059-833e-b5d0c4265190"
+                  LastKnownName="Affiche le reticule de visé"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="67364f64-c1c4-46f0-bcdc-1afe0d0aacb9"
+            name="Affiche la zone d'effet"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c6da1ff8-e747-46cd-a688-3adc08f1f459"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="4ce19ab1-f833-4988-8304-e1a457ea176b"
+                  LastKnownName="Decision5"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a8889855-c93b-4059-833e-b5d0c4265190"
+            name="Affiche le reticule de visé"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9e7c23fd-7d52-4a45-8ac6-f8d01a8feb34"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="50f5d3ba-53b6-45ae-997a-bcd539278f04"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="7c5275a7-b113-4c5c-83f3-fa11ae4d783b"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e9728b56-772c-48eb-9ec0-f864c72ff751"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c3fd9ce2-dab1-4d0b-ba07-9a10035ca7cb"
+                  LastKnownName="Lancement de l'attaque"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0998ada5-b7e3-42d4-a8b0-f24725078fd8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0294e256-dd68-4bd1-ba6b-ab50c855b47a"
+                  LastKnownName="Approche automatique de la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="724cd14d-f6c6-4fd5-8891-d0398fad4e3c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="798620ee-315a-4a34-ba17-920431656d0e"
+                  LastKnownName="Le joueur arrète de suivre la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="c3fd9ce2-dab1-4d0b-ba07-9a10035ca7cb"
+            name="Lancement de l'attaque"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5d8844f8-2909-4f15-a0f8-957c44e16cd7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="d4034c4d-f5f9-4777-9ff9-6da2b81d3114"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0294e256-dd68-4bd1-ba6b-ab50c855b47a"
+            name="Approche automatique de la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c3a1e310-cba6-4b38-91fc-ae15fdc95c8f"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="50f5d3ba-53b6-45ae-997a-bcd539278f04"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="d4034c4d-f5f9-4777-9ff9-6da2b81d3114"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="172e5eb1-bbce-4427-b3f0-204e611beff5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ad9b108e-f25f-405d-928a-09554b66b1f1"
+                  LastKnownName="Application des effets de l'attaque sur la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="25003ac4-b061-43d6-a8d6-7eca8d9e59b9"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d5bcae3d-72bd-494d-9753-2b69a68bbe64"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="ad9b108e-f25f-405d-928a-09554b66b1f1"
+            name="Application des effets de l'attaque sur la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f7f3703d-5498-43c7-a953-35a05c2e170e"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d5bcae3d-72bd-494d-9753-2b69a68bbe64"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="d5bcae3d-72bd-494d-9753-2b69a68bbe64"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1c5de532-e00e-4b36-9b05-f316daaad2ad"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="9e51ad5f-f2a4-454b-a771-ce960b6b7b60"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
           <activityFinalNode
-            Id="6c300e0f-3755-45e4-8924-90a19451ad4b"
+            Id="9e51ad5f-f2a4-454b-a771-ce960b6b7b60"
             name="ActivityFinal1"
             isLeaf="false" />
+          <mergeNode
+            Id="50f5d3ba-53b6-45ae-997a-bcd539278f04"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4932b356-b28d-4d15-aef3-a5985b23df22"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="7c5275a7-b113-4c5c-83f3-fa11ae4d783b"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode
+            Id="4ce19ab1-f833-4988-8304-e1a457ea176b"
+            name="Decision5"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f3f0b410-8cbb-4b75-ad59-5c685d85534c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c3fd9ce2-dab1-4d0b-ba07-9a10035ca7cb"
+                  LastKnownName="Lancement de l'attaque"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9e772425-a9db-43ee-b3a3-3f80bd36ad14"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="67364f64-c1c4-46f0-bcdc-1afe0d0aacb9"
+                  LastKnownName="Affiche la zone d'effet"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="798620ee-315a-4a34-ba17-920431656d0e"
+            name="Le joueur arrète de suivre la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="017f0ef5-bec4-47fa-aa54-1285227dd921"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d5bcae3d-72bd-494d-9753-2b69a68bbe64"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -2004,11 +2718,158 @@
           <initialNode
             Id="20491bd7-decb-4c75-a216-402a62d93fd0"
             name="Initial1"
-            isLeaf="false" />
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2e6d5a2b-073a-4ccc-919b-f018c71ad1e1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="00e9d015-0f3b-46a5-bc8b-e1d1dd499ec7"
+                  LastKnownName="Affiche le réticule de visé"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="00e9d015-0f3b-46a5-bc8b-e1d1dd499ec7"
+            name="Affiche le réticule de visé"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="730633b4-ce51-4698-9ae4-5b7192a7eaf1"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="7f085998-3e0e-4a24-b6fc-691eb42405c8"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f8ae6782-5b02-45c1-b50d-cfa6f9e12d97"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7686fcc7-0553-4b60-a8d6-d359ae81c4f5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0bb518f9-35c4-4fa3-aa4b-4b1760814d85"
+                  LastKnownName="Approche automatique de la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e9ba84ab-676f-456b-aa11-e7ab6a1597cd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2df5c6ea-2b0f-4833-96c4-217866e281e2"
+                  LastKnownName="Application de l'effet de l'objet sur la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2df5c6ea-2b0f-4833-96c4-217866e281e2"
+            name="Application de l'effet de l'objet sur la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9d1568e8-4b05-4b81-94c3-1db53b4671bd"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f1456bcc-63d0-4757-891e-1a26587389ed"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0bb518f9-35c4-4fa3-aa4b-4b1760814d85"
+            name="Approche automatique de la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1b49540f-a983-4e8d-a90d-613a29f65a31"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="24143347-3c3a-4da2-898d-56c6a9e563e5"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="24143347-3c3a-4da2-898d-56c6a9e563e5"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3eec0d50-3dce-4acd-ac24-38607d20a609"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="7f085998-3e0e-4a24-b6fc-691eb42405c8"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="4585464f-1a3d-4373-9453-a233b0f2b1ee"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e2a02552-c4ab-4564-9df9-caf1ea988bf0"
+                  LastKnownName="Arrète le suivit de la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="7f085998-3e0e-4a24-b6fc-691eb42405c8"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="80270f49-e45c-46cc-860c-b5e6e48e0371"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f8ae6782-5b02-45c1-b50d-cfa6f9e12d97"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
           <activityFinalNode
-            Id="284ebbf8-0168-4bb4-a091-fb51417c9e07"
+            Id="883ea835-9185-4970-bd20-13af83ce72cf"
             name="ActivityFinal1"
             isLeaf="false" />
+          <mergeNode
+            Id="f1456bcc-63d0-4757-891e-1a26587389ed"
+            name="Merge3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ffeae983-5f7b-44db-8e11-0ad0a9b60799"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="883ea835-9185-4970-bd20-13af83ce72cf"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="e2a02552-c4ab-4564-9df9-caf1ea988bf0"
+            name="Arrète le suivit de la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="744aaa59-b269-480d-af5c-28958f45f638"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f1456bcc-63d0-4757-891e-1a26587389ed"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -2083,7 +2944,7 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="75cb39ea-6a9a-4d11-ae9d-2c679041266a"
-                  LastKnownName="Deplacement à l'endroit voulu"
+                  LastKnownName="Déplacement à l'endroit voulu"
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
               <controlFlow
@@ -2113,7 +2974,7 @@
           </mergeNode>
           <opaqueAction
             Id="75cb39ea-6a9a-4d11-ae9d-2c679041266a"
-            name="Deplacement à l'endroit voulu"
+            name="Déplacement à l'endroit voulu"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
@@ -2365,7 +3226,202 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="ce2445ef-ee29-4e64-b6e0-2062593974ab"
+                Id="9ce77866-1bdf-4602-9343-77a8e7ce0dcf"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="9cf36aea-560b-4b1b-ac93-e654637f5ef3"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode
+            Id="b0c4f08f-6215-4fb9-a4e5-e6c9fed389e2"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="536ad16d-bfdf-4e63-b5d9-661abab54e14"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7438a65d-0edb-475e-9090-86ceb7b1a31b"
+                  LastKnownName="Affiche de la liste des objets achetables"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="af8037d4-7f04-429f-9b1d-776c40cae7cb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="397fa598-4f35-4afa-9f14-114c95272dd0"
+                  LastKnownName="Affichage de la liste des objets vendable"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="65b5b6e0-191b-451c-9cb1-5ee8a259987e"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="2753a6d8-01b9-42db-9f68-b39477a6bab9"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="7438a65d-0edb-475e-9090-86ceb7b1a31b"
+            name="Affiche de la liste des objets achetables"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1ab35350-e9e1-4ffe-8b58-a50480eef262"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="6e86b094-72ed-48cc-bae7-e784ab5b4a75"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="397fa598-4f35-4afa-9f14-114c95272dd0"
+            name="Affichage de la liste des objets vendable"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6c76f608-462d-45a6-b0a1-ee066cdcd3a5"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="7c8be5c2-84b3-4616-9c15-0aa013f1a5b1"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="6e86b094-72ed-48cc-bae7-e784ab5b4a75"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f294fde5-3ae4-4afb-a1c5-201858fddc25"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="97a15beb-1f15-4d0c-bc84-d78453a67f5b"
+                  LastKnownName="Affichage de la validation de l'achat"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a02c129a-a8fc-4086-830a-27f2db9132cb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7438a65d-0edb-475e-9090-86ceb7b1a31b"
+                  LastKnownName="Affiche de la liste des objets achetables"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c1513330-4294-45f2-b422-a466112c17b9"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="7b70a558-3c81-4036-8f29-0abe2825a693"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="8a4a8b1d-c0f3-42cb-a7d6-2d06ad7052b4"
+            name="Ajout le l'objet dans l'inventaire"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0237e2d7-ece1-4b0a-b66f-7a09c97393a2"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="664cf776-a470-4979-9db4-3594b94a30fa"
+                  LastKnownName="Join2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="97a15beb-1f15-4d0c-bc84-d78453a67f5b"
+            name="Affichage de la validation de l'achat"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="da129038-abd3-4ef6-8dcf-bc7e7ab0d6e5"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="efb52de6-b18b-4fb9-be7d-23cb2317616e"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="efb52de6-b18b-4fb9-be7d-23cb2317616e"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="07947231-0e45-4a49-8870-53e15f673f3d"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="48df37b3-ea58-4091-bef9-7252b4bcce43"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1809483a-7c44-4c98-80a4-cd85122bdd8c"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="99af3cba-c4c1-4cd8-9198-044cdf978e37"
+                  LastKnownName="Decision5"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="7c8be5c2-84b3-4616-9c15-0aa013f1a5b1"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8db9ab4a-ee6f-4c95-970c-e4d7bd7fdcc5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="397fa598-4f35-4afa-9f14-114c95272dd0"
+                  LastKnownName="Affichage de la liste des objets vendable"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="964efa68-6375-4e9c-bbe2-098e8df42f00"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="7b70a558-3c81-4036-8f29-0abe2825a693"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="6735dcf7-65f2-46c7-8e64-7e105b0eb196"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="25f4b36e-e554-484a-ad56-55c4eaf9b066"
+                  LastKnownName="Validation de la vente"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="2753a6d8-01b9-42db-9f68-b39477a6bab9"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <mergeNode
+            Id="9cf36aea-560b-4b1b-ac93-e654637f5ef3"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="782067eb-e02e-492b-b303-697195c08f06"
                 isLeaf="false">
                 <decisionNodeMoniker
                   Id="b0c4f08f-6215-4fb9-a4e5-e6c9fed389e2"
@@ -2373,15 +3429,889 @@
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
             </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="48df37b3-ea58-4091-bef9-7252b4bcce43"
+            name="Merge3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="22b86f23-d7c1-4a16-a9d9-782657a039bb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7438a65d-0edb-475e-9090-86ceb7b1a31b"
+                  LastKnownName="Affiche de la liste des objets achetables"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode
+            Id="99af3cba-c4c1-4cd8-9198-044cdf978e37"
+            name="Decision5"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="af5f59ff-a6dc-4e29-b1ef-81ed834b385f"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="48df37b3-ea58-4091-bef9-7252b4bcce43"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5551ea64-ff34-4be1-86b7-8af9b07155da"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="85a89006-2f60-42bf-a4e9-4d063f8a4e0c"
+                  LastKnownName="Fork2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="7b70a558-3c81-4036-8f29-0abe2825a693"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="262cf48f-b4f4-42e6-994e-bcaa41626f6b"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="9cf36aea-560b-4b1b-ac93-e654637f5ef3"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="25f4b36e-e554-484a-ad56-55c4eaf9b066"
+            name="Validation de la vente"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dd051df9-3b23-4fea-be93-4a82839b1947"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c8e04823-f8cd-40de-ba14-8a5e493cf842"
+                  LastKnownName="Decision6"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c8e04823-f8cd-40de-ba14-8a5e493cf842"
+            name="Decision6"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0c59a6f7-5c13-4d08-95d4-d6186df26ff5"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="da6c7101-83b1-442f-929f-20be5d1d1e88"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d6b855d1-f75a-438b-87d8-7dcfbad83053"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a1977655-9aac-41cf-9d50-a38f5d032f35"
+                  LastKnownName="Merge4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="b747a498-59d3-417f-85a6-a5cf8c6b398f"
+            name="Suppression de l'objet de l'inventaire"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ca05daf8-3c05-404b-933e-baa2bb798dc9"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="83739eac-8bac-451b-b5b9-bfb77b76ecfe"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="da6c7101-83b1-442f-929f-20be5d1d1e88"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c2be68dc-bdc1-4a41-b243-a9d424ad06c3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b747a498-59d3-417f-85a6-a5cf8c6b398f"
+                  LastKnownName="Suppression de l'objet de l'inventaire"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="55c4e5cb-7e9b-48c2-ad6b-2dfe577c545b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="70eca25e-927a-43a3-a2a5-238c6c287af9"
+                  LastKnownName="Ajoute la valeur de l'objet vendu au sac d'argent"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0a7e17ae-d1fa-49ea-ab3c-cef9f36f2cd8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0cb7caab-f987-4930-a273-5c21f2f5aef7"
+                  LastKnownName="Ajoute une unité de l'objet dans le stock du marchand"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="70eca25e-927a-43a3-a2a5-238c6c287af9"
+            name="Ajoute la valeur de l'objet vendu au sac d'argent"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f6a58001-9e37-4783-aa47-cf57fc2ce1a8"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="83739eac-8bac-451b-b5b9-bfb77b76ecfe"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="83739eac-8bac-451b-b5b9-bfb77b76ecfe"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ea4c2514-76f5-4dee-8798-518c20f26640"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a1977655-9aac-41cf-9d50-a38f5d032f35"
+                  LastKnownName="Merge4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <mergeNode
+            Id="a1977655-9aac-41cf-9d50-a38f5d032f35"
+            name="Merge4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a409604e-cfe5-4803-92f2-0adf63258c08"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="397fa598-4f35-4afa-9f14-114c95272dd0"
+                  LastKnownName="Affichage de la liste des objets vendable"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <forkNode
+            Id="85a89006-2f60-42bf-a4e9-4d063f8a4e0c"
+            name="Fork2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="68aa8b69-3aa0-495a-902b-c26206268383"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8a4a8b1d-c0f3-42cb-a7d6-2d06ad7052b4"
+                  LastKnownName="Ajout le l'objet dans l'inventaire"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a97420a7-24f0-4b67-ad19-42d35df05245"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="81ddfd4d-bdef-4e55-b25e-dffd125b88f0"
+                  LastKnownName="Enlève le montant de l'objet au sac d'argent du joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a6b4e318-2c02-412c-b6a5-a683b7bc309b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ec6ed058-9921-48bc-8640-16c21083f1ab"
+                  LastKnownName="Retire une unitée de l'objet acheté dans le stock du marchand"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <joinNode
+            Id="664cf776-a470-4979-9db4-3594b94a30fa"
+            name="Join2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2a9a9a04-f93d-4e01-a96e-9b3823f7d71b"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="48df37b3-ea58-4091-bef9-7252b4bcce43"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction
+            Id="81ddfd4d-bdef-4e55-b25e-dffd125b88f0"
+            name="Enlève le montant de l'objet au sac d'argent du joueur"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="46afc2de-0e53-4077-ad87-69af9de1e320"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="664cf776-a470-4979-9db4-3594b94a30fa"
+                  LastKnownName="Join2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ec6ed058-9921-48bc-8640-16c21083f1ab"
+            name="Retire une unitée de l'objet acheté dans le stock du marchand"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1911e5f1-2984-4400-bbf3-0ab8fd0a1854"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="664cf776-a470-4979-9db4-3594b94a30fa"
+                  LastKnownName="Join2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0cb7caab-f987-4930-a273-5c21f2f5aef7"
+            name="Ajoute une unité de l'objet dans le stock du marchand"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="aceb50d3-9e81-47a9-a968-698995b6432c"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="83739eac-8bac-451b-b5b9-bfb77b76ecfe"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="c6cefbe1-0741-4c6a-9b0f-dabe2a105716"
+        name="Zombie"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="1c1f435c-5dae-4b72-970f-1c003c9eee35"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fed5d141-9455-41e3-94b4-801706e3c1bf"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
           </initialNode>
+          <decisionNode
+            Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cd7634b8-3f7b-48b3-8532-ce597f8ab0dc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bd087f58-7733-4836-9c25-ac7d75aa21cb"
+                  LastKnownName="Attaque"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="556151e4-c4d0-4f99-bd25-6205f6c978c3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2e0967a7-dd1f-4187-bd2a-4dccda212939"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2fc95811-3883-4d5c-ba22-5d9c80c30ba5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b8efa03f-5cd3-4ec2-bc6f-d74dd945a377"
+                  LastKnownName="Enlever des points de vie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2e0967a7-dd1f-4187-bd2a-4dccda212939"
+            name="Déplacement"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8090ef90-9285-4081-bfa0-74e9173ac0c0"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="38b2a524-0ec0-4b40-8f90-8034fe71bece"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="bd087f58-7733-4836-9c25-ac7d75aa21cb"
+            name="Attaque"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d312d69c-84fb-4bc5-8de9-923102084a10"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="38b2a524-0ec0-4b40-8f90-8034fe71bece"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="38b2a524-0ec0-4b40-8f90-8034fe71bece"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="73fb910e-8c07-4092-86b8-ebb7461be158"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="f4573770-9d22-465e-8de3-544f8fcafd45"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
           <activityFinalNode
-            Id="27d7d168-f20b-4403-b12a-a97fee729dc2"
+            Id="7b02f2fe-4e3c-4733-b332-43cc14b70ef7"
             name="ActivityFinal1"
             isLeaf="false" />
-          <decisionNode
-            Id="b0c4f08f-6215-4fb9-a4e5-e6c9fed389e2"
-            name="Decision1"
+          <activityFinalNode
+            Id="f4573770-9d22-465e-8de3-544f8fcafd45"
+            name="ActivityFinal2"
             isLeaf="false" />
+          <opaqueAction
+            Id="b8efa03f-5cd3-4ec2-bc6f-d74dd945a377"
+            name="Enlever des points de vie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ff900da6-a403-4234-8afc-a21469b97e60"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="38b2a524-0ec0-4b40-8f90-8034fe71bece"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="b1c6f63a-f041-45c3-8332-0ddc34eb8af9"
+        name="Partie"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="876882d5-87f6-466c-acff-d93155d5203e"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="69d9b8de-b5e1-40bb-a3bf-a51955dafd10"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b3aa5028-21e0-4e4a-90df-f8fa2c53bbc1"
+                  LastKnownName="Deploiement des survivants sur la carte"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="b3aa5028-21e0-4e4a-90df-f8fa2c53bbc1"
+            name="Deploiement des survivants sur la carte"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ddc155af-7888-4453-9d75-3326f598b2a1"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="fbe0a16c-2c7f-4893-a439-643fc1a4be1c"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="fbe0a16c-2c7f-4893-a439-643fc1a4be1c"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f3e339eb-6650-47f2-bef7-55df34376ebd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1baab032-7fbf-4229-ae55-15a5784e4169"
+                  LastKnownName="Second joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="f82e45db-ddf0-43c9-8bed-d3f34a69b3a8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f10b5779-b767-4c08-9b75-9109f0784234"
+                  LastKnownName="Premier Joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="1baab032-7fbf-4229-ae55-15a5784e4169"
+            name="Second joueur"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c4b905c7-6c6e-4431-aac8-5f11c3d4459b"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="ee8271bd-2e81-45bf-915e-655622bd90c9"
+                  LastKnownName="Decision5"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="db6f313f-6bfb-48d5-b12d-28d5d62ec3e3"
+            name="Survivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="203b7152-7bff-4e24-8333-6935181eef09"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="edda0639-6201-4ef7-a3a2-13aad346acc9"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="23c069c7-6cb6-4fba-8e91-f8b066905fc8"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="75d28bd5-22dc-4d87-a0b4-fc52bf14b6fe"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="db6f313f-6bfb-48d5-b12d-28d5d62ec3e3"
+                  LastKnownName="Survivant"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="bf5c6da2-d521-4c85-84f2-974aad65ab9f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6547be8d-13a8-4ba2-859c-2dcbeeaebe5e"
+                  LastKnownName="Zombie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="6547be8d-13a8-4ba2-859c-2dcbeeaebe5e"
+            name="Zombie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="14bb1070-4077-4f57-8414-6f0be291d950"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="aaaaca38-95e6-4a60-a478-63bb85ef0e0e"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a2f80e59-7b30-4b44-a259-c4df5fc73b4a"
+            name="Affichage écran fin de partie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c7e6131d-5870-412c-abfb-f6edf1d611fd"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="fc1bc2e5-f133-4ded-96e3-6a9b3c39a873"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="edda0639-6201-4ef7-a3a2-13aad346acc9"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="563ad745-52a4-438e-8ee6-8579d58b24ef"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1baab032-7fbf-4229-ae55-15a5784e4169"
+                  LastKnownName="Second joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="bccbbaec-ea8f-4bb5-aa37-7f8591d47eb7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="80a9e3a8-e747-46f2-9ac1-c95075fcc8f7"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="80a9e3a8-e747-46f2-9ac1-c95075fcc8f7"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="61e37e28-3b41-42f5-9c74-f6b99c02ccfb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6bf3976f-f854-4f15-a491-f8f249ac84bc"
+                  LastKnownName="Déclencher le timer de fin de partie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0aad879d-c3b0-42bf-a69b-8463c147d171"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="89fe5321-cb94-4cfd-a644-659241b075bb"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="fc1bc2e5-f133-4ded-96e3-6a9b3c39a873"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="6bf3976f-f854-4f15-a491-f8f249ac84bc"
+            name="Déclencher le timer de fin de partie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b0f87158-1772-42be-8dce-29d2c2ece9d8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1baab032-7fbf-4229-ae55-15a5784e4169"
+                  LastKnownName="Second joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="c8d1b9ff-907e-42c9-83ec-bda1459594bf"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d8047887-bf65-4e43-919c-a2a57c44a856"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a2f80e59-7b30-4b44-a259-c4df5fc73b4a"
+                  LastKnownName="Affichage écran fin de partie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <decisionNode
+            Id="aaaaca38-95e6-4a60-a478-63bb85ef0e0e"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e484b3ce-b38a-4a86-b20c-c66cbbe04aaf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1baab032-7fbf-4229-ae55-15a5784e4169"
+                  LastKnownName="Second joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2c9c0871-ac0b-4f61-8ff3-28cc6b2f838c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="89fe5321-cb94-4cfd-a644-659241b075bb"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="89fe5321-cb94-4cfd-a644-659241b075bb"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ec17f3c9-de9e-4139-b290-611e9efc06bf"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="c8d1b9ff-907e-42c9-83ec-bda1459594bf"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode
+            Id="ee8271bd-2e81-45bf-915e-655622bd90c9"
+            name="Decision5"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b8c408d4-6947-4964-bc03-70caa644d965"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="23c069c7-6cb6-4fba-8e91-f8b066905fc8"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0869b6db-0825-46bb-b4f9-de78772220f2"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="89fe5321-cb94-4cfd-a644-659241b075bb"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="f10b5779-b767-4c08-9b75-9109f0784234"
+            name="Premier Joueur"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b9eb4670-6262-4a43-9861-f9ff6295a3a7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="cc791316-bda7-4c1a-b9bf-4b4ada11bb69"
+                  LastKnownName="Decision6"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="cc791316-bda7-4c1a-b9bf-4b4ada11bb69"
+            name="Decision6"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="252b637c-c4c0-4212-ad92-50ac3b15c5b3"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f2722d16-18e9-4307-96be-236b9536b5ac"
+                  LastKnownName="Decision7"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="7baab92e-568e-469b-8305-20463f1353d0"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f0ef3bfb-6226-4369-8918-6897a43747d4"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="f2722d16-18e9-4307-96be-236b9536b5ac"
+            name="Decision7"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9ed1516b-ed31-44f1-ab6a-95adcd083dd1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="08784d6f-67d1-4607-9821-8f142c451a3c"
+                  LastKnownName="Zombie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="22275b55-b791-4d4c-becd-8cae37b6bb0c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a950e851-d46d-42eb-a568-7afc5027ef6d"
+                  LastKnownName="Survivant"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="08784d6f-67d1-4607-9821-8f142c451a3c"
+            name="Zombie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3e5a7041-4a7f-488d-b271-2fb1dcbdb612"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="b9427e70-72c5-429a-a270-ddbaa9478fb7"
+                  LastKnownName="Decision8"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a950e851-d46d-42eb-a568-7afc5027ef6d"
+            name="Survivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="56222929-ee1c-47d7-8f78-6c2bea249ae4"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="4c5919b3-7d93-4bce-a084-56797f00c8af"
+                  LastKnownName="Decision9"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="f0ef3bfb-6226-4369-8918-6897a43747d4"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="63792230-3fb2-42f3-b632-1ee8283baef4"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="c8d1b9ff-907e-42c9-83ec-bda1459594bf"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode
+            Id="b9427e70-72c5-429a-a270-ddbaa9478fb7"
+            name="Decision8"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e209bf14-f4a5-4a63-adbd-c983c577f7b3"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f0ef3bfb-6226-4369-8918-6897a43747d4"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="aecf3443-7059-4518-a0b6-c077f7af8da7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f10b5779-b767-4c08-9b75-9109f0784234"
+                  LastKnownName="Premier Joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="4c5919b3-7d93-4bce-a084-56797f00c8af"
+            name="Decision9"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7b96e278-310a-48ff-965a-d4fa3e06e58a"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="9adc8102-af5e-4beb-8dad-61fbe7e11276"
+                  LastKnownName="Decision10"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1a0e8982-fd27-4ace-ab1b-0467378368dd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f10b5779-b767-4c08-9b75-9109f0784234"
+                  LastKnownName="Premier Joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="9adc8102-af5e-4beb-8dad-61fbe7e11276"
+            name="Decision10"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="23f74848-7162-4467-adc3-3b6530fc14c9"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f0ef3bfb-6226-4369-8918-6897a43747d4"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b74ecdd4-6afe-457a-ad1a-0d0fe5ace6d7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f1624476-00df-41ca-9915-77bf995a232e"
+                  LastKnownName="Déclencher le timer de fin de partie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="f1624476-00df-41ca-9915-77bf995a232e"
+            name="Déclencher le timer de fin de partie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c1c20b8c-5435-4c21-a318-cde90640d7c4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f10b5779-b767-4c08-9b75-9109f0784234"
+                  LastKnownName="Premier Joueur"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </packageHasNamedElement>
