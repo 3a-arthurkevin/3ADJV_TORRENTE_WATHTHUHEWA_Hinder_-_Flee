@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7a7ab136-9955-4bc5-9a69-dba8344577e2" name="hinder &amp; flee menu" linkedPackageId="ac9ddc7a-4cf9-4c85-8847-d6a7f910d259" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7a7ab136-9955-4bc5-9a69-dba8344577e2" name="hinder &amp; flee menu" linkedPackageId="ac9ddc7a-4cf9-4c85-8847-d6a7f910d259" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <ownedCommentsInternal>
     <comment Id="ed5007de-7e48-4a65-ac4b-8d72e513532a">
       <elementDefinition Id="73be087a-e74f-4818-ad45-93dce5b7bfda" />
       <body>Menu Principale</body>
+      <annotatedElements>
+        <initialNodeMoniker Id="2bfb034d-99f1-4d98-a315-6143ff5d488e" LastKnownName="Initial1" />
+      </annotatedElements>
     </comment>
     <comment Id="901047fa-834b-47d2-a88f-ba46fcc4ea91">
       <elementDefinition Id="d35e3b24-0fd3-42d7-a1e7-adc244d9a3a4" />
@@ -170,32 +173,11 @@
         <decisionNodeMoniker Id="ec186a98-10ce-4e16-84c4-c99f647847ff" LastKnownName="Decision8" />
       </annotatedElements>
     </comment>
-    <comment Id="644a4ab3-29bf-4dfb-ac95-6dc52f3ad7be">
-      <elementDefinition Id="4a6c8740-0248-49e7-870c-225be364341f" />
-      <body>Le joueur ne fait rien</body>
-      <annotatedElements>
-        <decisionNodeMoniker Id="ec186a98-10ce-4e16-84c4-c99f647847ff" LastKnownName="Decision8" />
-      </annotatedElements>
-    </comment>
     <comment Id="2aad4893-cbb8-4237-bdba-c92508b0f59c">
       <elementDefinition Id="e567e1cc-3352-4166-8d6d-da44ba975956" />
       <body>Fin de la partie</body>
       <annotatedElements>
         <decisionNodeMoniker Id="24dd5ad3-0189-40bd-9bba-a292f01d7ed1" LastKnownName="Decision7" />
-      </annotatedElements>
-    </comment>
-    <comment Id="d96c0615-b405-44b6-9cbc-7b5ec05abc8c">
-      <elementDefinition Id="0046cfb1-1942-41dc-90f4-807915550817" />
-      <body>Retour à l'état Idle</body>
-      <annotatedElements>
-        <mergeNodeMoniker Id="bf3deb9f-1234-4b05-b863-0c2d9b793415" LastKnownName="Merge3" />
-      </annotatedElements>
-    </comment>
-    <comment Id="4d72637e-287a-4895-9671-94329fa47f70">
-      <elementDefinition Id="71e2e9b5-60e4-4d5a-b4f2-98670f5ee510" />
-      <body>Idle</body>
-      <annotatedElements>
-        <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
       </annotatedElements>
     </comment>
   </ownedCommentsInternal>

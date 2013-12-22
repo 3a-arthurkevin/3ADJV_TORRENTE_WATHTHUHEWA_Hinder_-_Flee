@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="320e964a-0664-44ae-b8d2-d6f3018f9339" name="Zombie" linkedPackageId="465e4ec0-a080-40c8-8815-08fae165b75d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="2a883fcb-635d-438f-b170-e1f10c0a6e14">
+      <profileInstance Id="8cd7de51-df63-4759-87f2-9fd866f9f12f" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7cda8698-0f29-4807-b7c3-a3e2667ac524">
+      <profileInstance Id="d3ead7c5-61cd-4315-9f8b-bd9db8c36423" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="66179cd9-1902-4357-8f38-c7158f42de57" name="Zombie" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f63b6d2b-bef1-45fa-bccb-26bfcd02b921" />
+        <targetEnds>
+          <association Id="2df74856-c4af-460b-8b51-d591964f781e" isDerived="false" sourceEndRoleName="Zombie" targetEndRoleName="Attaquer un survivant" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8a715b4f-d42d-4cff-8fe3-26cd0bf79fab" LastKnownName="Attaquer un survivant" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f0dcf869-636b-4a3d-b482-ba999e870f8c" name="Zombie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6f8a4059-e0ce-4e47-8b24-755dce4a0f88" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6cd8b357-51f6-43c5-ae83-7355f55aeab0" name="Attaquer un survivant" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a4e16bec-a0c5-4a6a-a2d6-6388acb04f87" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5b49bdb4-ada4-422b-97e2-882fc13febf9" />
+          </association>
+          <association Id="b6330f89-7f9e-4973-bece-7bfda9c1f403" isDerived="false" sourceEndRoleName="Zombie" targetEndRoleName="Déplacement" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f171c671-e5c4-4732-a168-df850c398873" LastKnownName="Déplacement" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="256e546d-141d-4911-99a3-6536a5e51efb" name="Zombie" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="627ef5cd-55ae-4f9b-a541-99e114d40d7c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="bf8078be-feb0-4133-a3e2-3ef4f6ecedd2" name="Déplacement" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="565a3305-c880-4b34-9638-434e7dbc6a9c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4b20a802-4ae5-4f74-943e-5b31212d4bc4" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f171c671-e5c4-4732-a168-df850c398873" name="Déplacement" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a122501e-957d-48e4-9593-83e29e5df752" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8a715b4f-d42d-4cff-8fe3-26cd0bf79fab" name="Attaquer un survivant" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="51fc0ba9-87d3-4418-af13-6e1f373ee127" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="465e4ec0-a080-40c8-8815-08fae165b75d" name="projetAnnuel">
+    <elementDefinition Id="1cd13195-7a33-4be2-a0ae-a52654dc121e" />
+  </package>
+</useCaseModelRoot>
