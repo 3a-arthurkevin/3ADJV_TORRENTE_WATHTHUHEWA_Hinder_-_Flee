@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Marchand">
+  <activityRootModelMoniker Id="92c2a738-1ddc-4b8e-b6b0-20128c5f18f0" />
+  <nestedChildShapes>
+    <initialNodeShape Id="029677f1-682d-4157-a5a6-afe5107ac829" absoluteBounds="4.125, 0.625, 0.125, 0.125" customColor="89, 89, 89">
+      <initialNodeMoniker Id="1be30af5-2198-43ad-82f1-90b81be98dea" LastKnownName="Initial1" />
+    </initialNodeShape>
+    <activityFinalNodeShape Id="d520bfa9-322d-4a9d-9469-a449b164009b" absoluteBounds="4.25, 5.125, 0.125, 0.125" customColor="89, 89, 89">
+      <activityFinalNodeMoniker Id="bf4071d3-cfd9-4484-8184-098a2e8a0e86" LastKnownName="ActivityFinal1" />
+    </activityFinalNodeShape>
+    <decisionNodeShape Id="ebcc22ed-dc6c-4b27-9ddd-149fc3b168e0" absoluteBounds="4, 1.375, 0.375, 0.375" customColor="185, 212, 238">
+      <decisionNodeMoniker Id="3f705957-142c-41d2-810b-5064b4b777e8" LastKnownName="Decision1" />
+      <relativeChildShapes />
+    </decisionNodeShape>
+    <controlFlowConnector edgePoints="[(4.1875 : 0.75); (4.1875 : 1.375)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="Black">
+      <controlFlowMoniker Id="0b66c70d-c412-4571-949b-077a5d96ce0f" />
+      <relativeChildShapes />
+      <nodes>
+        <initialNodeShapeMoniker Id="029677f1-682d-4157-a5a6-afe5107ac829" />
+        <decisionNodeShapeMoniker Id="ebcc22ed-dc6c-4b27-9ddd-149fc3b168e0" />
+      </nodes>
+    </controlFlowConnector>
+  </nestedChildShapes>
+</activityDiagram>

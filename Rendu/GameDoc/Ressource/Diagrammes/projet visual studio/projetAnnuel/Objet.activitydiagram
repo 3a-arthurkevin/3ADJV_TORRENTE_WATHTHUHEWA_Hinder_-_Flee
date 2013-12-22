@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="d8b9c3b8-6b0b-40c3-94b3-5271b8b67f02" name="Objet" linkedPackageId="a8454ce9-145c-4e97-931a-2461df8da7b5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="88658cdf-8799-4165-bbee-593e2ca0f7ed">
+      <profileInstance Id="eefa824b-4c2a-46d7-9d83-b589bfc56008" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="492bc6fd-1d75-4d3c-b352-b3f8a86fa78f">
+      <profileInstance Id="ad171e86-1356-4ec8-8bf9-a816647ffb44" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="bdc89528-7d69-4f11-a2cb-d27d1df36464" name="Objet" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="76b86023-7fce-4f1c-a216-5511ee333b2b" />
+        <nodes>
+          <initialNode Id="c2871d49-6c73-42d0-b497-693ff4727d82" name="Initial1" isLeaf="false">
+            <elementDefinition Id="20491bd7-decb-4c75-a216-402a62d93fd0" />
+          </initialNode>
+          <activityFinalNode Id="19d5bac1-09ba-45ac-aeda-f68ff871ae46" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="284ebbf8-0168-4bb4-a091-fb51417c9e07" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="a8454ce9-145c-4e97-931a-2461df8da7b5" name="projetAnnuel">
+    <elementDefinition Id="1cd13195-7a33-4be2-a0ae-a52654dc121e" />
+  </package>
+</activityRootModel>

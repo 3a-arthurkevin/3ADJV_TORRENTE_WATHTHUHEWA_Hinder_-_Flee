@@ -22,12 +22,40 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="Attaque.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Attaque.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Attaque.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Deplacement.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Deplacement.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Deplacement.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Marchand.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Marchand.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Marchand.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="Menu.activitydiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Menu.activitydiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>Menu.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="Objet.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Objet.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Objet.activitydiagram</DependentUpon>
     </Content>
     <Content Include="Survivants.activitydiagram">
       <SubType>Content</SubType>
