@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7a7ab136-9955-4bc5-9a69-dba8344577e2" name="hinder &amp; flee menu" linkedPackageId="ac9ddc7a-4cf9-4c85-8847-d6a7f910d259" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="ed5007de-7e48-4a65-ac4b-8d72e513532a">
+      <elementDefinition Id="73be087a-e74f-4818-ad45-93dce5b7bfda" />
+      <body>Menu Principale</body>
+    </comment>
+    <comment Id="901047fa-834b-47d2-a88f-ba46fcc4ea91">
+      <elementDefinition Id="d35e3b24-0fd3-42d7-a1e7-adc244d9a3a4" />
+      <body>Choix de l'action dans le mnu principal</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9220c04c-6409-4276-99a6-af816eb4d33b" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="f8b13d3b-e0b1-4b3e-843d-781855b7331b">
+      <elementDefinition Id="7c5904c1-34ef-42cd-baa6-bdc1aa71110a" />
+      <body>Le joueur a cliqué sur Annuler</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="5e4dc583-57c1-4853-b535-ca37d61e6a76" LastKnownName="Decision3" />
+      </annotatedElements>
+    </comment>
+    <comment Id="04049dc2-0ae1-4f27-861a-57be1102cebc">
+      <elementDefinition Id="83f000db-3bbe-42f8-88e5-d636c04f3021" />
+      <body>Le joueur a cliqué sur Valider</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="5e4dc583-57c1-4853-b535-ca37d61e6a76" LastKnownName="Decision3" />
+      </annotatedElements>
+    </comment>
+    <comment Id="38ce2ce7-47e1-40ba-acbe-94d167326ede">
+      <elementDefinition Id="65c0934e-2af6-494b-ade3-65a97833ec8b" />
+      <body>Le joueur a cliqué sur Options</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9220c04c-6409-4276-99a6-af816eb4d33b" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="77f98735-148b-402e-a4c2-2b8f29a98e31">
+      <elementDefinition Id="58746499-b4af-4e72-8191-a03489fd0864" />
+      <body>Le joueur modifie ses options</body>
+    </comment>
+    <comment Id="f1e5deb2-abfc-45f4-824a-738ad5432d24">
+      <elementDefinition Id="37a9f8d2-7b36-426d-b79e-ab4263633364" />
+      <body>Quitter le jeu</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9220c04c-6409-4276-99a6-af816eb4d33b" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="22bdcfb9-88c9-4235-99f6-6f1b4bd7de14">
+      <elementDefinition Id="c4e5b1a1-8f5a-4379-a937-ee6efba7ae13" />
+      <body>Choix du joueur</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="f3930cd0-e374-4a4c-abdd-3bc968340313" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="eda3d430-8d92-4c61-a58a-b8d5714f1cb9">
+      <elementDefinition Id="c2b0603b-67f4-4166-9210-bed1a5f184f3" />
+      <body>Le joueur a clique sur Annuler</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="f3930cd0-e374-4a4c-abdd-3bc968340313" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="e97924ff-334d-4c57-8580-c00a6a476d36">
+      <elementDefinition Id="7fc0a318-9b09-4993-8894-4acc24f562b4" />
+      <body>Le joueur a cliqué sur Valider</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="f3930cd0-e374-4a4c-abdd-3bc968340313" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="b2f4db68-6d3a-4e26-8362-c14e423d43a3">
+      <elementDefinition Id="5af034e5-2340-408a-8436-34b9f5c359e3" />
+      <body>Le joueur a cliqué sur Lancer une partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9220c04c-6409-4276-99a6-af816eb4d33b" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="96ef5971-8123-4fa8-8b0b-d098a6fa0284">
+      <elementDefinition Id="55d0bcf3-c587-4604-b05e-4d5bce03defc" />
+      <body>Le joueur choisit entre créer une partie et rejoindre une partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9ce1be08-6698-4676-bf13-9bd73c39ed41" LastKnownName="Decision4" />
+      </annotatedElements>
+    </comment>
+    <comment Id="cd8d0436-dc1c-46b9-8f99-ba0155ef38ad">
+      <elementDefinition Id="4100ef1d-edae-422a-a9f7-2052123b59ba" />
+      <body>Retour bureau</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker Id="1579c9d4-e1e0-485f-a63f-5b9b6f996651" LastKnownName="ActivityFinal1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="1cdffede-689c-411e-84e5-31cf0478b3b0">
+      <elementDefinition Id="29a03d9a-7856-4f35-b909-3a3312642b4c" />
+      <body>Rejoindre une partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9ce1be08-6698-4676-bf13-9bd73c39ed41" LastKnownName="Decision4" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8484cbda-0529-46c8-9566-a2633464ba38">
+      <elementDefinition Id="3598395c-df1d-4541-ac56-ca5519f0d2c8" />
+      <body>Créer un partie</body>
+      <annotatedElements>
+        <mergeNodeMoniker Id="8699136f-af49-49ed-9935-e83feeda34b3" LastKnownName="Merge2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="eb371098-4bb2-4cbc-993a-86adb414a233">
+      <elementDefinition Id="6f2001f0-fdbe-4b19-b4e7-9d9b9436e33e" />
+      <body>Le joueur choisit une partie</body>
+      <annotatedElements>
+        <mergeNodeMoniker Id="8699136f-af49-49ed-9935-e83feeda34b3" LastKnownName="Merge2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8d28a608-f075-48f6-ac2d-954f8a50d95b">
+      <elementDefinition Id="1ad7ada1-586e-4183-8e49-94917930c019" />
+      <body>Le joueur rejoint un lobby</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="72b4378a-a70f-4700-80bf-177a8a55d61d" LastKnownName="Affichage du Lobby" />
+      </annotatedElements>
+    </comment>
+    <comment Id="3f27707c-5bd9-4b42-9048-ee0b3e020be7">
+      <elementDefinition Id="5e1f15b9-e728-4a09-ba99-dd8ddbf8b024" />
+      <body>Le joueur clique sur le bouton Prêt</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="60c53712-d761-402b-b42c-0667e58262ae" LastKnownName="Decision5" />
+      </annotatedElements>
+    </comment>
+    <comment Id="444969a8-2546-4a9a-aa82-0a32b5dfc450">
+      <elementDefinition Id="63a74369-ec32-4da4-9334-7780663bc603" />
+      <body>Le joueur choisit sa classe</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="60c53712-d761-402b-b42c-0667e58262ae" LastKnownName="Decision5" />
+      </annotatedElements>
+    </comment>
+    <comment Id="933de557-aeb2-4c04-a59a-e8a513027a7a">
+      <elementDefinition Id="37b7ed16-0c4b-473a-a401-f105d09e3eb4" />
+      <body>Le joueur a choisit sa classe</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="83eaecdc-2d63-48dc-a810-e4f2ea8bcb70" LastKnownName="Affichage liste des classes" />
+      </annotatedElements>
+    </comment>
+    <comment Id="26cf84bb-5296-492b-a09d-eb36873115ad">
+      <elementDefinition Id="4bfbf9d8-0ca9-4e86-8168-6ea4bc2952f7" />
+      <body>Un des joueur n'est pas prêt ou n'a pas choisit sa classe</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="78edd2cc-338a-4e42-b3c4-c5ac804713ee" LastKnownName="Decision6" />
+      </annotatedElements>
+    </comment>
+    <comment Id="b4a77ecf-4d69-4334-9306-3bdc207c29e7">
+      <elementDefinition Id="57d07766-b2c8-464d-b077-341e7f16ed5f" />
+      <body>La partie commence</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="78edd2cc-338a-4e42-b3c4-c5ac804713ee" LastKnownName="Decision6" />
+      </annotatedElements>
+    </comment>
+    <comment Id="b18878ad-960a-491b-92eb-a78e1680928b">
+      <elementDefinition Id="98ab321b-2ae3-4514-ab2b-bb9cabc6179f" />
+      <body>Les joueurs jouent</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="24dd5ad3-0189-40bd-9bba-a292f01d7ed1" LastKnownName="Decision7" />
+      </annotatedElements>
+    </comment>
+    <comment Id="5cbdbb2c-9a6a-4b3f-bdf9-7dda3cc89110">
+      <elementDefinition Id="b4bb02c5-6c95-4998-8b57-a2b2c84b351b" />
+      <body>Tant que la partie n'est pas fini</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="24dd5ad3-0189-40bd-9bba-a292f01d7ed1" LastKnownName="Decision7" />
+      </annotatedElements>
+    </comment>
+    <comment Id="cad16e8a-1d85-4ab8-bc93-06b0e5d86d58">
+      <elementDefinition Id="6fedc830-3012-4150-b416-82aaeaebaa0f" />
+      <body>Le joueur appui sur le bouton retour au menu principal</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="ec186a98-10ce-4e16-84c4-c99f647847ff" LastKnownName="Decision8" />
+      </annotatedElements>
+    </comment>
+    <comment Id="644a4ab3-29bf-4dfb-ac95-6dc52f3ad7be">
+      <elementDefinition Id="4a6c8740-0248-49e7-870c-225be364341f" />
+      <body>Le joueur ne fait rien</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="ec186a98-10ce-4e16-84c4-c99f647847ff" LastKnownName="Decision8" />
+      </annotatedElements>
+    </comment>
+    <comment Id="2aad4893-cbb8-4237-bdba-c92508b0f59c">
+      <elementDefinition Id="e567e1cc-3352-4166-8d6d-da44ba975956" />
+      <body>Fin de la partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="24dd5ad3-0189-40bd-9bba-a292f01d7ed1" LastKnownName="Decision7" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="9c0c24c1-8ade-4208-a2ab-e3707158e34e" name="hinder &amp; flee menu" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="f7641127-0228-498e-861c-3c6d404750c6" />
+        <nodes>
+          <initialNode Id="2bfb034d-99f1-4d98-a315-6143ff5d488e" name="Initial1" isLeaf="false">
+            <elementDefinition Id="10cca796-7e35-430c-accc-bb69c78d54c9" />
+            <flowNodeTargets>
+              <controlFlow Id="7bba049f-783f-4bac-b593-7c10b2a5d7d5" isLeaf="false">
+                <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
+                <elementDefinition Id="8c7d8417-6889-45a7-90de-649f49026036" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="dce0e247-047e-4bb3-9441-5f51f041ac18" name="Affichage Validation fermeture du jeu" isLeaf="false">
+            <elementDefinition Id="0eabdb73-1a29-4c13-9b83-789fac0000f6" />
+            <flowNodeTargets>
+              <controlFlow Id="37b6d64f-6e04-4795-8d73-129e87b979c8" isLeaf="false">
+                <decisionNodeMoniker Id="f3930cd0-e374-4a4c-abdd-3bc968340313" LastKnownName="Decision1" />
+                <elementDefinition Id="95e0444a-8011-4617-bc19-fbfd58d16886" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="f3930cd0-e374-4a4c-abdd-3bc968340313" name="Decision1" isLeaf="false">
+            <elementDefinition Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e" />
+            <flowNodeTargets>
+              <controlFlow Id="3e3fe7bc-5b93-42f9-8bd0-e2566cab8c63" isLeaf="false">
+                <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
+                <elementDefinition Id="a6d3dc4d-d9cd-47ef-adc5-f25204635484" />
+              </controlFlow>
+              <controlFlow Id="6d19e526-c077-4893-b319-d3127c5aed9f" isLeaf="false">
+                <activityFinalNodeMoniker Id="1579c9d4-e1e0-485f-a63f-5b9b6f996651" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="e0be3214-63c3-487e-8a13-c99e8c19eb43" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="9220c04c-6409-4276-99a6-af816eb4d33b" name="Decision2" isLeaf="false">
+            <elementDefinition Id="9d49cd2e-46ae-452e-9677-b503025992ff" />
+            <flowNodeTargets>
+              <controlFlow Id="80005653-2b3c-49cb-b231-e590138ab6e6" isLeaf="false">
+                <opaqueActionMoniker Id="dce0e247-047e-4bb3-9441-5f51f041ac18" LastKnownName="Affichage Validation fermeture du jeu" />
+                <elementDefinition Id="07b44d96-67f0-4dd0-9c3f-539b59ce0378" />
+              </controlFlow>
+              <controlFlow Id="498608ab-27d0-4981-93a2-ffbdaab8211c" isLeaf="false">
+                <opaqueActionMoniker Id="087581b1-6d2f-4e21-a0ee-fa1fd7a779c7" LastKnownName="Affichage menu options" />
+                <elementDefinition Id="44841d26-d257-4ab4-8f7b-29b69f197d18" />
+              </controlFlow>
+              <controlFlow Id="09ee91cc-cb78-4c84-8da9-fe5facf6ce50" isLeaf="false">
+                <decisionNodeMoniker Id="9ce1be08-6698-4676-bf13-9bd73c39ed41" LastKnownName="Decision4" />
+                <elementDefinition Id="fb0887cd-3f70-40a6-9fe7-5cd23955d56e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="77f12d04-cf0e-4789-b1d8-9bd8fe63fd8f" name="Sauvegarde des options" isLeaf="false">
+            <elementDefinition Id="a656dec3-6899-4e22-9535-dfe96503de70" />
+            <flowNodeTargets>
+              <controlFlow Id="a205f695-f523-402e-a2f1-56e1196200e6" isLeaf="false">
+                <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
+                <elementDefinition Id="2031874e-3efc-4079-985f-0d8739fa0003" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="5e4dc583-57c1-4853-b535-ca37d61e6a76" name="Decision3" isLeaf="false">
+            <elementDefinition Id="c5635fbf-1de4-4ee1-94c6-eedc9f509f4d" />
+            <flowNodeTargets>
+              <controlFlow Id="14cb8491-ef99-4b64-ab46-4936ca044a8b" isLeaf="false">
+                <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
+                <elementDefinition Id="fe1ac166-49b6-4dff-8f63-642e8ed4833d" />
+              </controlFlow>
+              <controlFlow Id="99393e27-0883-42e9-861f-1687d7a19669" isLeaf="false">
+                <opaqueActionMoniker Id="77f12d04-cf0e-4789-b1d8-9bd8fe63fd8f" LastKnownName="Sauvegarde des options" />
+                <elementDefinition Id="1c754d51-bea0-4b97-b031-f714cbde026d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="087581b1-6d2f-4e21-a0ee-fa1fd7a779c7" name="Affichage menu options" isLeaf="false">
+            <elementDefinition Id="383d8b91-cb0a-48ca-aeba-34f95a55ed95" />
+            <flowNodeTargets>
+              <controlFlow Id="852fc613-a4b8-497c-a3a0-5fd4e248038e" isLeaf="false">
+                <decisionNodeMoniker Id="5e4dc583-57c1-4853-b535-ca37d61e6a76" LastKnownName="Decision3" />
+                <elementDefinition Id="2a3e2180-ef95-4a0f-b2ac-97fc09151b0f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="9ce1be08-6698-4676-bf13-9bd73c39ed41" name="Decision4" isLeaf="false">
+            <elementDefinition Id="38f1466f-83d0-4cd8-8bb2-6d3a38ca05ce" />
+            <flowNodeTargets>
+              <controlFlow Id="8d511639-aec7-4422-bf8a-1e6d4b034c29" isLeaf="false">
+                <opaqueActionMoniker Id="7667a9ff-e836-45b6-ba28-2d9c20a9caf8" LastKnownName="Afficharge liste des partie disponible" />
+                <elementDefinition Id="ba03ee30-3d84-499d-b39c-61fdb5668095" />
+              </controlFlow>
+              <controlFlow Id="c50ee1a1-bee2-43b1-be19-fd99bfb6432f" isLeaf="false">
+                <mergeNodeMoniker Id="8699136f-af49-49ed-9935-e83feeda34b3" LastKnownName="Merge2" />
+                <elementDefinition Id="b5eb6db3-e71c-4c13-aeb7-bc68ce19ad12" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" name="Merge1" isLeaf="false">
+            <elementDefinition Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b" />
+            <flowNodeTargets>
+              <controlFlow Id="367f94f1-efec-4da8-acbd-64f7432ca1c1" isLeaf="false">
+                <decisionNodeMoniker Id="9220c04c-6409-4276-99a6-af816eb4d33b" LastKnownName="Decision2" />
+                <elementDefinition Id="776a812a-8e27-491f-8fe6-eded04671c4d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode Id="1579c9d4-e1e0-485f-a63f-5b9b6f996651" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="ef8e1175-6de4-446e-85a1-ec0a12520868" />
+          </activityFinalNode>
+          <opaqueAction Id="7667a9ff-e836-45b6-ba28-2d9c20a9caf8" name="Afficharge liste des partie disponible" isLeaf="false">
+            <elementDefinition Id="697022f4-2eef-49ea-8e1e-084baf19e2dd" />
+            <flowNodeTargets>
+              <controlFlow Id="1f3852f0-1acb-464b-a4b1-ebf1db989b67" isLeaf="false">
+                <mergeNodeMoniker Id="8699136f-af49-49ed-9935-e83feeda34b3" LastKnownName="Merge2" />
+                <elementDefinition Id="c571c749-b78d-4aa8-93e9-19b66bb191f2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="8699136f-af49-49ed-9935-e83feeda34b3" name="Merge2" isLeaf="false">
+            <elementDefinition Id="c5d929f0-013b-419b-852e-fa3a6c786586" />
+            <flowNodeTargets>
+              <controlFlow Id="cb5a61a5-3a44-4173-ae8c-4753a3fdc6ce" isLeaf="false">
+                <opaqueActionMoniker Id="72b4378a-a70f-4700-80bf-177a8a55d61d" LastKnownName="Affichage du Lobby" />
+                <elementDefinition Id="d535dbb1-4f30-4bc8-8408-efa9844c833b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="72b4378a-a70f-4700-80bf-177a8a55d61d" name="Affichage du Lobby" isLeaf="false">
+            <elementDefinition Id="241cb682-9967-4253-89aa-daf7d8370c26" />
+            <flowNodeTargets>
+              <controlFlow Id="641785b5-5df6-46e8-aa29-9983a5e9d442" isLeaf="false">
+                <decisionNodeMoniker Id="60c53712-d761-402b-b42c-0667e58262ae" LastKnownName="Decision5" />
+                <elementDefinition Id="c0a15ca5-3524-41ea-8cdf-cccea1551f21" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="60c53712-d761-402b-b42c-0667e58262ae" name="Decision5" isLeaf="false">
+            <elementDefinition Id="c964bd1d-7c62-4afd-bcab-c4d118b82621" />
+            <flowNodeTargets>
+              <controlFlow Id="9669790b-2457-4ae9-9285-0efad985304d" isLeaf="false">
+                <opaqueActionMoniker Id="e270c77f-c4c8-4855-909d-b9609238dd86" LastKnownName="Lancement d'une partie" />
+                <elementDefinition Id="f6221ea2-ae5a-427f-8f42-5db0d4bf4121" />
+              </controlFlow>
+              <controlFlow Id="52b9ba8b-707d-49b5-98b6-cb60eb31d334" isLeaf="false">
+                <opaqueActionMoniker Id="83eaecdc-2d63-48dc-a810-e4f2ea8bcb70" LastKnownName="Affichage liste des classes" />
+                <elementDefinition Id="18858e83-64b6-4513-9846-404b55b6faab" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="e270c77f-c4c8-4855-909d-b9609238dd86" name="Lancement d'une partie" isLeaf="false">
+            <elementDefinition Id="c2f70142-92bf-4deb-a221-c3fb45ceea7f" />
+            <flowNodeTargets>
+              <controlFlow Id="3918a919-173f-426a-af94-da8fc57b2a58" isLeaf="false">
+                <decisionNodeMoniker Id="78edd2cc-338a-4e42-b3c4-c5ac804713ee" LastKnownName="Decision6" />
+                <elementDefinition Id="30799431-a06a-4353-bd49-29820000d318" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="83eaecdc-2d63-48dc-a810-e4f2ea8bcb70" name="Affichage liste des classes" isLeaf="false">
+            <elementDefinition Id="1d1a8689-d112-40e5-9d29-0f370f052a2e" />
+            <flowNodeTargets>
+              <controlFlow Id="e052ca98-38e3-48ca-84ab-9b67893a8815" isLeaf="false">
+                <opaqueActionMoniker Id="72b4378a-a70f-4700-80bf-177a8a55d61d" LastKnownName="Affichage du Lobby" />
+                <elementDefinition Id="6e731e24-922f-4f2e-93f2-5a0fa6859197" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="78edd2cc-338a-4e42-b3c4-c5ac804713ee" name="Decision6" isLeaf="false">
+            <elementDefinition Id="be4a79b2-bc17-41b7-b6a2-a32b9160a4ba" />
+            <flowNodeTargets>
+              <controlFlow Id="3a7d3d0b-5799-4041-8cc1-d29067815062" isLeaf="false">
+                <opaqueActionMoniker Id="72b4378a-a70f-4700-80bf-177a8a55d61d" LastKnownName="Affichage du Lobby" />
+                <elementDefinition Id="66874b21-4a36-4198-bb06-b037e91ca7e7" />
+              </controlFlow>
+              <controlFlow Id="6997ea73-4357-4619-87d9-0293a7c12b13" isLeaf="false">
+                <opaqueActionMoniker Id="bf7fc195-3061-4791-b432-7cf4236f3e58" LastKnownName="Affichage du jeu" />
+                <elementDefinition Id="6bf99a63-a95c-4109-9830-263ccda1d459" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="bf7fc195-3061-4791-b432-7cf4236f3e58" name="Affichage du jeu" isLeaf="false">
+            <elementDefinition Id="f106ca8a-9fb2-4a53-8170-f16e50c2d9eb" />
+            <flowNodeTargets>
+              <controlFlow Id="0507edfe-d4a5-4b57-9b1a-38ca30c9aeb0" isLeaf="false">
+                <decisionNodeMoniker Id="24dd5ad3-0189-40bd-9bba-a292f01d7ed1" LastKnownName="Decision7" />
+                <elementDefinition Id="b3c09055-75e7-48a9-bda1-3703b20e212a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="24dd5ad3-0189-40bd-9bba-a292f01d7ed1" name="Decision7" isLeaf="false">
+            <elementDefinition Id="21a282c8-65d7-409f-ba49-9af671402140" />
+            <flowNodeTargets>
+              <controlFlow Id="3dc7483d-f458-4be1-bcb7-5e5745440112" isLeaf="false">
+                <opaqueActionMoniker Id="bf7fc195-3061-4791-b432-7cf4236f3e58" LastKnownName="Affichage du jeu" />
+                <elementDefinition Id="dc8e6600-9237-455b-8a81-e6e8540e37ef" />
+              </controlFlow>
+              <controlFlow Id="35447346-964f-49dd-9cca-7e345d6488e0" isLeaf="false">
+                <opaqueActionMoniker Id="5ebcf485-834b-479c-90cd-6a513b042e9c" LastKnownName="Affichage du tableau des scores" />
+                <elementDefinition Id="1b5ce7e6-012f-4497-8df4-43d666936ec5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="5ebcf485-834b-479c-90cd-6a513b042e9c" name="Affichage du tableau des scores" isLeaf="false">
+            <elementDefinition Id="48bb36e4-65e8-4e89-9dee-d4c265d127b2" />
+            <flowNodeTargets>
+              <controlFlow Id="8cba9c59-1b58-420e-a253-93f0b17b9273" isLeaf="false">
+                <decisionNodeMoniker Id="ec186a98-10ce-4e16-84c4-c99f647847ff" LastKnownName="Decision8" />
+                <elementDefinition Id="a23d40f9-599b-4bd0-bcb5-3e6e4c33bdd4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="ec186a98-10ce-4e16-84c4-c99f647847ff" name="Decision8" isLeaf="false">
+            <elementDefinition Id="33af37ee-362e-488f-b123-3f7d2f48d60e" />
+            <flowNodeTargets>
+              <controlFlow Id="b1555d3a-166a-42d2-ba0d-f4fdc281f692" isLeaf="false">
+                <opaqueActionMoniker Id="5ebcf485-834b-479c-90cd-6a513b042e9c" LastKnownName="Affichage du tableau des scores" />
+                <elementDefinition Id="9a5c3d2c-ffa9-4bec-94aa-2a10f6f1f51a" />
+              </controlFlow>
+              <controlFlow Id="93b51cde-9cbb-474e-ac9a-5a24da272df3" isLeaf="false">
+                <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
+                <elementDefinition Id="e8d231d6-3543-4642-b99f-a302e8295df7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="ac9ddc7a-4cf9-4c85-8847-d6a7f910d259" name="projetAnnuel">
+    <elementDefinition Id="1cd13195-7a33-4be2-a0ae-a52654dc121e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="88c4c060-aee3-42b4-9f9c-dd94c69dffae">
+        <profileInstance Id="e54266a5-4753-483e-ad55-e0d37c0acefc" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cddff4a9-eeab-4c98-9f21-97bd875ba1f8">
+        <profileInstance Id="274b715b-6936-4036-a8f5-5142715da18f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

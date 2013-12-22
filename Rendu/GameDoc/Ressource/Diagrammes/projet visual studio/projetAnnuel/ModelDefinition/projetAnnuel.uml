@@ -1,0 +1,2405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="1cd13195-7a33-4be2-a0ae-a52654dc121e"
+  name="projetAnnuel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="66125709-0847-4f52-b4db-85b5efda1576">
+      <body>Début de partie</body>
+      <annotatedElements>
+        <initialNodeMoniker
+          Id="51a2113f-7e45-44a6-9639-b2b61329eded"
+          LastKnownName="Initial1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="73be087a-e74f-4818-ad45-93dce5b7bfda">
+      <body>Menu Principale</body>
+    </comment>
+    <comment
+      Id="d9a6ad40-e15b-42bc-9f18-372ff289476e">
+      <body>Fin de partie</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker
+          Id="00c78414-074b-427e-9e3b-3821f40c17ea"
+          LastKnownName="ActivityFinal1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="19b64769-34fc-407c-8a3c-2e78bc6c2cd0">
+      <body>Non</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="5d8b5fad-2b2d-475d-932c-96c97de12fb0"
+          LastKnownName="Decision8"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="f8f4b177-0902-4f1d-bc43-80cfc6b9fcbe">
+      <body>Oui</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="5d8b5fad-2b2d-475d-932c-96c97de12fb0"
+          LastKnownName="Decision8"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="76609eb6-ff1f-457b-a175-c005ab62bb06">
+      <body>Survivant</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="b775b41d-eccf-484c-939a-b1cfdfc32b4e"
+          LastKnownName="Blesser"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8f386c5f-7fe9-4f88-8b09-09bfb8be25b5">
+      <body>Zombie</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="e37e569d-be0a-49cf-8cc7-495a0f9ec44b"
+          LastKnownName="Tuer"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="33807e0f-c1f9-4d68-923f-0332843339b4">
+      <body>Trouver</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="87d35cb3-9b89-447c-bd33-1ef30fb995c3"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="bff8c6e2-8115-4932-bf4c-993443a2900a">
+      <body>Rencontrer</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="04c11e38-c25c-4f59-832e-cdd19e18e8b8"
+          LastKnownName="Decision7"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ade99520-7b57-4c85-8957-68c807d64574">
+      <body>Oui</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="a3f35617-d289-4fe0-8dda-d0abe37d0baf"
+          LastKnownName="Decision10"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="685b520d-fc70-4af0-8a9e-cadf8aa10e6f">
+      <body>Non</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="a3f35617-d289-4fe0-8dda-d0abe37d0baf"
+          LastKnownName="Decision10"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="f656f580-89b2-4656-b743-36a9fa8680f4">
+      <body>Dernier survivant</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="a3f35617-d289-4fe0-8dda-d0abe37d0baf"
+          LastKnownName="Decision10"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="0b716330-8111-4e8d-af05-514f18651b65">
+      <body>Etat du personnage joué</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="d09aaa84-2a13-4c3a-a907-f6f4e6053538"
+          LastKnownName="Decision3"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="dccd1e14-9e04-45f9-adef-c9eaf0afa5f7">
+      <body>Plus aucun survivant en vie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="5d8b5fad-2b2d-475d-932c-96c97de12fb0"
+          LastKnownName="Decision8"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="d35e3b24-0fd3-42d7-a1e7-adc244d9a3a4">
+      <body>Choix de l'action dans le mnu principal</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="9d49cd2e-46ae-452e-9677-b503025992ff"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="7c5904c1-34ef-42cd-baa6-bdc1aa71110a">
+      <body>Le joueur a cliqué sur Annuler</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c5635fbf-1de4-4ee1-94c6-eedc9f509f4d"
+          LastKnownName="Decision3"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="83f000db-3bbe-42f8-88e5-d636c04f3021">
+      <body>Le joueur a cliqué sur Valider</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c5635fbf-1de4-4ee1-94c6-eedc9f509f4d"
+          LastKnownName="Decision3"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="65c0934e-2af6-494b-ade3-65a97833ec8b">
+      <body>Le joueur a cliqué sur Options</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="9d49cd2e-46ae-452e-9677-b503025992ff"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="58746499-b4af-4e72-8191-a03489fd0864">
+      <body>Le joueur modifie ses options</body>
+    </comment>
+    <comment
+      Id="37a9f8d2-7b36-426d-b79e-ab4263633364">
+      <body>Quitter le jeu</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="9d49cd2e-46ae-452e-9677-b503025992ff"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="c4e5b1a1-8f5a-4379-a937-ee6efba7ae13">
+      <body>Choix du joueur</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="c2b0603b-67f4-4166-9210-bed1a5f184f3">
+      <body>Le joueur a clique sur Annuler</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="7fc0a318-9b09-4993-8894-4acc24f562b4">
+      <body>Le joueur a cliqué sur Valider</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e"
+          LastKnownName="Decision1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="5af034e5-2340-408a-8436-34b9f5c359e3">
+      <body>Le joueur a cliqué sur Lancer une partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="9d49cd2e-46ae-452e-9677-b503025992ff"
+          LastKnownName="Decision2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="55d0bcf3-c587-4604-b05e-4d5bce03defc">
+      <body>Le joueur choisit entre créer une partie et rejoindre une partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="38f1466f-83d0-4cd8-8bb2-6d3a38ca05ce"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4100ef1d-edae-422a-a9f7-2052123b59ba">
+      <body>Retour bureau</body>
+      <annotatedElements>
+        <activityFinalNodeMoniker
+          Id="ef8e1175-6de4-446e-85a1-ec0a12520868"
+          LastKnownName="ActivityFinal1"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="29a03d9a-7856-4f35-b909-3a3312642b4c">
+      <body>Rejoindre une partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="38f1466f-83d0-4cd8-8bb2-6d3a38ca05ce"
+          LastKnownName="Decision4"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3598395c-df1d-4541-ac56-ca5519f0d2c8">
+      <body>Créer un partie</body>
+      <annotatedElements>
+        <mergeNodeMoniker
+          Id="c5d929f0-013b-419b-852e-fa3a6c786586"
+          LastKnownName="Merge2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="6f2001f0-fdbe-4b19-b4e7-9d9b9436e33e">
+      <body>Le joueur choisit une partie</body>
+      <annotatedElements>
+        <mergeNodeMoniker
+          Id="c5d929f0-013b-419b-852e-fa3a6c786586"
+          LastKnownName="Merge2"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="1ad7ada1-586e-4183-8e49-94917930c019">
+      <body>Le joueur rejoint un lobby</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="241cb682-9967-4253-89aa-daf7d8370c26"
+          LastKnownName="Affichage du Lobby"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="5e1f15b9-e728-4a09-ba99-dd8ddbf8b024">
+      <body>Le joueur clique sur le bouton Prêt</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c964bd1d-7c62-4afd-bcab-c4d118b82621"
+          LastKnownName="Decision5"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="63a74369-ec32-4da4-9334-7780663bc603">
+      <body>Le joueur choisit sa classe</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c964bd1d-7c62-4afd-bcab-c4d118b82621"
+          LastKnownName="Decision5"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="37b7ed16-0c4b-473a-a401-f105d09e3eb4">
+      <body>Le joueur a choisit sa classe</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="1d1a8689-d112-40e5-9d29-0f370f052a2e"
+          LastKnownName="Affichage liste des classes"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4bfbf9d8-0ca9-4e86-8168-6ea4bc2952f7">
+      <body>Un des joueur n'est pas prêt ou n'a pas choisit sa classe</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="be4a79b2-bc17-41b7-b6a2-a32b9160a4ba"
+          LastKnownName="Decision6"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="57d07766-b2c8-464d-b077-341e7f16ed5f">
+      <body>La partie commence</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="be4a79b2-bc17-41b7-b6a2-a32b9160a4ba"
+          LastKnownName="Decision6"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="98ab321b-2ae3-4514-ab2b-bb9cabc6179f">
+      <body>Les joueurs jouent</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="21a282c8-65d7-409f-ba49-9af671402140"
+          LastKnownName="Decision7"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="b4bb02c5-6c95-4998-8b57-a2b2c84b351b">
+      <body>Tant que la partie n'est pas fini</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="21a282c8-65d7-409f-ba49-9af671402140"
+          LastKnownName="Decision7"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="6fedc830-3012-4150-b416-82aaeaebaa0f">
+      <body>Le joueur appui sur le bouton retour au menu principal</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="33af37ee-362e-488f-b123-3f7d2f48d60e"
+          LastKnownName="Decision8"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4a6c8740-0248-49e7-870c-225be364341f">
+      <body>Le joueur ne fait rien</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="33af37ee-362e-488f-b123-3f7d2f48d60e"
+          LastKnownName="Decision8"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="e567e1cc-3352-4166-8d6d-da44ba975956">
+      <body>Fin de la partie</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="21a282c8-65d7-409f-ba49-9af671402140"
+          LastKnownName="Decision7"
+          LastKnownLocation="projetAnnuel.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="89f0c686-b39a-4155-87d5-926beb0fa06a"
+        name="Survivant"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a0076186-0dfb-4b6f-b062-dd6e0f993f6e"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="rejoinde une partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="10359cd0-e438-4b01-a5c3-11a0a6b709f1"
+              LastKnownName="lancer partie"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f90d7a55-d898-46ec-b5d3-3af3579b51a6"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f3a5b559-530d-49de-b25f-8db44796895f"
+                  name="rejoinde une partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0b7dd445-8282-4d3a-a04f-3eb0a0f89295"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="modifier les touches"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b1fbb0ff-374b-478c-98f2-923d7da81036"
+              LastKnownName="options"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9f62fe03-ea61-47ad-8532-c67d6b982928"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7743f2e6-ab88-4b9c-8e50-b7fc8734ecd4"
+                  name="modifier les touches"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4407c8fa-767e-45e2-9568-3b6b5617951f"
+            isDerived="false"
+            sourceEndRoleName="Joueur"
+            targetEndRoleName="modifier les options"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fdb4954b-782c-409f-b223-e57c7c2a043e"
+              LastKnownName="Quitter le jeu"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d8bbb7b-8216-4b00-b0dd-556b87182636"
+                  name="Joueur"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="798210b9-cb4c-46f4-8e6b-b2f54f277fe9"
+                  name="modifier les options"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="bfda7e67-0aea-47bf-bf6f-435761d24d53"
+        name="Lancer une partie"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="e0501de0-4200-4891-9b2f-c2621d5f671e"
+        name="Joueur2"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="10359cd0-e438-4b01-a5c3-11a0a6b709f1"
+        name="lancer partie"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4d97f41f-26f3-43db-9cbf-619c855d3325"
+            isDerived="false"
+            sourceEndRoleName="lancer partie"
+            targetEndRoleName="Créer"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="98cdfcb0-252b-4dfd-bf44-903fe2e394e0"
+              LastKnownName="Créer"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="66fc106d-76c9-4519-b64d-28317ee70fbe"
+                  name="lancer partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9ee0743e-a2b0-49f0-938c-da3287c37032"
+                  name="Créer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6b4127d7-830b-42c1-a48d-b9352abf3e66"
+            isDerived="false"
+            sourceEndRoleName="lancer partie"
+            targetEndRoleName="rejoindre"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="296de18c-5159-4ee3-894e-d40a05072948"
+              LastKnownName="rejoindre"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3c31cab3-b18e-4837-bd53-5bd3671a765e"
+                  name="lancer partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5c757e08-2189-494d-b73b-7c066741d3ce"
+                  name="rejoindre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b1fbb0ff-374b-478c-98f2-923d7da81036"
+        name="options"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="f641c791-61c3-498a-b513-759ef8212c13"
+            isDerived="false"
+            sourceEndRoleName="options"
+            targetEndRoleName="retour"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="802db545-b355-4d27-8119-bea8815d6d6e"
+              LastKnownName="retour"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="777afd50-53c4-4c45-a0ff-2beba45a7c4b"
+                  name="options"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d9c09ea2-dfda-4e7c-98c2-2d8d0019ff64"
+                  name="retour"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1559c87b-5297-475d-ae54-3927bfa499f5"
+            isDerived="false"
+            sourceEndRoleName="options"
+            targetEndRoleName="Modification options graphique"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d7ec5fb3-5c95-46c4-8a7f-abe0dcd70a9f"
+              LastKnownName="Modification options graphique"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e19442c5-766b-4f4b-928b-9b9e0ca6e313"
+                  name="options"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fb33227f-e4ce-40d6-b77f-227b08a4ff86"
+                  name="Modification options graphique"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d7318f70-d8bc-47d8-846f-da01e199b700"
+            isDerived="false"
+            sourceEndRoleName="options"
+            targetEndRoleName="modification options contrôles"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3aabbd9d-7390-4d83-81fd-bccee857d8da"
+              LastKnownName="modification options contrôles"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="51865ab6-341a-4126-b88b-525360fb817c"
+                  name="options"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ec9c503a-2758-41d2-8cd3-aeb97987ab25"
+                  name="modification options contrôles"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fdb4954b-782c-409f-b223-e57c7c2a043e"
+        name="Quitter le jeu"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a007a76d-8d0c-464b-8523-318401bd7618"
+            isDerived="false"
+            sourceEndRoleName="Quitter le jeu"
+            targetEndRoleName="Oui"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="dd574502-388b-4d34-94e4-7a26aa49551e"
+              LastKnownName="Oui"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8600b58e-103a-4787-94f3-b681c2fb2ba8"
+                  name="Quitter le jeu"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8c63db4f-a316-432c-8e34-5a2deda008c7"
+                  name="Oui"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="eaf849ed-1858-4f14-b303-add0b7225514"
+            isDerived="false"
+            sourceEndRoleName="Quitter le jeu"
+            targetEndRoleName="Non"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9d2638cf-c3fa-4695-b9ab-0847f4ed6350"
+              LastKnownName="Non"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="932fb886-1c27-4337-a716-95d0e01bd4c4"
+                  name="Quitter le jeu"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1ea6d3b-69d3-4b93-b1ec-69b2e1b7ec58"
+                  name="Non"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="dd574502-388b-4d34-94e4-7a26aa49551e"
+        name="Oui"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ea1fbd20-c0d3-4b7f-940d-1732d21ee41f"
+            isDerived="false"
+            sourceEndRoleName="Oui"
+            targetEndRoleName="Fermeture du client"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6be753b3-a079-42fc-9a06-a046783893a7"
+              LastKnownName="Fermeture du client"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="846c0259-876a-486e-95c0-856ffa4db8fc"
+                  name="Oui"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c1a60cc-f32a-42ca-8749-d73b25f22bb7"
+                  name="Fermeture du client"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9d2638cf-c3fa-4695-b9ab-0847f4ed6350"
+        name="Non"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6be753b3-a079-42fc-9a06-a046783893a7"
+        name="Fermeture du client"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="802db545-b355-4d27-8119-bea8815d6d6e"
+        name="retour"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d7ec5fb3-5c95-46c4-8a7f-abe0dcd70a9f"
+        name="Modification options graphique"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3aabbd9d-7390-4d83-81fd-bccee857d8da"
+        name="modification options contrôles"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="98cdfcb0-252b-4dfd-bf44-903fe2e394e0"
+        name="Créer"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="979aec87-b561-487d-bfa4-493ede522157"
+            isDerived="false"
+            sourceEndRoleName="Créer"
+            targetEndRoleName="Choix classe"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="23306ecd-81cc-42da-8410-43c3ffb25d2e"
+              LastKnownName="Choix classe"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d5cdbfc7-a83c-41a1-ba0a-5920aa97c371"
+                  name="Créer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9144abe6-9492-4c28-a910-bdfb5471ad57"
+                  name="Choix classe"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="296de18c-5159-4ee3-894e-d40a05072948"
+        name="rejoindre"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="dd35ff1a-6b19-41bb-aa74-07339901969f"
+            isDerived="false"
+            sourceEndRoleName="rejoindre"
+            targetEndRoleName="Choix classe"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="23306ecd-81cc-42da-8410-43c3ffb25d2e"
+              LastKnownName="Choix classe"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="336a8fa5-e3c3-4981-b254-9111b54d8e96"
+                  name="rejoindre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ab1d513c-7b1f-498b-ad00-32f2258c1b47"
+                  name="Choix classe"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="23306ecd-81cc-42da-8410-43c3ffb25d2e"
+        name="Choix classe"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5221e6cd-93b6-4fbd-a4fd-b33ed47bdd44"
+            isDerived="false"
+            sourceEndRoleName="Choix classe"
+            targetEndRoleName="Attente dans lobby"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="682d44fb-509e-4522-bf16-104daa2f4ecf"
+              LastKnownName="Attente dans lobby"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fbdafde4-872a-4b46-9de0-93510b0b7db8"
+                  name="Choix classe"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bbb3a0db-8964-4311-a654-e3f4695b9fe9"
+                  name="Attente dans lobby"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="682d44fb-509e-4522-bf16-104daa2f4ecf"
+        name="Attente dans lobby"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ad9a8a4d-b36c-4818-a013-a8b6b53d218a"
+            isDerived="false"
+            sourceEndRoleName="Attente dans lobby"
+            targetEndRoleName="Debut de partie"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9b4d9222-663f-4fbd-b284-4e8de2ee3db8"
+              LastKnownName="Debut de partie"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7f15a9ec-1052-44fc-bb11-fd870bee5a55"
+                  name="Attente dans lobby"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c645e928-b6c7-4cca-a7de-f8d7e2ea306d"
+                  name="Debut de partie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9b4d9222-663f-4fbd-b284-4e8de2ee3db8"
+        name="Debut de partie"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="f7641127-0228-498e-861c-3c6d404750c6"
+        name="hinder &amp; flee menu"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="10cca796-7e35-430c-accc-bb69c78d54c9"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8c7d8417-6889-45a7-90de-649f49026036"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="0eabdb73-1a29-4c13-9b83-789fac0000f6"
+            name="Affichage Validation fermeture du jeu"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="95e0444a-8011-4617-bc19-fbfd58d16886"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a6d3dc4d-d9cd-47ef-adc5-f25204635484"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e0be3214-63c3-487e-8a13-c99e8c19eb43"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="ef8e1175-6de4-446e-85a1-ec0a12520868"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="9d49cd2e-46ae-452e-9677-b503025992ff"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="07b44d96-67f0-4dd0-9c3f-539b59ce0378"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0eabdb73-1a29-4c13-9b83-789fac0000f6"
+                  LastKnownName="Affichage Validation fermeture du jeu"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="44841d26-d257-4ab4-8f7b-29b69f197d18"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="383d8b91-cb0a-48ca-aeba-34f95a55ed95"
+                  LastKnownName="Affichage menu options"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="fb0887cd-3f70-40a6-9fe7-5cd23955d56e"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="38f1466f-83d0-4cd8-8bb2-6d3a38ca05ce"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="a656dec3-6899-4e22-9535-dfe96503de70"
+            name="Sauvegarde des options"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2031874e-3efc-4079-985f-0d8739fa0003"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c5635fbf-1de4-4ee1-94c6-eedc9f509f4d"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fe1ac166-49b6-4dff-8f63-642e8ed4833d"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1c754d51-bea0-4b97-b031-f714cbde026d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a656dec3-6899-4e22-9535-dfe96503de70"
+                  LastKnownName="Sauvegarde des options"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="383d8b91-cb0a-48ca-aeba-34f95a55ed95"
+            name="Affichage menu options"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2a3e2180-ef95-4a0f-b2ac-97fc09151b0f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c5635fbf-1de4-4ee1-94c6-eedc9f509f4d"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="38f1466f-83d0-4cd8-8bb2-6d3a38ca05ce"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ba03ee30-3d84-499d-b39c-61fdb5668095"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="697022f4-2eef-49ea-8e1e-084baf19e2dd"
+                  LastKnownName="Afficharge liste des partie disponible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b5eb6db3-e71c-4c13-aeb7-bc68ce19ad12"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c5d929f0-013b-419b-852e-fa3a6c786586"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="776a812a-8e27-491f-8fe6-eded04671c4d"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="9d49cd2e-46ae-452e-9677-b503025992ff"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode
+            Id="ef8e1175-6de4-446e-85a1-ec0a12520868"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="697022f4-2eef-49ea-8e1e-084baf19e2dd"
+            name="Afficharge liste des partie disponible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c571c749-b78d-4aa8-93e9-19b66bb191f2"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c5d929f0-013b-419b-852e-fa3a6c786586"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="c5d929f0-013b-419b-852e-fa3a6c786586"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d535dbb1-4f30-4bc8-8408-efa9844c833b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="241cb682-9967-4253-89aa-daf7d8370c26"
+                  LastKnownName="Affichage du Lobby"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="241cb682-9967-4253-89aa-daf7d8370c26"
+            name="Affichage du Lobby"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c0a15ca5-3524-41ea-8cdf-cccea1551f21"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c964bd1d-7c62-4afd-bcab-c4d118b82621"
+                  LastKnownName="Decision5"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c964bd1d-7c62-4afd-bcab-c4d118b82621"
+            name="Decision5"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f6221ea2-ae5a-427f-8f42-5db0d4bf4121"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c2f70142-92bf-4deb-a221-c3fb45ceea7f"
+                  LastKnownName="Lancement d'une partie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="18858e83-64b6-4513-9846-404b55b6faab"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1d1a8689-d112-40e5-9d29-0f370f052a2e"
+                  LastKnownName="Affichage liste des classes"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="c2f70142-92bf-4deb-a221-c3fb45ceea7f"
+            name="Lancement d'une partie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="30799431-a06a-4353-bd49-29820000d318"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="be4a79b2-bc17-41b7-b6a2-a32b9160a4ba"
+                  LastKnownName="Decision6"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1d1a8689-d112-40e5-9d29-0f370f052a2e"
+            name="Affichage liste des classes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6e731e24-922f-4f2e-93f2-5a0fa6859197"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="241cb682-9967-4253-89aa-daf7d8370c26"
+                  LastKnownName="Affichage du Lobby"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="be4a79b2-bc17-41b7-b6a2-a32b9160a4ba"
+            name="Decision6"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="66874b21-4a36-4198-bb06-b037e91ca7e7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="241cb682-9967-4253-89aa-daf7d8370c26"
+                  LastKnownName="Affichage du Lobby"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="6bf99a63-a95c-4109-9830-263ccda1d459"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f106ca8a-9fb2-4a53-8170-f16e50c2d9eb"
+                  LastKnownName="Affichage du jeu"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="f106ca8a-9fb2-4a53-8170-f16e50c2d9eb"
+            name="Affichage du jeu"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b3c09055-75e7-48a9-bda1-3703b20e212a"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="21a282c8-65d7-409f-ba49-9af671402140"
+                  LastKnownName="Decision7"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="21a282c8-65d7-409f-ba49-9af671402140"
+            name="Decision7"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dc8e6600-9237-455b-8a81-e6e8540e37ef"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f106ca8a-9fb2-4a53-8170-f16e50c2d9eb"
+                  LastKnownName="Affichage du jeu"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1b5ce7e6-012f-4497-8df4-43d666936ec5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="48bb36e4-65e8-4e89-9dee-d4c265d127b2"
+                  LastKnownName="Affichage du tableau des scores"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="48bb36e4-65e8-4e89-9dee-d4c265d127b2"
+            name="Affichage du tableau des scores"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a23d40f9-599b-4bd0-bcb5-3e6e4c33bdd4"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="33af37ee-362e-488f-b123-3f7d2f48d60e"
+                  LastKnownName="Decision8"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="33af37ee-362e-488f-b123-3f7d2f48d60e"
+            name="Decision8"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9a5c3d2c-ffa9-4bec-94aa-2a10f6f1f51a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="48bb36e4-65e8-4e89-9dee-d4c265d127b2"
+                  LastKnownName="Affichage du tableau des scores"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e8d231d6-3543-4642-b99f-a302e8295df7"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="0d4ecbe8-e6e6-4950-bafc-1ca41ffc916b"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="e610fc04-1de2-4124-a452-47dadde9830e"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="d211df50-1ff6-48d2-bec0-3bfedb0ecdcd"
+            name="Joueur"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="b2e8fae9-dea9-4487-beee-f3328c4130c0"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <objectNode
+            Id="f2208716-4c9e-4949-8924-e3450ed28007"
+            name="Menu"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="480268ce-e8d2-4dc0-93bf-6b287995a1ae"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="153f97d2-77ce-4a6e-9e2d-e7cc8bf9a03d"
+            name="Quitter"
+            isLeaf="false" />
+          <opaqueAction
+            Id="598b4ce8-2eb0-46b8-8798-0d487247a3e2"
+            name="Options"
+            isLeaf="false" />
+          <opaqueAction
+            Id="e4d81034-9783-4be2-b79a-8376b84fd76b"
+            name="Click sur le bouton quitter le jeu"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="73aba1d7-50fe-4dc9-a89b-9ce3a064d858"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="153f97d2-77ce-4a6e-9e2d-e7cc8bf9a03d"
+                  LastKnownName="Quitter"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="c0190a0b-548f-4999-8569-c9032da88f93"
+        name="partie"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="51a2113f-7e45-44a6-9639-b2b61329eded"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="761c7b69-ac1d-4371-9cee-7002531b80f4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+            name="Déplacement"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0817e537-59ff-482f-88b5-e1e566444f6b"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="d09aaa84-2a13-4c3a-a907-f6f4e6053538"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="85287260-9f59-410d-ae22-5b3725dcbb44"
+            name="Ramasser objet"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="97d81718-563a-4225-a1b6-4332fbcd481e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8c925a43-bb2e-493f-8c07-f56b74b4d46a"
+                  LastKnownName="ajout à l'inventaire"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a162335e-3cc4-4cbf-a639-f0ea6c50b932"
+            name="Objet"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7a38757d-7524-471c-a267-76b6a0488b17"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c4e16324-9e2b-4347-b8ac-53f8114b9a16"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="271b2211-336a-4978-a45c-295afa9ab762"
+            name="Ennemies"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b12028af-bf08-4735-b55b-987d90013572"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="e671eadd-b9ba-41ee-9196-b8dd96304c0f"
+                  LastKnownName="Decision5"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="82faf124-fc0a-4159-8cb8-d917cb827a6c"
+            name="Laisser objet"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1801947b-600e-40a9-820d-b539d8c019c8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c4e16324-9e2b-4347-b8ac-53f8114b9a16"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fe2820d5-c991-4d9d-af29-bc84d8bd0837"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="85287260-9f59-410d-ae22-5b3725dcbb44"
+                  LastKnownName="Ramasser objet"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="357e9720-7237-425b-839e-be8e3967dbf0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="82faf124-fc0a-4159-8cb8-d917cb827a6c"
+                  LastKnownName="Laisser objet"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5fb8ae4c-de27-4e7d-a408-635e331bb63e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="853829a5-a2b0-429b-96b6-dcf7e504aef7"
+                  LastKnownName="Utiliser"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="8c925a43-bb2e-493f-8c07-f56b74b4d46a"
+            name="ajout à l'inventaire"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f4ee0910-8a5d-4a0d-a503-167d76cf8917"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="853829a5-a2b0-429b-96b6-dcf7e504aef7"
+            name="Utiliser"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="41576c41-15a3-4884-a4eb-c13569f41180"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7a02cd29-a13b-42cb-ba59-b45568f7d515"
+                  LastKnownName="Application de l'objet sur la cible"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7a02cd29-a13b-42cb-ba59-b45568f7d515"
+            name="Application de l'objet sur la cible"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9d6d1a8c-c3bf-4732-a296-edcc0b581208"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f4393cf6-85bf-472f-9088-36e99758746d"
+            name="Fuir"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a5ab8a33-2e07-46fc-9c47-cc5368b7675c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="99c2e2a5-3dc8-431b-ac2d-71633196baac"
+            name="Attaquer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9b84d351-45d7-41bd-9ace-37c8b1478baa"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="8e75b53a-fc14-4ef2-abb2-16ec778c14e9"
+                  LastKnownName="Decision9"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="e671eadd-b9ba-41ee-9196-b8dd96304c0f"
+            name="Decision5"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9e34455b-39fd-42c2-9651-137932bd8b84"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f4393cf6-85bf-472f-9088-36e99758746d"
+                  LastKnownName="Fuir"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="69a55fda-6bcb-40aa-b6b6-b8e0b8773d0a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="99c2e2a5-3dc8-431b-ac2d-71633196baac"
+                  LastKnownName="Attaquer"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="982c6965-ea1a-454f-a758-7dcc46639efa"
+            name="Mourir"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d87942a9-4937-4a68-a478-16c361cc1fea"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73180bb5-3ba8-4c2f-af95-304d471ab194"
+                  LastKnownName="Devenir Zombie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="00c78414-074b-427e-9e3b-3821f40c17ea"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <decisionNode
+            Id="87d35cb3-9b89-447c-bd33-1ef30fb995c3"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="449d1926-2741-4b4c-8d7c-beee8cad0e80"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="271b2211-336a-4978-a45c-295afa9ab762"
+                  LastKnownName="Ennemies"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="064cc87c-2fc0-480f-b286-bdf7190f1076"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a162335e-3cc4-4cbf-a639-f0ea6c50b932"
+                  LastKnownName="Objet"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="b775b41d-eccf-484c-939a-b1cfdfc32b4e"
+            name="Blesser"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b40de29e-cad7-450a-864d-e2bfef1669f6"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="65c69ef7-e27e-4f03-8eee-97f226436cbe"
+                  LastKnownName="Join2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="479d914f-4a96-4f5f-9bdd-86f2c40f74cf"
+            name="Decision6"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0e384df3-2dc1-452c-8c5b-5f32cbb1f980"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="982c6965-ea1a-454f-a758-7dcc46639efa"
+                  LastKnownName="Mourir"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="4bfa4cc3-03cd-40d7-a0bc-3d6ef0c46c2f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="d0cca1dc-68d7-4436-bf62-4534cbe1b41f"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="73180bb5-3ba8-4c2f-af95-304d471ab194"
+            name="Devenir Zombie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3da00de7-d532-4c46-9af3-8c1b55944be3"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="94bd8200-26e8-41b3-b59f-2878b48c29e3"
+                  LastKnownName="Join3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="5d8b5fad-2b2d-475d-932c-96c97de12fb0"
+            name="Decision8"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3dc6bbf1-c04e-48b7-8163-6b29938fd5f2"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="00c78414-074b-427e-9e3b-3821f40c17ea"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2d4e86d7-dae4-412c-a92a-d43b6f5f94fa"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="fbf38d44-5f47-4676-bec3-6e1c7e391b46"
+            name="Objet"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="92bb62f7-901b-4a4b-abaa-aa6ecfaa24a8"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="c3d78801-277b-462f-b035-9cdc865990f7"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8f8345a5-56ed-43da-9374-a9779fd0be70"
+            name="Compétence"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e7d4c2a7-6b70-4fb7-b7c7-c5f57b41eba0"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="c3d78801-277b-462f-b035-9cdc865990f7"
+                  LastKnownName="Join1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="8e75b53a-fc14-4ef2-abb2-16ec778c14e9"
+            name="Decision9"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1571e664-5bda-4680-8490-454856e78d6b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fbf38d44-5f47-4676-bec3-6e1c7e391b46"
+                  LastKnownName="Objet"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c0ceb81f-85f7-4b27-bc46-3561427e5f3a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8f8345a5-56ed-43da-9374-a9779fd0be70"
+                  LastKnownName="Compétence"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <joinNode
+            Id="c3d78801-277b-462f-b035-9cdc865990f7"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7bac8f0e-70c3-432c-b3c2-c6091d9893bd"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="479d914f-4a96-4f5f-9bdd-86f2c40f74cf"
+                  LastKnownName="Decision6"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <decisionNode
+            Id="d0cca1dc-68d7-4436-bf62-4534cbe1b41f"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="600786e4-6acf-49ce-a5a4-9c826d57da2c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b775b41d-eccf-484c-939a-b1cfdfc32b4e"
+                  LastKnownName="Blesser"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5650b0e2-21c2-4a0e-8ff5-0e4596e1f0c2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e37e569d-be0a-49cf-8cc7-495a0f9ec44b"
+                  LastKnownName="Tuer"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="e37e569d-be0a-49cf-8cc7-495a0f9ec44b"
+            name="Tuer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4b98a688-1737-48ea-af11-138fa935d4e6"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="65c69ef7-e27e-4f03-8eee-97f226436cbe"
+                  LastKnownName="Join2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="65c69ef7-e27e-4f03-8eee-97f226436cbe"
+            name="Join2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6f12f490-04b8-456e-b6f9-973b46ea64de"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="94bd8200-26e8-41b3-b59f-2878b48c29e3"
+                  LastKnownName="Join3"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <decisionNode
+            Id="d09aaa84-2a13-4c3a-a907-f6f4e6053538"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2e076d0b-2216-4a95-9cac-7bf9a8b37bbf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1399d1cb-7d88-43a4-b0dc-c49d7557d845"
+                  LastKnownName="Suvivant"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="35d6b348-6a00-4b6d-8a3b-bd9dd5a24c58"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e7fe5511-2664-4d4b-b618-e0da9a402e56"
+                  LastKnownName="Zombie"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="1399d1cb-7d88-43a4-b0dc-c49d7557d845"
+            name="Suvivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6c4a14c6-40a2-4544-819e-5fe7d891c58b"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="87d35cb3-9b89-447c-bd33-1ef30fb995c3"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e7fe5511-2664-4d4b-b618-e0da9a402e56"
+            name="Zombie"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d78ad12b-e67f-4965-b741-4ba800e14f66"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="04c11e38-c25c-4f59-832e-cdd19e18e8b8"
+                  LastKnownName="Decision7"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="04c11e38-c25c-4f59-832e-cdd19e18e8b8"
+            name="Decision7"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="63a66597-36ba-4da5-93a8-5e2c50bc1c4c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="67ec8ae9-dc14-48b8-9e0b-0517fd7dd59d"
+                  LastKnownName="Survivant"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d766db72-15e8-4d0d-8bbb-2955b9c11a19"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="678996ef-aec3-4265-8dea-14205024dfce"
+                  LastKnownName="Rien"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="678996ef-aec3-4265-8dea-14205024dfce"
+            name="Rien"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a27932a5-0e0a-4c67-a1ea-c731c226c5cc"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="67ec8ae9-dc14-48b8-9e0b-0517fd7dd59d"
+            name="Survivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="302c4fd0-dec4-47f8-8ac2-8c479530427c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="49407820-e63e-4b75-842b-519bddc72dca"
+                  LastKnownName="Attaquer"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="49407820-e63e-4b75-842b-519bddc72dca"
+            name="Attaquer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a785236a-10ac-4308-ac09-9879132e8b80"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="9795da62-0476-42b0-a3ad-7b8487e30464"
+                  LastKnownName="Decision11"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="8535314f-059b-479e-b6da-14b26f47646d"
+            name="Tuer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b5dffb34-e1ee-4624-982b-3f25c9646e6d"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="a3f35617-d289-4fe0-8dda-d0abe37d0baf"
+                  LastKnownName="Decision10"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="a3f35617-d289-4fe0-8dda-d0abe37d0baf"
+            name="Decision10"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e2375bbd-75ff-4cc2-9ca0-394efb6fde1b"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="00c78414-074b-427e-9e3b-3821f40c17ea"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a78630b6-1a57-4bd3-b902-1c5ff373f0d1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="5e752637-fed8-4657-a9f2-4bd9b059b7cf"
+            name="Infecter"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="45ebd723-5183-4154-a86e-adfb479622a3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73742a54-7dda-4815-92a4-249e75cba4c1"
+                  LastKnownName="Déplacement"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="9795da62-0476-42b0-a3ad-7b8487e30464"
+            name="Decision11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cc9521a0-d580-4471-9231-d1cea0fa3187"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8535314f-059b-479e-b6da-14b26f47646d"
+                  LastKnownName="Tuer"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="021c43d0-b9d9-4736-9e53-0d60d52a94f3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5e752637-fed8-4657-a9f2-4bd9b059b7cf"
+                  LastKnownName="Infecter"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <joinNode
+            Id="94bd8200-26e8-41b3-b59f-2878b48c29e3"
+            name="Join3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4a0f8835-7ec5-4bcb-9794-0a1a544b3684"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="5d8b5fad-2b2d-475d-932c-96c97de12fb0"
+                  LastKnownName="Decision8"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="bed15a95-1d59-4769-af6e-cbe62884c96e"
+        name="zombies"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="893e1d43-11f8-40b5-a44e-9a5d76bf8d6f"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8733ba25-5d38-40ce-8dff-a4bba20e4103"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9cba4691-58d5-46c9-821f-f29d7b4a8dd7"
+                  LastKnownName="Déplacements"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <activityFinalNode
+            Id="01cf23dc-cf19-438d-ab07-2fa4f462e755"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="9cba4691-58d5-46c9-821f-f29d7b4a8dd7"
+            name="Déplacements"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ff42e2f4-38ec-42d2-9619-62989dba05b0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="334a59d4-350f-4f30-9485-613265628d20"
+                  LastKnownName="Rencontre Survivant"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="334a59d4-350f-4f30-9485-613265628d20"
+            name="Rencontre Survivant"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="661e7efd-ab6d-40fb-86d9-018b00276e5d"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="d730bb47-daca-4c19-9e3e-3f52ebd205cf"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="d730bb47-daca-4c19-9e3e-3f52ebd205cf"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7a1641f3-60d0-4cd4-8236-35949b977e93"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a16b6d40-a48c-4299-a2a9-9a5ce6462a24"
+                  LastKnownName="Attaquer"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="dd1c686b-1192-40dc-86c4-5d4a06f0b2c1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9cba4691-58d5-46c9-821f-f29d7b4a8dd7"
+                  LastKnownName="Déplacements"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="a16b6d40-a48c-4299-a2a9-9a5ce6462a24"
+            name="Attaquer"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="df74619b-0911-4473-84fd-aa1cadbc3407"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="61e5320a-06a0-4154-8ec6-372b69e87674"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="projetAnnuel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="61e5320a-06a0-4154-8ec6-372b69e87674"
+            name="Decision2"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
