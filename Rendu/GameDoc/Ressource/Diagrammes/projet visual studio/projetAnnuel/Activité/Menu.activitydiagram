@@ -1,16 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7a7ab136-9955-4bc5-9a69-dba8344577e2" name="hinder &amp; flee menu" linkedPackageId="ac9ddc7a-4cf9-4c85-8847-d6a7f910d259" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="7a7ab136-9955-4bc5-9a69-dba8344577e2" name="hinder &amp; flee menu" linkedPackageId="ac9ddc7a-4cf9-4c85-8847-d6a7f910d259" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <ownedCommentsInternal>
-    <comment Id="ed5007de-7e48-4a65-ac4b-8d72e513532a">
-      <elementDefinition Id="73be087a-e74f-4818-ad45-93dce5b7bfda" />
-      <body>Menu Principale</body>
-      <annotatedElements>
-        <initialNodeMoniker Id="2bfb034d-99f1-4d98-a315-6143ff5d488e" LastKnownName="Initial1" />
-      </annotatedElements>
-    </comment>
     <comment Id="901047fa-834b-47d2-a88f-ba46fcc4ea91">
       <elementDefinition Id="d35e3b24-0fd3-42d7-a1e7-adc244d9a3a4" />
-      <body>Choix de l'action dans le mnu principal</body>
+      <body>Choix de l'action dans le menu principal</body>
       <annotatedElements>
         <decisionNodeMoniker Id="9220c04c-6409-4276-99a6-af816eb4d33b" LastKnownName="Decision2" />
       </annotatedElements>
@@ -56,7 +49,7 @@
     </comment>
     <comment Id="eda3d430-8d92-4c61-a58a-b8d5714f1cb9">
       <elementDefinition Id="c2b0603b-67f4-4166-9210-bed1a5f184f3" />
-      <body>Le joueur a clique sur Annuler</body>
+      <body>Le joueur a cliqué sur Annuler</body>
       <annotatedElements>
         <decisionNodeMoniker Id="f3930cd0-e374-4a4c-abdd-3bc968340313" LastKnownName="Decision1" />
       </annotatedElements>

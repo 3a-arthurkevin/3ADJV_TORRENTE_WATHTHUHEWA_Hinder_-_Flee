@@ -1,22 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="1cd13195-7a33-4be2-a0ae-a52654dc121e"
   name="projetAnnuel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <ownedCommentsInternal>
     <comment
-      Id="73be087a-e74f-4818-ad45-93dce5b7bfda">
-      <body>Menu Principale</body>
-      <annotatedElements>
-        <initialNodeMoniker
-          Id="10cca796-7e35-430c-accc-bb69c78d54c9"
-          LastKnownName="Initial1"
-          LastKnownLocation="projetAnnuel.uml" />
-      </annotatedElements>
-    </comment>
-    <comment
       Id="d35e3b24-0fd3-42d7-a1e7-adc244d9a3a4">
-      <body>Choix de l'action dans le mnu principal</body>
+      <body>Choix de l'action dans le menu principal</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="9d49cd2e-46ae-452e-9677-b503025992ff"
@@ -80,7 +70,7 @@
     </comment>
     <comment
       Id="c2b0603b-67f4-4166-9210-bed1a5f184f3">
-      <body>Le joueur a clique sur Annuler</body>
+      <body>Le joueur a cliqué sur Annuler</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="02c3dfda-ff7a-432b-b09f-5b8d478a5a5e"
@@ -630,7 +620,7 @@
     </comment>
     <comment
       Id="85734d6b-9ed3-45b5-9958-ba3ec8867785">
-      <body>Réussite du coup</body>
+      <body>Réussite de l'attaque</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="d4034c4d-f5f9-4777-9ff9-6da2b81d3114"
@@ -3562,7 +3552,7 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="0cb7caab-f987-4930-a273-5c21f2f5aef7"
-                  LastKnownName="Ajoute une unité de l'objet dans le stock du marchand"
+                  LastKnownName="Ajoute une unitée de l'objet dans le stock du marchand"
                   LastKnownLocation="projetAnnuel.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -3690,7 +3680,7 @@
           </opaqueAction>
           <opaqueAction
             Id="0cb7caab-f987-4930-a273-5c21f2f5aef7"
-            name="Ajoute une unité de l'objet dans le stock du marchand"
+            name="Ajoute une unitée de l'objet dans le stock du marchand"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow

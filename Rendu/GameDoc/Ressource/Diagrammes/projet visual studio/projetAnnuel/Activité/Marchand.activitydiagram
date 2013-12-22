@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="92c2a738-1ddc-4b8e-b6b0-20128c5f18f0" name="Marchand" linkedPackageId="11abe962-f384-49f3-bb85-bb3627e57aa1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="92c2a738-1ddc-4b8e-b6b0-20128c5f18f0" name="Marchand" linkedPackageId="11abe962-f384-49f3-bb85-bb3627e57aa1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <ownedCommentsInternal>
     <comment Id="7a0248bf-0ac0-4da9-ac78-a408d7e4e100">
       <elementDefinition Id="61b60564-f9a1-4655-893f-8fa880658134" />
@@ -286,7 +286,7 @@
                 <elementDefinition Id="55c4e5cb-7e9b-48c2-ad6b-2dfe577c545b" />
               </controlFlow>
               <controlFlow Id="06a9dd21-18fd-47bf-8aa3-76b0a5d8594f" isLeaf="false">
-                <opaqueActionMoniker Id="43bae2df-14e7-4e42-b3e6-6b08cbb029da" LastKnownName="Ajoute une unité de l'objet dans le stock du marchand" />
+                <opaqueActionMoniker Id="43bae2df-14e7-4e42-b3e6-6b08cbb029da" LastKnownName="Ajoute une unitée de l'objet dans le stock du marchand" />
                 <elementDefinition Id="0a7e17ae-d1fa-49ea-ab3c-cef9f36f2cd8" />
               </controlFlow>
             </flowNodeTargets>
@@ -362,7 +362,7 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <opaqueAction Id="43bae2df-14e7-4e42-b3e6-6b08cbb029da" name="Ajoute une unité de l'objet dans le stock du marchand" isLeaf="false">
+          <opaqueAction Id="43bae2df-14e7-4e42-b3e6-6b08cbb029da" name="Ajoute une unitée de l'objet dans le stock du marchand" isLeaf="false">
             <elementDefinition Id="0cb7caab-f987-4930-a273-5c21f2f5aef7" />
             <flowNodeTargets>
               <controlFlow Id="ec55ef2e-aba3-42dd-8d37-423fca82c206" isLeaf="false">

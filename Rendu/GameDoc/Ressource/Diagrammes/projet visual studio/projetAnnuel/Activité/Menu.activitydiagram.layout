@@ -46,10 +46,6 @@
       <decisionNodeMoniker Id="9ce1be08-6698-4676-bf13-9bd73c39ed41" LastKnownName="Decision4" />
       <relativeChildShapes />
     </decisionNodeShape>
-    <commentShape Id="db8097ab-2165-4080-9f63-8d73e4278777" absoluteBounds="7.375, 0.5, 1.25, 0.375" customColor="251, 247, 200">
-      <commentMoniker Id="ed5007de-7e48-4a65-ac4b-8d72e513532a" />
-      <relativeChildShapes />
-    </commentShape>
     <mergeNodeShape Id="83065a64-1bbb-4796-bd79-b32badacc37b" absoluteBounds="6.75, 0.875, 0.375, 0.375" customColor="185, 212, 238">
       <mergeNodeMoniker Id="9c2030ee-eaa2-40b3-9b12-86157369a5b7" LastKnownName="Merge1" />
       <relativeChildShapes />
@@ -591,12 +587,5 @@
         <mergeNodeShapeMoniker Id="83065a64-1bbb-4796-bd79-b32badacc37b" />
       </nodes>
     </controlFlowConnector>
-    <commentConnector edgePoints="[(7.375 : 0.5625); (7 : 0.5625)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
-      <relativeChildShapes />
-      <nodes>
-        <commentShapeMoniker Id="db8097ab-2165-4080-9f63-8d73e4278777" />
-        <initialNodeShapeMoniker Id="afffa1f5-25eb-4288-96fa-3e6fd637f923" />
-      </nodes>
-    </commentConnector>
   </nestedChildShapes>
 </activityDiagram>

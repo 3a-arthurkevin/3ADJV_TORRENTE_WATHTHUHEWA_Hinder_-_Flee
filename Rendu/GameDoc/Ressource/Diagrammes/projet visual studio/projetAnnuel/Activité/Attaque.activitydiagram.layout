@@ -55,7 +55,7 @@
         <actionShapeMoniker Id="ac834202-6330-46d1-889d-049c650dfd42" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(5.65625 : 4.40625); (5.05208333333333 : 4.40625 : JumpStart); (4.88541666666667 : 4.40625 : JumpEnd); (3.625 : 4.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+    <controlFlowConnector edgePoints="[(5.65625 : 4.40625); (3.625 : 4.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="68784aba-57f9-4cd0-90cc-b60746f78f35" />
       <relativeChildShapes />
       <nodes>
@@ -119,7 +119,7 @@
       <controlFlowMoniker Id="d8bee41b-1206-4c93-878b-bc1017be5676" />
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.9468737104807188, 4.6760403783891489, 0.125, 0.1341145783662796" shapeFieldName="Stereotype" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="5.9538181545112421, 4.6760403783891489, 0.125, 0.1341145783662796" shapeFieldName="Stereotype" />
       </moveableDecoratorHostShapes>
       <nodes>
         <decisionNodeShapeMoniker Id="47c5d9bb-b788-4f06-be55-3d0bd129b5fa" />

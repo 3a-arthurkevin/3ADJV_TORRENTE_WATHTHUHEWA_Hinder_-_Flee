@@ -66,7 +66,7 @@
         <mergeNodeShapeMoniker Id="12b88f2f-4725-43e8-bddb-df07f3802af0" />
       </nodes>
     </controlFlowConnector>
-    <controlFlowConnector edgePoints="[(2.68080357142857 : 6); (2.68080357142857 : 6.9374975); (4.7500025 : 6.9374975)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
+    <controlFlowConnector edgePoints="[(2.6875 : 6); (2.6875 : 7.0625); (4.625 : 7.0625)]" fixedFrom="Algorithm" fixedTo="Caller" customColor="Black">
       <controlFlowMoniker Id="279ad499-c573-4b55-89a3-1f501c83a10a" />
       <relativeChildShapes />
       <nodes>

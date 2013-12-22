@@ -429,7 +429,7 @@
     <commentConnector edgePoints="[(12.375 : 5.9375); (12.7984449760766 : 5.86094497607655)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="217d6bd0-42ed-4e7f-ad2b-af3ef5142428" customColor="Black">
       <relativeChildShapes />
       <moveableDecoratorHostShapes>
-        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="12.789716892126961, 6.06712651387421, 0.125, 0.1341145783662796" shapeFieldName="Stereotype" />
+        <moveableDecoratorHostShape manuallyPlaced="true" absoluteBounds="12.796661336157484, 6.06712651387421, 0.125, 0.1341145783662796" shapeFieldName="Stereotype" />
       </moveableDecoratorHostShapes>
       <nodes>
         <commentShapeMoniker Id="5b842341-42e6-43c6-a8a3-4101983def22" />
@@ -515,7 +515,7 @@
       </nodes>
     </controlFlowConnector>
     <actionShape Id="e4907857-107c-4385-9d30-3f9e9eb9d987" absoluteBounds="13.75, 7.5, 1.125, 0.625" customColor="161, 199, 231">
-      <opaqueActionMoniker Id="43bae2df-14e7-4e42-b3e6-6b08cbb029da" LastKnownName="Ajoute une unité de l'objet dans le stock du marchand" />
+      <opaqueActionMoniker Id="43bae2df-14e7-4e42-b3e6-6b08cbb029da" LastKnownName="Ajoute une unitée de l'objet dans le stock du marchand" />
     </actionShape>
     <controlFlowConnector edgePoints="[(13.5 : 6.69966216216216); (14.3125 : 6.69966216216216); (14.3125 : 7.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="06a9dd21-18fd-47bf-8aa3-76b0a5d8594f" />
