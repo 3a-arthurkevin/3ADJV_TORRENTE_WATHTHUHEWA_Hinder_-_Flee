@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="1cd13195-7a33-4be2-a0ae-a52654dc121e"
   name="projetAnnuel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -280,7 +280,7 @@
     </comment>
     <comment
       Id="39d2da6c-2901-46a5-b6fa-c481cefc9c9a">
-      <body>Le joueur souhaite utiliser un objets</body>
+      <body>Le joueur souhaite utiliser un objet</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="63921c07-3c37-490e-894a-b7657ae99686"
@@ -290,7 +290,7 @@
     </comment>
     <comment
       Id="2e732621-d3a4-47a2-b4b9-970d073caa63">
-      <body>Le joueur souhaite lancer un attaque</body>
+      <body>Le joueur souhaite lancer une attaque</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="63921c07-3c37-490e-894a-b7657ae99686"
@@ -690,7 +690,7 @@
     </comment>
     <comment
       Id="b7f2860e-3d57-4ac2-94b7-8192693458bd">
-      <body>Le joueur meut ou atteint 100% de la jauge de mutation</body>
+      <body>Le joueur meurt ou atteint 100% de la jauge de mutation</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="46920854-4193-4337-8019-d7ecd79fedfe"
@@ -820,7 +820,7 @@
     </comment>
     <comment
       Id="672ccbc0-d300-459a-a2e9-4ab864c5e7f9">
-      <body>Le joueur souhaite lancer un attaque</body>
+      <body>Le joueur souhaite lancer une attaque</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="4be1b601-5e5a-4fce-85a9-0f1cd9d41f5e"
