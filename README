@@ -1,1 +1,26 @@
-README du projet hinder & flee
+Arborescence du directory
+
+3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee
+└───Author.txt
+└───README
+└───Rendu
+    ├───Alpha
+    ├───Beta
+    ├───GameDoc
+    │   └───Ressource
+    │       ├───Diagrammes
+    │       │   ├───Diagramme d'activite
+    │       │   ├───Diagramme de cas d'utilisation
+    │       │   ├───Diagramme de classes
+    │       │   ├───Diagramme de Gantt
+    │       │   └───projet visual studio
+    │       └───Schema
+    │           ├───Boucle de jeu
+    │           ├───Input
+    │           └───Interfaces
+    │               ├───Menu
+    │               │   ├───Lancer partie
+    │               │   └───Options
+    │               └───Partie
+    ├───RC
+    └───Soutenance
