@@ -86,6 +86,20 @@
       <DependentUpon>Cas d'utilisation\hinder_-_flee.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
+    <Content Include="Cas d%27utilisation\Survivant.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Cas d%27utilisation\Survivant.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Cas d'utilisation\Survivant.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Cas d%27utilisation\Zombie.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Cas d%27utilisation\Zombie.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Cas d'utilisation\Zombie.usecasediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\projetAnnuel.uml">
       <SubType>Content</SubType>
     </Content>

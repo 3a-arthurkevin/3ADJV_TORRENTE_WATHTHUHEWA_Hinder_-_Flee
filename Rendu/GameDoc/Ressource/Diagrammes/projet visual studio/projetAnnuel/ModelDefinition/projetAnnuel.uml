@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="1cd13195-7a33-4be2-a0ae-a52654dc121e"
   name="projetAnnuel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -4314,6 +4314,931 @@
           </opaqueAction>
         </nodes>
       </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="f63b6d2b-bef1-45fa-bccb-26bfcd02b921"
+        name="Zombie"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5b49bdb4-ada4-422b-97e2-882fc13febf9"
+            isDerived="false"
+            sourceEndRoleName="Zombie"
+            targetEndRoleName="Attaquer un survivant"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="51fc0ba9-87d3-4418-af13-6e1f373ee127"
+              LastKnownName="Attaquer un survivant"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6f8a4059-e0ce-4e47-8b24-755dce4a0f88"
+                  name="Zombie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a4e16bec-a0c5-4a6a-a2d6-6388acb04f87"
+                  name="Attaquer un survivant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4b20a802-4ae5-4f74-943e-5b31212d4bc4"
+            isDerived="false"
+            sourceEndRoleName="Zombie"
+            targetEndRoleName="Déplacement"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a122501e-957d-48e4-9593-83e29e5df752"
+              LastKnownName="Déplacement"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="627ef5cd-55ae-4f9b-a541-99e114d40d7c"
+                  name="Zombie"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="565a3305-c880-4b34-9638-434e7dbc6a9c"
+                  name="Déplacement"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a122501e-957d-48e4-9593-83e29e5df752"
+        name="Déplacement"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="51fc0ba9-87d3-4418-af13-6e1f373ee127"
+        name="Attaquer un survivant"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="87f0ee57-b2f8-4ec8-992e-17db0f8f0c4c"
+        name="Survivant"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4e14152a-1927-4b6e-b24f-72987d8b532d"
+            isDerived="false"
+            sourceEndRoleName="Survivant"
+            targetEndRoleName="Objet"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="31f3d74c-8a30-4506-b94e-d50d5bb57732"
+              LastKnownName="Objet"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71406d14-dce6-4dbb-b466-e59053679b30"
+                  name="Survivant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="daf1f916-05e9-4289-9f93-bc9dd816035c"
+                  name="Objet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1849ae4a-bc77-4737-a409-41a73f80680b"
+            isDerived="false"
+            sourceEndRoleName="Survivant"
+            targetEndRoleName="Inventaire"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0c83ccc9-65e4-4c58-9ec7-2c0ba95254ad"
+              LastKnownName="Inventaire"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5d81a7aa-371e-4417-b994-b0812fac5a31"
+                  name="Survivant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="76e53cb7-6f1a-4058-baf8-33342507bece"
+                  name="Inventaire"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="29fe3622-339d-4f19-b1f4-c9f8f473bf75"
+            isDerived="false"
+            sourceEndRoleName="Survivant"
+            targetEndRoleName="Attaquer"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="72c56c77-86a4-4e32-8179-3e83835f79b2"
+              LastKnownName="Attaquer"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a4c4810d-303f-4247-abf8-51035ad9e1b8"
+                  name="Survivant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1ec484e8-1668-4339-8fa6-142425a0918d"
+                  name="Attaquer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="35d1e1b1-fcc7-4874-b895-6359c261a062"
+            isDerived="false"
+            sourceEndRoleName="Survivant"
+            targetEndRoleName="Déplacement"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8f9e052a-0bc6-4885-a5c7-7a9f1fdd81a6"
+              LastKnownName="Déplacement"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="951ca482-3690-409f-b560-ad8a0f77a097"
+                  name="Survivant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e7fa7010-0735-4af1-b5cb-80009f5f6d37"
+                  name="Déplacement"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="26eddd6c-4ffa-4b07-8e2d-cea2fc2cecda"
+            isDerived="false"
+            sourceEndRoleName="Survivant"
+            targetEndRoleName="Marchand"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a1b96f18-3d97-4be9-887b-ace808cc55c6"
+              LastKnownName="Marchand"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93e3a5ac-ade6-44f0-b79a-bfdca3635a7c"
+                  name="Survivant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="28928ea4-440d-4901-9f33-b3f809434bb1"
+                  name="Marchand"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="31f3d74c-8a30-4506-b94e-d50d5bb57732"
+        name="Objet"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5f1bccbe-ccd4-4a89-bc95-326b619f2a66"
+            isDerived="false"
+            sourceEndRoleName="Objet"
+            targetEndRoleName="Utiliser sur la cible"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5767f109-2079-4925-8767-f576fa1860ca"
+              LastKnownName="Utiliser sur la cible"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bb28ea18-edeb-40a9-9e83-7a98ca2b50ae"
+                  name="Objet"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ed750a7d-8b8c-4be6-b4bc-4a294b7365ed"
+                  name="Utiliser sur la cible"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0c83ccc9-65e4-4c58-9ec7-2c0ba95254ad"
+        name="Inventaire"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ff7b8e2c-d5f0-4dd2-a91c-e6fc02c36b33"
+            isDerived="false"
+            sourceEndRoleName="Inventaire"
+            targetEndRoleName="Jeter l'item"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="115ec778-5f3d-4975-8445-bbb8004707ae"
+              LastKnownName="Jeter l'item choisit"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b0ff4851-6109-438e-a140-0a558b80b87b"
+                  name="Inventaire"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e46cce89-375d-4237-b57b-c9ff3b9b0757"
+                  name="Jeter l'item"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="72c56c77-86a4-4e32-8179-3e83835f79b2"
+        name="Attaquer"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="98459230-a23e-43bc-abd9-dab55bb8b6b7"
+            isDerived="false"
+            sourceEndRoleName="Attaquer"
+            targetEndRoleName="Lancer compétence sur la cible"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4de35813-1f9b-48a3-8846-634d7fc4fafe"
+              LastKnownName="Lancer compétence sur la cible"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="01c1769b-f5f3-4358-88e3-91194b41427c"
+                  name="Attaquer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="331721cf-0116-458a-b0a0-ac29b44b1b11"
+                  name="Lancer compétence sur la cible"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8f9e052a-0bc6-4885-a5c7-7a9f1fdd81a6"
+        name="Déplacement"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="7feb0ea9-ed0f-44df-9f9a-943ec355f139"
+            isDerived="false"
+            sourceEndRoleName="Déplacement"
+            targetEndRoleName="Escalier"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8b29c6fb-5b0f-4346-ac6a-ab8bc384fc3c"
+              LastKnownName="Escalier"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="38dcb1c7-740f-4d3a-83be-08ae98f13a5f"
+                  name="Déplacement"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e5ac6c6f-a802-45dc-9b23-2d53c560d39a"
+                  name="Escalier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f511b61a-256b-4cc4-845c-c4f80df6231c"
+            isDerived="false"
+            sourceEndRoleName="Déplacement"
+            targetEndRoleName="Carte"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c5314c8b-9682-4b93-a571-f7466b4303b9"
+              LastKnownName="Carte"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cf91e556-ecd3-4ac2-a3ac-8a019804074f"
+                  name="Déplacement"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a870b4ae-9de9-49b4-ab6f-7df7e85ff4ef"
+                  name="Carte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5a3ee8fb-abea-4bf9-afad-c4ab9fcea289"
+            isDerived="false"
+            sourceEndRoleName="Déplacement"
+            targetEndRoleName="Cachette"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e2186c54-e84f-49c2-b9c1-3e0e3e1611a0"
+              LastKnownName="Cachette"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4a812e22-aa40-47d3-937e-fd8c01091ca2"
+                  name="Déplacement"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="67bd1a60-a666-46d9-af86-d4d0b619946f"
+                  name="Cachette"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a1b96f18-3d97-4be9-887b-ace808cc55c6"
+        name="Marchand"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e2e100f8-46cf-4251-a1a3-81e74c105963"
+            isDerived="false"
+            sourceEndRoleName="Marchand"
+            targetEndRoleName="Vendre"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f8a2a235-2475-4fba-a633-309852cae09d"
+              LastKnownName="Vendre"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5bea4f68-3380-4763-9ff4-bdffe8e4c068"
+                  name="Marchand"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b741f022-3566-4694-a502-98f8794f7652"
+                  name="Vendre"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4c6b7385-56d1-421b-a647-3269f63c4035"
+            isDerived="false"
+            sourceEndRoleName="Marchand"
+            targetEndRoleName="Acheter"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a0c8d919-c465-4478-8457-5554811b0482"
+              LastKnownName="Acheter"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7c1d5199-4c23-49a3-ae10-71ad58ff0dae"
+                  name="Marchand"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4d766e0a-2a91-4cc3-9da3-0295d6aa0c24"
+                  name="Acheter"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="572a34e9-82c6-4c3d-9e19-7de05732799f"
+        name="Vendre des obets au marchand"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5767f109-2079-4925-8767-f576fa1860ca"
+        name="Utiliser sur la cible"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="115ec778-5f3d-4975-8445-bbb8004707ae"
+        name="Jeter l'item choisit"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4de35813-1f9b-48a3-8846-634d7fc4fafe"
+        name="Lancer compétence sur la cible"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8b29c6fb-5b0f-4346-ac6a-ab8bc384fc3c"
+        name="Escalier"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c2d1e3ac-d209-4583-91b6-d596cf1c898f"
+            isDerived="false"
+            sourceEndRoleName="Escalier"
+            targetEndRoleName="Changer d'étage"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="c697aaed-7fe6-492c-866d-aa3ea67d1524"
+              LastKnownName="Changer d'étage"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6305f79c-dc2f-4447-901a-7453d63a3a13"
+                  name="Escalier"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6eafea98-c2b1-440a-98c7-186181e72736"
+                  name="Changer d'étage"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c5314c8b-9682-4b93-a571-f7466b4303b9"
+        name="Carte"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="53afbe56-8af1-4ff2-b209-b5eab3b8f120"
+            isDerived="false"
+            sourceEndRoleName="Carte"
+            targetEndRoleName="Sortir de la cachette"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="89040108-f5b9-4f9d-b00e-b26013b2b22c"
+              LastKnownName="Sortir de la cachette"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71981a6e-ecee-47a0-97f4-8062feab81f5"
+                  name="Carte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="dbdbd33b-b1c7-4214-8a97-c8f8fb76e093"
+                  name="Sortir de la cachette"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1da7ba7b-33df-4fdd-9dd4-ca87a5402122"
+            isDerived="false"
+            sourceEndRoleName="Carte"
+            targetEndRoleName="Déplacement dans l'étage courant"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e3d678b1-8590-4359-ab12-5b5b23330397"
+              LastKnownName="Déplacement dans l'étage courant"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bb92ac91-1663-4ff5-bbb2-add43e9dc621"
+                  name="Carte"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8a70460f-4799-4fef-8870-fc7b2335fb4f"
+                  name="Déplacement dans l'étage courant"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e2186c54-e84f-49c2-b9c1-3e0e3e1611a0"
+        name="Cachette"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="2475e122-ffe9-40de-9192-bddf3393e8c7"
+            isDerived="false"
+            sourceEndRoleName="Cachette"
+            targetEndRoleName="Entrer"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="145a5130-f429-4592-aee1-d56590c19909"
+              LastKnownName="Entrer"
+              LastKnownLocation="projetAnnuel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f5c348a7-b648-45e8-96d2-983a7d0f4fbb"
+                  name="Cachette"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7afa69d2-1060-4c4d-ac89-d2b4ce6d53ee"
+                  name="Entrer"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="c697aaed-7fe6-492c-866d-aa3ea67d1524"
+        name="Changer d'étage"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a0c8d919-c465-4478-8457-5554811b0482"
+        name="Acheter"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f8a2a235-2475-4fba-a633-309852cae09d"
+        name="Vendre"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="145a5130-f429-4592-aee1-d56590c19909"
+        name="Entrer"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="89040108-f5b9-4f9d-b00e-b26013b2b22c"
+        name="Sortir de la cachette"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e3d678b1-8590-4359-ab12-5b5b23330397"
+        name="Déplacement dans l'étage courant"
+        isAbstract="false"
+        isLeaf="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
