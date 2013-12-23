@@ -2219,10 +2219,6 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <activityFinalNode
-            Id="f9903c03-8600-4fb5-b38c-cfa1a07b3579"
-            name="ActivityFinal1"
-            isLeaf="false" />
           <decisionNode
             Id="46920854-4193-4337-8019-d7ecd79fedfe"
             name="Decision2"
@@ -3798,10 +3794,6 @@
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
-          <activityFinalNode
-            Id="7b02f2fe-4e3c-4733-b332-43cc14b70ef7"
-            name="ActivityFinal1"
-            isLeaf="false" />
           <activityFinalNode
             Id="f4573770-9d22-465e-8de3-544f8fcafd45"
             name="ActivityFinal2"

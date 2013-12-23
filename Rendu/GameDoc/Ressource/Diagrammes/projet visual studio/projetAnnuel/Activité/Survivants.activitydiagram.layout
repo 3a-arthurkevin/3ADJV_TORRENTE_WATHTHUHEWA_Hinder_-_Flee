@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 9.125" name="partie$">
+<activityDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 8.5" name="partie$">
   <activityRootModelMoniker Id="d9604571-6e4b-4e9c-8782-134156e193c7" />
   <nestedChildShapes>
     <initialNodeShape Id="d7d78e13-6fc0-4685-8a6c-3732a2035301" absoluteBounds="4.625, 0.5, 0.125, 0.125" customColor="89, 89, 89">
@@ -57,9 +57,6 @@
       <commentMoniker Id="9c2c5e69-5332-4c13-b0f0-87248a7b0e82" />
       <relativeChildShapes />
     </commentShape>
-    <activityFinalNodeShape Id="4e394b5c-edee-470c-8a7e-6587b14f0f04" absoluteBounds="4.625, 8.75, 0.125, 0.125" customColor="89, 89, 89">
-      <activityFinalNodeMoniker Id="c6ac7e03-853c-457d-b6fb-66c532a840ea" LastKnownName="ActivityFinal1" />
-    </activityFinalNodeShape>
     <controlFlowConnector edgePoints="[(4.53125 : 1.34375); (1.15625 : 1.34375); (1.15625 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="Black">
       <controlFlowMoniker Id="ed97a08c-8629-4d62-940d-811c5de554a2" />
       <relativeChildShapes />

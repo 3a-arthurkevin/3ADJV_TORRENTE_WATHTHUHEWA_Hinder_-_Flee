@@ -95,9 +95,6 @@
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
-          <activityFinalNode Id="f1608ea8-52b6-463f-a52d-7cab0951284a" name="ActivityFinal1" isLeaf="false">
-            <elementDefinition Id="7b02f2fe-4e3c-4733-b332-43cc14b70ef7" />
-          </activityFinalNode>
           <activityFinalNode Id="0c1075c5-4760-4493-8304-5cde3e59f011" name="ActivityFinal2" isLeaf="false">
             <elementDefinition Id="f4573770-9d22-465e-8de3-544f8fcafd45" />
           </activityFinalNode>

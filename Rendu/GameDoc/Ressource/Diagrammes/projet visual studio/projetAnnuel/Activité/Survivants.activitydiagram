@@ -156,9 +156,6 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <activityFinalNode Id="c6ac7e03-853c-457d-b6fb-66c532a840ea" name="ActivityFinal1" isLeaf="false">
-            <elementDefinition Id="f9903c03-8600-4fb5-b38c-cfa1a07b3579" />
-          </activityFinalNode>
           <decisionNode Id="7f58af17-c957-4b5f-a551-68c951946424" name="Decision2" isLeaf="false">
             <elementDefinition Id="46920854-4193-4337-8019-d7ecd79fedfe" />
             <flowNodeTargets>
