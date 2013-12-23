@@ -1,0 +1,5 @@
+III Compétence
+	Lister les compétences et leurs effets
+	
+b Éléments secondaires
+	Voir avec kevin si on garde la featur de dégat sur le marchand
