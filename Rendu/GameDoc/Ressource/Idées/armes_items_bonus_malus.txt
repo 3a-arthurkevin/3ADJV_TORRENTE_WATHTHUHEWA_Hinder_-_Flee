@@ -1,0 +1,29 @@
+Bonus
+- speedUp
+- invisible pour les zombie (pas attaqué par les zombies)
+- Regain de vie
+- gold++
+- 
+
+Malus
+- speedDown
+- focus de tous les zombie
+- aveuglement
+- inversion de la camera
+- attaque--
+- impossibilité d'attaquer
+- 
+
+Items
+- bébé en plastique qui fait du bruit pour attirer les zombies
+- antitode
+- 
+
+Pièges
+- piège à loup
+- huile
+- filet
+- 
+
+Armes
+- 
