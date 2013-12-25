@@ -14,7 +14,7 @@ Malus
 - attaque--
 - impossibilité d'attaquer
 - Stun
-- Mutation en poulet ou autre bestiole
+- Transformation en poulet ou autre bestiole
 - allongement temps cooldown
 
 Items
@@ -24,21 +24,24 @@ Items
 - piège à loup
 - huile
 - filet
+- Bouteille de sang (au lieu du morceau de jambon)
+- Morceau de jambon (objet à double tranchant attire zombie) --> appliquer sur cible pour attirer zombie sur cible pendant un court moment
 - Seringue contenant virus mutation (si joueur interrompu se retourne contre soi meme)
 
 
 Armes
 - Au lieu du morceau de jambon une jambe en décomposition peut ètre \o/
--Morceau de jambon (arme à double tranchant car attire les zombies vers soi naturelement)
 	1- Coup simple
 	2- balayette
 	3- Lancé de sang (Empoisonne le zombie, aveugle le survivant)
-	S- 
+	S :
 		- Barbare : Tourbilol (bump les suvivant)
 		- Assassin : 
+
 -Bouclier (arme de fuite/defense principalement)
 	1- Coup de bouclier (degat zombie/ mini bump survivant)
 	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
 	3- Contre renvoie attaque zombie (degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer
-	S Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
-	S Assassin - Utilise le bouclier comme luge pour ce déplacer
+	S :
+		Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
+		Assassin - Utilise le bouclier comme luge pour ce déplacer
