@@ -26,11 +26,13 @@ Items
 - 
 
 Armes
+- Au lieu du morceau de jambon une jambe en décomposition peut ètre \o/
 -Morceau de jambon (arme à double tranchant car attire les zombies vers soi naturelement)
-	1- 
-	2- 
-	3- 
-	S- 
+	1- Coup simple
+	2- balayette
+	3- Lancé de sang (Empoisonne le zombie, aveugle le survivant)
+	S- Tourbilol (bump les suvivant)
+-
 -bouclier
 	1- 
 	2- 
