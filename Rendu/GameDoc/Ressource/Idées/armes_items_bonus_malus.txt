@@ -45,3 +45,10 @@ Armes
 	S :
 		Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
 		Assassin - Utilise le bouclier comme luge pour ce déplacer
+				
+-Bouteil d'alcool fort
+	1- 
+	2- fracasse crane degat zombie / stun survivant
+	3- 
+	S Barbare : boit l'alcool pour uper ses stats
+	S Assassin : fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies
