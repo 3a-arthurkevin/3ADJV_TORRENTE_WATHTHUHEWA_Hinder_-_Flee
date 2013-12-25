@@ -28,24 +28,17 @@ Items
 
 
 Armes
-<<<<<<< HEAD
 - Au lieu du morceau de jambon une jambe en décomposition peut ètre \o/
 -Morceau de jambon (arme à double tranchant car attire les zombies vers soi naturelement)
 	1- Coup simple
 	2- balayette
 	3- Lancé de sang (Empoisonne le zombie, aveugle le survivant)
-	S- Tourbilol (bump les suvivant)
--
--bouclier
-	1- 
-	2- 
-	3- Contre  stack puissance attaque zombie pendant /(si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer)
-	S- Rush (permet de passer à travers de 1 ou 2 zombies)/Repousse + Stun survivant
-=======
+	S- 
+		- Barbare : Tourbilol (bump les suvivant)
+		- Assassin :
 -Bouclier (arme de fuite/defense principalement)
 	1- Coup de bouclier (degat zombie/ mini bump survivant)
 	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
 	3- Contre renvoie attaque zombie (degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer
 	S Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
 	S Assassin - 
->>>>>>> 19b46ad1c56267339d0a4ac99406b116e4582279
