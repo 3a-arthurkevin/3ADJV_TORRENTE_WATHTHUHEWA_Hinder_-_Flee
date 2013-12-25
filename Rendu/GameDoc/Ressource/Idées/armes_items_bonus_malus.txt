@@ -1,4 +1,4 @@
-Bonus
+﻿Bonus
 - speedUp
 - invisible pour les zombie (pas attaqué par les zombies)
 - Regain de vie
@@ -14,7 +14,7 @@ Malus
 - attaque--
 - impossibilité d'attaquer
 - Stun
-- 
+- Mutation en poulet ou autre bestiole
 
 Items
 - bébé en plastique qui fait du bruit pour attirer les zombies
@@ -23,16 +23,14 @@ Items
 - piège à loup
 - huile
 - filet
-- 
+- Morceau de jambon (objet à double tranchant attire zombie) --> appliquer sur cible pour attirer zombie sur cible pendant un court moment
+- Seringue contenant virus mutation (si application cible géné, l'utilisateur se pique lui meme et il s'infecte)
+
 
 Armes
--Morceau de jambon (arme à double tranchant car attire les zombies vers soi naturelement)
-	1- 
-	2- 
-	3- 
-	S- 
--bouclier
-	1- 
-	2- 
-	3- Contre  stack puissance attaque zombie pendant /(si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer)
-	S- Rush (permet de passer à travers de 1 ou 2 zombies)/Repousse + Stun survivant
+-Bouclier (arme de fuite/defense principalement)
+	1- Coup de bouclier (degat zombie/ mini bump survivant)
+	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
+	3- Contre renvoie attaque zombie (degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer
+	S Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
+	S Assassin - 
