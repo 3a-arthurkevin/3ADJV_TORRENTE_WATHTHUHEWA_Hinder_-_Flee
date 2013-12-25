@@ -41,4 +41,4 @@ Armes
 	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
 	3- Contre renvoie attaque zombie (degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer
 	S Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
-	S Assassin - 
+	S Assassin - Utilise le bouclier comme luge pour ce déplacer
