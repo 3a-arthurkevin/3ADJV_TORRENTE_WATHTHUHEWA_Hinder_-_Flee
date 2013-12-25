@@ -4,7 +4,7 @@
 - Regain de vie
 - gold++
 - Découvrir le brouillard de guerre de l'étage (tous les étages ?)
-- 
+- reduction temps cool down
 
 Malus
 - speedDown
@@ -15,6 +15,7 @@ Malus
 - impossibilité d'attaquer
 - Stun
 - Transformation en poulet ou autre bestiole
+- allongement temps cooldown
 
 Items
 - bébé en plastique qui fait du bruit pour attirer les zombies
@@ -25,8 +26,7 @@ Items
 - filet
 - Bouteille de sang (au lieu du morceau de jambon)
 - Morceau de jambon (objet à double tranchant attire zombie) --> appliquer sur cible pour attirer zombie sur cible pendant un court moment
-
-- Seringue contenant virus mutation (si application cible géné, l'utilisateur se pique lui meme et il s'infecte)
+- Seringue contenant virus mutation (si joueur interrompu se retourne contre soi meme)
 
 
 Armes
@@ -37,7 +37,7 @@ Armes
 	S :
 		- Barbare : Tourbilol (bump les suvivant)
 		- Assassin : 
-		
+
 -Bouclier (arme de fuite/defense principalement)
 	1- Coup de bouclier (degat zombie/ mini bump survivant)
 	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
