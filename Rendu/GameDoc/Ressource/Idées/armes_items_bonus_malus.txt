@@ -3,6 +3,7 @@ Bonus
 - invisible pour les zombie (pas attaqué par les zombies)
 - Regain de vie
 - gold++
+- Découvrir le brouillard de guerre de l'étage (tous les étages ?)
 - 
 
 Malus
@@ -12,18 +13,26 @@ Malus
 - inversion de la camera
 - attaque--
 - impossibilité d'attaquer
+- Stun
 - 
 
 Items
 - bébé en plastique qui fait du bruit pour attirer les zombies
 - antitode
-- 
-
-Pièges
+- mini zombie qui explose (bump si survivant, dégat si zombie)
 - piège à loup
 - huile
 - filet
 - 
 
 Armes
-- 
+-Morceau de jambon (arme à double tranchant car attire les zombies vers soi naturelement)
+	1- 
+	2- 
+	3- 
+	S- 
+-bouclier
+	1- 
+	2- 
+	3- Contre  stack puissance attaque zombie pendant /(si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer)
+	S- Rush (permet de passer à travers de 1 ou 2 zombies)/Repousse + Stun survivant
