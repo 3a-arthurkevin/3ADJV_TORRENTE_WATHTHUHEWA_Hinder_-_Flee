@@ -50,5 +50,6 @@ Armes
 	1- 
 	2- fracasse crane degat zombie / stun survivant
 	3- 
-	S Barbare : boit l'alcool pour uper ses stats
-	S Assassin : fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies
+	S :
+		Barbare : boit l'alcool pour uper ses stats
+		Assassin : fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies
