@@ -47,9 +47,9 @@ Armes
 		Assassin - Utilise le bouclier comme luge pour ce déplacer
 				
 -Bouteil d'alcool fort
-	1- 
+	1- Coup de bouteil (Coup simple)
 	2- fracasse crane degat zombie / stun survivant
-	3- 
+	3- Jet d'alcool (la cible qui reçois l'alcool se retrouve focus par les zombies)
 	S :
 		Barbare : boit l'alcool pour uper ses stats
 		Assassin : fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies
