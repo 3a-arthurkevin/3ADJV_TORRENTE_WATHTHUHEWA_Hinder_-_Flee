@@ -30,26 +30,28 @@ Items
 
 
 Armes
-- Au lieu du morceau de jambon une jambe en décomposition peut ètre \o/
-	1- Coup simple
+- Jambe en décomposition
+	1- Coup de jambe
 	2- balayette
-	3- Lancé de sang (Empoisonne le zombie, aveugle le survivant)
+	3- Giclé de sang (Empoisonne le zombie, aveugle le survivant)
 	S :
 		- Barbare : Tourbilol (bump les suvivant)
-		- Assassin : 
+		- Assassin : Empoisonnement (Empoisonne avec les onglet de la jambe en décomposition)
 
--Bouclier (arme de fuite/defense principalement)
+- Bouclier (arme de fuite/defense principalement)
 	1- Coup de bouclier (degat zombie/ mini bump survivant)
 	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
-	3- Contre renvoie attaque zombie (degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer
+	3- Contre-Attaque  ((degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer)
 	S :
-		Barbare - Rush (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
-		Assassin - Utilise le bouclier comme luge pour ce déplacer
+		Barbare - Course effrainée (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
+		Assassin - Surfeur fou (Utilise le bouclier comme luge pour ce déplacer)
 				
--Bouteil d'alcool fort
-	1- Coup de bouteil (Coup simple)
-	2- fracasse crane degat zombie / stun survivant
+- Bouteil d'alcool fort
+	1- Coup de bouteille (Coup simple)
+	2- Brise crâne degat zombie / stun survivant
 	3- Jet d'alcool (la cible qui reçois l'alcool se retrouve focus par les zombies)
 	S :
-		Barbare : boit l'alcool pour uper ses stats
-		Assassin : fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies
+		Barbare : Berserker (boit l'alcool pour uper ses stats)
+		Assassin : Souleur fou (fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies)
+
+		
