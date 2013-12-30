@@ -1,47 +1,17 @@
 Bonus
 - speedUp
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - invisible pour les zombie (pas attaqué par les zombies)
 - Regain de vie
 - gold++
 - Découvrir le brouillard de guerre de l'étage (tous les étages ?)
-=======
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-
 - invisible pour les zombie (pas attaqué par les zombies)
-
 - Regain de vie
-
 - gold++
-
 - Découvrir le brouillard de guerre de l'étage (tous les étages ?)
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
 - reduction temps cool down
 
 Malus
 - speedDown
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - focus de tous les zombie
 - Cecité : aveuglement
 - inversion de la camera
@@ -63,30 +33,16 @@ Malus V2
 - Poison : perte de x pv par seconde pendant y seconde     (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
 - Sommeil : dors pendant x second ou se reveil des que joueur subit attaque	
 	
-=======
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-
+	
+	
 - focus de tous les zombie
-
 - Cecité : aveuglement
-
 - inversion de la camera
-
 - attaque--
-
 - defense--
-
 - Mutisme : impossibilité d'attaquer avec compétence (Coup blanc toutjours possible)
-
 - Stun
-
 - Transformation en animal/bestiole
-
 - allongement temps cooldown
 
 /* Compliqué a mettre en place pour les déplacement je pense.
@@ -118,6 +74,9 @@ Malus V2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
 >>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
 =======
 >>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
