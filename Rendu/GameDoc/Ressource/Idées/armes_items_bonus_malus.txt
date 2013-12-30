@@ -17,16 +17,21 @@ Malus
 - Transformation en poulet ou autre bestiole
 - allongement temps cooldown
 
+Malus V2
+- Confusion (inversement de touche ou déplacement aléatoire du perso)
+- Berserk (deplacement/attaque la cible la plus proche)
+- Tomber (joueur tombe et ne peut rien faire le temps de se relever)
+
 Items
 - bébé en plastique qui fait du bruit pour attirer les zombies
-- antitode
+- antitode (soigne mutation en cours d'un survivant)
 - mini zombie qui explose (bump si survivant, dégat si zombie)
-- piège à loup
-- huile
-- filet
-- Bouteille de sang (au lieu du morceau de jambon)
-- Morceau de jambon (objet à double tranchant attire zombie) --> appliquer sur cible pour attirer zombie sur cible pendant un court moment
-- Seringue contenant virus mutation (si joueur interrompu se retourne contre soi meme)
+- piège à loup (immobilise l'entité prise dans le piege 5 sec)
+- huile (zone dure 1min --> fait tomber les joueurs qui marche sur flaque)
+- filet (zone : immobilise les entités prise dans le piege 3 sec)
+- Bouteille de sang (attire les zombies sur la cible sur laquelle on a appliquer le sang)
+//- Morceau de jambon (objet à double tranchant attire zombie) --> appliquer sur cible pour attirer zombie sur cible pendant un court moment
+- Seringue virus (Enclanche la mutation en zombie sur le survivant cible --> fonctionne que sur survivant sain, sinon sans effet)(si joueur interrompu se retourne contre soi meme)
 
 
 Armes
