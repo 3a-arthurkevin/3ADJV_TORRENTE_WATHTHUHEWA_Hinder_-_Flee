@@ -55,11 +55,11 @@ Armes
 		Assassin : Souleur fou (fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies)
 
 -Canne de Mumbo (baton avec un crane sur le bout)/ spéciale mette quelque secs pour se faire comme incantation (revoir malus des spéciales pour pas avec identiques)
-	1- 
+	1- Coup de canne (degat faible sur zombie/)
 	2- 
 	3- 
-	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, defense--)
-	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, defense--)	
+	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)
+	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)	
 	
 	
 Hostilité --> Par defaut joueur a de l'hostilité (on peut dire que c'est la distance max pour qu'un zombie le détecte --> materlialiser par 2eme collider sphere sur le perso)
