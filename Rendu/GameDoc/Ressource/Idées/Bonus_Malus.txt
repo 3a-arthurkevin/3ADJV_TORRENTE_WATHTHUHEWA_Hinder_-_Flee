@@ -38,7 +38,7 @@ Malus
 - Confusion : inversement de touche ou déplacement aléatoire du perso 
 
 // Les déplacement faudra voir pour que ça soit pas trop bordélique
-// On peut mettre un nouveau vecteur qui pointe vers une horde au pire
+// On peut mettre un nouveau vecteur qui pointe vers une horde au pire en plus de celui voulu par le joueur
 // à tester
 - Berserk : deplacement/attaque la cible la plus proche et attaque++
 
