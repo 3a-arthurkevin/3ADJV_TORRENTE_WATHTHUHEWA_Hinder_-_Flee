@@ -54,4 +54,9 @@ Armes
 		Barbare : Berserker (boit l'alcool pour uper ses stats)
 		Assassin : Souleur fou (fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies)
 
-		
+-Canne de Mumbo (baton avec un crane sur le bout)/ spéciale mette quelque secs pour se faire comme incantation (revoir malus des spéciales)
+	1- 
+	2- 
+	3- 
+	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, defense--)
+	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, defense--)	
