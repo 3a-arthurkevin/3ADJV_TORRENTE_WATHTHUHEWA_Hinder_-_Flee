@@ -1,4 +1,4 @@
-Bonus
+﻿Bonus
 - speedUp
 - invisible pour les zombie (pas attaqué par les zombies)
 - Regain de vie
@@ -71,19 +71,6 @@ Malus V2
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
-=======
->>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
 Hostilité --> Par defaut joueur a de l'hostilité (on peut dire que c'est la distance max pour qu'un zombie le détecte --> materlialiser par 2eme collider sphere sur le perso)
 	Compétence ou objet (morceau ce viande) qui donne de l'hostilité à une cible
 	Les malus buffs hostilités ne dure que x secondes (on va dire 3 sec ou 5 sec à voir)
