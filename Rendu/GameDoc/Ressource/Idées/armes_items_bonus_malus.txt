@@ -12,15 +12,19 @@ Malus
 - Cecité : aveuglement
 - inversion de la camera
 - attaque--
-- Mutisme : impossibilité d'attaquer
+- Mutisme : impossibilité d'attaquer avec compétence (attaque blanche toutjours possible)
 - Stun
 - Transformation en poulet ou autre bestiole
 - allongement temps cooldown
 
 Malus V2
 - Confusion (inversement de touche ou déplacement aléatoire du perso)
-- Berserk (deplacement/attaque la cible la plus proche)
+- Berserk (deplacement/attaque la cible la plus proche et attaque++)
+- Immobilisation (ne peut plus bouger pendant quelques secondes)
 - Tomber (joueur tombe et ne peut rien faire le temps de se relever)
+- Zapper moral : baisse un peu toutes les stats
+- Saignement : perte de x pv par seconde pendant y seconde
+- Brulure : perte de x pv par seconde pendant y seconde
 
 
 Items
