@@ -9,10 +9,10 @@
 Malus
 - speedDown
 - focus de tous les zombie
-- aveuglement
+- Cecité : aveuglement
 - inversion de la camera
 - attaque--
-- impossibilité d'attaquer
+- Mutisme : impossibilité d'attaquer
 - Stun
 - Transformation en poulet ou autre bestiole
 - allongement temps cooldown
@@ -21,6 +21,7 @@ Malus V2
 - Confusion (inversement de touche ou déplacement aléatoire du perso)
 - Berserk (deplacement/attaque la cible la plus proche)
 - Tomber (joueur tombe et ne peut rien faire le temps de se relever)
+
 
 Items
 - bébé en plastique qui fait du bruit pour attirer les zombies
@@ -60,9 +61,9 @@ Armes
 		Assassin : Souleur fou (fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies)
 
 -Canne de Mumbo (baton avec un crane sur le bout)/ spéciale mette quelque secs pour se faire comme incantation (revoir malus des spéciales pour pas avec identiques)
-	1- Coup de canne (degat faible sur zombie/)
-	2- 
-	3- 
+	1- Coup de canne (mini bump zombie et survivant)
+	2- Danse defense : bonus defense pour 5 sec (cooldown 30 sec)
+	3- Coup de crane (degat moyen sur zombie/assomme survivant 2 sec)
 	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)
 	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)	
 	
