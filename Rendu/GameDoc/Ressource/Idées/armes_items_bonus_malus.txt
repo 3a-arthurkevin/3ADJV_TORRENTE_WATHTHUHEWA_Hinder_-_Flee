@@ -54,9 +54,21 @@ Armes
 		Barbare : Berserker (boit l'alcool pour uper ses stats)
 		Assassin : Souleur fou (fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies)
 
--Canne de Mumbo (baton avec un crane sur le bout)/ spéciale mette quelque secs pour se faire comme incantation (revoir malus des spéciales)
+-Canne de Mumbo (baton avec un crane sur le bout)/ spéciale mette quelque secs pour se faire comme incantation (revoir malus des spéciales pour pas avec identiques)
 	1- 
 	2- 
 	3- 
 	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, defense--)
 	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, defense--)	
+	
+	
+Hostilité --> Par defaut joueur a de l'hostilité (on peut dire que c'est la distance max pour qu'un zombie le détecte --> materlialiser par 2eme collider sphere sur le perso)
+	Compétence ou objet (morceau ce viande) qui donne de l'hostilité à une cible
+	Les malus buffs hostilités ne dure que x secondes (on va dire 3 sec ou 5 sec à voir)
+	Selon le niveau hostilité, distance max d'attirance varie (mettre un collider sphere temporaire sur le joueur subissant l'hostilité)
+	Si 2 joueurs se lancent des comps d'hostilité, celui qui a le + d'hostilité se fait focus (ou faire 2 groupe de zombie de tailles différentes selon le niveau d'hostilité)
+	Si buff d'hostilité trop cheaté, coller un malus quand on utilise cette compétence
+	Hostilité utile si on veut gagner la partie (que les zombies mange adversaire)
+	Si retour à hostilité normal, zombies qui sont venu sont plus proche de joueur --> joueur doit dont faire plus attention à ses déplacements pour pas se faire repérer	
+	
+	
