@@ -1,0 +1,30 @@
+- Jambe en décomposition
+	1- Coup de jambe
+	2- balayette
+	3- Giclé de sang (Empoisonne le zombie, aveugle le survivant)
+	S :
+		- Barbare : Tourbilol (bump les suvivant)
+		- Assassin : Empoisonnement (Empoisonne avec les onglet de la jambe en décomposition)
+
+- Bouclier (arme de fuite/defense principalement)
+	1- Coup de bouclier (degat zombie/ mini bump survivant)
+	2- Protection (protege d'une attaque --> nb usage limite car casse le bouclier à terme)
+	3- Contre-Attaque  ((degat)/si bien placer renvoie effet attaque survivant --> demande un bon timing/difficile à placer)
+	S :
+		Barbare - Course effrainée (permet de passer à travers de 1 ou 2 zombies + un peu de degat)/Repousse + Stun survivant
+		Assassin - Surfeur fou (Utilise le bouclier comme luge pour ce déplacer)
+				
+- Bouteil d'alcool fort
+	1- Coup de bouteille (Coup simple)
+	2- Brise crâne degat zombie / stun survivant
+	3- Jet d'alcool (la cible qui reçois l'alcool se retrouve focus par les zombies)
+	S :
+		Barbare : Berserker (boit l'alcool pour uper ses stats)
+		Assassin : Souleur fou (fait boire l'alcool pour alteration vision survivant/ confuse un zombie et se met à attaquer les autres zombies)
+
+-Canne de Mumbo (baton avec un crane sur le bout)/ spéciale mette quelque secs pour se faire comme incantation (revoir malus des spéciales pour pas avec identiques)
+	1- Coup de canne (mini bump zombie et survivant)
+	2- Danse defense : bonus defense pour 5 sec (cooldown 30 sec)
+	3- Coup de crane (degat moyen sur zombie/assomme survivant 2 sec)
+	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)
+	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)	

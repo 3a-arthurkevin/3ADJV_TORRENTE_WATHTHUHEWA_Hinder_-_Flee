@@ -3,7 +3,7 @@
 - invisible pour les zombie (pas attaqué par les zombies)
 - Regain de vie
 - gold++
-- Découvrir le brouillard de guerre de l'étage (tous les étages ?)
+- Accuité++ : Découvrir le brouillard de guerre de l'étage (tous les étages ? et pendant quelques secs ?)
 - reduction temps cool down
 
 Malus
@@ -71,8 +71,8 @@ Armes
 	1- Coup de canne (mini bump zombie et survivant)
 	2- Danse defense : bonus defense pour 5 sec (cooldown 30 sec)
 	3- Coup de crane (degat moyen sur zombie/assomme survivant 2 sec)
-	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)
-	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, vitesse++, deplacement--, defense--)	
+	S Barbare : Transformation cible en poulet pendant 8 sec (effet transfo : force--, hostilité++, deplacement--, defense--, pv-- --> seul attaque dispo == coup de bec)
+	S Assassin : Transformation cible en chat pendant 8 sec (effet transfo : force--, hostilité++, deplacement--, defense--, pv-- --> seul attaque dispo == coup de griffe)	
 	
 	
 Hostilité --> Par defaut joueur a de l'hostilité (on peut dire que c'est la distance max pour qu'un zombie le détecte --> materlialiser par 2eme collider sphere sur le perso)

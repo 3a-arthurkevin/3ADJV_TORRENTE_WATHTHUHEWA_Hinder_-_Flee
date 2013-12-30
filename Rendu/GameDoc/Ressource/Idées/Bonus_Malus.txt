@@ -1,0 +1,137 @@
+Bonus
+- speedUp
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+- invisible pour les zombie (pas attaqué par les zombies)
+- Regain de vie
+- gold++
+- Découvrir le brouillard de guerre de l'étage (tous les étages ?)
+=======
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+
+- invisible pour les zombie (pas attaqué par les zombies)
+
+- Regain de vie
+
+- gold++
+
+- Découvrir le brouillard de guerre de l'étage (tous les étages ?)
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+- reduction temps cool down
+
+Malus
+- speedDown
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+- focus de tous les zombie
+- Cecité : aveuglement
+- inversion de la camera
+- attaque--
+- defense--
+- Mutisme : impossibilité d'attaquer avec compétence (attaque blanche toutjours possible)
+- Stun
+- Transformation en poulet ou autre bestiole
+- allongement temps cooldown
+
+Malus V2
+- Confusion : inversement de touche ou déplacement aléatoire du perso
+- Berserk : deplacement/attaque la cible la plus proche et attaque++
+- Immobilisation : ne peut plus bouger pendant quelques secondes
+- Tomber : joueur tombe et ne peut rien faire le temps de se relever
+- Zapper moral : baisse un peu toutes les stats
+- Saignement : perte de x pv par seconde pendant y seconde  (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
+- Brulure : perte de x pv par seconde pendant y seconde     (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
+- Poison : perte de x pv par seconde pendant y seconde     (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
+- Sommeil : dors pendant x second ou se reveil des que joueur subit attaque	
+	
+=======
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+
+- focus de tous les zombie
+
+- Cecité : aveuglement
+
+- inversion de la camera
+
+- attaque--
+
+- defense--
+
+- Mutisme : impossibilité d'attaquer avec compétence (Coup blanc toutjours possible)
+
+- Stun
+
+- Transformation en animal/bestiole
+
+- allongement temps cooldown
+
+/* Compliqué a mettre en place pour les déplacement je pense.
+ * On peut faire un lancement aléatoire de compétence ou d'objet
+ * Genre lance l'objet 1 mais enfaite c'est un autre qui part à la place pareil pour les compétence */
+- Confusion : inversement de touche ou déplacement aléatoire du perso 
+
+// Les déplacement faudra voir pour que ça soit pas trop bordélique
+// On peut mettre un nouveau vecteur qui pointe vers une horde au pire en plus de celui voulu par le joueur
+// à tester
+- Berserk : deplacement/attaque la cible la plus proche et attaque++
+
+- Immobilisation : ne peut plus bouger pendant quelques secondes
+
+- Tomber : joueur tombe et ne peut rien faire le temps de se relever
+
+- Zapper moral : baisse un peu toutes les stats
+
+- Saignement : perte de x pv par seconde pendant y seconde  (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
+
+- Brulure : perte de x pv par seconde pendant y seconde     (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
+
+- Poison : perte de x pv par seconde pendant y seconde     (ne peut tuer un survivant --> si survivant presque plus de vie --> stagne à 1pv ou +)
+
+- Sommeil : dors pendant x second ou se reveil des que joueur subit attaque	
+
+
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+=======
+>>>>>>> aab3994cd7e3148c9861a6476f7525acf1b8cb99
+Hostilité --> Par defaut joueur a de l'hostilité (on peut dire que c'est la distance max pour qu'un zombie le détecte --> materlialiser par 2eme collider sphere sur le perso)
+	Compétence ou objet (morceau ce viande) qui donne de l'hostilité à une cible
+	Les malus buffs hostilités ne dure que x secondes (on va dire 3 sec ou 5 sec à voir)
+	Selon le niveau hostilité, distance max d'attirance varie (mettre un collider sphere temporaire sur le joueur subissant l'hostilité)
+	Si 2 joueurs se lancent des comps d'hostilité, celui qui a le + d'hostilité se fait focus (ou faire 2 groupe de zombie de tailles différentes selon le niveau d'hostilité)
+	Si buff d'hostilité trop cheaté, coller un malus quand on utilise cette compétence
+	Hostilité utile si on veut gagner la partie (que les zombies mange adversaire)
+	Si retour à hostilité normal, zombies qui sont venu sont plus proche de joueur --> joueur doit dont faire plus attention à ses déplacements pour pas se faire repérer	
+	
+	
