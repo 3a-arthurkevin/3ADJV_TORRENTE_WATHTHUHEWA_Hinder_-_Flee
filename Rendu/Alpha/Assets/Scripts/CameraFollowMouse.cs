@@ -32,20 +32,20 @@ public class CameraFollowMouse : MonoBehaviour
 
         if ( (mousePosition.x <= 1 - activeZoneBegin) && (mousePosition.x >= 1 - activeZoneEnd) )
         {
-            cameraPosition.x += Time.deltaTime * moveSpeed * cameraPosition.y;
+            cameraPosition.x -= Time.deltaTime * moveSpeed * cameraPosition.y;
         }
         else if ((mousePosition.x >= activeZoneBegin) && (mousePosition.x <= activeZoneEnd))
         {
-            cameraPosition.x -= Time.deltaTime * moveSpeed * cameraPosition.y;
+            cameraPosition.x += Time.deltaTime * moveSpeed * cameraPosition.y;
         }
 
         if ( (mousePosition.y <= 1 - activeZoneBegin) && (mousePosition.y >= 1 - activeZoneEnd) )
         {
-            cameraPosition.z += Time.deltaTime * moveSpeed * cameraPosition.y;
+            cameraPosition.z -= Time.deltaTime * moveSpeed * cameraPosition.y;
         }
         else if ( (mousePosition.y >= activeZoneBegin) && (mousePosition.y <= activeZoneEnd) )
         {
-            cameraPosition.z -= Time.deltaTime * moveSpeed * cameraPosition.y;
+            cameraPosition.z += Time.deltaTime * moveSpeed * cameraPosition.y;
         }
 
         _transform.position = cameraPosition;
