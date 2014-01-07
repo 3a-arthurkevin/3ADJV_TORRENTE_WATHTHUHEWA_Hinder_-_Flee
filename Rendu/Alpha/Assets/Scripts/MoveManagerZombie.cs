@@ -10,6 +10,7 @@ public class MoveManagerZombie : MonoBehaviour {
 
 	void Start ()
 	{
+		m_followScript.Follow = null;
 		m_followScript.enabled = false;
 		m_randomScript.enabled = true;
 	}
@@ -17,12 +18,15 @@ public class MoveManagerZombie : MonoBehaviour {
 	public void Follow(Transform t)
 	{
 		m_followScript.Follow = t;
-		m_followScript.enabled = true;
+		m_followScript.enabled = !m_followScript.enabled;
+		m_randomScript.enabled = !m_randomScript.enabled;
+		Debug.Log(m_followScript.enabled);
 	}
 
 	public void UnFollow()
 	{
 		m_followScript.Follow = null;
-		m_followScript.enabled = false;
+		m_followScript.enabled = !m_followScript.enabled;
+		m_randomScript.enabled = !m_randomScript.enabled;
 	}
 }

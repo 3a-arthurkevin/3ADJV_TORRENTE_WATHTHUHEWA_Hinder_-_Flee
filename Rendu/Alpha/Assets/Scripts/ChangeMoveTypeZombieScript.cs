@@ -5,6 +5,10 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
 	[SerializeField]
 	private MoveManagerZombie m_manager;
 
+	void Start()
+	{
+	}
+
 	void OnTriggerEnter(Collider col)
 	{
 		m_manager.Follow(col.transform);
