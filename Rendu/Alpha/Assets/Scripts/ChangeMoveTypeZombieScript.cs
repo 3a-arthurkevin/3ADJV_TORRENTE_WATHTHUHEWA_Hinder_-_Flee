@@ -5,8 +5,6 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
 	[SerializeField]
 	private MoveManagerZombie m_manager;
 
-	private bool underFollow;
-
 	void OnTriggerEnter(Collider col)
 	{
 		m_manager.Follow(col.transform);
@@ -14,7 +12,6 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
 
 	void OnTriggerExit(Collider col)
 	{
-		m_manager.Unfollow();
-		underFollow = false;
+		m_manager.UnFollow();
 	}
 }

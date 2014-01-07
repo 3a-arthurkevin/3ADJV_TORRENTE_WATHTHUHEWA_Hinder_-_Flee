@@ -14,13 +14,13 @@ public class MoveManagerZombie : MonoBehaviour {
 		m_randomScript.enabled = true;
 	}
 
-	void Follow(Transform t)
+	public void Follow(Transform t)
 	{
 		m_followScript.Follow = t;
 		m_followScript.enabled = true;
 	}
 
-	void UnFollow()
+	public void UnFollow()
 	{
 		m_followScript.Follow = null;
 		m_followScript.enabled = false;
