@@ -223,6 +223,8 @@ MonoBehaviour:
   _transform: {fileID: 255715367}
   deadZone: .5
   moveSpeed: .600000024
+  initialMousePositionX: .5
+  initialMousePositionY: .5
 --- !u!1 &619447808
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +355,14 @@ Prefab:
     - target: {fileID: 11400000, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
       propertyPath: zoomOutLimit
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
+      propertyPath: initialMousePositionX
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
+      propertyPath: initialMousePositionY
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
