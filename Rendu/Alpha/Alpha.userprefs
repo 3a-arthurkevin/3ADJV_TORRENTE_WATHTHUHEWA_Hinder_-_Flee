@@ -1,6 +1,18 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MoveManagerZombie.cs">
+    <Files>
+      <File FileName="Assets\Scripts\FollowMoveZombieScript.cs" Line="30" Column="3" />
+      <File FileName="Assets\Scripts\ChangeMoveTypeZombieScript.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\RandomMoveZombieScript.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\MoveManagerZombie.cs" Line="23" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+>>>>>>> 0e66e520b599df4973dbff41fa50f6a7cc8c25a6
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

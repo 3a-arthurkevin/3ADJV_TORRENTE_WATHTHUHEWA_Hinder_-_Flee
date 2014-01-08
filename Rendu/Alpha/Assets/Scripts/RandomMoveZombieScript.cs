@@ -15,8 +15,4 @@ public class RandomMoveZombieScript : MonoBehaviour {
 	void FixedUpdate()
 	{
 	}
-
-	void action()
-	{
-	}
 }
