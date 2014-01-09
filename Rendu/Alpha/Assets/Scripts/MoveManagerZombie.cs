@@ -20,7 +20,6 @@ public class MoveManagerZombie : MonoBehaviour {
 		m_followScript.Follow = t;
 		m_followScript.enabled = !m_followScript.enabled;
 		m_randomScript.enabled = !m_randomScript.enabled;
-		Debug.Log(m_followScript.enabled);
 	}
 
 	public void UnFollow()
