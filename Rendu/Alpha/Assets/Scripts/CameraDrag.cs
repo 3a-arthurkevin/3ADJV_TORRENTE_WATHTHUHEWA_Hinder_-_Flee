@@ -25,7 +25,7 @@ public class CameraDrag : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () 
+	void LateUpdate () 
     {
         //Si on fait clique droit avec la souris
         //Enregistrement de la position de la souris à cet instant t précis
@@ -42,12 +42,12 @@ public class CameraDrag : MonoBehaviour
             Vector2 mouseLocation = Vector3.zero;
             Vector3 cameraPosition = _transform.position;
 
-            //Puis on set les valeurs X et Y avec la fonction Set --> fonction void
+            //Puis on set les valeurs X et Y de la position souris avec la fonction Set --> fonction de type void
             //Position de la souris s'adapte à la taille de l'écran (valeur de X et Y comprisent entre 0 et 1)
             mouseLocation.Set(Input.mousePosition.x/Screen.width, Input.mousePosition.y/Screen.height);
 
             //On regarde si la position de la souris est plus à gauche ou plus à droit
-            //sur l'axe des X par rapport à la position initiale
+            //sur l'axe des X par rapport à la position initiale (celle enregistré lors du clique)
             //Et on adapte le déplacement sur l'axe x de la camera
             if (mouseLocation.x < initialMousePositionX)
             {
@@ -59,7 +59,7 @@ public class CameraDrag : MonoBehaviour
             }
 
             //On regarde si la position de la souris est plus en bas ou plus en haut
-            //sur l'axe des Y par rapport à la position initiale
+            //sur l'axe des Y par rapport à la position initiale (celle enregistré lors du clique)
             //Et on adapte le déplacement sur l'axe z de la camera
             if (mouseLocation.y < initialMousePositionY)
             {

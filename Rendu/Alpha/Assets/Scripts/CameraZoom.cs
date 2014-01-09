@@ -26,9 +26,9 @@ public class CameraZoom : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void LateUpdate () 
     {   
-        //On déplare la variable qui contiendra le mouvement caméra de la molette souris
+        //On déclare la variable qui contiendra le mouvement caméra de la molette souris
         //et on récupère la position de la camera
         float scrollMove;
         Vector3 cameraPosition = _transform.position;

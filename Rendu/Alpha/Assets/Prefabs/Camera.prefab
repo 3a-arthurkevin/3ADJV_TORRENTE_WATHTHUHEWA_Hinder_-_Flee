@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 400000}
-  activeZoneBegin: .949999988
-  activeZoneEnd: .99000001
+  activeZoneBegin: .899999976
+  activeZoneEnd: .959999979
   moveSpeed: .400000006
 --- !u!114 &11400004
 MonoBehaviour:
@@ -132,8 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 400000}
-  deadZone: .5
   moveSpeed: .600000024
+  initialMousePositionX: 0
+  initialMousePositionY: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
