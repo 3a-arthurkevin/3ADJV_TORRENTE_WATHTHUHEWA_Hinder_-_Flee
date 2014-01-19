@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraResetOnCharacter : MonoBehaviour {
+public class CameraResetOnCharacterScript : MonoBehaviour
+{
 
     [SerializeField]
     private Transform _transformCharacter;
 
     [SerializeField]
     private Transform _transformCamera;
+
+    [SerializeField]
+    Vector3 _cameraPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -21,15 +25,15 @@ public class CameraResetOnCharacter : MonoBehaviour {
 	    if(Input.GetKeyUp(KeyCode.Space))
         {
             //On récupère la position de la camera à ce moment la
-            Vector3 cameraPosition = _transformCamera.position;
+            _cameraPosition = _transformCamera.position;
 
             //On applique le mouvement sur l'axe x et z
             //de facon à ce qu'elle se retrouve au dessus du personnage associé (grace au tranform du personnage)
-            cameraPosition.x = _transformCharacter.position.x;
-            cameraPosition.z = _transformCharacter.position.z;
+            _cameraPosition.x = _transformCharacter.position.x;
+            _cameraPosition.z = _transformCharacter.position.z;
             
             //On applique le déplacement sur le transform de la caméra
-            _transformCamera.position = cameraPosition;
+            _transformCamera.position = _cameraPosition;
         }
 	}
 }

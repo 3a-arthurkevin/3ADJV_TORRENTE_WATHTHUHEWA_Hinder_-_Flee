@@ -89,9 +89,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 400000}
-  scrollSpeed: 5
-  zoomInLimit: 5
-  zoomOutLimit: 10
+  _scrollSpeed: 10
+  _zoomInLimit: 5
+  _zoomOutLimit: 10
+  _cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,9 +105,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 400000}
-  activeZoneBegin: .899999976
-  activeZoneEnd: .959999979
-  moveSpeed: .400000006
+  _mousePosition: {x: 0, y: 0}
+  _cameraPosition: {x: 0, y: 0, z: 0}
+  _activeZoneBegin: .899999976
+  _activeZoneEnd: .959999979
+  _moveSpeed: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transformCharacter: {fileID: 400000, guid: 0bbb18fd0277f114e9151da77d0599bc, type: 2}
   _transformCamera: {fileID: 400000}
+  _cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,9 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 400000}
-  moveSpeed: .600000024
-  initialMousePositionX: 0
-  initialMousePositionY: 0
+  _moveSpeed: 3
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
