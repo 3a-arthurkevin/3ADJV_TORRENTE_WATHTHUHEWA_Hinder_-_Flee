@@ -94,7 +94,6 @@ MonoBehaviour:
   _scrollLimiteMax: 20
   _nbScroll: 10
   _nbScrollDefault: 10
-  _cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
