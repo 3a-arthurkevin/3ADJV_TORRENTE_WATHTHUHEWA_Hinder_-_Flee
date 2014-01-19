@@ -3,52 +3,52 @@ using System.Collections;
 
 public class CameraZoomScript : MonoBehaviour 
 {
-    //Transform de la caméra
     [SerializeField]
     private Transform _transform;
 
-    //Vitesse de zoom/dézoom
     [SerializeField]
-    private float _scrollSpeed = 3f;
-
-    //Hauteur caméra min (zoom max)
-    [SerializeField]
-    public float _zoomInLimit = 5f;
-
-    //Hauteur de caméra max (dézoom max)
-    [SerializeField]
-    public float _zoomOutLimit = 10f;
+    private float _scrollSpeed = 20f;
 
     [SerializeField]
-    Vector3 _cameraPosition;
+    private int _scrollLimitMin = 0;
 
-	// Use this for initialization
-	void Start () 
-    {
-	
-	}
+    [SerializeField]
+    private int _scrollLimiteMax = 20;
+
+    [SerializeField]
+    private int _nbScroll = 10;
+
+    [SerializeField]
+    private int _nbScrollDefault = 10;
+
+    [SerializeField]
+    private Vector3 _cameraPosition;
 	
 	// Update is called once per frame
 	void LateUpdate () 
     {
         var mouvement = Input.GetAxis("Mouse ScrollWheel");
 
-        if ((_transform.position.y >= _zoomInLimit) && (_transform.position.y <= _zoomOutLimit))
-            _transform.position += /*_transform.rotation * */Vector3.down * mouvement * Time.deltaTime * _scrollSpeed;
-        else
+        if (mouvement > 0)
         {
-            _cameraPosition = _transform.position;
-
-            if (_cameraPosition.y < _zoomInLimit)
+            if ((_nbScroll >= _scrollLimitMin) && (_nbScroll < _scrollLimiteMax))
             {
-                _cameraPosition.y = _zoomInLimit;
+                _transform.position += _transform.rotation * Vector3.forward * mouvement * Time.deltaTime * _scrollSpeed;
+                _nbScroll++;
             }
-            else
-            {
-                _cameraPosition.y = _zoomOutLimit;
-            }
-
-            _transform.position = _cameraPosition;
         }
+        if (mouvement < 0)
+        {
+            if ((_nbScroll > _scrollLimitMin) && (_nbScroll <= _scrollLimiteMax))
+            {
+                _transform.position += _transform.rotation * Vector3.forward * mouvement * Time.deltaTime * _scrollSpeed;
+                _nbScroll--;
+            }
+        }
+    }
+
+    public void resetNbScroll()
+    {
+        _nbScroll = _nbScrollDefault;
     }
 }
