@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17ac56094a7ae24cb4120e5ff54fc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transformCharacter: {fileID: 400000, guid: 0bbb18fd0277f114e9151da77d0599bc, type: 2}
+  _transformCharacter: {fileID: 0}
   _transformCamera: {fileID: 400000}
   _cameraPosition: {x: 0, y: 0, z: 0}
   _scriptZoom: {fileID: 11400000}

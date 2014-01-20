@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChangeMoveTypeZombieScript : MonoBehaviour {
 	[SerializeField]
-	private MoveManagerZombie m_manager;
+	private MoveManagerZombieScript m_manager;
 
 	void OnTriggerEnter(Collider col)
 	{

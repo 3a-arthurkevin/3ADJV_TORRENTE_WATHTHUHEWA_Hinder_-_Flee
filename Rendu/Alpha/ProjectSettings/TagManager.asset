@@ -13,7 +13,7 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: Sol
+  User Layer 8: Ground
   User Layer 9: Zombie
   User Layer 10: visionZombie
   User Layer 11: Survivant
@@ -36,7 +36,7 @@ TagManager:
   User Layer 28: 
   User Layer 29: 
   User Layer 30: 
-  User Layer 31: 
+  User Layer 31: IgnoreRayCast
   m_SortingLayers:
   - name: Default
     userID: 0
