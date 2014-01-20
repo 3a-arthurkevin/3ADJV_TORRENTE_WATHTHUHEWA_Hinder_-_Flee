@@ -17,8 +17,8 @@ public class InputManagerMoveSurvivantScript : MonoBehaviour
 
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100000, ~LayerMask.NameToLayer("Ground")))
-                m_wantToGo.position = hit.point;
-
+                if(hit.collider.gameObject.tag == "Ground")
+                    m_wantToGo.position = hit.point;
         }
 	}
 }
