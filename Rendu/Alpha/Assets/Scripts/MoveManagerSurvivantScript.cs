@@ -25,7 +25,7 @@ public class MoveManagerSurvivantScript : MonoBehaviour
             if(m_wantToGo != m_previousWantToGo)
                 NavMesh.CalculatePath(m_characterPosition.position, m_wantToGo.position, -1, m_path);
 
-
+            
         }
     }
 }
