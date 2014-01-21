@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\FollowMoveZombieScript.cs" />
      <Compile Include="Assets\Scripts\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\InputManagerMoveSurvivantScript.cs" />
+     <Compile Include="Assets\Scripts\MoveManagerSurvivantScript.cs" />
      <Compile Include="Assets\Scripts\MoveManagerZombieScript.cs" />
      <Compile Include="Assets\Scripts\RandomMoveZombieScript.cs" />
   </ItemGroup>
