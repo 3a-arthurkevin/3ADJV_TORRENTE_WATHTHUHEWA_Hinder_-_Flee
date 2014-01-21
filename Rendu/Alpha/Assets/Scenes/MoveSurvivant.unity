@@ -723,8 +723,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 746969796}
-  m_Layer: 0
-  m_Name: WantToGo
+  m_Layer: 12
+  m_Name: TargetSurvivant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -736,11 +736,11 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 746969795}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: .979785323, z: 0, w: .200052157}
+  m_LocalPosition: {x: -16.4357262, y: .988162994, z: 16.0540504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1704043565}
+  m_Father: {fileID: 0}
 --- !u!1 &759218667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,11 +1353,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704043562}
   m_LocalRotation: {x: 0, y: .979785323, z: 0, w: .200052157}
-  m_LocalPosition: {x: -16.4357262, y: .988162994, z: 16.0540504}
+  m_LocalPosition: {x: -5.9811902, y: .988162994, z: 5.59589148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1122660863}
-  - {fileID: 746969796}
   m_Father: {fileID: 0}
 --- !u!114 &1704043566
 MonoBehaviour:
@@ -1373,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_characterCamera: {fileID: 452606260}
   m_wantToGo: {fileID: 746969796}
+  m_nameLayerToMove: Ground
 --- !u!114 &1704043567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,8 +1384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66f1e69b6c04cb4893ccf85800a92cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_characterPosition: {fileID: 0}
-  m_wantToGo: {fileID: 0}
+  m_characterPosition: {fileID: 1704043565}
+  m_wantToGo: {fileID: 746969796}
   m_speed: 5
 --- !u!1 &1770815860
 GameObject:
