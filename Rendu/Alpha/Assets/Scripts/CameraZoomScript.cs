@@ -22,12 +22,6 @@ public class CameraZoomScript : MonoBehaviour
     private float _nbScrollDefault = 7f;
 
     [SerializeField]
-    private float _limitMin;
-
-    [SerializeField]
-    private float _limitMax;
-
-    [SerializeField]
     private Vector3 _cameraPosition;
 	
 	// Update is called once per frame
