@@ -16,45 +16,40 @@ public class CameraZoomScript : MonoBehaviour
     private int _scrollLimiteMax = 15;
 
     [SerializeField]
-    private int _nbScroll = 7;
+    private float _nbScroll = 7f;
 
     [SerializeField]
-    private int _nbScrollDefault = 7;
-
-    /*[SerializeField]
-    private float _limitYMin;
+    private float _nbScrollDefault = 7f;
 
     [SerializeField]
-    private float _limitYMax;
+    private float _limitMin;
 
     [SerializeField]
-    private float _limitZMin;
+    private float _limitMax;
 
     [SerializeField]
-    private float _limitZMax;
-
-    [SerializeField]
-    private Vector3 _cameraPosition;*/
+    private Vector3 _cameraPosition;
 	
 	// Update is called once per frame
 	void LateUpdate () 
     {
         var mouvement = Input.GetAxis("Mouse ScrollWheel");
+        mouvement = Mathf.Clamp(mouvement, -1, 1);
 
         if (mouvement > 0)
         {
             if ((_nbScroll >= _scrollLimitMin) && (_nbScroll < _scrollLimiteMax))
             {
-                _transform.position += _transform.rotation * Vector3.forward * mouvement * Time.deltaTime * _scrollSpeed;
-                _nbScroll++;
+                _transform.position += _transform.rotation * Vector3.forward * Time.deltaTime * _scrollSpeed * mouvement;
+                _nbScroll += mouvement;
             }     
         }
         if (mouvement < 0)
         {
             if ((_nbScroll > _scrollLimitMin) && (_nbScroll <= _scrollLimiteMax))
             {
-                _transform.position += _transform.rotation * Vector3.forward * mouvement * Time.deltaTime * _scrollSpeed;
-                _nbScroll--;
+                _transform.position += _transform.rotation * Vector3.forward * Time.deltaTime * _scrollSpeed * mouvement;
+                _nbScroll += mouvement;
             }
         }
     }
