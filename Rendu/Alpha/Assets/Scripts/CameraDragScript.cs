@@ -24,11 +24,11 @@ public class CameraDragScript : MonoBehaviour
             var mouvementX = Input.GetAxis("Mouse X");
             var mouvementY = Input.GetAxis("Mouse Y");
 
-            _transform.position -= Vector3.forward * mouvementY * Time.deltaTime * _moveSpeed;
-            _transform.position -= Vector3.right * mouvementX * Time.deltaTime * _moveSpeed;
+            //_transform.position -= Vector3.forward * mouvementY * Time.deltaTime * _moveSpeed;
+            //_transform.position -= Vector3.right * mouvementX * Time.deltaTime * _moveSpeed;
 
-            //_transform.position -= _transform.rotation * Vector3.forward * mouvementY * Time.deltaTime * _moveSpeed;
-            //_transform.position -= _transform.rotation * Vector3.right * mouvementX * Time.deltaTime * _moveSpeed;
+            _transform.position -= _transform.rotation * Vector3.forward * mouvementY * Time.deltaTime * _moveSpeed;
+            _transform.position -= _transform.rotation * Vector3.right * mouvementX * Time.deltaTime * _moveSpeed;
         }
         else
             _scriptZoom.enabled = true;
