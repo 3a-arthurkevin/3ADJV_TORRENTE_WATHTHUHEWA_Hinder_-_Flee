@@ -7,7 +7,10 @@ public class InputManagerMoveSurvivantScript : MonoBehaviour
     private Camera m_characterCamera;
 
     [SerializeField]
-    private Transform m_wantToGo;
+    private MoveManagerSurvivantScript m_moveSurvivant;
+
+    [SerializeField]
+    private Transform m_target;
 
     [SerializeField]
     private string m_nameLayerToMove;
@@ -26,8 +29,11 @@ public class InputManagerMoveSurvivantScript : MonoBehaviour
             var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100, m_bitMaskLayerToMove)) 
-                m_wantToGo.position = hit.point;
+            if (Physics.Raycast(ray, out hit, 100, m_bitMaskLayerToMove))
+            {
+                m_target.position = hit.point;
+                m_moveSurvivant.Target = m_target;
+            }
         }
 	}
 }
