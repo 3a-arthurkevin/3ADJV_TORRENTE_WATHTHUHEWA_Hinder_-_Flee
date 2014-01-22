@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\CameraZoomScript.cs" />
      <Compile Include="Assets\Scripts\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\FollowMoveZombieScript.cs" />
+     <Compile Include="Assets\Scripts\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\InputManagerMoveSurvivantScript.cs" />
      <Compile Include="Assets\Scripts\MoveManagerSurvivantScript.cs" />
      <Compile Include="Assets\Scripts\MoveManagerSurvivantScriptOld.cs" />
