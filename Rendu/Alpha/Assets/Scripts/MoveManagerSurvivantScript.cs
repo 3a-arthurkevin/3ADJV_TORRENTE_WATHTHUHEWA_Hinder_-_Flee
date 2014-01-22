@@ -1,31 +1,73 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveManagerSurvivantScript : MonoBehaviour
-{
-    [SerializeField]
-    private Transform m_characterPosition;
+public class MoveManagerSurvivantScript : MonoBehaviour {
 
     [SerializeField]
-    private Transform m_wantToGo;
+    private Rigidbody m_characterRigidbody;
 
     [SerializeField]
-    private float m_speed = 5f;
+    private Transform m_character;
 
-    private Transform m_previousWantToGo;
+    [SerializeField]
+    private Transform m_target;
 
     private NavMeshPath m_path;
+    private bool m_targetChange;
+    private Vector3 m_curCorner;
+
+    [SerializeField]
+    private float minDistance;
+
+    [SerializeField]
+    private float velocity;
+
+    public Transform Target
+    {
+        get
+        {
+            return m_target;
+        }
+        set
+        {
+            m_target = value;
+            m_targetChange = true;
+        }
+    }
+
+    void Start()
+    {
+        m_target = null;
+        m_path = new NavMeshPath();
+    }
 
     void FixedUpdate()
     {
-        if (m_wantToGo != null)
+        if (m_targetChange)
         {
-            // Si la position de wantToGo est différente de celle du précédent tour de boucle
-            // On recalcule le path
-            if(m_wantToGo != m_previousWantToGo)
-                NavMesh.CalculatePath(m_characterPosition.position, m_wantToGo.position, -1, m_path);
 
+            NavMesh.CalculatePath(m_character.position, m_target.position, 0, m_path);
 
+            if (m_path.corners.Length > 1)
+                m_curCorner = m_path.corners[1];
+
+            else
+                m_target = null;
+
+            m_targetChange = false;
+        }
+
+        if (m_target != null)
+        {
+            var direction = m_curCorner - m_character.position;
+            direction = new Vector3(direction.x, 0, direction.z);
+
+            if (direction.sqrMagnitude < minDistance)
+            {
+                
+            }
+
+            rigidbody.velocity = direction.normalized * velocity;
         }
     }
 }

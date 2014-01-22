@@ -45,7 +45,7 @@ TagManager:
   User Layer 9: Zombie
   User Layer 10: visionZombie
   User Layer 11: Survivant
-  User Layer 12: 
+  User Layer 12: TargetSurvivant
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 
@@ -64,7 +64,7 @@ TagManager:
   User Layer 28: 
   User Layer 29: 
   User Layer 30: 
-  User Layer 31: IgnoreRayCast
+  User Layer 31: 
   m_SortingLayers:
   - name: Default
     userID: 0
