@@ -27,20 +27,20 @@ public class CameraFollowMouseScript : MonoBehaviour
 
         if ( (_mousePosition.x <= 1 - _activeZoneBegin) && (_mousePosition.x >= 1 - _activeZoneEnd) )
         {
-            _transform.position -= _transform.rotation * Vector3.right * Time.deltaTime * _moveSpeed;
+            _transform.position -= Vector3.right * Time.deltaTime * _moveSpeed;
         }
         else if ((_mousePosition.x >= _activeZoneBegin) && (_mousePosition.x <= _activeZoneEnd))
         {
-            _transform.position += _transform.rotation * Vector3.right * Time.deltaTime * _moveSpeed;
+            _transform.position += Vector3.right * Time.deltaTime * _moveSpeed;
         }
 
         if ( (_mousePosition.y <= 1 - _activeZoneBegin) && (_mousePosition.y >= 1 - _activeZoneEnd) )
         {
-            _transform.position -= _transform.rotation * Vector3.forward * Time.deltaTime * _moveSpeed;
+            _transform.position -= Vector3.forward * Time.deltaTime * _moveSpeed;
         }
         else if ( (_mousePosition.y >= _activeZoneBegin) && (_mousePosition.y <= _activeZoneEnd) )
         {
-            _transform.position += _transform.rotation * Vector3.forward * Time.deltaTime * _moveSpeed;
+            _transform.position += Vector3.forward * Time.deltaTime * _moveSpeed;
         }
 	}
 }
