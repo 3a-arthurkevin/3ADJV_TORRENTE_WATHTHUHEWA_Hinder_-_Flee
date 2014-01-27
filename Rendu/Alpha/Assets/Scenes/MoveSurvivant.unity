@@ -630,7 +630,7 @@ MonoBehaviour:
   _mousePosition: {x: 0, y: 0}
   _activeZoneBegin: .899999976
   _activeZoneEnd: 1
-  _moveSpeed: 1
+  _moveSpeed: 5
 --- !u!114 &452606256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +649,7 @@ MonoBehaviour:
   _scrollLimiteMax: 20
   _nbScroll: 10
   _nbScrollDefault: 10
+  _cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!81 &452606257
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1360,8 +1361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_characterRigidbody: {fileID: 1704043563}
   m_character: {fileID: 1704043565}
-  m_target: {fileID: 0}
-  minDistance: 5
+  m_target: {fileID: 1837512484}
+  minDistance: 2
   velocity: 2
 --- !u!1 &1770815860
 GameObject:
