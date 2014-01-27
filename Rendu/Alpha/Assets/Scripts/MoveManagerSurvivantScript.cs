@@ -15,6 +15,7 @@ public class MoveManagerSurvivantScript : MonoBehaviour {
     private NavMeshPath m_path;
     private bool m_targetChange;
     private Vector3 m_curCorner;
+    private uint m_numCorner;
 
     [SerializeField]
     private float minDistance;
@@ -49,8 +50,10 @@ public class MoveManagerSurvivantScript : MonoBehaviour {
             NavMesh.CalculatePath(m_character.position, m_target.position, 0, m_path);
 
             if (m_path.corners.Length > 1)
+            {
                 m_curCorner = m_path.corners[1];
-
+                m_numCorner = 1;
+            }
             else
                 m_target = null;
 
@@ -64,7 +67,13 @@ public class MoveManagerSurvivantScript : MonoBehaviour {
 
             if (direction.sqrMagnitude < minDistance)
             {
-                
+                if (++m_numCorner > m_path.corners.Length)
+                {
+                    m_target = null;
+                    return;
+                }
+                else
+                    m_curCorner = m_path.corners[m_numCorner];
             }
 
             rigidbody.velocity = direction.normalized * velocity;
