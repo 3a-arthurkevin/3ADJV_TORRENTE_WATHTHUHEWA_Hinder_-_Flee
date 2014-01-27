@@ -70,8 +70,6 @@ public class MoveManagerSurvivantScript : MonoBehaviour {
 
             if (direction.sqrMagnitude < minDistance)
             {
-                Debug.Log(m_numCorner);
-                Debug.Log(m_path.corners.Length);
                 if (m_numCorner+1 > m_path.corners.Length)
                 {
                     m_target = null;
