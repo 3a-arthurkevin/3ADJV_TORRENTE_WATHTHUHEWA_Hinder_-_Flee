@@ -9,16 +9,6 @@ public class HealthManagerScript : MonoBehaviour {
     [SerializeField]
     private int _currentLifePoint;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void addLifePoint(int lifePointToAdd)
     {
         _currentLifePoint += lifePointToAdd;
@@ -33,5 +23,10 @@ public class HealthManagerScript : MonoBehaviour {
 
         if (_currentLifePoint < 0)
             _currentLifePoint = 0;
+    }
+
+    public bool isDead()
+    {
+        return (_currentLifePoint == 0);
     }
 }
