@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraZoomScript : MonoBehaviour 
 {
     [SerializeField]
-    private Transform m_transform;
+    private Transform m_transformCamera;
 
     [SerializeField]
     private float m_scrollSpeed = 15f;
@@ -33,7 +33,7 @@ public class CameraZoomScript : MonoBehaviour
         {
             if ((m_nbScroll >= m_scrollLimitMin) && (m_nbScroll < m_scrollLimiteMax))
             {
-                m_transform.position += m_transform.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
+                m_transformCamera.position += m_transformCamera.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
                 m_nbScroll += mouvement;
             }     
         }
@@ -41,7 +41,7 @@ public class CameraZoomScript : MonoBehaviour
         {
             if ((m_nbScroll > m_scrollLimitMin) && (m_nbScroll <= m_scrollLimiteMax))
             {
-                m_transform.position += m_transform.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
+                m_transformCamera.position += m_transformCamera.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
                 m_nbScroll += mouvement;
             }
         }
