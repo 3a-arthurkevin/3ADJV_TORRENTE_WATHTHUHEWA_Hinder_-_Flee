@@ -17,7 +17,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: CharacterCamera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -90,8 +90,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 400000}
   _moveSpeed: 3
-  _scriptZoom: {fileID: 11400002}
+  _scriptZoom: {fileID: 11400004}
 --- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17ac56094a7ae24cb4120e5ff54fc95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transformCharacter: {fileID: 0}
+  _transformCamera: {fileID: 400000}
+  _cameraPosition: {x: 0, y: 0, z: 0}
+  _scriptZoom: {fileID: 11400006}
+--- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,9 +120,9 @@ MonoBehaviour:
   _transform: {fileID: 400000}
   _mousePosition: {x: 0, y: 0}
   _activeZoneBegin: .899999976
-  _activeZoneEnd: .99000001
-  _moveSpeed: 5
---- !u!114 &11400004
+  _activeZoneEnd: 1
+  _moveSpeed: 3
+--- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -125,21 +140,6 @@ MonoBehaviour:
   _nbScroll: 7
   _nbScrollDefault: 7
   _cameraPosition: {x: 0, y: 0, z: 0}
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f17ac56094a7ae24cb4120e5ff54fc95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transformCharacter: {fileID: 0}
-  _transformCamera: {fileID: 400000}
-  _cameraPosition: {x: 0, y: 0, z: 0}
-  _scriptZoom: {fileID: 11400004}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
