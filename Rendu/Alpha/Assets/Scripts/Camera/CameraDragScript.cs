@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraDragScript : MonoBehaviour 
 {
     [SerializeField]
-    private Transform m_transform;
+    private Transform m_transformCamera;
 
     [SerializeField]
     private float m_moveSpeed = 3f;
@@ -24,8 +24,8 @@ public class CameraDragScript : MonoBehaviour
             var mouvementX = Input.GetAxis("Mouse X");
             var mouvementY = Input.GetAxis("Mouse Y");
 
-            m_transform.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
-            m_transform.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;
+            m_transformCamera.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
+            m_transformCamera.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;
         }
         else
             m_scriptZoom.enabled = true;

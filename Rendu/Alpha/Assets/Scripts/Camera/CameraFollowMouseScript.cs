@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraFollowMouseScript : MonoBehaviour 
 {
     [SerializeField]
-    private Transform m_transform;
+    private Transform m_transformCamera;
 
     [SerializeField]
     private Vector2 m_mousePosition;
@@ -27,20 +27,20 @@ public class CameraFollowMouseScript : MonoBehaviour
 
         if ( (m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd) )
         {
-            m_transform.position -= Vector3.right * Time.deltaTime * m_moveSpeed;
+            m_transformCamera.position -= Vector3.right * Time.deltaTime * m_moveSpeed;
         }
         else if ((m_mousePosition.x >= m_activeZoneBegin) && (m_mousePosition.x <= m_activeZoneEnd))
         {
-            m_transform.position += Vector3.right * Time.deltaTime * m_moveSpeed;
+            m_transformCamera.position += Vector3.right * Time.deltaTime * m_moveSpeed;
         }
 
         if ( (m_mousePosition.y <= 1 - m_activeZoneBegin) && (m_mousePosition.y >= 1 - m_activeZoneEnd) )
         {
-            m_transform.position -= Vector3.forward * Time.deltaTime * m_moveSpeed;
+            m_transformCamera.position -= Vector3.forward * Time.deltaTime * m_moveSpeed;
         }
         else if ( (m_mousePosition.y >= m_activeZoneBegin) && (m_mousePosition.y <= m_activeZoneEnd) )
         {
-            m_transform.position += Vector3.forward * Time.deltaTime * m_moveSpeed;
+            m_transformCamera.position += Vector3.forward * Time.deltaTime * m_moveSpeed;
         }
 	}
 }
