@@ -165,6 +165,10 @@ Prefab:
       propertyPath: _nbScrollDefault
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
+      propertyPath: _transformCharacter
+      value: 
+      objectReference: {fileID: 997386563}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
   m_RootGameObject: {fileID: 1341494216}
@@ -292,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17ac56094a7ae24cb4120e5ff54fc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transformCharacter: {fileID: 400000, guid: 0bbb18fd0277f114e9151da77d0599bc, type: 2}
+  _transformCharacter: {fileID: 997386563}
   _transformCamera: {fileID: 1341494225}
   _cameraPosition: {x: 0, y: 0, z: 0}
   _scriptZoom: {fileID: 1341494220}
@@ -331,8 +335,6 @@ MonoBehaviour:
   _scrollLimiteMax: 15
   _nbScroll: 7
   _nbScrollDefault: 7
-  _limitMin: 0
-  _limitMax: 0
   _cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!81 &1341494221
 AudioListener:
