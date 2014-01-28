@@ -209,7 +209,7 @@ MonoBehaviour:
   m_transformCamera: {fileID: 1056007346}
   m_mousePosition: {x: 0, y: 0}
   m_activeZoneBegin: .899999976
-  m_activeZoneEnd: .959999979
+  m_activeZoneEnd: .99000001
   m_moveSpeed: 3
 --- !u!114 &1056007341
 MonoBehaviour:
@@ -920,6 +920,10 @@ Prefab:
       propertyPath: m_transformCamera
       value: 
       objectReference: {fileID: 1056007346}
+    - target: {fileID: 11400004, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
+      propertyPath: m_activeZoneEnd
+      value: .99000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d20cb76711379d8408322ad975e90f3d, type: 2}
   m_RootGameObject: {fileID: 1056007337}
