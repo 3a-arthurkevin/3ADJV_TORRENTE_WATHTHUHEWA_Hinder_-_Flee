@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   m_Layer: 11
-  m_Name: Survivant
+  m_Name: Survivor
   m_TagString: Survivant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_characterCamera: {fileID: 0}
-  m_moveSurvivant: {fileID: 11400000}
+  m_moveSurvivor: {fileID: 0}
   m_target: {fileID: 0}
   m_nameLayerToMove: Ground
 --- !u!136 &13600000

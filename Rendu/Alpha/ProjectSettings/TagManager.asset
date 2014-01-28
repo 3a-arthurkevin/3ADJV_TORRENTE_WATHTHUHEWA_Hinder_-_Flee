@@ -41,11 +41,11 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: Sol
+  User Layer 8: Ground
   User Layer 9: Zombie
-  User Layer 10: visionZombie
-  User Layer 11: Survivant
-  User Layer 12: TargetSurvivant
+  User Layer 10: ZombieView
+  User Layer 11: Survivor
+  User Layer 12: SurvivorTarget
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 

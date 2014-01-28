@@ -5,16 +5,16 @@ public class CameraResetOnCharacterScript : MonoBehaviour
 {
 
     [SerializeField]
-    private Transform _transformCharacter;
+    private Transform m_transformCharacter;
 
     [SerializeField]
-    private Transform _transformCamera;
+    private Transform m_transformCamera;
 
     [SerializeField]
-    private Vector3 _cameraPosition;
+    private Vector3 m_cameraPosition;
 
     [SerializeField]
-    private CameraZoomScript _scriptZoom;
+    private CameraZoomScript m_scriptZoom;
 
     void Start ()
     {
@@ -30,12 +30,12 @@ public class CameraResetOnCharacterScript : MonoBehaviour
 
     void resetCamera()
     {
-        _cameraPosition.x = _transformCharacter.position.x;
-        _cameraPosition.y = _transformCharacter.position.y + 7;
-        _cameraPosition.z = _transformCharacter.position.z - 7;
+        m_cameraPosition.x = m_transformCharacter.position.x;
+        m_cameraPosition.y = m_transformCharacter.position.y + 7;
+        m_cameraPosition.z = m_transformCharacter.position.z - 7;
 
-        _transformCamera.position = _cameraPosition;
+        m_transformCamera.position = m_cameraPosition;
 
-        _scriptZoom.resetNbScroll();
+        m_scriptZoom.resetNbScroll();
     }
 }

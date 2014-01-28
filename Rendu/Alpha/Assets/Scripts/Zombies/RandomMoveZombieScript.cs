@@ -7,10 +7,6 @@ public class RandomMoveZombieScript : MonoBehaviour {
 	{
 	}
 
-	void Update ()
-	{
-	}
-
 	void FixedUpdate()
 	{
 	}

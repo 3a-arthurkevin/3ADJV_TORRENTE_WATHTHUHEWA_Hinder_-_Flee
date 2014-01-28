@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97423ecd9b0401842bcc1d28ad5aa6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transform: {fileID: 1056007346}
-  _moveSpeed: 3
-  _scriptZoom: {fileID: 1056007340}
+  m_transform: {fileID: 0}
+  m_moveSpeed: 3
+  m_scriptZoom: {fileID: 0}
 --- !u!114 &1056007339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,10 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17ac56094a7ae24cb4120e5ff54fc95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transformCharacter: {fileID: 1745846993}
-  _transformCamera: {fileID: 1056007346}
-  _cameraPosition: {x: 0, y: 0, z: 0}
-  _scriptZoom: {fileID: 1056007341}
+  m_transformCharacter: {fileID: 0}
+  m_transformCamera: {fileID: 0}
+  m_cameraPosition: {x: 0, y: 0, z: 0}
+  m_scriptZoom: {fileID: 0}
 --- !u!114 &1056007340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,11 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afac068a64b9b0542964915707a4eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transform: {fileID: 1056007346}
-  _mousePosition: {x: 0, y: 0}
-  _activeZoneBegin: .899999976
-  _activeZoneEnd: 1
-  _moveSpeed: 3
+  m_transform: {fileID: 0}
+  m_mousePosition: {x: 0, y: 0}
+  m_activeZoneBegin: .899999976
+  m_activeZoneEnd: .959999979
+  m_moveSpeed: 3
 --- !u!114 &1056007341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,13 +201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa494309003aae6449bfdfa31893f45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transform: {fileID: 1056007346}
-  _scrollSpeed: 15
-  _scrollLimitMin: 0
-  _scrollLimiteMax: 15
-  _nbScroll: 7
-  _nbScrollDefault: 7
-  _cameraPosition: {x: 0, y: 0, z: 0}
+  m_transform: {fileID: 0}
+  m_scrollSpeed: 15
+  m_scrollLimitMin: 0
+  m_scrollLimiteMax: 15
+  m_nbScroll: 7
+  m_nbScrollDefault: 7
+  m_cameraPosition: {x: 0, y: 0, z: 0}
 --- !u!81 &1056007342
 AudioListener:
   m_ObjectHideFlags: 0
@@ -382,12 +382,12 @@ GameObject:
   - 33: {fileID: 1252552198}
   - 64: {fileID: 1252552197}
   - 23: {fileID: 1252552196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &1252552196
 Renderer:
@@ -452,12 +452,12 @@ GameObject:
   - 33: {fileID: 1567516503}
   - 64: {fileID: 1567516502}
   - 23: {fileID: 1567516501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &1567516501
 Renderer:
@@ -522,12 +522,12 @@ GameObject:
   - 33: {fileID: 1692828918}
   - 64: {fileID: 1692828917}
   - 23: {fileID: 1692828916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &1692828916
 Renderer:
@@ -594,7 +594,7 @@ GameObject:
   - 114: {fileID: 1745846995}
   - 114: {fileID: 1745846994}
   m_Layer: 11
-  m_Name: Survivant
+  m_Name: Survivor
   m_TagString: Survivant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_characterCamera: {fileID: 0}
-  m_moveSurvivant: {fileID: 1745846994}
+  m_moveSurvivor: {fileID: 0}
   m_target: {fileID: 0}
   m_nameLayerToMove: Ground
 --- !u!54 &1745846996
@@ -686,12 +686,12 @@ GameObject:
   - 33: {fileID: 1832334877}
   - 64: {fileID: 1832334876}
   - 23: {fileID: 1832334875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &1832334875
 Renderer:
@@ -756,12 +756,12 @@ GameObject:
   - 33: {fileID: 2042245233}
   - 64: {fileID: 2042245232}
   - 23: {fileID: 2042245231}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!23 &2042245231
 Renderer:

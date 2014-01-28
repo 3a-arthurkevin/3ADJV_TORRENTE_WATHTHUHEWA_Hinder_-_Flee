@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveManagerSurvivantScript : MonoBehaviour {
+public class MoveManagerSurvivorScript : MonoBehaviour {
 
     [SerializeField]
     private Rigidbody m_characterRigidbody;

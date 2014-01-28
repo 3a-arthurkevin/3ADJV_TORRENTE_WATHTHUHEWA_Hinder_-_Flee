@@ -4,13 +4,13 @@ using System.Collections;
 public class CameraDragScript : MonoBehaviour 
 {
     [SerializeField]
-    private Transform _transform;
+    private Transform m_transform;
 
     [SerializeField]
-    private float _moveSpeed = 3f;
+    private float m_moveSpeed = 3f;
 
     [SerializeField]
-    private CameraFollowMouseScript _scriptZoom;
+    private CameraFollowMouseScript m_scriptZoom;
 
 
 	// Update is called once per frame
@@ -19,15 +19,15 @@ public class CameraDragScript : MonoBehaviour
         //Si le clique droit de la souris est maintenu
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            _scriptZoom.enabled = false;
+            m_scriptZoom.enabled = false;
 
             var mouvementX = Input.GetAxis("Mouse X");
             var mouvementY = Input.GetAxis("Mouse Y");
 
-            _transform.position -= Vector3.forward * mouvementY * Time.deltaTime * _moveSpeed;
-            _transform.position -= Vector3.right * mouvementX * Time.deltaTime * _moveSpeed;
+            m_transform.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
+            m_transform.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;
         }
         else
-            _scriptZoom.enabled = true;
+            m_scriptZoom.enabled = true;
 	}
 }

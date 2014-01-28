@@ -4,43 +4,43 @@ using System.Collections;
 public class CameraFollowMouseScript : MonoBehaviour 
 {
     [SerializeField]
-    private Transform _transform;
+    private Transform m_transform;
 
     [SerializeField]
-    private Vector2 _mousePosition;
+    private Vector2 m_mousePosition;
 
     [SerializeField]
-    private float _activeZoneBegin = 0.90f;
+    private float m_activeZoneBegin = 0.90f;
     
     [SerializeField]
-    private float _activeZoneEnd = 0.96f;
+    private float m_activeZoneEnd = 0.96f;
 
     [SerializeField]
-    private float _moveSpeed = 3f;
+    private float m_moveSpeed = 3f;
 
 	
 	// Update is called once per frame
 	void LateUpdate () 
     {
-        _mousePosition = Vector3.zero;
-        _mousePosition.Set(Input.mousePosition.x/Screen.width, Input.mousePosition.y/Screen.height);
+        m_mousePosition = Vector3.zero;
+        m_mousePosition.Set(Input.mousePosition.x/Screen.width, Input.mousePosition.y/Screen.height);
 
-        if ( (_mousePosition.x <= 1 - _activeZoneBegin) && (_mousePosition.x >= 1 - _activeZoneEnd) )
+        if ( (m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd) )
         {
-            _transform.position -= Vector3.right * Time.deltaTime * _moveSpeed;
+            m_transform.position -= Vector3.right * Time.deltaTime * m_moveSpeed;
         }
-        else if ((_mousePosition.x >= _activeZoneBegin) && (_mousePosition.x <= _activeZoneEnd))
+        else if ((m_mousePosition.x >= m_activeZoneBegin) && (m_mousePosition.x <= m_activeZoneEnd))
         {
-            _transform.position += Vector3.right * Time.deltaTime * _moveSpeed;
+            m_transform.position += Vector3.right * Time.deltaTime * m_moveSpeed;
         }
 
-        if ( (_mousePosition.y <= 1 - _activeZoneBegin) && (_mousePosition.y >= 1 - _activeZoneEnd) )
+        if ( (m_mousePosition.y <= 1 - m_activeZoneBegin) && (m_mousePosition.y >= 1 - m_activeZoneEnd) )
         {
-            _transform.position -= Vector3.forward * Time.deltaTime * _moveSpeed;
+            m_transform.position -= Vector3.forward * Time.deltaTime * m_moveSpeed;
         }
-        else if ( (_mousePosition.y >= _activeZoneBegin) && (_mousePosition.y <= _activeZoneEnd) )
+        else if ( (m_mousePosition.y >= m_activeZoneBegin) && (m_mousePosition.y <= m_activeZoneEnd) )
         {
-            _transform.position += Vector3.forward * Time.deltaTime * _moveSpeed;
+            m_transform.position += Vector3.forward * Time.deltaTime * m_moveSpeed;
         }
 	}
 }

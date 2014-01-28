@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InputManagerMoveSurvivantScript : MonoBehaviour
+public class InputManagerMoveSurvivorScript : MonoBehaviour
 {
     [SerializeField]
     private Camera m_characterCamera;
 
     [SerializeField]
-    private MoveManagerSurvivantScript m_moveSurvivant;
+    private MoveManagerSurvivorScript m_moveSurvivor;
 
     [SerializeField]
     private Transform m_target;
@@ -32,7 +32,7 @@ public class InputManagerMoveSurvivantScript : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100, m_bitMaskLayerToMove))
             {
                 m_target.position = hit.point;
-                m_moveSurvivant.Target = m_target;
+                m_moveSurvivor.Target = m_target;
             }
         }
 	}
