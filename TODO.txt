@@ -1,0 +1,5 @@
+Arthur:
+	=> Move :
+		=> Changer les velocity par des manipulation de Transform
+
+	=> Faire les téléportations grace aux escaliers
