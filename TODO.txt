@@ -3,3 +3,9 @@ Arthur:
 		=> Changer les velocity par des manipulation de Transform
 
 	=> Faire les téléportations grace aux escaliers
+	
+Kevin :
+	=> Camera
+		- Borner la camera à l'étage du joueur
+		
+	=> Porte à faire
