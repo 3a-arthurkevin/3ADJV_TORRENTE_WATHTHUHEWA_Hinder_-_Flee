@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class MoveManagerSurvivorScript : MonoBehaviour {
-
     [SerializeField]
-    private Rigidbody m_characterRigidbody;
+    private Rigidbody m_rigidBodySurvivor;
 
     [SerializeField]
     private Transform m_character;
@@ -42,6 +41,11 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         m_path = new NavMeshPath();
     }
 
+    void Update()
+    {
+        Debug.Log(m_rigidBodySurvivor.velocity);
+    }
+
     void FixedUpdate()
     {
         if (m_targetChange)
@@ -55,9 +59,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
                 m_numCorner = 1;
             }
             else
-            {
                 m_target = null;
-            }
 
             m_targetChange = false;
         }
@@ -66,7 +68,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         {//Déplacement jusqu'au coint final
 
             var direction = m_curCorner - m_character.position;
-            direction = new Vector3(direction.x, 0, direction.z);
+            direction.Set(direction.x, 0, direction.z);
 
             if (direction.sqrMagnitude < minDistance)
             {
@@ -76,14 +78,12 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
                     m_path.ClearCorners();
                 }
                 else
-                {
                     m_curCorner = m_path.corners[m_numCorner++];
-                }
 
                 return;
             }
 
-            rigidbody.velocity = direction.normalized * velocity;
+            m_rigidBodySurvivor.velocity = direction.normalized * velocity;
         }
     }
 }

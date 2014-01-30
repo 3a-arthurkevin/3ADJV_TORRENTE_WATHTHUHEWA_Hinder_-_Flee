@@ -2,14 +2,20 @@
 using System.Collections;
 
 public class FollowMoveZombieScript : MonoBehaviour {
-	[SerializeField]
+    [SerializeField]
+    private Rigidbody m_rigidBodyZombie;
+    
+    [SerializeField]
 	private Transform m_zombiePos;
 
 	[SerializeField]
 	private Transform m_follow;
 
-	[SerializeField]
-	private float m_speed = 2;
+    [SerializeField]
+    private float m_minDistance = 2;
+
+    [SerializeField]
+    private float m_velocity = 2;
 
 	public Transform Follow
 	{
@@ -28,9 +34,14 @@ public class FollowMoveZombieScript : MonoBehaviour {
 		if(m_follow != null)
 		{
 			var direction = m_follow.position - m_zombiePos.position;
-			direction = new Vector3(direction.x, 0, direction.z);
+			direction.Set(direction.x, 0, direction.z);
 
-            m_zombiePos.position += direction.normalized * m_speed * Time.deltaTime;
+            if (direction.sqrMagnitude > m_minDistance)
+
+                m_rigidBodyZombie.velocity = direction.normalized * m_velocity;
+
+            else
+                m_follow = null;
 		}
 	}
 
