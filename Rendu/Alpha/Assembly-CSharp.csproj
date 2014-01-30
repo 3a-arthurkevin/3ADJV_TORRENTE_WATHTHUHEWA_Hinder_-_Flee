@@ -50,8 +50,8 @@
      <Compile Include="Assets\Scripts\Camera\CameraFollowMouseScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraResetOnCharacterScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
-     <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\DoorOpenAndCloseScript.cs" />
+     <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
