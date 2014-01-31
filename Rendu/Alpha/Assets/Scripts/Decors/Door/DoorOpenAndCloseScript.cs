@@ -4,15 +4,15 @@ using System.Collections;
 public class DoorOpenAndCloseScript : MonoBehaviour
 {
     [SerializeField]
-    Animator _controller;
+    Animator m_controller;
 
     void OnTriggerEnter(Collider other)
     {
-        _controller.SetInteger("numberOfCharacter", _controller.GetInteger("numberOfCharacter") + 1);
+        m_controller.SetInteger("numberOfCharacter", m_controller.GetInteger("numberOfCharacter") + 1);
     }
 
     void OnTriggerExit(Collider other)
     {
-        _controller.SetInteger("numberOfCharacter", _controller.GetInteger("numberOfCharacter") - 1);
+        m_controller.SetInteger("numberOfCharacter", m_controller.GetInteger("numberOfCharacter") - 1);
     }
 }

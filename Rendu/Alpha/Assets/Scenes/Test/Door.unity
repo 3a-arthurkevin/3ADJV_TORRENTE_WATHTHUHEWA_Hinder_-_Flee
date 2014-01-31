@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6584e79684e814782bd85f5cbda5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: {fileID: 1543584351}
+  m_controller: {fileID: 1543584351}
 --- !u!1 &431748441
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +470,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 192405cec95a58340985093aac94a431, type: 2}
+      propertyPath: m_controller
+      value: 
+      objectReference: {fileID: 1543584351}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 192405cec95a58340985093aac94a431, type: 2}
   m_RootGameObject: {fileID: 1543584349}
