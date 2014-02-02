@@ -46,15 +46,23 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BonusMalus\AttackBonusMalusMalusScript.cs" />
+     <Compile Include="Assets\Scripts\BonusMalus\CoolDownBonusMalusScript.cs" />
+     <Compile Include="Assets\Scripts\BonusMalus\DefenseBonusMalusScript.cs" />
+     <Compile Include="Assets\Scripts\BonusMalus\IBonusMalusScript.cs" />
+     <Compile Include="Assets\Scripts\BonusMalus\SpeedBonusMalusScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraDragScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollowMouseScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraResetOnCharacterScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Door\DoorOpenAndCloseScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
+     <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
+     <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
+     <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\FollowMoveZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScript.cs" />
