@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92b9ca1549d41e418986427dc774984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_position: {fileID: 27189308}
+  m_position: {x: 0, y: 0, z: 0}
   m_level: 0
 --- !u!4 &27189308
 Transform:

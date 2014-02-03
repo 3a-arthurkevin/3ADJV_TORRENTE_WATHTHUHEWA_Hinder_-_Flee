@@ -62,6 +62,9 @@
      <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
+     <Compile Include="Assets\Scripts\Utils\ConfigLevelManager.cs" />
+     <Compile Include="Assets\Scripts\Utils\ConfigSkillManager.cs" />
+     <Compile Include="Assets\Scripts\Utils\ConfigWeaponManager.cs" />
      <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\FollowMoveZombieScript.cs" />

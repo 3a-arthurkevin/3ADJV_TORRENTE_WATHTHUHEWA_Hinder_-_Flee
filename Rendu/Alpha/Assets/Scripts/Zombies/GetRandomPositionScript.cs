@@ -7,6 +7,7 @@ public class GetRandomPositionScript : MonoBehaviour {
     [SerializeField]
     private static List<List<PointScript>> m_allPoint;
 
+
     
 
     public static PointScript getRandomPoint()
