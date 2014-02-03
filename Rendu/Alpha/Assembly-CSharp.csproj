@@ -57,7 +57,9 @@
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\FollowMoveZombieScript.cs" />
+     <Compile Include="Assets\Scripts\Zombies\GetRandomPositionScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScript.cs" />
+     <Compile Include="Assets\Scripts\Zombies\PointScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\RandomMoveZombieScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
