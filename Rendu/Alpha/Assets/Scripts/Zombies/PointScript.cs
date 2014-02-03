@@ -4,7 +4,7 @@ using System.Collections;
 public class PointScript : MonoBehaviour {
 
     [SerializeField]
-    private Transform m_position;
+    private Vector3 m_position;
 
     [SerializeField]
     private int m_level;
@@ -21,7 +21,7 @@ public class PointScript : MonoBehaviour {
         }
     }
 
-    public Transform Position
+    public Vector3 Position
     {
         get
         {

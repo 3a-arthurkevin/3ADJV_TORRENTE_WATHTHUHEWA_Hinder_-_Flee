@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
 {
-    [SerializeField]
+    /*[SerializeField]
     int m_damage = 10;
 
     [SerializeField]
@@ -17,6 +17,7 @@ public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
             // 1 --> attaque AOE
             // 2 --> .....
             // 3 --> .....  
+     */
 
     [SerializeField]
     int m_sizeOfCollider; 
