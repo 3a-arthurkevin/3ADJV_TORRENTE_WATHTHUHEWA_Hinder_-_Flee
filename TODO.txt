@@ -1,8 +1,9 @@
 Arthur:
-	=> Move :
-		=> Changer les velocity par des manipulation de Transform
-
-	=> Faire les téléportations grace aux escaliers
+	=> ConfigLevelManager
+	=> Move Random des zombie
+	=> Téléportation des survivants grace au escalier
+		=> voir pour la même chose pour les zombie après le rendu alpha
+	
 	
 Kevin :
 	=> Camera
