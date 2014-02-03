@@ -41,11 +41,6 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         m_path = new NavMeshPath();
     }
 
-    void Update()
-    {
-        Debug.Log(m_rigidBodySurvivor.velocity);
-    }
-
     void FixedUpdate()
     {
         if (m_targetChange)
