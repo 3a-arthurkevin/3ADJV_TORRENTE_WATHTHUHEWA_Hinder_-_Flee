@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Camera\CameraResetOnCharacterScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Door\DoorOpenAndCloseScript.cs" />
+     <Compile Include="Assets\Scripts\Decors\Stair\ChangeCursorStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
      <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />
