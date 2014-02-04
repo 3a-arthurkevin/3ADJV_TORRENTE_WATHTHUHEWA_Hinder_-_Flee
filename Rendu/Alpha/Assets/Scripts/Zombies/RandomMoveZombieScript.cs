@@ -54,8 +54,6 @@ public class RandomMoveZombieScript : MonoBehaviour {
     {
         m_direction = GetRandomPositionScript.getRandomPoint(m_manager.AtIsStair).Position;
         m_directionChange = true;
-
-        Debug.Log(m_direction);
     }
 
 	void FixedUpdate()
