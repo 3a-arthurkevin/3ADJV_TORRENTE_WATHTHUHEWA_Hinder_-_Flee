@@ -35,7 +35,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         }
     }
 
-    void Start()
+    void Awake()
     {
         m_target = null;
         m_path = new NavMeshPath();
