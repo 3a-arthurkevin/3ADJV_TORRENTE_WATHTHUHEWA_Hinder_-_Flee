@@ -1,0 +1,34 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class TeleportSurvivorToEndStairScript : MonoBehaviour {
+
+    [SerializeField]
+    private Transform m_stairOut;
+    private bool m_hasClicked;
+
+    void Awake()
+    {
+        m_hasClicked = false;
+    }
+
+    void OnMouseDown()
+    {
+        m_hasClicked = true;
+        Debug.Log("Click");
+    }
+
+    void OnMouseUp()
+    {
+        m_hasClicked = false;
+    }
+
+    void OnTriggerStay(Collider survivor)
+    {
+        Debug.Log("Trigger");
+        if (m_hasClicked)
+        {//TP survivor
+            survivor.transform.position = m_stairOut.position;
+        }
+    }
+}
