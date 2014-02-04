@@ -4,9 +4,29 @@ using System.Collections;
 public class RandomMoveZombieScript : MonoBehaviour {
 
     [SerializeField]
-    private Transform m_direction;
+    private Transform m_zombie;
 
-    public Transform Direction
+    [SerializeField]
+    private Rigidbody m_rigidBodyZombie;
+
+    [SerializeField]
+    private Vector3 m_direction;
+
+    [SerializeField]
+    private MoveManagerZombieScript m_manager;
+
+    private NavMeshPath m_path;
+    private bool m_directionChange;
+    private Vector3 m_curCorner;
+    private uint m_numCorner;
+
+    [SerializeField]
+    private float minDistance;
+
+    [SerializeField]
+    private float velocity;
+
+    public Vector3 Direction
     {
         get
         {
@@ -15,18 +35,63 @@ public class RandomMoveZombieScript : MonoBehaviour {
         set
         {
             m_direction = value;
+            m_directionChange = true;
         }
     }
 
-	void Start ()
+	void Awake()
 	{
+        m_path = new NavMeshPath();
+        changeDirection();
 	}
+
+    void OnEnable()
+    {
+        changeDirection();
+    }
+
+    void changeDirection()
+    {
+        m_direction = GetRandomPositionScript.getRandomPoint(m_manager.AtIsStair).Position;
+        m_directionChange = true;
+
+        Debug.Log(m_direction);
+    }
 
 	void FixedUpdate()
 	{
-        if (m_direction)
+        if (m_directionChange)
         {
 
+            NavMesh.CalculatePath(m_zombie.position, m_direction, -1, m_path);
+
+            if (m_path.corners.Length > 1)
+            {
+                m_curCorner = m_path.corners[1];
+                m_numCorner = 1;
+            }
+            else
+                changeDirection();
+
+            m_directionChange = false;
         }
+
+        var direction = m_curCorner - m_zombie.position;
+        direction.Set(direction.x, 0, direction.z);
+
+        if (direction.sqrMagnitude < minDistance)
+        {
+            if (m_numCorner + 1 > m_path.corners.Length)
+            {
+                changeDirection();
+                m_path.ClearCorners();
+            }
+            else
+                m_curCorner = m_path.corners[m_numCorner++];
+            
+            return;
+        }
+        
+        m_rigidBodyZombie.velocity = direction.normalized * velocity;
 	}
 }

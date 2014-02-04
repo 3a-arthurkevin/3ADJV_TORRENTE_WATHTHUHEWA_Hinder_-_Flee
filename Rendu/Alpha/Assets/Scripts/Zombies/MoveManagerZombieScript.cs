@@ -8,7 +8,22 @@ public class MoveManagerZombieScript : MonoBehaviour {
 	[SerializeField]
 	private RandomMoveZombieScript m_randomScript;
 
-	void Start ()
+    [SerializeField]
+    private int m_atIsStair;
+
+    public int AtIsStair
+    {
+        get
+        {
+            return m_atIsStair;
+        }
+        set
+        {
+            m_atIsStair = value;
+        }
+    }
+
+	void Awake()
 	{
 		m_followScript.Follow = null;
 		m_followScript.enabled = false;
