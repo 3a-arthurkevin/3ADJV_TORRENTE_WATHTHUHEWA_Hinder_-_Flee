@@ -7,34 +7,34 @@ public class ConfigLevelManager : MonoBehaviour {
    public static List<List<PointScript>> getMovePointForFirtsLevel()
     {
         List<List<PointScript>> levelOne    = new List<List<PointScript>>();
-        List<PointScript> firstStair        = new List<PointScript>();
+        List<PointScript> firstFloor        = new List<PointScript>();
         PointScript point                   = ScriptableObject.CreateInstance<PointScript>();
         
         point.Level = 1;
         
         point.Position = new Vector3(-10, 0, 0);
-        firstStair.Add(point.Clone());
+        firstFloor.Add(point.Clone());
 
         point.Position = new Vector3(0, 0, 0);
-        firstStair.Add(point.Clone());
+        firstFloor.Add(point.Clone());
 
         point.Position = new Vector3(10, 0, 0);
-        firstStair.Add(point.Clone());
+        firstFloor.Add(point.Clone());
 
-        List<PointScript> secondStair = new List<PointScript>();
+        List<PointScript> secondFloor = new List<PointScript>();
         point.Level = 2;
 
         point.Position = new Vector3(-10, 0, -35);
-        secondStair.Add(point.Clone());
+        secondFloor.Add(point.Clone());
 
         point.Position = new Vector3(0, 0, -35);
-        secondStair.Add(point.Clone());
+        secondFloor.Add(point.Clone());
 
         point.Position = new Vector3(10, 0, -35);
-        secondStair.Add(point.Clone());
+        secondFloor.Add(point.Clone());
 
-        levelOne.Add(firstStair);
-        levelOne.Add(secondStair);
+        levelOne.Add(firstFloor);
+        levelOne.Add(secondFloor);
 
         return levelOne;
     }

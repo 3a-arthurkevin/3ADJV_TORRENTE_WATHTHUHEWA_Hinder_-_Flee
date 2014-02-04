@@ -9,17 +9,17 @@ public class MoveManagerZombieScript : MonoBehaviour {
 	private RandomMoveZombieScript m_randomScript;
 
     [SerializeField]
-    private int m_atIsStair;
+    private int m_atIsFloor;
 
-    public int AtIsStair
+    public int AtIsFloor
     {
         get
         {
-            return m_atIsStair;
+            return m_atIsFloor;
         }
         set
         {
-            m_atIsStair = value;
+            m_atIsFloor = value;
         }
     }
 
