@@ -83,4 +83,10 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
             m_rigidBodySurvivor.velocity = direction.normalized * velocity;
         }
     }
+
+    public void teleport(Vector3 position)
+    {
+        m_target = null;
+        transform.position = position;
+    }
 }

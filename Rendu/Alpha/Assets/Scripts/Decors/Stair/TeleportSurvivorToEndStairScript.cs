@@ -14,12 +14,13 @@ public class TeleportSurvivorToEndStairScript : MonoBehaviour {
 
     void OnMouseDown()
     {
+        Debug.Log("MouseDown");
         m_hasClicked = true;
-        Debug.Log("Click mouse");
     }
 
     void OnMouseUp()
     {
+        Debug.Log("MouseUp");
         m_hasClicked = false;
     }
 
