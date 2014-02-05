@@ -15,7 +15,7 @@ public class TeleportSurvivorToEndStairScript : MonoBehaviour {
     void OnMouseDown()
     {
         m_hasClicked = true;
-        Debug.Log("Click");
+        Debug.Log("Click mouse");
     }
 
     void OnMouseUp()
