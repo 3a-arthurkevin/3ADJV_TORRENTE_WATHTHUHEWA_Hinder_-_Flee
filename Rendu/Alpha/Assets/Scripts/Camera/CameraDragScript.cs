@@ -12,6 +12,9 @@ public class CameraDragScript : MonoBehaviour
     [SerializeField]
     private CameraFollowMouseScript m_scriptZoom;
 
+    private int m_limitX;
+
+    private int m_limitZ;
 
 	// Update is called once per frame
 	void LateUpdate () 
@@ -21,8 +24,22 @@ public class CameraDragScript : MonoBehaviour
         {
             m_scriptZoom.enabled = false;
 
+            m_limitX = GetComponent<CameraLimitDeplacement>().blockMoveX(m_transformCamera);
+            m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+
             var mouvementX = Input.GetAxis("Mouse X");
             var mouvementY = Input.GetAxis("Mouse Y");
+
+            if (m_limitX < 0 && mouvementX > 0)
+                mouvementX = 0;
+            else if (m_limitX > 0 && mouvementX < 0)
+                mouvementX = 0;
+
+
+            if (m_limitZ < 0 && mouvementY > 0)
+                mouvementY = 0;
+            else if (m_limitZ > 0 && mouvementY < 0)
+                mouvementY = 0;
 
             m_transformCamera.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
             m_transformCamera.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;

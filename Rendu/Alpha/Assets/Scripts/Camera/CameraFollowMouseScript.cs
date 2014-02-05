@@ -18,6 +18,10 @@ public class CameraFollowMouseScript : MonoBehaviour
     [SerializeField]
     private float m_moveSpeed = 3f;
 
+    private int m_limitX;
+
+    private int m_limitZ;
+
 	
 	// Update is called once per frame
 	void LateUpdate () 
@@ -25,20 +29,24 @@ public class CameraFollowMouseScript : MonoBehaviour
         m_mousePosition = Vector3.zero;
         m_mousePosition.Set(Input.mousePosition.x/Screen.width, Input.mousePosition.y/Screen.height);
 
-        if ( (m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd) )
+        m_limitX = GetComponent<CameraLimitDeplacement>().blockMoveX(m_transformCamera);
+        m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+
+        if ( (m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd) && (m_limitX >= 0) )
         {
             m_transformCamera.position -= Vector3.right * Time.deltaTime * m_moveSpeed;
         }
-        else if ((m_mousePosition.x >= m_activeZoneBegin) && (m_mousePosition.x <= m_activeZoneEnd))
+        else if ((m_mousePosition.x >= m_activeZoneBegin) && (m_mousePosition.x <= m_activeZoneEnd) && (m_limitX <= 0) )
         {
             m_transformCamera.position += Vector3.right * Time.deltaTime * m_moveSpeed;
         }
 
-        if ( (m_mousePosition.y <= 1 - m_activeZoneBegin) && (m_mousePosition.y >= 1 - m_activeZoneEnd) )
+
+        if ((m_mousePosition.y <= 1 - m_activeZoneBegin) && (m_mousePosition.y >= 1 - m_activeZoneEnd) && (m_limitZ >= 0) )
         {
             m_transformCamera.position -= Vector3.forward * Time.deltaTime * m_moveSpeed;
         }
-        else if ( (m_mousePosition.y >= m_activeZoneBegin) && (m_mousePosition.y <= m_activeZoneEnd) )
+        else if ((m_mousePosition.y >= m_activeZoneBegin) && (m_mousePosition.y <= m_activeZoneEnd) && (m_limitZ <= 0))
         {
             m_transformCamera.position += Vector3.forward * Time.deltaTime * m_moveSpeed;
         }

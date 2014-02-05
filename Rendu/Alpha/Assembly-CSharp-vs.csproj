@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\BonusMalus\SpeedBonusMalusScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraDragScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollowMouseScript.cs" />
+     <Compile Include="Assets\Scripts\Camera\CameraLimitDeplacement.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraResetOnCharacterScript.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Door\DoorOpenAndCloseScript.cs" />
