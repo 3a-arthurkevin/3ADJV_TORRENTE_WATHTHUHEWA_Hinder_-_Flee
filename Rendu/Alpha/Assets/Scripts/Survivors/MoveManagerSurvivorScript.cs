@@ -38,14 +38,13 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     void Awake()
     {
         m_target = null;
-        m_path = new NavMeshPath();
     }
 
     void FixedUpdate()
     {
         if (m_targetChange)
         {//Recalcul du chemin
-
+            m_path = new NavMeshPath();
             NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
 
             if (m_path.corners.Length > 1)
@@ -54,7 +53,10 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
                 m_numCorner = 1;
             }
             else
+            {
+                Debug.Log(m_path.status);
                 m_target = null;
+            }
 
             m_targetChange = false;
         }
@@ -80,5 +82,11 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
 
             m_rigidBodySurvivor.velocity = direction.normalized * velocity;
         }
+    }
+
+    public void teleport(Vector3 position)
+    {
+        m_target = null;
+        transform.position = position;
     }
 }
