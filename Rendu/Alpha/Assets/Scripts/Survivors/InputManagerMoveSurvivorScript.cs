@@ -12,14 +12,10 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     [SerializeField]
     private Transform m_target;
 
-    [SerializeField]
-    private string m_nameLayerToMove;
 
-    private int m_bitMaskLayerToMove;
 
     void Start()
     {
-        m_bitMaskLayerToMove = 1 << LayerMask.NameToLayer(m_nameLayerToMove);
     }
 
 	void Update ()
@@ -29,7 +25,7 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
             var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100, m_bitMaskLayerToMove))
+            if (Physics.Raycast(ray, out hit, 1000, ~LayerMask.NameToLayer("Ground")))
             {
                 m_target.position = hit.point;
                 m_moveSurvivor.Target = m_target;
