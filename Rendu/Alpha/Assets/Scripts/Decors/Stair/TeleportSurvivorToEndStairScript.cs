@@ -25,7 +25,6 @@ public class TeleportSurvivorToEndStairScript : MonoBehaviour {
 
     void OnTriggerStay(Collider survivor)
     {
-        Debug.Log("Trigger");
         if (m_hasClicked)
         {//TP survivor
             survivor.transform.position = m_stairOut.position;
