@@ -3,7 +3,6 @@ using System.Collections;
 
 public class SurvivorManagerForStairScript : MonoBehaviour
 {
-
     [SerializeField]
     private Texture2D m_cursor;
 

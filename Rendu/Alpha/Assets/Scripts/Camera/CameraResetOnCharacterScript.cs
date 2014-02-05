@@ -28,7 +28,7 @@ public class CameraResetOnCharacterScript : MonoBehaviour
             resetCamera();
 	}
 
-    void resetCamera()
+    public void resetCamera()
     {
         m_cameraPosition.x = m_transformCharacter.position.x;
         m_cameraPosition.y = m_transformCharacter.position.y + 7;

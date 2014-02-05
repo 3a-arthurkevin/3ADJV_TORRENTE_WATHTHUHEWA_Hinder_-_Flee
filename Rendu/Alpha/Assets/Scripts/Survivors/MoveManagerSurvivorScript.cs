@@ -3,6 +3,9 @@ using System.Collections;
 
 public class MoveManagerSurvivorScript : MonoBehaviour {
     [SerializeField]
+    private Camera m_characterCamera;
+    
+    [SerializeField]
     private Rigidbody m_rigidBodySurvivor;
 
     [SerializeField]
@@ -88,5 +91,6 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     {
         m_target = null;
         transform.position = position;
+        m_characterCamera.GetComponent<CameraResetOnCharacterScript>().resetCamera();
     }
 }
