@@ -5,7 +5,7 @@ public class CameraLimitDeplacement : MonoBehaviour {
 
     [SerializeField]
     private Transform m_planeMap;
-    
+
     [SerializeField]
     private float m_limitX;
 
@@ -13,9 +13,9 @@ public class CameraLimitDeplacement : MonoBehaviour {
     private float m_limitZ;
 
     void Start()
-    {   
-        m_limitX = m_planeMap.localScale.x * 4f;
-        m_limitZ = m_planeMap.localScale.z * 5f;
+    {
+        m_limitX = m_planeMap.position.x + (m_planeMap.localScale.x); //* 5f);
+        m_limitZ = m_planeMap.position.z + (m_planeMap.localScale.z);//* 5f);
     }
 
     public int blockMoveX(Transform cameraTransform)

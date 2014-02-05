@@ -596,6 +596,10 @@ Prefab:
       propertyPath: m_planeMap
       value: 
       objectReference: {fileID: 92667457}
+    - target: {fileID: 11400008, guid: af399dfd2b2376a46a6d13e5226e354b, type: 2}
+      propertyPath: m_meshFilterMap
+      value: 
+      objectReference: {fileID: 92667456}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af399dfd2b2376a46a6d13e5226e354b, type: 2}
   m_RootGameObject: {fileID: 481157335}
