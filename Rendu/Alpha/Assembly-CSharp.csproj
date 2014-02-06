@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AttackScript.cs" />
      <Compile Include="Assets\Scripts\BonusMalus\AttackBonusMalusMalusScript.cs" />
      <Compile Include="Assets\Scripts\BonusMalus\CoolDownBonusMalusScript.cs" />
      <Compile Include="Assets\Scripts\BonusMalus\DefenseBonusMalusScript.cs" />
@@ -62,6 +63,10 @@
      <Compile Include="Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportSurvivorToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
+     <Compile Include="Assets\Scripts\HealthAndDamageScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerDataBaseScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerDateClassScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerNameScript.cs" />
      <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
      <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
