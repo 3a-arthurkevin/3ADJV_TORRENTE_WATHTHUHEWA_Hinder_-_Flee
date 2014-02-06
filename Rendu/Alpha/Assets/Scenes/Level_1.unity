@@ -2898,9 +2898,9 @@ Transform:
   - {fileID: 82284692}
   - {fileID: 1505736534}
   - {fileID: 1339973436}
-  - {fileID: 1435106680}
   - {fileID: 1826014584}
   - {fileID: 567842419}
+  - {fileID: 1435106680}
   - {fileID: 1133184540}
   - {fileID: 1189567949}
   m_Father: {fileID: 374346750}
@@ -4470,20 +4470,20 @@ Transform:
   m_Children:
   - {fileID: 1462571971}
   - {fileID: 17375592}
-  - {fileID: 2129248245}
-  - {fileID: 405855486}
-  - {fileID: 981859931}
-  - {fileID: 215044572}
-  - {fileID: 708914389}
-  - {fileID: 532342918}
-  - {fileID: 679478376}
-  - {fileID: 1670847496}
-  - {fileID: 73218859}
-  - {fileID: 956503307}
-  - {fileID: 1479453132}
   - {fileID: 1792057219}
+  - {fileID: 1479453132}
+  - {fileID: 1670847496}
+  - {fileID: 532342918}
+  - {fileID: 73218859}
+  - {fileID: 215044572}
+  - {fileID: 956503307}
   - {fileID: 683989090}
   - {fileID: 1389427251}
+  - {fileID: 2129248245}
+  - {fileID: 679478376}
+  - {fileID: 405855486}
+  - {fileID: 981859931}
+  - {fileID: 708914389}
   m_Father: {fileID: 880484582}
 --- !u!1001 &383554305
 Prefab:
@@ -5444,7 +5444,7 @@ GameObject:
   - 23: {fileID: 487301221}
   m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -9260,16 +9260,16 @@ Transform:
   m_LocalPosition: {x: 0, y: .5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2048385953}
-  - {fileID: 2075531208}
-  - {fileID: 1367849750}
-  - {fileID: 2053911910}
-  - {fileID: 936704312}
-  - {fileID: 865029240}
-  - {fileID: 801062384}
   - {fileID: 1167634099}
+  - {fileID: 1367849750}
+  - {fileID: 2048385953}
+  - {fileID: 2053911910}
   - {fileID: 602879820}
+  - {fileID: 865029240}
   - {fileID: 1582013726}
+  - {fileID: 801062384}
+  - {fileID: 936704312}
+  - {fileID: 2075531208}
   m_Father: {fileID: 1321717101}
 --- !u!208 &791065070
 NavMeshObstacle:
@@ -10691,7 +10691,7 @@ GameObject:
   - 23: {fileID: 941262870}
   m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -11443,6 +11443,10 @@ Prefab:
     - target: {fileID: 400000, guid: 4756cc74aafb82341a7361a5393a6fb7, type: 2}
       propertyPath: m_LocalScale.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4756cc74aafb82341a7361a5393a6fb7, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4756cc74aafb82341a7361a5393a6fb7, type: 2}
@@ -13423,7 +13427,7 @@ GameObject:
   - 4: {fileID: 1186819192}
   m_Layer: 0
   m_Name: Floors
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24616,6 +24620,7 @@ MonoBehaviour:
   m_characterCamera: {fileID: 85142405}
   m_moveSurvivor: {fileID: 2142356245}
   m_target: {fileID: 2097854970}
+  m_maxDistance: 0
 --- !u!54 &2142356247
 Rigidbody:
   m_ObjectHideFlags: 0

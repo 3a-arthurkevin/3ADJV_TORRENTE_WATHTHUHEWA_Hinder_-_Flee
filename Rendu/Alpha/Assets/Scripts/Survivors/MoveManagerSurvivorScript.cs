@@ -47,6 +47,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     {
         if (m_targetChange)
         {//Recalcul du chemin
+
             m_path = new NavMeshPath();
             NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
 
