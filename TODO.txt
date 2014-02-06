@@ -1,10 +1,7 @@
 Arthur:
-	=> ConfigLevelManager
-		=> Fait pour le level de Test
-			=> Le faire pour le Level_1 du projet avant le rendu
 			
-	=> Téléportation des survivants grace au escalier
-		=> voir pour la même chose pour les zombie après le rendu alpha
+	=> Téléportation
+		=> Zombie après le rendu alpha
 	
 	
 Kevin :
