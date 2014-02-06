@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Door\DoorOpenAndCloseScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\ChangeCursorStairScript.cs" />
+     <Compile Include="Assets\Scripts\Decors\Stair\FloarLocationScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportSurvivorToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />

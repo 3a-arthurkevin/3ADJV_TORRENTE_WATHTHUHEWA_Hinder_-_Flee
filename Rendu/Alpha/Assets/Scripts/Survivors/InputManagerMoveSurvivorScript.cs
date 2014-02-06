@@ -25,11 +25,17 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
             var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1000, ~(1 << LayerMask.NameToLayer("Ground"))))
+            /*if (Physics.Raycast(ray, out hit, 1000, ~(1 << LayerMask.NameToLayer("Ground"))))
+            {
+                m_target.position = hit.point;
+                m_moveSurvivor.Target = m_target;
+            }*/
+            if (Physics.Raycast(ray, out hit, 1000, ~LayerMask.NameToLayer("Ground")))
             {
                 m_target.position = hit.point;
                 m_moveSurvivor.Target = m_target;
             }
+            
         }
 	}
 }

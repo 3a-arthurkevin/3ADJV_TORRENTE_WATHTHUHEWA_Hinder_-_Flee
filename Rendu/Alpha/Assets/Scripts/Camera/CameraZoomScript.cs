@@ -23,13 +23,18 @@ public class CameraZoomScript : MonoBehaviour
 
     [SerializeField]
     private Vector3 m_cameraPosition;
-	
+
+    private float m_limitZ;
+
+
 	void LateUpdate () 
     {
         var mouvement = Input.GetAxis("Mouse ScrollWheel");
         mouvement = Mathf.Clamp(mouvement, -1, 1);
 
-        if (mouvement > 0)
+        m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+
+        if (mouvement > 0 && m_limitZ <= 0)
         {
             if ((m_nbScroll >= m_scrollLimitMin) && (m_nbScroll < m_scrollLimiteMax))
             {
@@ -37,7 +42,7 @@ public class CameraZoomScript : MonoBehaviour
                 m_nbScroll += mouvement;
             }     
         }
-        if (mouvement < 0)
+        if (mouvement < 0 && m_limitZ >= 0)
         {
             if ((m_nbScroll > m_scrollLimitMin) && (m_nbScroll <= m_scrollLimiteMax))
             {
