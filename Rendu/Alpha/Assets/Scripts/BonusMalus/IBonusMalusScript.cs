@@ -3,5 +3,6 @@ using System.Collections;
 
 public interface IBonusMalusScript
 {
-    void stateAlteration(/* Script character Manager ??? */);
+    //Je fais de la merde ici
+    float stateAlterValue();
 }
