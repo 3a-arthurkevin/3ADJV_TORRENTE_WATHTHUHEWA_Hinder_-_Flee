@@ -1,15 +1,16 @@
+
 ﻿using UnityEngine;
 using System.Collections;
 
 public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
 {
-    /*[SerializeField]
+    [SerializeField]
     int m_damage = 10;
 
     [SerializeField]
     int m_coolDownDuration = 10; 
         //Durée des cool down en secondes
-
+    /*
     [SerializeField]
     int m_typeOfAttack = 0;
         // typeOfAttack (à définir)
@@ -19,30 +20,17 @@ public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
             // 3 --> .....  
      */
 
+    //
+    //A ce niveau la je pense que je fais un peu de la merde dans l'archi du code (pour les armes/skill/malusBonus)
+    //
+
+    //Instanciation
     [SerializeField]
-    int m_sizeOfCollider; 
-        //taille du collider de la zone d'attaque lors de l'utilisation du skill
+    private DefenseBonusMalusScript malusDefense = new DefenseBonusMalusScript(-0.10f);
 
-    //[SerializeField]
-    //Script BonusMalus
-        //Script malus associé à la skill
-
-
-
-    void ISkillScript.UseSkill()
+    //Utilisé dans PlayerStatsManager
+    float ISkillScript.UseSkill()
     {
-        //code déclanchant les effets
-        //Fonction se déclanche quand on a un onTriggerEnter de l'attaque --> surement dans le characterAttackManager ???
-
-        bool targetIsHuman = false;
-
-        if (targetIsHuman)
-        {
-            //declanche malus sur joueur
-        }
-        else
-        {
-            //declanche degat sur zombie
-        }
+        return malusDefense.getAlterValue();
     }
 }

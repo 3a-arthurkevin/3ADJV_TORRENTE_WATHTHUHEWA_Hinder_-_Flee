@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DefenseBonusMalusScript : MonoBehaviour {
+public class DefenseBonusMalusScript
+{
+    //Je fais de la merde ici
+    private float m_alterDefenseValue;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public DefenseBonusMalusScript(float value)
+    {
+        m_alterDefenseValue = value;
+    }
+
+    public float getAlterValue()
+    {
+        return m_alterDefenseValue;
+    }
 }

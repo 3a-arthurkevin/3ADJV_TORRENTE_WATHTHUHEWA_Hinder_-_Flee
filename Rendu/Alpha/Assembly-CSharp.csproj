@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -67,15 +67,17 @@
      <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\AttackScript.cs" />
+     <Compile Include="Assets\Scripts\Tmp\AttackManagerScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\HealthAndDamageScript.cs" />
+     <Compile Include="Assets\Scripts\Tmp\HealthManaTmpScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerDataBaseScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerDateClassScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerNameScript.cs" />
+     <Compile Include="Assets\Scripts\Tmp\PlayerStatsManager.cs" />
      <Compile Include="Assets\Scripts\Utils\ConfigLevelManager.cs" />
      <Compile Include="Assets\Scripts\Utils\ConfigSkillManager.cs" />
      <Compile Include="Assets\Scripts\Utils\ConfigWeaponManager.cs" />
-     <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
+     <Compile Include="Assets\Scripts\Weapons\WeaponScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\FollowMoveZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\GetRandomPositionScript.cs" />
