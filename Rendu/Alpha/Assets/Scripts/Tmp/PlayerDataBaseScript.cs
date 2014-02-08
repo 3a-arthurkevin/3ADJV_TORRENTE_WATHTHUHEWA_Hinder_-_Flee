@@ -8,42 +8,56 @@ using System.Collections.Generic;
 
 public class PlayerDataBaseScript : MonoBehaviour {
 
-	// Variable début
-
-    public List<PlayerDateClassScript> PlayerList = new List<PlayerDateClassScript>();
+    public List<PlayerDateClassScript> m_playerList = new List<PlayerDateClassScript>();
 
     //utilisé pour ajouter joueur
-    public NetworkPlayer networkPlayer;
+    public NetworkPlayer m_networkPlayer;
 
     //utilisé pour mettre à jour la list des joueurs avec le nom du joueur
-    public bool nameSet = false;
-    public string playerName;
+    public bool m_nameSet = false;
+    public string m_playerName;
 
     //utilisé pour mettre à jour la classe du joueur
-    public bool playerClassChoice = false;
-    public int playerClass;
+    public bool m_playerClassChoice = false;
+    public int m_playerClass;
 
-    // Variable fin
+    [SerializeField]
+    private bool m_isBuildingServer = true;
 
-    void Start() { }
+    [SerializeField]
+    private int portNumber = 9090;
+
+    void Start() 
+    {
+        Application.runInBackground = true;
+
+        if (m_isBuildingServer)
+        {
+            Network.InitializeSecurity();
+            Network.InitializeServer(1, portNumber, true);
+        }
+        else
+        {
+            Network.Connect("127.0.0.1", portNumber);
+        }
+    }
 
     void Update() 
     {
         //Affect le nom du joueur
-        if (nameSet)
+        if (m_nameSet)
         {
-            networkView.RPC("EditPlayerListWithName", RPCMode.AllBuffered, Network.player, playerName);
-            nameSet = false;
+            networkView.RPC("EditPlayerListWithName", RPCMode.AllBuffered, Network.player, m_playerName);
+            m_nameSet = false;
         }
 
         //Affect la classe du joueur
-        if (playerClassChoice)
+        if (m_playerClassChoice)
         {
-            networkView.RPC("EditPlayerListWithClass", RPCMode.AllBuffered, Network.player, playerClass);
-            playerClassChoice = false;
+            networkView.RPC("EditPlayerListWithClass", RPCMode.AllBuffered, Network.player, m_playerClass);
+            m_playerClassChoice = false;
         }
     }
-
 
 
     //Pour ajouter un joueur à la list
@@ -53,6 +67,11 @@ public class PlayerDataBaseScript : MonoBehaviour {
         //--> allBuffered (buffer au cas ou quelqu'un en plus arrive en cours)
         // netPlayer --> parametre de la fonction
         networkView.RPC("AddPlayerToList", RPCMode.AllBuffered, netPlayer);
+
+        if (m_playerList.Count == 2)
+        {
+            //Code pour démarrer la partie
+        }
     }
 
     //Enlver joueur de la liste quans il se déconnecte 
@@ -70,7 +89,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         player.networkPlayer = int.Parse(nPlayer.ToString());
 
-        PlayerList.Add(player);
+        m_playerList.Add(player);
     }
 
     //Trouve l'id du joueur et l'enleve de la list
@@ -79,14 +98,14 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         int i = 0;
         bool find = false;
-        int listSize = PlayerList.Count;
+        int listSize = m_playerList.Count;
 
         while (i < listSize && !find)
         {
-            if (PlayerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
+            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
             {
                 find = true;
-                PlayerList.RemoveAt(i);
+                m_playerList.RemoveAt(i);
             }
         }
     }
@@ -98,13 +117,13 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         int i = 0;
         bool find = false;
-        int listSize = PlayerList.Count;
+        int listSize = m_playerList.Count;
 
         while (i < listSize && !find)
         {
-            if (PlayerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
+            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
             {
-                PlayerList[i].playerName = name;
+                m_playerList[i].playerName = name;
             }
         }
     }
@@ -115,13 +134,13 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         int i = 0;
         bool find = false;
-        int listSize = PlayerList.Count;
+        int listSize = m_playerList.Count;
 
         while (i < listSize && !find)
         {
-            if (PlayerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
+            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
             {
-                PlayerList[i].playerClass = playerClass;
+                m_playerList[i].playerClass = playerClass;
             }
         }
     }

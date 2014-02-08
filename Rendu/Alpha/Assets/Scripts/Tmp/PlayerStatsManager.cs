@@ -39,7 +39,7 @@ public class PlayerStatsManager : MonoBehaviour
     //Vu qu'on a un interface Skill, on regarde son type pour savoir quelle stat modifié
     public void applySkillAlteration(int idSkill)
     {
-        WeaponScript weapon = m_parentGameObject.GetComponent<WeaponScript>();
+        WeaponInfo weapon = m_parentGameObject.GetComponent<WeaponInfo>();
 
         ISkillScript skillUsed = weapon.getSkill(idSkill);
 

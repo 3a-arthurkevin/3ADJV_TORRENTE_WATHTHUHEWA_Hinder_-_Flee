@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponScript : MonoBehaviour
-{
-    //
-    // Je fais de la merde ici aussi
-    // Faut que je revoir l'archi du code, entre Weapon/Skill/BonusMalus --> utilisation d'interface, autres chose. arg j'en sais rien
-    //
+public class WeaponInfo : MonoBehaviour {
 
     //Dommage infligé au zombie --> pas de pris en compte des dommage des skill pour l'instant
     [SerializeField]
-    int m_damage = 5; //valeur choisi au hasard pour tester
+    int m_damage;
 
     //Les skills affecté à l'arme selon la touche
     [SerializeField]
@@ -25,6 +20,11 @@ public class WeaponScript : MonoBehaviour
     [SerializeField]
     ISkillScript m_SkillR;
 
+	public int getDamage()
+    {
+        return m_damage;
+    }
+
     private bool m_hasHit = false;
 
     //Collider de l'entité qui rentre dans le collider l'objet auquel le script est attaché --> ici l'arme
@@ -32,7 +32,7 @@ public class WeaponScript : MonoBehaviour
 
 
     //Pour savoir qui quelquechose est dans le collider de l'arme
-        //--> le paramètre collider de la fonction represente le collider de l'entité entrant dans le collider de l'arme
+    //--> le paramètre collider de la fonction represente le collider de l'entité entrant dans le collider de l'arme
     void onTriggerStay(Collider collider)
     {
         //Faudra mettre des tag sur les entités pour les reconnaitres
@@ -54,12 +54,6 @@ public class WeaponScript : MonoBehaviour
     public bool getHasHit(int idSkill)
     {
         return m_hasHit;
-    }
-
-    //Pour récupérer les Dommages à appliquer --> si cible zombie
-    public int getDamage()
-    {
-        return m_damage;
     }
 
     //Pour récupérer le skill à appliquer --> si cible survivant

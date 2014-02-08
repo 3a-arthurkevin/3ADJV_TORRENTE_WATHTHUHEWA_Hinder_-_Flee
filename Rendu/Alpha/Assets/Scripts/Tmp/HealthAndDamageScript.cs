@@ -57,13 +57,13 @@ public class HealthAndDamageScript : MonoBehaviour {
 
             int i = 0;
             bool find = false;
-            int listSize = dataScript.PlayerList.Count;
+            int listSize = dataScript.m_playerList.Count;
 
             while (i < listSize && !find)
             {
-                if (myAttacker == dataScript.PlayerList[i].playerName)
+                if (myAttacker == dataScript.m_playerList[i].playerName)
                 {
-                    if (int.Parse(Network.player.ToString()) == dataScript.PlayerList[i].networkPlayer)
+                    if (int.Parse(Network.player.ToString()) == dataScript.m_playerList[i].networkPlayer)
                     {
                         //Verification de ce qui a touché le joueur et application des dégats
                         if (hitByWeapon == true && destroyed == false)

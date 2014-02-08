@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackScript : MonoBehaviour {
+public class AttackScript : MonoBehaviour 
+{
 
     //Represente le joueur qui attaque
     private GameObject m_parentGameObject;
 
     //L'arme du joueur qui attaque --> obtenue grace à m_parentGameObject
-    private WeaponScript m_weapon;
+    private WeaponInfo m_weaponInfo;
 
+    private int m_idSkill;
 
 	// Use this for initialization
 	void Start () 
     {
-        m_parentGameObject = transform.parent.gameObject;
-        //Affectation de l'arme comme ca provisorement, le temps de faire l'inventaire/armeEquipé Scirpt
-        m_weapon = m_parentGameObject.GetComponent<WeaponScript>();
+        
 	}
 	
 	// Update is called once per frame
@@ -23,16 +23,16 @@ public class AttackScript : MonoBehaviour {
     {
         /*
         if (changement weapon) 
-            update de l'arme attaque --> m_weapon = m_parentGameObject.GetComponent<WeaponScript>();
+            update de l'arme attaque
          
          */
 
-        int idSkill = pushButtonAttack();
-        if (idSkill >= 0)
+        m_idSkill = pushButtonAttack();
+        if (m_idSkill >= 0)
         {
-            if (doesAttackHasHit(idSkill))
+            if (doesAttackHasHit(m_idSkill))
             {
-                applyAttackEffect(idSkill);
+                applyAttackEffect(m_idSkill);
             }
         }
 	}
@@ -74,7 +74,7 @@ public class AttackScript : MonoBehaviour {
     //Pour savoir si un ennemi etait dans le collider de l'arme pendant l'attaque
     public bool doesAttackHasHit(int idSkill)
     {
-        return m_weapon.getHasHit(idSkill);
+        return m_weaponInfo.getHasHit(idSkill);
     }
 
     //Application de l'effet de l'attaque
@@ -82,12 +82,12 @@ public class AttackScript : MonoBehaviour {
         //Reset du collider (à null) et du boolean hasHit (à false)
     public void applyAttackEffect(int idSkill)
     {
-        Collider targetCollider = m_weapon.getTargetCollider();
+        Collider targetCollider = m_weaponInfo.getTargetCollider();
 
         if (targetCollider.tag == "zombie")
         {
             HealthManaTmpScript targetHealthManager = targetCollider.transform.GetComponent<HealthManaTmpScript>();
-            targetHealthManager.applyDamage(m_weapon.getDamage());
+            targetHealthManager.applyDamage(m_weaponInfo.getDamage());
         }
         else if (targetCollider.tag == "survivor")
         {
@@ -95,6 +95,6 @@ public class AttackScript : MonoBehaviour {
             targetStatsManager.applySkillAlteration(idSkill);
         }
 
-        m_weapon.resetAfterHit();
+        m_weaponInfo.resetAfterHit();
     }
 }
