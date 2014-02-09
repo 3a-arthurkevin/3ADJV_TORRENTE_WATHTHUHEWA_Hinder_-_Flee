@@ -7,9 +7,6 @@ public class RandomMoveZombieScript : MonoBehaviour {
     private Transform m_zombie;
 
     [SerializeField]
-    private Rigidbody m_rigidBodyZombie;
-
-    [SerializeField]
     private Vector3 m_direction;
 
     [SerializeField]
@@ -21,10 +18,10 @@ public class RandomMoveZombieScript : MonoBehaviour {
     private uint m_numCorner;
 
     [SerializeField]
-    private float minDistance;
+    private float m_minDistance;
 
     [SerializeField]
-    private float velocity;
+    private float m_speed;
 
     public Vector3 Direction
     {
@@ -77,7 +74,7 @@ public class RandomMoveZombieScript : MonoBehaviour {
         var direction = m_curCorner - m_zombie.position;
         direction.Set(direction.x, 0, direction.z);
 
-        if (direction.sqrMagnitude < minDistance)
+        if (direction.sqrMagnitude < m_minDistance)
         {
             if (m_numCorner + 1 > m_path.corners.Length)
             {
@@ -89,7 +86,7 @@ public class RandomMoveZombieScript : MonoBehaviour {
             
             return;
         }
-        
-        m_rigidBodyZombie.velocity = direction.normalized * velocity;
+
+        m_zombie.position += direction.normalized * m_speed * Time.deltaTime;
 	}
 }

@@ -3,10 +3,10 @@ using System.Collections;
 
 public class MoveManagerSurvivorScript : MonoBehaviour {
     [SerializeField]
-    private Camera m_characterCamera;
+    private Rigidbody m_rigidBodyPlayer;
     
     [SerializeField]
-    private Rigidbody m_rigidBodySurvivor;
+    private Camera m_characterCamera;
 
     [SerializeField]
     private Transform m_character;
@@ -15,15 +15,14 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     private Transform m_target;
 
     private NavMeshPath m_path;
-    private bool m_targetChange;
     private Vector3 m_curCorner;
     private uint m_numCorner;
 
     [SerializeField]
-    private float minDistance;
+    private float m_minDistance = 2;
 
     [SerializeField]
-    private float velocity;
+    private float m_speed = 2;
 
     public Transform Target
     {
@@ -34,7 +33,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         set
         {
             m_target = value;
-            m_targetChange = true;
+            reCalcPath();
         }
     }
 
@@ -45,46 +44,47 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (m_targetChange)
-        {//Recalcul du chemin
-
-            m_path = new NavMeshPath();
-            NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
-
-            if (m_path.corners.Length > 1)
-            {
-                m_curCorner = m_path.corners[1];
-                m_numCorner = 1;
-            }
-            else
-            {
-                Debug.Log(m_path.status);
-                m_target = null;
-            }
-
-            m_targetChange = false;
-        }
-
         if (m_target != null)
         {//Déplacement jusqu'au coint final
-
+            
             var direction = m_curCorner - m_character.position;
-            direction.Set(direction.x, 0, direction.z);
+            direction.y = 0;
 
-            if (direction.sqrMagnitude < minDistance)
+            if (direction.sqrMagnitude < m_minDistance)
             {
-                if (m_numCorner+1 > m_path.corners.Length)
+                if (m_numCorner + 1 > m_path.corners.Length)
                 {
                     m_target = null;
                     m_path.ClearCorners();
                 }
                 else
+                {
                     m_curCorner = m_path.corners[m_numCorner++];
-
+                    m_character.LookAt(m_curCorner);
+                }
                 return;
             }
 
-            m_rigidBodySurvivor.velocity = direction.normalized * velocity;
+            m_rigidBodyPlayer.velocity = direction.normalized * m_speed;
+            //m_character.position += m_character.forward * m_speed * Time.deltaTime;
+        }
+    }
+
+    private void reCalcPath()
+    {
+        m_path = new NavMeshPath();
+        NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
+
+        if (m_path.corners.Length > 1)
+        {
+            m_curCorner = m_path.corners[1];
+            m_numCorner = 1;
+            m_character.LookAt(m_curCorner);
+        }
+        else
+        {
+            Debug.Log(m_path.status);
+            m_target = null;
         }
     }
 
