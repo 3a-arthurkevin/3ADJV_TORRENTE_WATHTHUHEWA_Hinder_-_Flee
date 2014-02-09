@@ -1,35 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackScript : MonoBehaviour 
+public class AttackManagerScript : MonoBehaviour 
 {
 
-    //Represente le joueur qui attaque
+    //Represente l'arme du joueur qui attaque
+    [SerializeField]
     private GameObject m_parentGameObject;
 
-    //L'arme du joueur qui attaque --> obtenue grace à m_parentGameObject
+    //Info sur l'arme du joueur qui attaque --> obtenue grace à m_parentGameObject
+    [SerializeField]
     private WeaponInfo m_weaponInfo;
 
-    private int m_idSkill;
+    [SerializeField]
+    private int m_idSkill = -1;
 
 	// Use this for initialization
 	void Start () 
     {
-        
+        m_parentGameObject = transform.gameObject;
+        m_weaponInfo = m_parentGameObject.GetComponent<WeaponInfo>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        /*
-        if (changement weapon) 
-            update de l'arme attaque
-         
-         */
-
         m_idSkill = pushButtonAttack();
         if (m_idSkill >= 0)
         {
+            Debug.Log(m_weaponInfo.getDamage());
             if (doesAttackHasHit(m_idSkill))
             {
                 applyAttackEffect(m_idSkill);
@@ -43,7 +42,6 @@ public class AttackScript : MonoBehaviour
     //
 
     //Pour savoir si le bouton appuyé est un bouton d'attaque
-    // Est ce que unity est en QWERTY ????? -__-'
     private int pushButtonAttack()
     {
         int idAttack = -1;
@@ -84,12 +82,12 @@ public class AttackScript : MonoBehaviour
     {
         Collider targetCollider = m_weaponInfo.getTargetCollider();
 
-        if (targetCollider.tag == "zombie")
+        if (targetCollider.tag == "Zombie")
         {
             HealthManaTmpScript targetHealthManager = targetCollider.transform.GetComponent<HealthManaTmpScript>();
             targetHealthManager.applyDamage(m_weaponInfo.getDamage());
         }
-        else if (targetCollider.tag == "survivor")
+        else if (targetCollider.tag == "Survivant")
         {
             PlayerStatsManager targetStatsManager = targetCollider.transform.GetComponent<PlayerStatsManager>();
             targetStatsManager.applySkillAlteration(idSkill);

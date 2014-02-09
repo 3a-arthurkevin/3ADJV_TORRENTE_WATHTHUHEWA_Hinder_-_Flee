@@ -5,7 +5,7 @@ public class WeaponInfo : MonoBehaviour {
 
     //Dommage infligé au zombie --> pas de pris en compte des dommage des skill pour l'instant
     [SerializeField]
-    int m_damage;
+    int m_damage = 10;
 
     //Les skills affecté à l'arme selon la touche
     [SerializeField]
@@ -33,14 +33,14 @@ public class WeaponInfo : MonoBehaviour {
 
     //Pour savoir qui quelquechose est dans le collider de l'arme
     //--> le paramètre collider de la fonction represente le collider de l'entité entrant dans le collider de l'arme
-    void onTriggerStay(Collider collider)
+    void OnTriggerStay(Collider c)
     {
         //Faudra mettre des tag sur les entités pour les reconnaitres
         //J'ai vue les tag mais les noms sont en francais --> on les met en anglais ????
-        if (collider.tag == "survivor" || collider.tag == "zombie")
+        if (c.tag == "Survivor" || c.tag == "Zombie")
         {
             m_hasHit = true;
-            m_targetCollider = collider;
+            m_targetCollider = c;
         }
     }
 

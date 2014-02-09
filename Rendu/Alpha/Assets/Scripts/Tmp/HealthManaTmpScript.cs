@@ -14,15 +14,17 @@ public class HealthManaTmpScript : MonoBehaviour {
     private bool m_zeroLifePoint = false;
 
     [SerializeField]
-    private int m_currentHealth;
+    private int m_currentHealth = 100;
 
     [SerializeField]
-    private int m_maxHealth;
+    private int m_maxHealth = 100;
 
 	// Use this for initialization
 	void Start () 
     {
-        m_parentGameObject = transform.parent.gameObject;
+        m_parentGameObject = transform.gameObject;
+        m_currentHealth = 100;
+        m_maxHealth = 100;
 	}
 	
 	// Update is called once per frame
