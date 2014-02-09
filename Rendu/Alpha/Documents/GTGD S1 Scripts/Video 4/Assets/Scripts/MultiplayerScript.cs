@@ -202,7 +202,6 @@ public class MultiplayerScript : MonoBehaviour {
 			}
 		}
 		
-		
 		if(iWantToConnectToAServer == true)
 		{
 			//The user can type their player name into the
