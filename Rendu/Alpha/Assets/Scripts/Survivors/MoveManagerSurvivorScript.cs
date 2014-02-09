@@ -60,7 +60,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
                 else
                 {
                     m_curCorner = m_path.corners[m_numCorner++];
-                    m_character.LookAt(m_curCorner);
+                    //m_character.LookAt(m_curCorner);
                 }
                 return;
             }
@@ -79,7 +79,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         {
             m_curCorner = m_path.corners[1];
             m_numCorner = 1;
-            m_character.LookAt(m_curCorner);
+            //m_character.LookAt(m_curCorner);
         }
         else
         {

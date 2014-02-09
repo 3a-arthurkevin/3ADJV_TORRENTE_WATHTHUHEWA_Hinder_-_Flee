@@ -21,7 +21,7 @@ public class AttackManagerScript : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        m_parentGameObject = transform.gameObject;
+        m_parentGameObject = gameObject;
         m_weaponInfo = m_parentGameObject.GetComponent<WeaponInfo>();
 	}
 	

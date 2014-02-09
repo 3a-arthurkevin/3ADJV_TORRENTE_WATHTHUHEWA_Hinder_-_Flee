@@ -33,12 +33,6 @@ TagManager:
   - 
   - 
   - 
-<<<<<<< HEAD
-=======
-  - 
-  - Zombie
-  - 
->>>>>>> d50bcff631e93ed4741680c073c319c8cdb7e056
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -68,15 +62,7 @@ TagManager:
   User Layer 26: 
   User Layer 27: 
   User Layer 28: 
-<<<<<<< HEAD
   User Layer 29: 
-=======
-  User Layer 29: Weapon
->>>>>>> d50bcff631e93ed4741680c073c319c8cdb7e056
   User Layer 30: Wall
   User Layer 31: Door
-  m_SortingLayers:
-  - name: Default
-    userID: 0
-    uniqueID: 0
-    locked: 0
+  m_SortingLayers: []

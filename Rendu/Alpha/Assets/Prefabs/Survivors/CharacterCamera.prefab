@@ -44,7 +44,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97423ecd9b0401842bcc1d28ad5aa6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_parentGameObject: {fileID: 0}
   m_transformCamera: {fileID: 400000}
   m_moveSpeed: 3
   m_scriptZoom: {fileID: 11400004}
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afac068a64b9b0542964915707a4eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_parentGameObject: {fileID: 0}
   m_transformCamera: {fileID: 400000}
   m_mousePosition: {x: 0, y: 0}
   m_activeZoneBegin: .899999976
