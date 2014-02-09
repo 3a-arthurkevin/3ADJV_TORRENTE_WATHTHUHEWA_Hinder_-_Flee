@@ -10,6 +10,7 @@ public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
     int m_coolDownDuration = 10; 
         //Durée des cool down en secondes
     /*
+     * --> pour mettre des collider différents selon le type d'attaque
     [SerializeField]
     int m_typeOfAttack = 0;
         // typeOfAttack (à définir)
@@ -18,10 +19,6 @@ public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
             // 2 --> .....
             // 3 --> .....  
      */
-
-    //
-    //A ce niveau la je pense que je fais un peu de la merde dans l'archi du code (pour les armes/skill/malusBonus)
-    //
 
     //Instanciation
     [SerializeField]

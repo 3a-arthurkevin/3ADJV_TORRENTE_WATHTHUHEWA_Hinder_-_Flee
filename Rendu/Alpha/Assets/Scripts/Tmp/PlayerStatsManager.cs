@@ -25,7 +25,7 @@ public class PlayerStatsManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_parentGameObject = transform.parent.gameObject;
+        m_parentGameObject = transform.gameObject;
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class PlayerStatsManager : MonoBehaviour
     //Vu qu'on a un interface Skill, on regarde son type pour savoir quelle stat modifié
     public void applySkillAlteration(int idSkill)
     {
-        WeaponScript weapon = m_parentGameObject.GetComponent<WeaponScript>();
+        WeaponInfo weapon = m_parentGameObject.GetComponent<WeaponInfo>();
 
         ISkillScript skillUsed = weapon.getSkill(idSkill);
 

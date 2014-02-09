@@ -4,6 +4,9 @@ using System.Collections;
 public class CameraDragScript : MonoBehaviour 
 {
     [SerializeField]
+    private GameObject m_parentGameObject;
+    
+    [SerializeField]
     private Transform m_transformCamera;
 
     [SerializeField]
@@ -16,6 +19,13 @@ public class CameraDragScript : MonoBehaviour
 
     private int m_limitZ;
 
+    //Pour pouvoir désactiver le script et joueur avec la camera quand on fait des tests
+    //A enlever apres
+    void Start()
+    {
+        m_parentGameObject = transform.gameObject;
+    }
+
 	// Update is called once per frame
 	void LateUpdate () 
     {
@@ -24,8 +34,16 @@ public class CameraDragScript : MonoBehaviour
         {
             m_scriptZoom.enabled = false;
 
-            m_limitX = GetComponent<CameraLimitDeplacement>().blockMoveX(m_transformCamera);
-            m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+            if (m_parentGameObject.GetComponent<CameraLimitDeplacement>().enabled == true)
+            {
+                m_limitX = GetComponent<CameraLimitDeplacement>().blockMoveX(m_transformCamera);
+                m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+            }
+            else
+            {
+                m_limitX = 0;
+                m_limitZ = 0;
+            }
 
             var mouvementX = Input.GetAxis("Mouse X");
             var mouvementY = Input.GetAxis("Mouse Y");

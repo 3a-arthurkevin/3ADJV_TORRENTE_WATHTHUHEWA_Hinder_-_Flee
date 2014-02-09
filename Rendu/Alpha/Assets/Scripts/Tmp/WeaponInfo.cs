@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponScript : MonoBehaviour
-{
-    //
-    // Je fais de la merde ici aussi
-    // Faut que je revoir l'archi du code, entre Weapon/Skill/BonusMalus --> utilisation d'interface, autres chose. arg j'en sais rien
-    //
+public class WeaponInfo : MonoBehaviour {
 
-    //Dommage infligé au zombie --> pas de pris en compte des dommage des skill pour l'instant
+    //Dommage infligable par l'arme au zombie --> pas de prise en compte des dommages des skill pour l'instant
     [SerializeField]
-    int m_damage = 5; //valeur choisi au hasard pour tester
+    int m_damage = 10;
 
     //Les skills affecté à l'arme selon la touche
     [SerializeField]
     ISkillScript m_SkillA;
+
+    [SerializeField]
+    DefenseBonusMalusScript m_malus;
 
     [SerializeField]
     ISkillScript m_SkillZ;
@@ -25,6 +23,11 @@ public class WeaponScript : MonoBehaviour
     [SerializeField]
     ISkillScript m_SkillR;
 
+	public int getDamage()
+    {
+        return m_damage;
+    }
+
     private bool m_hasHit = false;
 
     //Collider de l'entité qui rentre dans le collider l'objet auquel le script est attaché --> ici l'arme
@@ -32,15 +35,15 @@ public class WeaponScript : MonoBehaviour
 
 
     //Pour savoir qui quelquechose est dans le collider de l'arme
-        //--> le paramètre collider de la fonction represente le collider de l'entité entrant dans le collider de l'arme
-    void onTriggerStay(Collider collider)
+    //--> le paramètre collider de la fonction represente le collider de l'entité entrant dans le collider de l'arme
+    void OnTriggerStay(Collider c)
     {
         //Faudra mettre des tag sur les entités pour les reconnaitres
         //J'ai vue les tag mais les noms sont en francais --> on les met en anglais ????
-        if (collider.tag == "survivor" || collider.tag == "zombie")
+        if (c.tag == "Survivor" || c.tag == "Zombie")
         {
             m_hasHit = true;
-            m_targetCollider = collider;
+            m_targetCollider = c;
         }
     }
 
@@ -51,18 +54,14 @@ public class WeaponScript : MonoBehaviour
 
 
     //Pour récupérer hasHit
+    [RPC]
     public bool getHasHit(int idSkill)
     {
         return m_hasHit;
     }
 
-    //Pour récupérer les Dommages à appliquer --> si cible zombie
-    public int getDamage()
-    {
-        return m_damage;
-    }
-
     //Pour récupérer le skill à appliquer --> si cible survivant
+    [RPC]
     public ISkillScript getSkill(int idSkill)
     {
         if (idSkill == 0)
@@ -78,12 +77,14 @@ public class WeaponScript : MonoBehaviour
     }
 
     //Récupération du collider de la cible --> pour pouvoir remonter au GameObject cible
+    [RPC]
     public Collider getTargetCollider()
     {
         return m_targetCollider;
     }
 
-    //Reset apres l'application de l'attack 
+    //Pour reset les attribut apres l'application de l'attack
+    [RPC]
     public void resetAfterHit()
     {
         m_hasHit = false;

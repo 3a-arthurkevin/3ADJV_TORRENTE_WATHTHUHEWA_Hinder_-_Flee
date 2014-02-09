@@ -14,15 +14,17 @@ public class HealthManaTmpScript : MonoBehaviour {
     private bool m_zeroLifePoint = false;
 
     [SerializeField]
-    private int m_currentHealth;
+    private int m_currentHealth = 100;
 
     [SerializeField]
-    private int m_maxHealth;
+    private int m_maxHealth = 100;
 
 	// Use this for initialization
 	void Start () 
     {
-        m_parentGameObject = transform.parent.gameObject;
+        m_parentGameObject = transform.gameObject;
+        m_currentHealth = 100;
+        m_maxHealth = 100;
 	}
 	
 	// Update is called once per frame
@@ -31,17 +33,23 @@ public class HealthManaTmpScript : MonoBehaviour {
         	
 	}
 
+    public bool getZeroLifePoint()
+    {
+        return m_zeroLifePoint;
+    }
+
     //Application des degats (utilisé dans AttackManager)
     //Et remise des PV à 0 si l'entité à moins de 0 PV
+    [RPC]
     public void applyDamage(int damage)
     {
         m_currentHealth -= damage;
-
         capHealthWhenDead();
     }
 
     //Pour utilisation de potion ou autre
     //Remise des PV au seuil max si il est au dela de ce seuil
+    [RPC]
     public void regenHealth(int regen)
     {
         m_currentHealth += regen;
@@ -50,6 +58,7 @@ public class HealthManaTmpScript : MonoBehaviour {
     }
 
     //Pour que l'entité n'ai pas plus de PV que le maximum autorisé
+    [RPC]
     public void capMaxHealth()
     {
         if (m_currentHealth > m_maxHealth)
@@ -59,11 +68,13 @@ public class HealthManaTmpScript : MonoBehaviour {
     }
 
     //Pour que l'entité n'ai pas moins que 0 SerializePrivateVariables (CacheIndex serait bizarre desu ne)
+    [RPC]
     public void capHealthWhenDead()
     {
         if (m_currentHealth < 0)
         {
             m_currentHealth = 0;
+            m_zeroLifePoint = true;
         }
     }
 

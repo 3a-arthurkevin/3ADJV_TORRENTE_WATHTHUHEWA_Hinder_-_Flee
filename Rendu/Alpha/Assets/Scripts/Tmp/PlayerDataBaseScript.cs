@@ -2,48 +2,55 @@
 using System.Collections;
 using System.Collections.Generic;
 
-//Script qui manage la liste des player
-//Script attaché à n emptyObject GameManager
-//Script accessbile par le playernameScript / Health,Damage Script ...
+//Script qui manage la liste des player/connexion joueur et serveur
+//Script attaché à un emptyObject GameManager
+//Script accessbile par le HealthManager Script ...
 
 public class PlayerDataBaseScript : MonoBehaviour {
 
-	// Variable début
-
-    public List<PlayerDateClassScript> PlayerList = new List<PlayerDateClassScript>();
+    public List<PlayerDateClassScript> m_playerList = new List<PlayerDateClassScript>();
 
     //utilisé pour ajouter joueur
-    public NetworkPlayer networkPlayer;
+    public NetworkPlayer m_networkPlayer;
 
     //utilisé pour mettre à jour la list des joueurs avec le nom du joueur
-    public bool nameSet = false;
-    public string playerName;
+    public bool m_nameSet = false;
+    public string m_playerName;
 
     //utilisé pour mettre à jour la classe du joueur
-    public bool playerClassChoice = false;
-    public int playerClass;
+    public bool m_playerClassChoice = false;
+    public int m_playerClass;
 
-    // Variable fin
+    [SerializeField]
+    private bool m_isBuildingServer = true;
 
-    void Start() { }
+    [SerializeField]
+    private int portNumber = 9090;
 
-    void Update() 
+    void Start() 
     {
-        //Affect le nom du joueur
-        if (nameSet)
-        {
-            networkView.RPC("EditPlayerListWithName", RPCMode.AllBuffered, Network.player, playerName);
-            nameSet = false;
-        }
+        Application.runInBackground = true;
 
-        //Affect la classe du joueur
-        if (playerClassChoice)
+        if (m_isBuildingServer)
         {
-            networkView.RPC("EditPlayerListWithClass", RPCMode.AllBuffered, Network.player, playerClass);
-            playerClassChoice = false;
+            Network.InitializeSecurity();
+            Network.InitializeServer(1, portNumber, true);
+        }
+        else
+        {
+            Network.Connect("127.0.0.1", portNumber);
         }
     }
 
+    void Update() 
+    {
+        //Affect la classe du joueur
+        if (m_playerClassChoice)
+        {
+            networkView.RPC("EditPlayerListWithClass", RPCMode.AllBuffered, Network.player, m_playerClass);
+            m_playerClassChoice = false;
+        }
+    }
 
 
     //Pour ajouter un joueur à la list
@@ -53,9 +60,14 @@ public class PlayerDataBaseScript : MonoBehaviour {
         //--> allBuffered (buffer au cas ou quelqu'un en plus arrive en cours)
         // netPlayer --> parametre de la fonction
         networkView.RPC("AddPlayerToList", RPCMode.AllBuffered, netPlayer);
+
+        if (m_playerList.Count == 2)
+        {
+            //Code pour démarrer la partie
+        }
     }
 
-    //Enlver joueur de la liste quans il se déconnecte 
+    //Enlever joueur de la liste quand il se déconnecte 
     void OnPlayerDisconnected(NetworkPlayer netPlayer)
     {
         networkView.RPC("RemovePlayerFromList", RPCMode.AllBuffered, netPlayer);
@@ -70,7 +82,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         player.networkPlayer = int.Parse(nPlayer.ToString());
 
-        PlayerList.Add(player);
+        m_playerList.Add(player);
     }
 
     //Trouve l'id du joueur et l'enleve de la list
@@ -79,32 +91,14 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         int i = 0;
         bool find = false;
-        int listSize = PlayerList.Count;
+        int listSize = m_playerList.Count;
 
         while (i < listSize && !find)
         {
-            if (PlayerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
+            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
             {
                 find = true;
-                PlayerList.RemoveAt(i);
-            }
-        }
-    }
-
-
-    //Trouve le joueur dans la list et affecte son nom
-    [RPC]
-    void EditPlayerListWithName(NetworkPlayer nPlayer, string name)
-    {
-        int i = 0;
-        bool find = false;
-        int listSize = PlayerList.Count;
-
-        while (i < listSize && !find)
-        {
-            if (PlayerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
-            {
-                PlayerList[i].playerName = name;
+                m_playerList.RemoveAt(i);
             }
         }
     }
@@ -115,13 +109,13 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         int i = 0;
         bool find = false;
-        int listSize = PlayerList.Count;
+        int listSize = m_playerList.Count;
 
         while (i < listSize && !find)
         {
-            if (PlayerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
+            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
             {
-                PlayerList[i].playerClass = playerClass;
+                m_playerList[i].playerClass = playerClass;
             }
         }
     }

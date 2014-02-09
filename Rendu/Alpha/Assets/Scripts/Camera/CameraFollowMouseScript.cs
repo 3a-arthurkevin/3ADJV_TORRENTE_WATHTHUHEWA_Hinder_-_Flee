@@ -4,6 +4,9 @@ using System.Collections;
 public class CameraFollowMouseScript : MonoBehaviour 
 {
     [SerializeField]
+    private GameObject m_parentGameObject;
+    
+    [SerializeField]
     private Transform m_transformCamera;
 
     [SerializeField]
@@ -22,15 +25,28 @@ public class CameraFollowMouseScript : MonoBehaviour
 
     private int m_limitZ;
 
-	
+
+    void Start()
+    {
+        m_parentGameObject = transform.gameObject;
+    }
+
 	// Update is called once per frame
 	void LateUpdate () 
     {
         m_mousePosition = Vector3.zero;
         m_mousePosition.Set(Input.mousePosition.x/Screen.width, Input.mousePosition.y/Screen.height);
 
-        m_limitX = GetComponent<CameraLimitDeplacement>().blockMoveX(m_transformCamera);
-        m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+        if (m_parentGameObject.GetComponent<CameraLimitDeplacement>().enabled == true)
+        {
+            m_limitX = GetComponent<CameraLimitDeplacement>().blockMoveX(m_transformCamera);
+            m_limitZ = GetComponent<CameraLimitDeplacement>().blockMoveY(m_transformCamera);
+        }
+        else
+        {
+            m_limitX = 0;
+            m_limitZ = 0;
+        }
 
         if ( (m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd) && (m_limitX >= 0) )
         {
