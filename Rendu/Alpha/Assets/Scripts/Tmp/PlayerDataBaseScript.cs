@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-//Script qui manage la liste des player
-//Script attaché à n emptyObject GameManager
-//Script accessbile par le playernameScript / Health,Damage Script ...
+//Script qui manage la liste des player/connexion joueur et serveur
+//Script attaché à un emptyObject GameManager
+//Script accessbile par le HealthManager Script ...
 
 public class PlayerDataBaseScript : MonoBehaviour {
 
@@ -44,13 +44,6 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     void Update() 
     {
-        //Affect le nom du joueur
-        if (m_nameSet)
-        {
-            networkView.RPC("EditPlayerListWithName", RPCMode.AllBuffered, Network.player, m_playerName);
-            m_nameSet = false;
-        }
-
         //Affect la classe du joueur
         if (m_playerClassChoice)
         {
@@ -74,7 +67,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
         }
     }
 
-    //Enlver joueur de la liste quans il se déconnecte 
+    //Enlever joueur de la liste quand il se déconnecte 
     void OnPlayerDisconnected(NetworkPlayer netPlayer)
     {
         networkView.RPC("RemovePlayerFromList", RPCMode.AllBuffered, netPlayer);
@@ -106,24 +99,6 @@ public class PlayerDataBaseScript : MonoBehaviour {
             {
                 find = true;
                 m_playerList.RemoveAt(i);
-            }
-        }
-    }
-
-
-    //Trouve le joueur dans la list et affecte son nom
-    [RPC]
-    void EditPlayerListWithName(NetworkPlayer nPlayer, string name)
-    {
-        int i = 0;
-        bool find = false;
-        int listSize = m_playerList.Count;
-
-        while (i < listSize && !find)
-        {
-            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
-            {
-                m_playerList[i].playerName = name;
             }
         }
     }

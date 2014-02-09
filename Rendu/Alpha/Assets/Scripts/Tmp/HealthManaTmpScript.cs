@@ -33,6 +33,11 @@ public class HealthManaTmpScript : MonoBehaviour {
         	
 	}
 
+    public bool getZeroLifePoint()
+    {
+        return m_zeroLifePoint;
+    }
+
     //Application des degats (utilisé dans AttackManager)
     //Et remise des PV à 0 si l'entité à moins de 0 PV
     [RPC]
@@ -69,6 +74,7 @@ public class HealthManaTmpScript : MonoBehaviour {
         if (m_currentHealth < 0)
         {
             m_currentHealth = 0;
+            m_zeroLifePoint = true;
         }
     }
 

@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Script collé à une arme
+//Permet d'attaquer
+
 public class AttackManagerScript : MonoBehaviour 
 {
 
-    //Represente l'arme du joueur qui attaque
+    //Represente le GameObject arme du joueur qui attaque
     [SerializeField]
     private GameObject m_parentGameObject;
 
@@ -28,7 +31,6 @@ public class AttackManagerScript : MonoBehaviour
         m_idSkill = pushButtonAttack();
         if (m_idSkill >= 0)
         {
-            Debug.Log(m_weaponInfo.getDamage());
             if (doesAttackHasHit(m_idSkill))
             {
                 applyAttackEffect(m_idSkill);
@@ -44,23 +46,24 @@ public class AttackManagerScript : MonoBehaviour
     //Pour savoir si le bouton appuyé est un bouton d'attaque
     private int pushButtonAttack()
     {
+        //Id par défaut = -1
         int idAttack = -1;
 
         if (Input.anyKeyDown)
         {
-            if (Input.GetKeyDown(KeyCode.A) /* && coolDown ok*/)
+            if (Input.GetKeyDown(KeyCode.A) /* && coolDown skillA ok*/)
             {
                 idAttack = 0;
             }
-            else if (Input.GetKeyDown(KeyCode.Z) /* && coolDown ok*/)
+            else if (Input.GetKeyDown(KeyCode.Z) /* && coolDown skillZ ok*/)
             {
                 idAttack = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.E) /* && coolDown ok*/)
+            else if (Input.GetKeyDown(KeyCode.E) /* && coolDown skillE ok*/)
             {
                 idAttack = 2;
             }
-            else if (Input.GetKeyDown(KeyCode.R) /* && coolDown ok*/)
+            else if (Input.GetKeyDown(KeyCode.R) /* && coolDown skillR ok*/)
             {
                 idAttack = 3;
             }
@@ -76,7 +79,7 @@ public class AttackManagerScript : MonoBehaviour
     }
 
     //Application de l'effet de l'attaque
-        //Différencie le zombie et le survivant et applique les dégat ou malus selon la cas
+        //Différencie le zombie et le survivant et applique les dégats ou malus selon la cas
         //Reset du collider (à null) et du boolean hasHit (à false)
     public void applyAttackEffect(int idSkill)
     {
@@ -86,6 +89,11 @@ public class AttackManagerScript : MonoBehaviour
         {
             HealthManaTmpScript targetHealthManager = targetCollider.transform.GetComponent<HealthManaTmpScript>();
             targetHealthManager.applyDamage(m_weaponInfo.getDamage());
+
+            /*if (targetHealthManager.getZeroLifePoint())
+            {
+                // --> détruire le zombie ou transformer de survivant
+            }*/
         }
         else if (targetCollider.tag == "Survivant")
         {

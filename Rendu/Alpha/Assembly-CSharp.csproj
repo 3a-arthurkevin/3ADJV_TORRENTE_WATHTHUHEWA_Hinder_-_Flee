@@ -68,9 +68,7 @@
      <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\AttackManagerScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\AttackTmpScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\ConnexionScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\HealthAndDamageScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\HealthManaTmpScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerDataBaseScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerDateClassScript.cs" />

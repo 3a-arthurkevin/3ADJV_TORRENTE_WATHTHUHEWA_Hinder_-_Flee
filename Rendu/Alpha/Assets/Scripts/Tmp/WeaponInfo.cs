@@ -3,13 +3,16 @@ using System.Collections;
 
 public class WeaponInfo : MonoBehaviour {
 
-    //Dommage infligé au zombie --> pas de pris en compte des dommage des skill pour l'instant
+    //Dommage infligable par l'arme au zombie --> pas de prise en compte des dommages des skill pour l'instant
     [SerializeField]
     int m_damage = 10;
 
     //Les skills affecté à l'arme selon la touche
     [SerializeField]
     ISkillScript m_SkillA;
+
+    [SerializeField]
+    DefenseBonusMalusScript m_malus;
 
     [SerializeField]
     ISkillScript m_SkillZ;
@@ -51,12 +54,14 @@ public class WeaponInfo : MonoBehaviour {
 
 
     //Pour récupérer hasHit
+    [RPC]
     public bool getHasHit(int idSkill)
     {
         return m_hasHit;
     }
 
     //Pour récupérer le skill à appliquer --> si cible survivant
+    [RPC]
     public ISkillScript getSkill(int idSkill)
     {
         if (idSkill == 0)
@@ -72,12 +77,14 @@ public class WeaponInfo : MonoBehaviour {
     }
 
     //Récupération du collider de la cible --> pour pouvoir remonter au GameObject cible
+    [RPC]
     public Collider getTargetCollider()
     {
         return m_targetCollider;
     }
 
-    //Reset apres l'application de l'attack 
+    //Pour reset les attribut apres l'application de l'attack
+    [RPC]
     public void resetAfterHit()
     {
         m_hasHit = false;
