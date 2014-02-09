@@ -21,6 +21,7 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("Ground")))
             {
+                Debug.Log(hit.point);
                 m_target.position = hit.point;
                 m_moveSurvivor.Target = m_target;
             }
