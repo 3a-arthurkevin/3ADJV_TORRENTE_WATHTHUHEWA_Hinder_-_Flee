@@ -54,14 +54,12 @@ public class WeaponInfo : MonoBehaviour {
 
 
     //Pour récupérer hasHit
-    [RPC]
     public bool getHasHit(int idSkill)
     {
         return m_hasHit;
     }
 
     //Pour récupérer le skill à appliquer --> si cible survivant
-    [RPC]
     public ISkillScript getSkill(int idSkill)
     {
         if (idSkill == 0)
@@ -77,14 +75,12 @@ public class WeaponInfo : MonoBehaviour {
     }
 
     //Récupération du collider de la cible --> pour pouvoir remonter au GameObject cible
-    [RPC]
     public Collider getTargetCollider()
     {
         return m_targetCollider;
     }
 
     //Pour reset les attribut apres l'application de l'attack
-    [RPC]
     public void resetAfterHit()
     {
         m_hasHit = false;
