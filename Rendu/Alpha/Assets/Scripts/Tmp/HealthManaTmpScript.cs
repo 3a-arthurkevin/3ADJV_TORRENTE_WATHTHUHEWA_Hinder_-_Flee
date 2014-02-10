@@ -40,7 +40,6 @@ public class HealthManaTmpScript : MonoBehaviour {
 
     //Application des degats (utilisé dans AttackManager)
     //Et remise des PV à 0 si l'entité à moins de 0 PV
-    [RPC]
     public void applyDamage(int damage)
     {
         m_currentHealth -= damage;
@@ -49,7 +48,6 @@ public class HealthManaTmpScript : MonoBehaviour {
 
     //Pour utilisation de potion ou autre
     //Remise des PV au seuil max si il est au dela de ce seuil
-    [RPC]
     public void regenHealth(int regen)
     {
         m_currentHealth += regen;
@@ -67,14 +65,25 @@ public class HealthManaTmpScript : MonoBehaviour {
         }
     }
 
-    //Pour que l'entité n'ai pas moins que 0 SerializePrivateVariables (CacheIndex serait bizarre desu ne)
-    [RPC]
+    //Pour que l'entité n'ai pas moins que 0 point de vie
     public void capHealthWhenDead()
     {
         if (m_currentHealth < 0)
         {
             m_currentHealth = 0;
             m_zeroLifePoint = true;
+            /*
+            if (m_parentGameObject.tag == "Surviant")
+            {
+                Changement du joueur en zombie
+                Voir le nombre de joueur dans la partie de type Survivant
+                    --> si il n'y en a plus que 1, lancer le chrono de fin de partir (1 min à tenir)
+            }
+            else if (m_parentGameObject.tag == "Zombie")
+            { 
+                Detruire GameObject
+            }
+            */
         }
     }
 

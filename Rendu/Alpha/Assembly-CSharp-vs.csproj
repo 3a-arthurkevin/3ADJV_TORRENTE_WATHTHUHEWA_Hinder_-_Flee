@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\AttackManagerScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\ConnexionScript.cs" />
+     <Compile Include="Assets\Scripts\Tmp\EndGameConditionManager.cs" />
      <Compile Include="Assets\Scripts\Tmp\HealthManaTmpScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerDateClassScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\PlayerNameScript.cs" />
