@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 //Script qui manage la liste des player/connexion joueur et serveur
 //Script attaché à un emptyObject GameManager
@@ -8,24 +9,24 @@ using System.Collections.Generic;
 
 public class PlayerDataBaseScript : MonoBehaviour {
 
-    public List<PlayerDateClassScript> m_playerList = new List<PlayerDateClassScript>();
-
-    //utilisé pour ajouter joueur
-    public NetworkPlayer m_networkPlayer;
-
-    //utilisé pour mettre à jour la list des joueurs avec le nom du joueur
-    public bool m_nameSet = false;
-    public string m_playerName = "Joueur";    //Pour l'instant on nomme tout le monde "Joueur" (à modifier plus tard)
-
-    //utilisé pour mettre à jour la classe du joueur
-    public bool m_playerClassChoice = false;
-    public int m_playerClass = 0;   //Pour l'instant on met tout les joueurs en class id 0 (à modifier plus tard)
+    //Stocke le Transform + le NetworkPlayer durant la game
+    private Dictionary<NetworkPlayer, Transform> m_players;
+    
+    //Stocke les NetworkPlayer avant le lancement de la game
+    private List<NetworkPlayer> m_beforeGamePlayer;
 
     [SerializeField]
     private bool m_isBuildingServer = true;
 
     [SerializeField]
     private int portNumber = 9090;
+
+    [SerializeField]
+    private int m_maxPlayers = 2;
+    private int m_currentPlayer = 0;
+
+    [SerializeField]
+    private Transform m_prefab;
 
     
     void Start() 
@@ -34,9 +35,11 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         if (m_isBuildingServer)
         {
+            m_beforeGamePlayer = new List<NetworkPlayer>();
             Network.InitializeSecurity();
-            Network.InitializeServer(1, portNumber, true);
-            Debug.Log("Serveur Démarré !!!");
+            var useNat = !Network.HavePublicAddress();
+            Network.InitializeServer(m_maxPlayers, portNumber, useNat);
+            Debug.LogError("Serveur Démarré !!!");
         }
         else
         {
@@ -45,106 +48,70 @@ public class PlayerDataBaseScript : MonoBehaviour {
         }
     }
 
-    void Update() 
-    {
-        //Affecte nom joueur
-        if (m_nameSet)
-        {
-            networkView.RPC("EditPlayerListWithName", RPCMode.AllBuffered, Network.player, m_playerName);
-            m_playerClassChoice = false;
-        }
-
-        //Affect la classe du joueur
-        if (m_playerClassChoice)
-        {
-            networkView.RPC("EditPlayerListWithClass", RPCMode.AllBuffered, Network.player, m_playerClass);
-            m_playerClassChoice = false;
-        }
-    }
-
-
-    //Pour ajouter un joueur à la list
-    void OnPlayerConnected(NetworkPlayer netPlayer)
-    {
-        Debug.LogError("New player");
-        //utilise la fonction "AddPlayerToList" pour tout les players 
-        //--> allBuffered (buffer au cas ou quelqu'un en plus arrive en cours)
-        // netPlayer --> parametre de la fonction
-        networkView.RPC("AddPlayerToList", RPCMode.AllBuffered, netPlayer);
-        if (m_playerList.Count == 2)
-        {
-            //Code pour démarrer la partie
-        }
+    void OnPlayerConnected(NetworkPlayer newPlayer)
+    {//Nouveau joueur se connect au serveur
+        createNewPlayer(newPlayer);
     }
 
     //Enlever joueur de la liste quand il se déconnecte 
-    void OnPlayerDisconnected(NetworkPlayer netPlayer)
+    void OnPlayerDisconnected(NetworkPlayer oldPlayer)
     {
-        Debug.LogError("Old player");
-        networkView.RPC("RemovePlayerFromList", RPCMode.AllBuffered, netPlayer);
+        removePlayer(oldPlayer);
     }
 
 
-    //Ajouter joueur à la liste et lui donner un id réseau
-    [RPC]
-    void AddPlayerToList(NetworkPlayer nPlayer)
+    private void createNewPlayer(NetworkPlayer newPlayer)
     {
-        PlayerDateClassScript player = new PlayerDateClassScript();
+        m_beforeGamePlayer.Add(newPlayer);
 
-        player.networkPlayer = int.Parse(nPlayer.ToString());
-
-        m_playerList.Add(player);
+        if (++m_currentPlayer == m_maxPlayers)
+            initialiseGame();
     }
 
-    //Trouve l'id du joueur et l'enleve de la list
-    [RPC]
-    void RemovePlayerFromList(NetworkPlayer nPlayer)
-    {
-        int i = 0;
-        bool find = false;
-        int listSize = m_playerList.Count;
+    private void initialiseGame()
+    {//Instancie toute les préfabs et supprime la liste m_beforeGame
+        Debug.LogError("Start Game");
 
-        while (i < listSize && !find)
+        m_players = new Dictionary<NetworkPlayer, Transform>(m_beforeGamePlayer.Count);
+
+        foreach(var player in m_beforeGamePlayer)
         {
-            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
+            Transform transformPlayer = (Transform)Network.Instantiate(m_prefab, ConfigLevelManager.getNextSpawnForLevelOne(), Quaternion.identity, int.Parse(player.ToString()));
+            
+            NetworkView playerNetworkView = transformPlayer.networkView;
+
+            playerNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player);
+
+            m_players.Add(player, transformPlayer);
+            ++m_currentPlayer;
+        }
+
+        m_beforeGamePlayer = null;
+    }
+
+    private void removePlayer(NetworkPlayer oldPlayer)
+    {
+        int idPlayer = int.Parse(oldPlayer.ToString());
+
+        for (int i = 0; i < m_players.Count; ++i)
+        {
+            var item = m_players.ElementAt(i);
+
+            if (int.Parse(item.Key.ToString()) == idPlayer)
             {
-                find = true;
-                m_playerList.RemoveAt(i);
+                Destroy(item.Value.gameObject);
+                m_players.Remove(item.Key);
+                --m_currentPlayer;
+                
+                return;
             }
         }
     }
 
-    //Trouve le joueur dans la list et affecte sa un nom (Pour l'instant on lui donne un id)
-    [RPC]
-    void EditPlayerListWithName(NetworkPlayer nPlayer, int playerName)
+    public Transform getTransformPlayer(NetworkPlayer player)
     {
-        int i = 0;
-        bool find = false;
-        int listSize = m_playerList.Count;
-
-        while (i < listSize && !find)
-        {
-            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
-            {
-                m_playerList[i].playerClass = playerName;
-            }
-        }
-    }
-
-    //Trouve le joueur dans la list et affecte sa classe (Barbar ou assasin)
-    [RPC]
-    void EditPlayerListWithClass(NetworkPlayer nPlayer, int playerClass)
-    {
-        int i = 0;
-        bool find = false;
-        int listSize = m_playerList.Count;
-
-        while (i < listSize && !find)
-        {
-            if (m_playerList[i].networkPlayer == int.Parse(nPlayer.ToString()))
-            {
-                m_playerList[i].playerClass = playerClass;
-            }
-        }
+        Transform transformPlayer = null;
+        m_players.TryGetValue(player, out transformPlayer);
+        return transformPlayer;
     }
 }

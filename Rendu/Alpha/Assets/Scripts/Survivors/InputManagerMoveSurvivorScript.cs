@@ -4,6 +4,9 @@ using System.Collections;
 public class InputManagerMoveSurvivorScript : MonoBehaviour
 {
     [SerializeField]
+    private NetworkPlayer m_owner;
+
+    [SerializeField]
     private Camera m_characterCamera;
 
     [SerializeField]
@@ -13,32 +16,36 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     private Transform m_target;
 
     [SerializeField]
-    private NetworkView m_networkView;
+    private NetworkView m_networkView = null;
 
 	void Update ()
     {
-        if (Network.isClient)
+        if (Network.isClient && m_owner == Network.player)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.LogError("Sending");
-
-                m_networkView.RPC("setTarget", RPCMode.Server, Network.player, Input.mousePosition);
-                /*var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
-
+                var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
+                
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("Ground")))
-                {
-                    m_target.position = hit.point;
-                    m_moveSurvivor.Target = m_target;
-                }*/
+                    m_networkView.RPC("setTarget", RPCMode.Server, Network.player, hit.point);
             }
         }
 	}
 
     [RPC]
-    void setTarget(NetworkPlayer player, Vector3 mousePosition)
+    void setTarget(NetworkPlayer player, Vector3 targetPosition)
     {
-        Debug.LogError("Player : " + player.ipAddress + ", mousePos : " + mousePosition.ToString("F6"));
+        if (Network.isServer)
+        {
+            m_target.position = targetPosition;
+            m_moveSurvivor.setTarget(player, m_target);
+        }
+    }
+
+    [RPC]
+    public void SetPlayer(NetworkPlayer owner)
+    {
+        m_owner = owner;
     }
 }

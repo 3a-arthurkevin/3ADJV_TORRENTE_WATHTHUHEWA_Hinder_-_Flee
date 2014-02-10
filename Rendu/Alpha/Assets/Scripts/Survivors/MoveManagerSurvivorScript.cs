@@ -38,6 +38,12 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
         }
     }
 
+    public void setTarget(NetworkPlayer player, Transform target)
+    {
+        m_target = target;
+        reCalcPath();
+    }
+
     void Awake()
     {
         m_target = null;
