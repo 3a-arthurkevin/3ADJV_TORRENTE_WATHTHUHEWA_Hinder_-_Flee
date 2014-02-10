@@ -83,9 +83,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 105412089}
   - 136: {fileID: 105412093}
-  - 54: {fileID: 105412092}
   - 114: {fileID: 105412091}
   - 114: {fileID: 105412090}
+  - 54: {fileID: 105412092}
   - 114: {fileID: 105412094}
   m_Layer: 11
   m_Name: Survivor
@@ -119,12 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29850f1f6c1e8a419e02fe970330d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_rigidBodyPlayer: {fileID: 105412092}
   m_characterCamera: {fileID: 481157344}
-  m_rigidBodySurvivor: {fileID: 105412092}
   m_character: {fileID: 105412089}
   m_target: {fileID: 1601461875}
-  minDistance: 1
-  velocity: 3
+  m_minDistance: 2
+  m_speed: 2
 --- !u!114 &105412091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +831,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2441,6 +2441,7 @@ GameObject:
   - 33: {fileID: 1484046267}
   - 23: {fileID: 1484046269}
   - 23: {fileID: 1484046268}
+  - 65: {fileID: 1484046270}
   m_Layer: 31
   m_Name: BlockDoor
   m_TagString: Untagged
@@ -2511,6 +2512,19 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!65 &1484046270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500002, guid: 192405cec95a58340985093aac94a431,
+    type: 2}
+  m_PrefabInternal: {fileID: 937306590}
+  m_GameObject: {fileID: 1484046265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1502867272
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3184,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1888123363}
   - 136: {fileID: 1888123368}
-  - 54: {fileID: 1888123366}
   - 114: {fileID: 1888123367}
   - 114: {fileID: 1888123365}
   - 114: {fileID: 1888123364}
@@ -3223,27 +3236,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_zombie: {fileID: 1888123363}
-  m_rigidBodyZombie: {fileID: 1888123366}
   m_direction: {x: 0, y: 0, z: 0}
   m_manager: {fileID: 1888123364}
-  minDistance: 2
-  velocity: 2
---- !u!54 &1888123366
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400000, guid: 0fb76991aff24124f8794e0357cd35ad,
-    type: 2}
-  m_PrefabInternal: {fileID: 1967708975}
-  m_GameObject: {fileID: 1888123362}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
+  m_minDistance: 0
+  m_speed: 0
 --- !u!114 &1888123367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3256,11 +3252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af661696b558eec4bb3121f6242f6b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rigidBodyZombie: {fileID: 1888123366}
   m_zombiePos: {fileID: 1888123363}
   m_follow: {fileID: 0}
   m_minDistance: 2
-  m_velocity: 2
+  m_speed: 2
 --- !u!136 &1888123368
 CapsuleCollider:
   m_ObjectHideFlags: 0
