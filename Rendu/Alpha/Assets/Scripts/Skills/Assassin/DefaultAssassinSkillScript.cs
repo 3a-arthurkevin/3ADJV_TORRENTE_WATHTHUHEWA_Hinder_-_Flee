@@ -3,11 +3,11 @@ using System.Collections;
 
 public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
 {
-    [SerializeField]
+    /*[SerializeField]
     int m_damage = 10;
 
     [SerializeField]
-    int m_coolDownDuration = 10; 
+    int m_coolDownDuration = 10; */
         //Durée des cool down en secondes
     /*
      * --> pour mettre des collider différents selon le type d'attaque

@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Cour\DevJV\3A-NavMesh\Assets\Scripts\MoveToScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs">
     <Files>
-      <File FileName="..\..\..\..\Cour\DevJV\3A-NavMesh\Assets\Scripts\MoveToScript.cs" Line="23" Column="2" />
+      <File FileName="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" Line="1" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

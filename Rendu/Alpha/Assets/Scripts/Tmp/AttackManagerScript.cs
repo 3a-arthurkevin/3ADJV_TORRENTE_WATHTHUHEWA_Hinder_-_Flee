@@ -18,15 +18,15 @@ public class AttackManagerScript : MonoBehaviour
     [SerializeField]
     private int m_idSkill = -1;
 
-    [SerializeField]
-    private NetworkView m_networkView;
+    //[SerializeField]
+    //private NetworkView m_networkView;
 
 	// Use this for initialization
 	void Start () 
     {
         m_parentGameObject = gameObject;
         m_weaponInfo = m_parentGameObject.GetComponent<WeaponInfo>();
-        m_networkView = gameObject.GetComponent<NetworkView>();
+        //m_networkView = gameObject.GetComponent<NetworkView>();
 	}
 	
 	// Update is called once per frame

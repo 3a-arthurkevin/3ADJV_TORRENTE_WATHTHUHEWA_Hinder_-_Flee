@@ -10,16 +10,16 @@ public class PlayerStatsManager : MonoBehaviour
     //Toutes les stats du joueurs (dont celle pouvant etre modifié par bonus malus)
 
     [SerializeField]
-    private float m_attack = 1f;
-
-    [SerializeField]
     private float m_defense = 1f;
+
+    /*[SerializeField]
+    private float m_attack = 1f;
 
     [SerializeField]
     private float m_playerSpeed = 2.5f;
 
     [SerializeField]
-    private float m_coolDownSpeed = 1f;
+    private float m_coolDownSpeed = 1f;*/
 
 
     // Use this for initialization

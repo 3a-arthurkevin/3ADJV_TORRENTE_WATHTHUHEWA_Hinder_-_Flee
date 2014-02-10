@@ -113,7 +113,6 @@ GameObject:
   - 114: {fileID: 317160953}
   - 54: {fileID: 317160952}
   - 148: {fileID: 317160957}
-  - 132: {fileID: 317160958}
   m_Layer: 11
   m_Name: Survivor
   m_TagString: Survivant
@@ -170,7 +169,7 @@ MonoBehaviour:
   m_characterCamera: {fileID: 983231189}
   m_moveSurvivor: {fileID: 0}
   m_target: {fileID: 279977607}
-  m_networkView: {fileID: 0}
+  m_networkView: {fileID: 317160957}
 --- !u!136 &317160955
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -209,29 +208,6 @@ NetworkView:
   m_ViewID:
     m_ID: 1
     m_Type: 1
---- !u!132 &317160958
-GUIText:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 317160951}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: Unknow
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 0}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190335
-  m_PixelCorrect: 1
-  m_RichText: 1
 --- !u!1 &401633791
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +432,10 @@ Prefab:
       propertyPath: m_moveSurvivor
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
+      propertyPath: m_networkView
+      value: 
+      objectReference: {fileID: 317160957}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
   m_RootGameObject: {fileID: 317160951}
@@ -691,7 +671,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1092556228}
   - 114: {fileID: 1092556229}
-  - 132: {fileID: 1092556230}
+  - 148: {fileID: 1092556230}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -725,31 +705,20 @@ MonoBehaviour:
   m_playerName: Joueur
   m_playerClassChoice: 0
   m_playerClass: 0
-  m_isBuildingServer: 0
+  m_isBuildingServer: 1
   portNumber: 9090
---- !u!132 &1092556230
-GUIText:
+--- !u!148 &1092556230
+NetworkView:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092556227}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Text: Unknow
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 300}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 0}
-  m_Material: {fileID: 0}
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278250751
-  m_PixelCorrect: 1
-  m_RichText: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1092556228}
+  m_ViewID:
+    m_ID: 2
+    m_Type: 1
 --- !u!1 &1181319664
 GameObject:
   m_ObjectHideFlags: 0
