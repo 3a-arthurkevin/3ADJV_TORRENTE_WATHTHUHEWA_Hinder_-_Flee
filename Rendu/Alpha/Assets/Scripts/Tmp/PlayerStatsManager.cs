@@ -25,7 +25,7 @@ public class PlayerStatsManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_parentGameObject = transform.gameObject;
+        m_parentGameObject = gameObject;
     }
 
     // Update is called once per frame

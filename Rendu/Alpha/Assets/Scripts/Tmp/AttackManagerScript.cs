@@ -18,30 +18,33 @@ public class AttackManagerScript : MonoBehaviour
     [SerializeField]
     private int m_idSkill = -1;
 
+    [SerializeField]
+    private NetworkView m_networkView;
+
 	// Use this for initialization
 	void Start () 
     {
         m_parentGameObject = gameObject;
         m_weaponInfo = m_parentGameObject.GetComponent<WeaponInfo>();
+        m_networkView = gameObject.GetComponent<NetworkView>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        m_idSkill = pushButtonAttack();
-        if (m_idSkill >= 0)
+        if (Network.isClient)
         {
-            if (doesAttackHasHit(m_idSkill))
+            m_idSkill = pushButtonAttack();
+            if (m_idSkill >= 0)
             {
-                applyAttackEffect(m_idSkill);
+                if (doesAttackHasHit(m_idSkill))
+                {
+                    applyAttackEffect(m_idSkill);
+                }
             }
         }
 	}
 
-
-    //
-    // Fonction ci dessous utilisé dans le Update()
-    //
 
     //Pour savoir si le bouton appuyé est un bouton d'attaque
     private int pushButtonAttack()
