@@ -35,10 +35,12 @@ public class PlayerDataBaseScript : MonoBehaviour {
         {
             Network.InitializeSecurity();
             Network.InitializeServer(1, portNumber, true);
+            Debug.Log("Serveur Démarré !!!");
         }
         else
         {
             Network.Connect("127.0.0.1", portNumber);
+            Debug.Log("1 joueur connecté !!!");
         }
     }
 
@@ -60,7 +62,6 @@ public class PlayerDataBaseScript : MonoBehaviour {
         //--> allBuffered (buffer au cas ou quelqu'un en plus arrive en cours)
         // netPlayer --> parametre de la fonction
         networkView.RPC("AddPlayerToList", RPCMode.AllBuffered, netPlayer);
-
         if (m_playerList.Count == 2)
         {
             //Code pour démarrer la partie
