@@ -17,6 +17,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     private NavMeshPath m_path;
     private Vector3 m_curCorner;
     private uint m_numCorner;
+    private bool m_isMoved = false;
 
     [SerializeField]
     private float m_minDistance = 2;
@@ -46,33 +47,42 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     {
         if (m_target != null)
         {//Déplacement jusqu'au coint final
-            
+
             var direction = m_curCorner - m_character.position;
-            direction.y = 0;
 
-            if (direction.sqrMagnitude < m_minDistance)
+            if (m_isMoved)
             {
-                if (m_numCorner + 1 > m_path.corners.Length)
+                if (direction.sqrMagnitude < m_minDistance)
                 {
-                    m_rigidBodyPlayer.velocity = Vector3.zero;
-                    m_target = null;
-                    m_path.ClearCorners();
-                }
-                else
-                {
-                    m_curCorner = m_path.corners[m_numCorner++];
-                    m_character.LookAt(m_curCorner);
-                }
-                return;
-            }
+                    if (m_numCorner + 1 > m_path.corners.Length)
+                    {
+                        m_rigidBodyPlayer.velocity = Vector3.zero;
+                        m_target = null;
+                        m_path.ClearCorners();
+                    }
+                    else
+                    {
+                        m_curCorner = m_path.corners[m_numCorner++];
+                        m_character.LookAt(m_curCorner);
+                    }
 
-            m_rigidBodyPlayer.velocity = direction.normalized * m_speed;
-            //m_character.position += m_character.forward * m_speed * Time.deltaTime;
+                    m_isMoved = false;
+                    return;
+                }
+            }
+            else
+            {
+                m_rigidBodyPlayer.AddForce(Vector3.forward * m_speed, ForceMode.Impulse);
+                m_isMoved = true;
+                //m_rigidBodyPlayer.velocity = direction.normalized * m_speed;
+            }
         }
     }
 
     private void reCalcPath()
     {
+        m_isMoved = false;
+
         m_path = new NavMeshPath();
         NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
 
