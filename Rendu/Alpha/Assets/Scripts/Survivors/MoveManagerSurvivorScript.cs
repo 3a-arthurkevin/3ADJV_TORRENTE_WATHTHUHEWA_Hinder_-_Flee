@@ -56,6 +56,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
                 {
                     if (m_numCorner + 1 > m_path.corners.Length)
                     {
+
                         m_rigidBodyPlayer.velocity = Vector3.zero;
                         m_target = null;
                         m_path.ClearCorners();

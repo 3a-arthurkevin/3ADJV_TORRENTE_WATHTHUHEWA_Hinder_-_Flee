@@ -112,6 +112,7 @@ GameObject:
   - 114: {fileID: 317160954}
   - 114: {fileID: 317160953}
   - 54: {fileID: 317160952}
+  - 148: {fileID: 317160957}
   m_Layer: 11
   m_Name: Survivor
   m_TagString: Survivant
@@ -194,6 +195,18 @@ Transform:
   m_Children:
   - {fileID: 1181319665}
   m_Father: {fileID: 0}
+--- !u!148 &317160957
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 317160951}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 317160956}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
 --- !u!1 &401633791
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +649,32 @@ Prefab:
   m_RootGameObject: {fileID: 983231180}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1092556227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1092556228}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1092556228
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092556227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1181319664
 GameObject:
   m_ObjectHideFlags: 0
