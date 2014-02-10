@@ -36,12 +36,12 @@ public class PlayerDataBaseScript : MonoBehaviour {
         {
             Network.InitializeSecurity();
             Network.InitializeServer(1, portNumber, true);
-            guiText.text = "Serveur Démarré !!!";
+            Debug.Log("Serveur Démarré !!!");
         }
         else
         {
             Network.Connect("127.0.0.1", portNumber);
-            guiText.text = "1 joueur connecté !!!";
+            Debug.LogError("1 joueur connecté !!!");
         }
     }
 
@@ -66,7 +66,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     //Pour ajouter un joueur à la list
     void OnPlayerConnected(NetworkPlayer netPlayer)
     {
-        guiText.text = "New player";
+        Debug.LogError("New player");
         //utilise la fonction "AddPlayerToList" pour tout les players 
         //--> allBuffered (buffer au cas ou quelqu'un en plus arrive en cours)
         // netPlayer --> parametre de la fonction
@@ -80,7 +80,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     //Enlever joueur de la liste quand il se déconnecte 
     void OnPlayerDisconnected(NetworkPlayer netPlayer)
     {
-        guiText.text = "Old player";
+        Debug.LogError("Old player");
         networkView.RPC("RemovePlayerFromList", RPCMode.AllBuffered, netPlayer);
     }
 

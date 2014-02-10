@@ -21,7 +21,7 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                guiText.text = "Sending";
+                Debug.LogError("Sending");
 
                 m_networkView.RPC("setTarget", RPCMode.Server, Network.player, Input.mousePosition);
                 /*var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
@@ -39,6 +39,6 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     [RPC]
     void setTarget(NetworkPlayer player, Vector3 mousePosition)
     {
-        guiText.text = "player : " + player.ipAddress + ", mousePos : " + mousePosition.ToString("F6");
+        Debug.LogError("Player : " + player.ipAddress + ", mousePos : " + mousePosition.ToString("F6"));
     }
 }

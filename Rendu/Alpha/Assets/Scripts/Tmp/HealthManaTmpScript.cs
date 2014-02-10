@@ -7,8 +7,8 @@ using System.Collections;
 public class HealthManaTmpScript : MonoBehaviour {
 
     //Représente le gameObject sur lequel le script est attaché
-    [SerializeField]
-    private GameObject m_parentGameObject;
+    //[SerializeField]
+    //private GameObject m_parentGameObject;
 
     //Pour savoir si le perso est mort
     private bool m_zeroLifePoint = false;
@@ -22,7 +22,7 @@ public class HealthManaTmpScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        m_parentGameObject = gameObject;
+        //m_parentGameObject = gameObject;
         m_currentHealth = 100;
         m_maxHealth = 100;
 	}
