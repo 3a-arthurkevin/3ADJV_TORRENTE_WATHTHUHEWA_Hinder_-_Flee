@@ -72,9 +72,9 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
             }
             else
             {
-                m_rigidBodyPlayer.AddForce(Vector3.forward * m_speed, ForceMode.Impulse);
+                
+                m_rigidBodyPlayer.AddForce(direction.normalized * m_speed, ForceMode.Impulse);
                 m_isMoved = true;
-                //m_rigidBodyPlayer.velocity = direction.normalized * m_speed;
             }
         }
     }
@@ -82,6 +82,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
     private void reCalcPath()
     {
         m_isMoved = false;
+        m_rigidBodyPlayer.velocity = Vector3.zero;
 
         m_path = new NavMeshPath();
         NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
