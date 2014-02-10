@@ -1,56 +1,65 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MoveManagerSurvivorScript : MonoBehaviour {
-    [SerializeField]
-    private Rigidbody m_rigidBodyPlayer;
-    
-    [SerializeField]
-    private Camera m_characterCamera;
-
-    [SerializeField]
-    private Transform m_character;
-
-    [SerializeField]
-    private Transform m_target;
-
-    private NavMeshPath m_path;
-    private Vector3 m_curCorner;
-    private uint m_numCorner;
-    private bool m_isMoved = false;
 
     [SerializeField]
     private float m_minDistance = 2;
 
     [SerializeField]
-    private float m_speed = 2;
+    private float m_defaultSpeed = 2;
 
-    public Transform Target
+    class MoveData
     {
-        get
+        private NavMeshPath m_path = null;
+        private bool m_isMoved = false;
+        private float m_speed = 2;
+        private Vector3 m_curCorner;
+        private uint m_numCorner = 0;
+
+        public NavMeshPath Path
         {
-            return m_target;
+            get { return m_path; }
+            set { m_path = value; }
         }
-        set
+
+        public bool IsMoved
         {
-            m_target = value;
-            reCalcPath();
+            get { return m_isMoved; }
+            set { m_isMoved = value; }
+        }
+
+        public float Speed
+        {
+            get { return m_speed; }
+            set { m_speed = value; }
         }
     }
+
+    private Dictionary<NetworkPlayer, MoveData> m_players = null;
 
     public void setTarget(NetworkPlayer player, Transform target)
-    {
-        m_target = target;
-        reCalcPath();
+    {//Calcul du path
+     //Commencement du déplacement des survivant
+       var GameManager = GameObject.Find("GameManager");
+       PlayerDataBaseScript dataScript = GameManager.GetComponent<PlayerDataBaseScript>();
+
+       Transform transformPlayer = dataScript.getTransformPlayer(player);
+
+       transformPlayer.rigidbody.velocity = Vector3.zero;
+        
     }
 
-    void Awake()
+    void Start()
     {
-        m_target = null;
+        if (Network.isClient)
+            enabled = false;
     }
 
     void FixedUpdate()
     {
+        /*
         if (m_target != null)
         {//Déplacement jusqu'au coint final
 
@@ -83,18 +92,16 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
                 m_rigidBodyPlayer.AddForce(direction.normalized * m_speed, ForceMode.Impulse);
                 m_isMoved = true;
             }
-        }
+        }*/
     }
 
-    private void reCalcPath()
+    private NavMeshPath getCalcPath()
     {
-        m_isMoved = false;
-        m_rigidBodyPlayer.velocity = Vector3.zero;
+        /*
+        var path = new NavMeshPath();
+        NavMesh.CalculatePath(m_character.position, m_target.position, -1, path);
 
-        m_path = new NavMeshPath();
-        NavMesh.CalculatePath(m_character.position, m_target.position, -1, m_path);
-
-        if (m_path.corners.Length > 1)
+        if (path.corners.Length > 1)
         {
             m_curCorner = m_path.corners[1];
             m_numCorner = 1;
@@ -105,12 +112,19 @@ public class MoveManagerSurvivorScript : MonoBehaviour {
             Debug.Log(m_path.status);
             m_target = null;
         }
+
+        return path;
+        */
+
+        return new NavMeshPath();
     }
 
     public void teleport(Vector3 position)
     {
+        /*
         m_target = null;
         transform.position = position;
         m_characterCamera.GetComponent<CameraResetOnCharacterScript>().resetCamera();
+        */
     }
 }

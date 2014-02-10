@@ -13,10 +13,19 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     private MoveManagerSurvivorScript m_moveSurvivor;
 
     [SerializeField]
-    private Transform m_target;
+    private Transform m_target = null;
 
     [SerializeField]
     private NetworkView m_networkView = null;
+
+    [SerializeField]
+    private Transform m_prefabsTarget = null;
+
+    void Start()
+    {
+        if (m_target == null)
+            m_target = (Transform)Instantiate(m_prefabsTarget, Vector3.zero, Quaternion.identity);
+    }
 
 	void Update ()
     {
