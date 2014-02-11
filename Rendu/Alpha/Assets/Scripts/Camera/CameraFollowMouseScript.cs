@@ -28,7 +28,8 @@ public class CameraFollowMouseScript : MonoBehaviour
 
     void Start()
     {
-        m_parentGameObject = transform.gameObject;
+        m_parentGameObject = gameObject;
+        m_transformCamera = transform;
     }
 
 	// Update is called once per frame

@@ -18,6 +18,7 @@ public class CameraResetOnCharacterScript : MonoBehaviour
 
     void Start ()
     {
+        m_transformCamera = transform;
         resetCamera();
     }
 	
@@ -37,5 +38,10 @@ public class CameraResetOnCharacterScript : MonoBehaviour
         m_transformCamera.position = m_cameraPosition;
 
         m_scriptZoom.resetNbScroll();
+    }
+
+    public void setSurvivorTranform(Transform survivorTransform)
+    {
+        m_transformCharacter = survivorTransform;
     }
 }
