@@ -138,7 +138,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
         var character = GameObject.Find("Survivor" + Network.player.ToString());
         
         Transform camera = (Transform)Instantiate(m_CharacterCameraPrefab);
-        camera.GetComponent<ConfigCharacterCameraScript>();
+        ConfigCharacterCameraScript configCameraScript = camera.GetComponent<ConfigCharacterCameraScript>();
+        configCameraScript.ConfigCameraAndSurvivor(camera, character.transform);
     }
 
     [RPC]
