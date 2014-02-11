@@ -10,11 +10,13 @@ public class ConfigCharacterCameraScript : MonoBehaviour {
     */
     public void ConfigCameraAndSurvivor(Transform cameraTransform, Transform survivorTransform)
     {
-        CameraResetOnCharacterScript cameraResetScript = camera.GetComponent<CameraResetOnCharacterScript>();
+        Camera characterCamera = gameObject.camera;
+        
+        CameraResetOnCharacterScript cameraResetScript =  cameraTransform.GetComponent<CameraResetOnCharacterScript>();
         cameraResetScript.setSurvivorTranform(survivorTransform);
 
+        InputManagerMoveSurvivorScript inputSurvivantManagerScript = survivorTransform.GetComponent<InputManagerMoveSurvivorScript>();
+        inputSurvivantManagerScript.setCameraTransform(characterCamera);
 
-
-        //camera.GetComponent<>();
     }
 }
