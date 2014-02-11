@@ -16,7 +16,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private List<NetworkPlayer> m_beforeGamePlayer;
 
     [SerializeField]
-    private bool m_isBuildingServer = true;
+    private bool m_buildServer = true;
 
     [SerializeField]
     private int m_portNumber = 9090;
@@ -36,7 +36,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         Application.runInBackground = true;
 
-        if (m_isBuildingServer)
+        if (m_buildServer)
         {
             m_beforeGamePlayer = new List<NetworkPlayer>();
             Network.InitializeSecurity();

@@ -11,7 +11,7 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\server_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\server_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\server_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.062 seconds
+- Completed reload, in  0.067 seconds
 desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -19,13 +19,6 @@ Server start
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
 PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:45)
- 
-(Filename: C Line: 0)
-
-Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\server_Data\Managed\System.Core.dll (this message is harmless)
-NullReferenceException: Object reference not set to an instance of an object
-  at PlayerDataBaseScript.removePlayer (NetworkPlayer oldPlayer) [0x0006e] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:101 
-  at PlayerDataBaseScript.OnPlayerDisconnected (NetworkPlayer oldPlayer) [0x00000] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:62 
  
 (Filename: C Line: 0)
 
