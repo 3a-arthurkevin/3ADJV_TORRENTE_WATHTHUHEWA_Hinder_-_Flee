@@ -73,6 +73,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
         Debug.LogError("Start Game");
 
         m_players = new Dictionary<NetworkPlayer, Transform>(m_beforeGamePlayer.Count);
+        var moveManagerSurvivor = GetComponent<MoveManagerSurvivorScript>();
 
         foreach(var player in m_beforeGamePlayer)
         {
@@ -81,6 +82,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
             NetworkView playerNetworkView = transformPlayer.networkView;
 
             playerNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player);
+
+            moveManagerSurvivor.addPlayer(player, transformPlayer);
 
             m_players.Add(player, transformPlayer);
             ++m_currentPlayer;

@@ -27,7 +27,6 @@ GameObject:
   - 4: {fileID: 400002}
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
   - 148: {fileID: 14800000}
   m_Layer: 11
@@ -103,23 +102,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a29850f1f6c1e8a419e02fe970330d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_rigidBodyPlayer: {fileID: 5400000}
-  m_characterCamera: {fileID: 0}
-  m_character: {fileID: 400002}
-  m_target: {fileID: 0}
-  m_minDistance: 2
-  m_speed: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,10 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f88163edac97d42bc76d628d09bcbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_characterCamera: {fileID: 0}
-  m_moveSurvivor: {fileID: 11400000}
+  m_characterCamera: {fileID: 2000000, guid: af399dfd2b2376a46a6d13e5226e354b, type: 2}
+  m_moveSurvivor: {fileID: 0}
   m_target: {fileID: 0}
-  m_networkView: {fileID: 0}
+  m_networkView: {fileID: 14800000}
   m_prefabsTarget: {fileID: 400000, guid: dbbf54dd76a0a044e9c82adfb93a158b, type: 2}
 --- !u!136 &13600000
 CapsuleCollider:
