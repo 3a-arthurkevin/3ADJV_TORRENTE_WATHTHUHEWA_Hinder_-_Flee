@@ -23,7 +23,8 @@ public class CameraDragScript : MonoBehaviour
     //A enlever apres
     void Start()
     {
-        m_parentGameObject = transform.gameObject;
+        m_transformCamera = transform;
+        m_parentGameObject = gameObject;
     }
 
 	// Update is called once per frame

@@ -61,4 +61,9 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     {
         m_owner = owner;
     }
+
+    public void setCameraTransform(Camera cameraObject)
+    {
+        m_characterCamera = cameraObject;
+    }
 }

@@ -26,6 +26,10 @@ public class CameraZoomScript : MonoBehaviour
 
     private float m_limitZ;
 
+    void Start()
+    {
+        m_transformCamera = transform;
+    }
 
 	void LateUpdate () 
     {
