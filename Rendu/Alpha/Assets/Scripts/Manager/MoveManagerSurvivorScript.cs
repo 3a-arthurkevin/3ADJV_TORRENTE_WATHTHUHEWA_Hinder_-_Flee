@@ -92,6 +92,8 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 data.NumCorner = 1;
             }
         }
+        else
+            Debug.LogError("Path error");
 
     }
 

@@ -34,7 +34,10 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
                 
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("Ground")))
+                {
+                    Debug.LogError("RPC send");
                     m_networkView.RPC("setTarget", RPCMode.Server, Network.player, hit.point);
+                }
             }
         }
 	}
@@ -44,6 +47,7 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     {
         if (Network.isServer)
         {
+            Debug.LogError("RPC Receive");
             m_target.position = targetPosition;
             
             var gameManager = GameObject.Find("GameManager");

@@ -7527,7 +7527,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isBuildingServer: 1
-  portNumber: 9090
+  m_portNumber: 9090
+  m_idAdress: 127.0.0.1
   m_maxPlayers: 2
   m_prefab: {fileID: 400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
 --- !u!4 &257308245
@@ -18952,6 +18953,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 14800000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_isBuildingServer
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

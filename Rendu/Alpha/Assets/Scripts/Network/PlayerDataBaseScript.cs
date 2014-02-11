@@ -19,7 +19,10 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private bool m_isBuildingServer = true;
 
     [SerializeField]
-    private int portNumber = 9090;
+    private int m_portNumber = 9090;
+    
+    [SerializeField]
+    private string m_idAdress = "127.0.0.1";
 
     [SerializeField]
     private int m_maxPlayers = 2;
@@ -38,13 +41,13 @@ public class PlayerDataBaseScript : MonoBehaviour {
             m_beforeGamePlayer = new List<NetworkPlayer>();
             Network.InitializeSecurity();
             var useNat = !Network.HavePublicAddress();
-            Network.InitializeServer(m_maxPlayers, portNumber, useNat);
-            Debug.LogError("Serveur Démarré !!!");
+            Network.InitializeServer(m_maxPlayers, m_portNumber, useNat);
+            Debug.LogError("Server start");
         }
         else
         {
-            Network.Connect("127.0.0.1", portNumber);
-            Debug.LogError("1 joueur connecté !!!");
+            Network.Connect(m_idAdress, m_portNumber);
+            Debug.LogError("Client connect");
         }
     }
 
@@ -70,7 +73,6 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     private void initialiseGame()
     {//Instancie toute les préfabs et supprime la liste m_beforeGame
-        Debug.LogError("Start Game");
 
         m_players = new Dictionary<NetworkPlayer, Transform>(m_beforeGamePlayer.Count);
         var moveManagerSurvivor = GetComponent<MoveManagerSurvivorScript>();
