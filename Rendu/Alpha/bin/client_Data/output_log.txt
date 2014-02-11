@@ -11,8 +11,8 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\client_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.097 seconds
-desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
+- Completed reload, in  0.122 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 1 joueur connecté !!!
@@ -35,8 +35,8 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\client_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Alpha\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.076 seconds
-desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
+- Completed reload, in  0.130 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 1 joueur connecté !!!
@@ -46,11 +46,11 @@ PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE
  
 (Filename: C Line: 0)
 
-The server has disconneTted fe msthvee hal dins.cMontnlictely  fr omrvher has shut down.
- el
-(Fi tenasmev Cr hBu sdutge tdwork/d3
-d4
-95i58e4de: C:f/Buintdigmet/wNretd3or9k/8N4etworkManntime/agewrrkcppetLine: 740)
-
-r.cpp Line: 740)
+The server has disconnected from the client. Most likely the Terver hahe server h.a
+s
+ Fdisncon:ne:t/BuilodAtgeencl/eworkMd3st likelyd the /ervntimesN shut dowtwor
+ M
+(aFil.ename: C:/B4uil
+d
+Agent/work/d3d49558e4d408f4/Runtime/Network/NetworkManager.cpp Line: 740)
 

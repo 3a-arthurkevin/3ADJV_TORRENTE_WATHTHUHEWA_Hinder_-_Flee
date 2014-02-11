@@ -38,6 +38,11 @@ public class MoveManagerSurvivorScript : MonoBehaviour
             get { return m_speed; }
             set { m_speed = value; }
         }
+        public uint NumCorner
+        {
+            get { return m_numCorner; }
+            set { m_numCorner = value; }
+        }
         public Transform Position
         {
             get { return m_survivorPosition; }
@@ -83,47 +88,53 @@ public class MoveManagerSurvivorScript : MonoBehaviour
 
             if (path != null)
             {
+                data.Path = path;
+                data.NumCorner = 1;
             }
         }
 
     }
 
     void Update()
-    {
-        /*
-        if (m_target != null)
-        {//Déplacement jusqu'au coint final
+    {//Move each survivor
 
-            var direction = m_curCorner - m_character.position;
+        MoveData data;
 
-            if (m_isMoved)
+        foreach (var item in m_players)
+        {
+            //Manage move de chaque player
+            data = item.Value;
+
+            if (data.Path != null)
             {
-                if (direction.sqrMagnitude < m_minDistance)
+                var direction = data.Path.corners[data.NumCorner] - data.Position.position;
+
+                if (data.IsMoved)
                 {
-                    if (m_numCorner + 1 > m_path.corners.Length)
+                    if (direction.sqrMagnitude < m_minDistance)
                     {
+                        if (data.NumCorner + 1 > data.Path.corners.Length)
+                        {
+                            data.RigidBody.velocity = Vector3.zero;
+                            data.Path = null;
+                        }
+                        else
+                        {
+                            ++data.NumCorner; 
+                            data.Position.LookAt(data.Path.corners[data.NumCorner]);
+                        }
 
-                        m_rigidBodyPlayer.velocity = Vector3.zero;
-                        m_target = null;
-                        m_path.ClearCorners();
+                        data.IsMoved = false;
+                        return;
                     }
-                    else
-                    {
-                        m_curCorner = m_path.corners[m_numCorner++];
-                        m_character.LookAt(m_curCorner);
-                    }
-
-                    m_isMoved = false;
-                    return;
+                }
+                else
+                {
+                    data.RigidBody.AddForce(direction.normalized * data.Speed, ForceMode.Impulse);
+                    data.IsMoved = true;
                 }
             }
-            else
-            {
-                
-                m_rigidBodyPlayer.AddForce(direction.normalized * m_speed, ForceMode.Impulse);
-                m_isMoved = true;
-            }
-        }*/
+        }
     }
 
     private NavMeshPath getCalcPath(Vector3 origin, Vector3 wantToGo)

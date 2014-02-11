@@ -10,9 +10,6 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     private Camera m_characterCamera;
 
     [SerializeField]
-    private MoveManagerSurvivorScript m_moveSurvivor;
-
-    [SerializeField]
     private Transform m_target = null;
 
     [SerializeField]
@@ -48,7 +45,10 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
         if (Network.isServer)
         {
             m_target.position = targetPosition;
-            m_moveSurvivor.setTarget(player, m_target);
+            
+            var gameManager = GameObject.Find("GameManager");
+            MoveManagerSurvivorScript moveManagerSurvivor = gameManager.GetComponent<MoveManagerSurvivorScript>();
+            moveManagerSurvivor.setTarget(player, m_target);
         }
     }
 
