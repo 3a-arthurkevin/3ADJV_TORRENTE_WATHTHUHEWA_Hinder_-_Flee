@@ -58,7 +58,7 @@ public class ConfigLevelManager : MonoBehaviour
     {
         m_spawn = new List<Vector3>();
 
-        m_spawn.Add(new Vector3(0, 1, 0));
-        m_spawn.Add(new Vector3(10, 1, 10));
+        m_spawn.Add(new Vector3(10, 1, 70));
+        m_spawn.Add(new Vector3(30, 1, 70));
     }
 }

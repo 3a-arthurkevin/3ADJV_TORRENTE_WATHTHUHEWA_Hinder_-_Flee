@@ -29,7 +29,13 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private int m_currentPlayer = 0;
 
     [SerializeField]
-    private Transform m_prefab;
+    private Transform m_SurvivorPrefab;
+    [SerializeField]
+    private Transform m_CharacterCameraPrefab;
+
+
+    [SerializeField]
+    private NetworkView m_networkView;
 
     
     void Start() 
@@ -79,11 +85,14 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         foreach(var player in m_beforeGamePlayer)
         {
-            Transform transformPlayer = (Transform)Network.Instantiate(m_prefab, ConfigLevelManager.getNextSpawnForLevelOne(), Quaternion.identity, int.Parse(player.ToString()));
-            
+            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnForLevelOne(), Quaternion.identity, int.Parse(player.ToString()));
+
+            transformPlayer.name = "Survivor" + player.ToString();
+
             NetworkView playerNetworkView = transformPlayer.networkView;
 
             playerNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player);
+            playerNetworkView.RPC("SetName", RPCMode.OthersBuffered, player, "Survivor" + player.ToString());
 
             moveManagerSurvivor.addPlayer(player, transformPlayer);
 
@@ -92,6 +101,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
         }
 
         m_beforeGamePlayer = null;
+        m_networkView.RPC("InitClient", RPCMode.OthersBuffered);
     }
 
     private void removePlayer(NetworkPlayer oldPlayer)
@@ -118,5 +128,26 @@ public class PlayerDataBaseScript : MonoBehaviour {
         Transform transformPlayer = null;
         m_players.TryGetValue(player, out transformPlayer);
         return transformPlayer;
+    }
+
+    [RPC]
+    public void InitClient()
+    {//Positionne la camera sur le survivor
+        //Et fait les différente initialisation du client
+
+        var character = GameObject.Find("Survivor" + Network.player.ToString());
+        
+        Transform camera = (Transform)Instantiate(m_CharacterCameraPrefab);
+        camera.GetComponent<ConfigCharacterCameraScript>();
+    }
+
+    [RPC]
+    void clientIsInit(NetworkPlayer player)
+    {//Reçois un message du client pour prévenir qu'il est prêt
+        //La game ne démarre seulement quand tous les clients sont prêt
+
+        if (Network.isServer)
+        {
+        }
     }
 }

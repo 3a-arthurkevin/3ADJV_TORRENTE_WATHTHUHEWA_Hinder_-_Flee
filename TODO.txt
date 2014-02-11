@@ -2,7 +2,9 @@ Arthur:
 			
 	=> Téléportation
 		=> Zombie après le rendu alpha
-	
+	=> Réseaux
+		=> Fix déplacement survivor
+		=> Déplacement de la Camera
 	
 Kevin :
 	=> Camera

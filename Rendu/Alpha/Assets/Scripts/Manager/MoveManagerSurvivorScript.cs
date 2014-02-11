@@ -92,12 +92,10 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 data.NumCorner = 1;
             }
         }
-        else
-            Debug.LogError("Path error");
 
     }
 
-    void Update()
+    void FixedUpdate()
     {//Move each survivor
 
         MoveData data;
@@ -109,22 +107,21 @@ public class MoveManagerSurvivorScript : MonoBehaviour
 
             if (data.Path != null)
             {
-                var direction = data.Path.corners[data.NumCorner] - data.Position.position;
 
+                var direction = data.Path.corners[data.NumCorner] - data.Position.position;
+                
                 if (data.IsMoved)
                 {
+
                     if (direction.sqrMagnitude < m_minDistance)
                     {
-                        if (data.NumCorner + 1 > data.Path.corners.Length)
+                        if ((data.NumCorner + 1) >= data.Path.corners.Length)
                         {
                             data.RigidBody.velocity = Vector3.zero;
                             data.Path = null;
                         }
                         else
-                        {
-                            ++data.NumCorner; 
-                            data.Position.LookAt(data.Path.corners[data.NumCorner]);
-                        }
+                            data.Position.LookAt(data.Path.corners[++(data.NumCorner)]);
 
                         data.IsMoved = false;
                         return;
@@ -132,6 +129,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 }
                 else
                 {
+                    Debug.LogError("Apply force");
                     data.RigidBody.AddForce(direction.normalized * data.Speed, ForceMode.Impulse);
                     data.IsMoved = true;
                 }
