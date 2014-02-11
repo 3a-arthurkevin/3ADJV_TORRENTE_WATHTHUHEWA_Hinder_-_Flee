@@ -7,5 +7,5 @@ public class ConfigCharacterCameraScript : MonoBehaviour {
      * par exemple setter des Référence à des transform ou autre
      * Pour le moment ce script est appelé par le PlayerDataBase par la méthode InitClient
      * Cette méthode est utilisé par les clients
-     * /
+     */
 }
