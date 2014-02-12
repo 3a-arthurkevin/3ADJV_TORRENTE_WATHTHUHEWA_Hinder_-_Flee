@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: CharacterCamera
   m_TagString: MainCamera
@@ -89,7 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97423ecd9b0401842bcc1d28ad5aa6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_parentGameObject: {fileID: 0}
   m_transformCamera: {fileID: 400000}
   m_moveSpeed: 3
   m_scriptZoom: {fileID: 11400004}
@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afac068a64b9b0542964915707a4eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_parentGameObject: {fileID: 0}
   m_transformCamera: {fileID: 400000}
   m_mousePosition: {x: 0, y: 0}
   m_activeZoneBegin: .899999976
@@ -157,6 +156,17 @@ MonoBehaviour:
   m_planeMap: {fileID: 0}
   m_limitX: 0
   m_limitZ: 0
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a748625db8beba4597f53122bb056eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

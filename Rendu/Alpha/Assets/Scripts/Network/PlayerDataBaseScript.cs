@@ -136,9 +136,17 @@ public class PlayerDataBaseScript : MonoBehaviour {
         //Et fait les différente initialisation du client
 
         var character = GameObject.Find("Survivor" + Network.player.ToString());
-        
+
         Transform camera = (Transform)Instantiate(m_CharacterCameraPrefab);
+        
+        if (camera == null)
+            Debug.LogError("camera pas trouvé");
+
         ConfigCharacterCameraScript configCameraScript = camera.GetComponent<ConfigCharacterCameraScript>();
+
+        if (configCameraScript == null)
+            Debug.LogError("Config pas trouvé");
+
         configCameraScript.ConfigCameraAndSurvivor(camera, character.transform);
     }
 
