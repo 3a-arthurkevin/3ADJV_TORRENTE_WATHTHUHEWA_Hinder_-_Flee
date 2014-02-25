@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d9604571-6e4b-4e9c-8782-134156e193c7" name="partie" linkedPackageId="8e71cdea-3026-42c5-8356-2136a16918e8" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="d87fc1af-c507-4c6d-b9f1-1c484db88b1d">
+      <elementDefinition Id="dfafd02c-1e1a-410a-beb2-fe1603127597" />
+      <body>Diagramme Utilisation des objets</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="2e1677ec-6e1b-4ee0-8d5e-50df5111bd38" LastKnownName="Objet" />
+      </annotatedElements>
+    </comment>
+    <comment Id="24e41471-e751-476d-af10-dbed3df20b25">
+      <elementDefinition Id="050e68b8-994c-4e30-beb1-24a421a4d1df" />
+      <body>Diagramme des déplacements</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="ac8fd855-e3ea-41b6-bd44-e80eeae20480" LastKnownName="Déplacement" />
+      </annotatedElements>
+    </comment>
+    <comment Id="9187c129-cda1-4352-8670-f75db8c41de0">
+      <elementDefinition Id="0734e429-8929-4aba-830a-3d6ca679a585" />
+      <body>Diagramme des attaques</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="291dbf01-ad2c-44d8-a4f7-a98798b9d337" LastKnownName="Attaque" />
+      </annotatedElements>
+    </comment>
+    <comment Id="69fa6837-cf23-4ea0-883f-7493982b6f48">
+      <elementDefinition Id="39d2da6c-2901-46a5-b6fa-c481cefc9c9a" />
+      <body>Le joueur souhaite utiliser un objet</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="a17c5553-0bbb-4716-920e-2b796f06aa09">
+      <elementDefinition Id="2e732621-d3a4-47a2-b4b9-970d073caa63" />
+      <body>Le joueur souhaite lancer une attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="78b4efc3-219f-40b8-92f4-78cad6408a26">
+      <elementDefinition Id="73aee818-3403-4270-aeca-27b4f1825ed1" />
+      <body>Le joueur souhaite se déplacer</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="d9742f74-4563-472c-8414-05718b42bff3">
+      <elementDefinition Id="dcdfa369-762e-4a63-a39e-0a3c6a229fe7" />
+      <body>Le joueur clique sur le marchand</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="9c2c5e69-5332-4c13-b0f0-87248a7b0e82">
+      <elementDefinition Id="ed3d673d-4c0b-4c18-8407-254ec32486f0" />
+      <body>Diagramme d'interraction avec le marchand</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="4e0a7d14-f376-4015-9477-64af41cef90a" LastKnownName="Marchand" />
+      </annotatedElements>
+    </comment>
+    <comment Id="0c1d13ad-2e23-4066-976b-20fbb181d6f2">
+      <elementDefinition Id="bcbbc5b6-dd77-46d0-994d-e23bdfed8bf6" />
+      <body>Le joueur reçoit une attaque</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="40fa3bbf-ece6-49ac-b3d3-2133e69489c9">
+      <elementDefinition Id="b7f2860e-3d57-4ac2-94b7-8192693458bd" />
+      <body>Le joueur meurt ou atteint 100% de la jauge de mutation</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="7f58af17-c957-4b5f-a551-68c951946424" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="e243a07e-df9d-4185-bac6-a905fb4a9c10" name="partie" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="c0190a0b-548f-4999-8569-c9032da88f93" />
+        <nodes>
+          <initialNode Id="1fe44ca8-6071-4a36-a966-fa3d32b8d244" name="Initial1" isLeaf="false">
+            <elementDefinition Id="1ff6b1f4-8549-48b4-bbf1-78b94d8e1213" />
+            <flowNodeTargets>
+              <controlFlow Id="365eeed3-38df-429d-b85d-2f90d25cdd03" isLeaf="false">
+                <decisionNodeMoniker Id="bc784974-a432-4cf3-a707-9e7478f34f62" LastKnownName="Decision1" />
+                <elementDefinition Id="8a8bd6bc-383f-4ba7-a3be-49d7f156ed79" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode Id="bc784974-a432-4cf3-a707-9e7478f34f62" name="Decision1" isLeaf="false">
+            <elementDefinition Id="63921c07-3c37-490e-894a-b7657ae99686" />
+            <flowNodeTargets>
+              <controlFlow Id="ed97a08c-8629-4d62-940d-811c5de554a2" isLeaf="false">
+                <opaqueActionMoniker Id="291dbf01-ad2c-44d8-a4f7-a98798b9d337" LastKnownName="Attaque" />
+                <elementDefinition Id="617acf14-e731-43da-a698-42e6ca006ca5" />
+              </controlFlow>
+              <controlFlow Id="f0fea78c-0c7b-48ed-9506-8da656514bcf" isLeaf="false">
+                <opaqueActionMoniker Id="ac8fd855-e3ea-41b6-bd44-e80eeae20480" LastKnownName="Déplacement" />
+                <elementDefinition Id="408b9dfa-2672-49c1-b0d8-74e5b4b45eb6" />
+              </controlFlow>
+              <controlFlow Id="16dd41c5-6e49-4192-b4d3-8024f084ebec" isLeaf="false">
+                <opaqueActionMoniker Id="2e1677ec-6e1b-4ee0-8d5e-50df5111bd38" LastKnownName="Objet" />
+                <elementDefinition Id="0f182d00-b0fe-45d8-a44e-1e513008150b" />
+              </controlFlow>
+              <controlFlow Id="13d73cfd-a0e5-4980-ac6b-859a0e425bd4" isLeaf="false">
+                <opaqueActionMoniker Id="4e0a7d14-f376-4015-9477-64af41cef90a" LastKnownName="Marchand" />
+                <elementDefinition Id="dbe4c5ac-e568-4ffc-9c0a-3cf5c6e63ca4" />
+              </controlFlow>
+              <controlFlow Id="fe69308c-11dc-486d-9318-71b26cc6dbfb" isLeaf="false">
+                <decisionNodeMoniker Id="7f58af17-c957-4b5f-a551-68c951946424" LastKnownName="Decision2" />
+                <elementDefinition Id="8b1c47d1-de21-42d3-b82a-5c746bfb3491" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="ac8fd855-e3ea-41b6-bd44-e80eeae20480" name="Déplacement" isLeaf="false">
+            <elementDefinition Id="aae0870f-104a-43d4-80e2-a90defa3baaa" />
+            <flowNodeTargets>
+              <controlFlow Id="ad3ec2e2-dfab-41ed-ab52-49965167a3fc" isLeaf="false">
+                <mergeNodeMoniker Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" LastKnownName="Merge2" />
+                <elementDefinition Id="6d545956-238e-4846-a79e-9f3176150ce7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="291dbf01-ad2c-44d8-a4f7-a98798b9d337" name="Attaque" isLeaf="false">
+            <elementDefinition Id="7a79be19-fd90-4e6d-ac38-d79e7b650d36" />
+            <flowNodeTargets>
+              <controlFlow Id="08a6f1a2-95db-4429-92fc-e1b8ace886d6" isLeaf="false">
+                <mergeNodeMoniker Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" LastKnownName="Merge2" />
+                <elementDefinition Id="8b3c6eb9-e078-45dc-a4ff-8b80ce7d0da2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2e1677ec-6e1b-4ee0-8d5e-50df5111bd38" name="Objet" isLeaf="false">
+            <elementDefinition Id="165c81f7-9a62-4ecb-846d-3b6d5b8b0f71" />
+            <flowNodeTargets>
+              <controlFlow Id="4cd376a0-1410-4f5a-9e86-ea557dbbf7b9" isLeaf="false">
+                <mergeNodeMoniker Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" LastKnownName="Merge2" />
+                <elementDefinition Id="b27021bd-7cc0-4ee5-8403-9d507d445205" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" name="Merge2" isLeaf="false">
+            <elementDefinition Id="b74e3502-b433-426d-a86b-9f98cc8935b7" />
+            <flowNodeTargets>
+              <controlFlow Id="4aa09ef9-8ec6-4be4-9cdb-6b9fd3116644" isLeaf="false">
+                <activityFinalNodeMoniker Id="3d3adb70-e15b-4f33-9e43-55558b2e55e3" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="c81daa93-6bc9-42fe-a6fd-9023ac3f110d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="4e0a7d14-f376-4015-9477-64af41cef90a" name="Marchand" isLeaf="false">
+            <elementDefinition Id="8474b131-d6bd-4dee-96a6-1787511f9d64" />
+            <flowNodeTargets>
+              <controlFlow Id="d2a4534c-baa4-43df-8a2e-e4051635a03f" isLeaf="false">
+                <mergeNodeMoniker Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" LastKnownName="Merge2" />
+                <elementDefinition Id="fa0b4691-6112-4cbb-be2e-e79fd339538d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="7f58af17-c957-4b5f-a551-68c951946424" name="Decision2" isLeaf="false">
+            <elementDefinition Id="46920854-4193-4337-8019-d7ecd79fedfe" />
+            <flowNodeTargets>
+              <controlFlow Id="ac542f62-024e-4f3f-ad37-2c3290bfbd10" isLeaf="false">
+                <opaqueActionMoniker Id="91ab52e7-0309-4e61-901a-1335a60c5864" LastKnownName="Mutation du survivant" />
+                <elementDefinition Id="35a3339b-b53c-4083-ac2f-d291cf203e6d" />
+              </controlFlow>
+              <controlFlow Id="f5eb281a-c38a-42ce-9616-17bd50acba0c" isLeaf="false">
+                <forkNodeMoniker Id="7da450ab-8ee4-483d-86a3-bce651c6072b" LastKnownName="Fork1" />
+                <elementDefinition Id="9f13c6ef-5fa7-44db-a5c4-ce654648be38" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="92a8d442-0410-47d5-aa6d-3618295a88fc" name="Augmentation de la barre de mutation" isLeaf="false">
+            <elementDefinition Id="2eeee505-650b-496e-8461-62a661256ff2" />
+            <flowNodeTargets>
+              <controlFlow Id="4c308b86-8ba9-4d09-90ff-6f937ca6ad10" isLeaf="false">
+                <joinNodeMoniker Id="9e403eaf-9ef9-44ad-ac56-a3de94f2efab" LastKnownName="Join1" />
+                <elementDefinition Id="f0229324-e25f-4b61-8a2d-fb05b733f60c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="91ab52e7-0309-4e61-901a-1335a60c5864" name="Mutation du survivant" isLeaf="false">
+            <elementDefinition Id="8c7c9cc6-ba7e-4947-811a-720c739cd74b" />
+            <flowNodeTargets>
+              <controlFlow Id="fd229ec7-673a-48ed-93f5-b386e2837121" isLeaf="false">
+                <mergeNodeMoniker Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" LastKnownName="Merge2" />
+                <elementDefinition Id="4f8ec656-d9f8-43a0-bdff-ba40ac6d131d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="3d3adb70-e15b-4f33-9e43-55558b2e55e3" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="3c6b7cd7-b629-4257-b85b-28a200270ab0" />
+          </activityFinalNode>
+          <forkNode Id="7da450ab-8ee4-483d-86a3-bce651c6072b" name="Fork1" isLeaf="false">
+            <elementDefinition Id="f51be9c2-643f-4993-81c7-c6ddb5485c70" />
+            <flowNodeTargets>
+              <controlFlow Id="dc002736-3ba3-4cba-9e8b-44ece6c4f11b" isLeaf="false">
+                <opaqueActionMoniker Id="43a6c2c8-bcde-4d91-9658-74ffe97f66be" LastKnownName="Enlever des points de vie" />
+                <elementDefinition Id="2f2c23d3-e26b-47c9-9907-0666805d1b47" />
+              </controlFlow>
+              <controlFlow Id="62d55648-b1e5-4efd-8969-659e53c0c2e7" isLeaf="false">
+                <opaqueActionMoniker Id="92a8d442-0410-47d5-aa6d-3618295a88fc" LastKnownName="Augmentation de la barre de mutation" />
+                <elementDefinition Id="f7e30b46-7bc6-4f83-a86e-be3528ad1b03" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="43a6c2c8-bcde-4d91-9658-74ffe97f66be" name="Enlever des points de vie" isLeaf="false">
+            <elementDefinition Id="7a27b5aa-a92b-4925-9f24-45b5dd0ccce3" />
+            <flowNodeTargets>
+              <controlFlow Id="ce0f3e5d-a033-4e8a-8bcc-ce47aac33539" isLeaf="false">
+                <joinNodeMoniker Id="9e403eaf-9ef9-44ad-ac56-a3de94f2efab" LastKnownName="Join1" />
+                <elementDefinition Id="a78b5319-68ac-43f6-a917-da52ba972363" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="9e403eaf-9ef9-44ad-ac56-a3de94f2efab" name="Join1" isLeaf="false">
+            <elementDefinition Id="829c3607-a396-46a4-83ee-5ae28ecc53b6" />
+            <flowNodeTargets>
+              <controlFlow Id="f19443c7-efa6-4df8-9db4-e0eb54c4bcf8" isLeaf="false">
+                <mergeNodeMoniker Id="2abc3388-73c7-4d8b-b0ec-3e2ebc76d8ff" LastKnownName="Merge2" />
+                <elementDefinition Id="23d9bde4-0e99-4a40-94b3-62ed61e7f647" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="8e71cdea-3026-42c5-8356-2136a16918e8" name="projetAnnuel">
+    <elementDefinition Id="1cd13195-7a33-4be2-a0ae-a52654dc121e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f0b36796-2ec3-42d4-aa83-e0951b157999">
+        <profileInstance Id="f906c233-8ff9-402b-891a-35ccdc3a9e0e" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="38b53040-435e-4aae-80a0-3a40c904709a">
+        <profileInstance Id="42f66b00-fdf0-4f0f-8ea0-fbef39b356c5" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>
