@@ -11,9 +11,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     //Stocke le Transform + le NetworkPlayer durant la game
     private Dictionary<NetworkPlayer, Transform> m_players;
-    
-    //Stocke les NetworkPlayer avant le lancement de la game
-    private List<NetworkPlayer> m_beforeGamePlayer;
+    private Dictionary<NetworkPlayer, bool> m_playerReady;
+    private List<NetworkPlayer> m_playerRemoved;
 
     [SerializeField]
     private bool m_buildServer = true;
@@ -24,15 +23,18 @@ public class PlayerDataBaseScript : MonoBehaviour {
     [SerializeField]
     private string m_idAdress = "127.0.0.1";
 
+    private bool m_useNat = false;
+
     [SerializeField]
     private int m_maxPlayers = 2;
     private int m_currentPlayer = 0;
+    private bool m_gameLauched = false;
 
     [SerializeField]
     private Transform m_SurvivorPrefab;
+    
     [SerializeField]
     private Transform m_CharacterCameraPrefab;
-
 
     [SerializeField]
     private NetworkView m_networkView;
@@ -44,47 +46,93 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         if (m_buildServer)
         {
-            m_beforeGamePlayer = new List<NetworkPlayer>();
+            m_players = new Dictionary<NetworkPlayer, Transform>();
+            m_playerReady = new Dictionary<NetworkPlayer, bool>();
+            m_playerRemoved = new List<NetworkPlayer>();
+
             Network.InitializeSecurity();
-            var useNat = !Network.HavePublicAddress();
-            Network.InitializeServer(m_maxPlayers, m_portNumber, useNat);
-            Debug.LogError("Server start");
+
+            //Si pc a une adresse public utilisé NAT sinon non
+            m_useNat = Network.HavePublicAddress();
+
+            NetworkConnectionError err = Network.InitializeServer(m_maxPlayers, m_portNumber, m_useNat);
+            
+            if (err != NetworkConnectionError.NoError)
+                Debug.LogError(err.ToString());
+            else
+                Debug.LogError("Server start");
         }
         else
         {
-            Network.Connect(m_idAdress, m_portNumber);
-            Debug.LogError("Client connect");
+            
+            NetworkConnectionError err = Network.Connect(m_idAdress, m_portNumber);
+
+            if (err != NetworkConnectionError.NoError)
+                Debug.LogError(err.ToString());
+            else
+                Debug.LogError("Client Connect");
         }
     }
 
     void OnPlayerConnected(NetworkPlayer newPlayer)
     {//Nouveau joueur se connect au serveur
-        createNewPlayer(newPlayer);
+
+        if (m_currentPlayer < m_maxPlayers)
+        {
+            if (m_gameLauched)
+            {
+                Debug.LogError("Game is already lauched");
+            }
+            else
+            {
+                m_players.Add(newPlayer, null);
+                m_playerReady.Add(newPlayer, false);
+
+                if (++m_currentPlayer == m_maxPlayers)
+                    initialiseGame();
+            }
+        }
+        else
+            Debug.LogError("Server Full");
     }
 
-    //Enlever joueur de la liste quand il se déconnecte 
     void OnPlayerDisconnected(NetworkPlayer oldPlayer)
     {
-        removePlayer(oldPlayer);
+        if (removePlayer(oldPlayer))
+        {
+            Debug.LogError(oldPlayer.ToString() + " Has remove at game");
+            
+            m_playerRemoved.Add(oldPlayer);
+        }
+        else
+            Debug.LogError("Player not found");
+        
+        --m_currentPlayer;
+        
+        pauseGame();
     }
 
-
-    private void createNewPlayer(NetworkPlayer newPlayer)
+    private void resetGame()
     {
-        m_beforeGamePlayer.Add(newPlayer);
+    }
 
-        if (++m_currentPlayer == m_maxPlayers)
-            initialiseGame();
+    private void pauseGame()
+    {
+        /*for (int i = 0; i < m_players.Count; ++i)
+        {
+            
+        }*/
     }
 
     private void initialiseGame()
     {//Instancie toute les préfabs et supprime la liste m_beforeGame
 
-        m_players = new Dictionary<NetworkPlayer, Transform>(m_beforeGamePlayer.Count);
         var moveManagerSurvivor = GetComponent<MoveManagerSurvivorScript>();
 
-        foreach(var player in m_beforeGamePlayer)
+        for(int i = 0; i < m_players.Count; ++i)
         {
+            NetworkPlayer player = m_players.ElementAt(i).Key;
+
             Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnForLevelOne(), Quaternion.identity, int.Parse(player.ToString()));
 
             transformPlayer.name = "Survivor" + player.ToString();
@@ -95,32 +143,16 @@ public class PlayerDataBaseScript : MonoBehaviour {
             playerNetworkView.RPC("SetName", RPCMode.OthersBuffered, player, "Survivor" + player.ToString());
 
             moveManagerSurvivor.addPlayer(player, transformPlayer);
-
-            m_players.Add(player, transformPlayer);
-            ++m_currentPlayer;
+            
+            m_players[player] = transformPlayer;
         }
 
-        m_beforeGamePlayer = null;
         m_networkView.RPC("InitClient", RPCMode.OthersBuffered);
     }
 
-    private void removePlayer(NetworkPlayer oldPlayer)
+    private bool removePlayer(NetworkPlayer oldPlayer)
     {
-        int idPlayer = int.Parse(oldPlayer.ToString());
-
-        for (int i = 0; i < m_players.Count; ++i)
-        {
-            var item = m_players.ElementAt(i);
-
-            if (int.Parse(item.Key.ToString()) == idPlayer)
-            {
-                Destroy(item.Value.gameObject);
-                m_players.Remove(item.Key);
-                --m_currentPlayer;
-                
-                return;
-            }
-        }
+        return m_players.Remove(oldPlayer) && m_playerReady.Remove(oldPlayer);
     }
 
     public Transform getTransformPlayer(NetworkPlayer player)
@@ -136,18 +168,29 @@ public class PlayerDataBaseScript : MonoBehaviour {
         //Et fait les différente initialisation du client
 
         var character = GameObject.Find("Survivor" + Network.player.ToString());
+        
+        Debug.LogError(Network.player.ToString());
+
+        if (character == null)
+            Debug.LogError("Character non trouvé");
 
         Transform camera = (Transform)Instantiate(m_CharacterCameraPrefab);
-        
+
         if (camera == null)
-            Debug.LogError("camera pas trouvé");
+            Debug.LogError("Error instanciate Camera");
+
+        camera.name = "CharacterCamera";
 
         ConfigCharacterCameraScript configCameraScript = camera.GetComponent<ConfigCharacterCameraScript>();
 
         if (configCameraScript == null)
-            Debug.LogError("Config pas trouvé");
+            Debug.LogError("Config non trouvé");
 
         configCameraScript.ConfigCameraAndSurvivor(camera, character.transform);
+
+        camera.camera.enabled = false;
+
+        m_networkView.RPC("clientIsInit", RPCMode.Server, Network.player);
     }
 
     [RPC]
@@ -157,6 +200,41 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         if (Network.isServer)
         {
+            bool playerInit = false;
+            
+            if (m_playerReady.TryGetValue(player, out playerInit))
+            {
+                if (playerInit)
+                {
+                    Debug.LogError("Player already init");
+                }
+                else
+                {
+                    m_playerReady[player] = true;
+                }
+            }
+            else
+            {
+                Debug.LogError("Player not found for initialisation");
+            }
         }
+
+        //Tous à true ?
+        if (m_playerReady.All<KeyValuePair<NetworkPlayer, bool>>( item => item.Value == true))
+        {//Oui
+            m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
+        }
+    }
+
+    [RPC]
+    void LaunchGame()
+    {
+        var cam = GameObject.Find("CharacterCamera");
+
+        if (cam == null)
+            Debug.LogError("Failed find camera");
+
+        cam.camera.enabled = true;
+        Debug.LogError("Game launched");
     }
 }

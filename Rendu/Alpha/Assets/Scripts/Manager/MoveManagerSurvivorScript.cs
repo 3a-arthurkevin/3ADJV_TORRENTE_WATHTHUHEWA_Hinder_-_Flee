@@ -79,10 +79,9 @@ public class MoveManagerSurvivorScript : MonoBehaviour
     {//Calcul du path
      //Commencement du déplacement des survivant
 
-        MoveData data;
-        m_players.TryGetValue(player, out data);
+        MoveData data = null;
 
-        if (data != null)
+        if (m_players.TryGetValue(player, out data) && data != null)
         {
             var path = getCalcPath(data.Position.position, target.position);
 
@@ -91,6 +90,14 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 data.Path = path;
                 data.NumCorner = 1;
             }
+            else
+            {
+                data.Path = null;
+                data.NumCorner = 0;
+            }
+            
+            data.IsMoved = false;
+            data.RigidBody.velocity = Vector3.zero;
         }
 
     }
@@ -107,12 +114,10 @@ public class MoveManagerSurvivorScript : MonoBehaviour
 
             if (data.Path != null)
             {
-
                 var direction = data.Path.corners[data.NumCorner] - data.Position.position;
-                
+
                 if (data.IsMoved)
                 {
-
                     if (direction.sqrMagnitude < m_minDistance)
                     {
                         if ((data.NumCorner + 1) >= data.Path.corners.Length)
@@ -121,7 +126,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                             data.Path = null;
                         }
                         else
-                            data.Position.LookAt(data.Path.corners[++(data.NumCorner)]);
+                            data.Position.LookAt(data.Path.corners[++data.NumCorner]);
 
                         data.IsMoved = false;
                         return;
@@ -129,7 +134,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Apply force");
+                    data.RigidBody.velocity = Vector3.zero;
                     data.RigidBody.AddForce(direction.normalized * data.Speed, ForceMode.Impulse);
                     data.IsMoved = true;
                 }
