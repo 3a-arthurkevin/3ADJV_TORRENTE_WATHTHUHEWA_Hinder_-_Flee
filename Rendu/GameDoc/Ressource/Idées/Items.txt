@@ -1,9 +1,0 @@
-- bébé en plastique qui fait du bruit pour attirer les zombies
-- antitode (soigne mutation en cours d'un survivant)
-- mini zombie qui explose (bump si survivant, dégat si zombie)
-- piège à loup (immobilise l'entité prise dans le piege 5 sec)
-- huile (zone dure 1min --> fait tomber les joueurs qui marche sur flaque)
-- filet (zone : immobilise les entités prise dans le piege 3 sec)
-- Bouteille de sang (attire les zombies sur la cible sur laquelle on a appliquer le sang)
-- Morceau de jambon (jetté au sol il attire les zombie, si on entre dans une zone applique un debuff qui attire tous les zombie sur nous)
-- Seringue virus (Enclanche la mutation en zombie sur le survivant cible --> fonctionne que sur survivant sain, sinon sans effet)(si joueur interrompu se retourne contre soi meme)
