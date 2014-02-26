@@ -45,7 +45,13 @@ public class SurvivorManagerForStairScript : MonoBehaviour
         
         if (m_hasClicked)
         {//TP survivor
-            survivor.GetComponent<MoveManagerSurvivorScript>().teleport(m_stairOut.position);
+            MoveManagerSurvivorScript moveManager = survivor.GetComponent<MoveManagerSurvivorScript>();
+
+            if (moveManager != null)
+                moveManager.teleport(m_stairOut.position);
+            
+            else
+                Debug.LogError("MoveManagerSurvivorScript not found");
         }
     }
 }
