@@ -1,0 +1,11 @@
+- GameManager
+	Manager de la partie
+
+- PlayerDatabaseScript
+	Liste de tous les joueurs
+
+- PlayerDataScript
+	- list d'attribut d'un joueur
+
+
+Hit/Health Manager
