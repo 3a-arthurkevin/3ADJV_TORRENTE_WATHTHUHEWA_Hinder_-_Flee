@@ -1,21 +1,21 @@
 Initialize engine version: 4.3.2f1 (0517a5ae8669)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [igdumdim32.dll 10.18.10.3379]
+    Version:  Direct3D 9.0c [igdumd32.dll 9.18.13.2702]
     Renderer: Intel(R) HD Graphics 4000
     Vendor:   Intel
-    VRAM:     912 MB (via DXGI)
+    VRAM:     944 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=0
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.056 seconds
-desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.119 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\System.Core.dll (this message is harmless)
 Client Connect
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
@@ -23,10 +23,129 @@ PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE
  
 (Filename: C Line: 0)
 
-1
+Initialize engine version: 4.3.2f1 (0517a5ae8669)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [igdumd32.dll 9.18.13.2702]
+    Renderer: Intel(R) HD Graphics 4000
+    Vendor:   Intel
+    VRAM:     944 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.066 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\System.Core.dll (this message is harmless)
+Client Connect
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogError(Object)
+PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:73)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.De
+bug:Internal_Log(Innternal_Loing, Obj, St)
+UnityEngict)
+Unbug:LogError(bug:LctgE
+PrayerDataects)Sc
+PriyetrDaitClBens() (ript:\Userlient() (Dot C:\Uts\GitHub\3ADDoc_TORRts\E_WATHTHUHEWA_TORREr_-_Flee-26bfda0c7591br_-_fc88abb4b5ebde618f6426fc\Renb4b5ebdha\Ass642f35\Rend\NetworkAssets\ScataBaseScriprk\P:172)
+ 
+(FilseScme: C Line: 0
+)
+
+Filename: C Line: 0)
+
+Game launched
+UnityGngine.Debugchent
+Urnil_LoE(Int32, String, Object)
+UnInt32,giString, ObjecErro
+r(Object)
+PlayerDatagEasrSor(Obj:Lct)chGa
+mlayerDataBa\Useript:rthur\Doamuments\GitHuUsers\Ar_TORRr\Doc_WATHts\GitWAub\_ADJin_TORRENTl_eeTH6bHda0cWA_Hin36fcd8abb-b5ebde626f642f35\Rendu\6fc88aAssets\Sde618f6\Network\PlayerDaa\Assets\Scripts:238)
+ r
+(ki\enamye: r Latea 0)
+
+Script.cs:238)
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SurvivorManagerForStairScript.OnTriggerStay (UnityEngine.Collider survivor) [0x0000b] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs:48 
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SurvivorManagerForStairScript.OnTriggerStay (UnityEngine.Collider survivor) [0x0000b] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs:48 
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SurvivorManagerForStairScript.OnTriggerStay (UnityEngine.Collider survivor) [0x0000b] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs:48 
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SurvivorManagerForStairScript.OnTriggerStay (UnityEngine.Collider survivor) [0x0000b] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs:48 
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SurvivorManagerForStairScript.OnTriggerStay (UnityEngine.Collider survivor) [0x0000b] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs:48 
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SurvivorManagerForStairScript.OnTriggerStay (UnityEngine.Collider survivor) [0x0000b] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs:48 
+ 
+(Filename: C Line: 0)
+
+Initialize engine version: 4.3.2f1 (0517a5ae8669)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [igdumd32.dll 9.18.13.2702]
+    Renderer: Intel(R) HD Graphics 4000
+    Vendor:   Intel
+    VRAM:     944 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.069 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Kevin\Desktop\projetAnnuel\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\System.Core.dll (this message is harmless)
+Client Connect
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogError(Object)
+PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:73)
+ 
+(Filename: C Line: 0)
+
+3
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
 PlayerDataBaseScript:InitClient() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:172)
+ 
+(Filename: C Line: 0)
+
+Character non trouvé
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogError(Object)
+PlayerDataBaseScript:InitClient() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:175)
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerDataBaseScript.InitClient () [0x00095] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:189 
  
 (Filename: C Line: 0)
 
@@ -34,6 +153,12 @@ Game launched
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
 PlayerDataBaseScript:LaunchGame() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Network\PlayerDataBaseScript.cs:238)
+ 
+(Filename: C Line: 0)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at CameraResetOnCharacterScript.resetCamera () [0x00000] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Camera\CameraResetOnCharacterScript.cs:34 
+  at CameraResetOnCharacterScript.Start () [0x0000c] in C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee-26bfda0c7591b236fc88abb4b5ebde618f642f35\Rendu\Alpha\Assets\Scripts\Camera\CameraResetOnCharacterScript.cs:22 
  
 (Filename: C Line: 0)
 
