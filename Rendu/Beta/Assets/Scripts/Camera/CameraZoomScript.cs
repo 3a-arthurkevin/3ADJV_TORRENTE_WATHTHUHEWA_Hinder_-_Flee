@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraZoomScript : MonoBehaviour 
+public class CameraZoomScript : MonoBehaviour
 {
     [SerializeField]
     private Transform m_transformCamera;
@@ -13,7 +13,7 @@ public class CameraZoomScript : MonoBehaviour
     private int m_scrollLimitMin = 0;
 
     [SerializeField]
-    private int m_scrollLimiteMax = 15;
+    private int m_scrollLimitMax = 15;
 
     [SerializeField]
     private float m_nbScroll = 7f;
@@ -24,27 +24,31 @@ public class CameraZoomScript : MonoBehaviour
     [SerializeField]
     private Vector3 m_cameraPosition;
 
+    [SerializeField]
+    private CameraLimitDeplacement m_scriptLimit;
+
     void Start()
     {
         m_transformCamera = transform;
+        m_scriptLimit = transform.GetComponent<CameraLimitDeplacement>();
     }
 
-	void LateUpdate () 
+    void LateUpdate()
     {
         var mouvement = Input.GetAxis("Mouse ScrollWheel");
         mouvement = Mathf.Clamp(mouvement, -1, 1);
 
-        if (mouvement > 0)
+        if (mouvement > 0 && !(m_scriptLimit.blockMoveY(m_transformCamera) > 0))
         {
-            if ((m_nbScroll >= m_scrollLimitMin) && (m_nbScroll < m_scrollLimiteMax))
+            if (m_nbScroll <= m_scrollLimitMax)
             {
                 m_transformCamera.position += m_transformCamera.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
                 m_nbScroll += mouvement;
-            }     
+            }
         }
         if (mouvement < 0)
         {
-            if ((m_nbScroll > m_scrollLimitMin) && (m_nbScroll <= m_scrollLimiteMax))
+            if (m_nbScroll >= m_scrollLimitMin && !(m_scriptLimit.blockMoveY(m_transformCamera) < 0))
             {
                 m_transformCamera.position += m_transformCamera.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
                 m_nbScroll += mouvement;

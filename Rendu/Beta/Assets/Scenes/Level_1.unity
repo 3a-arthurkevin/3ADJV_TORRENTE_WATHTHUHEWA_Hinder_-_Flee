@@ -26722,7 +26722,7 @@ GameObject:
   - 64: {fileID: 1068727859}
   - 23: {fileID: 1068727858}
   m_Layer: 0
-  m_Name: CamBorder
+  m_Name: CamBorder1
   m_TagString: CamBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -30137,7 +30137,7 @@ GameObject:
   - 64: {fileID: 1225422189}
   - 23: {fileID: 1225422188}
   m_Layer: 0
-  m_Name: CamBorder
+  m_Name: CamBorder0
   m_TagString: CamBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1

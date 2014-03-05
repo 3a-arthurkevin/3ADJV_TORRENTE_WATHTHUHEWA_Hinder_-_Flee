@@ -70,27 +70,15 @@ public class TeleportSurvivorToEndStairScript : MonoBehaviour {
             //TP survivor lors qu'il prend l'escalier
             //Mise à jour des limites de la camera du joueur
             survivor.transform.position = m_stairOut.position;
+            Camera.current.GetComponent<CameraResetOnCharacterScript>().resetCamera();
             
             GameObject floor = null;
-            GameObject camBorder = null;
+            Transform camBorder = null;
 
             if (findCurrentFloor(out floor))
-            {
-                camBorder = floor.transform.FindChild("camBorder").gameObject;
-
-                /*
-                try
-                {
-                    récupérer la cam du joueur pour appeler la fonction setLimite
-                
-                 * Soit jouer avec le nom de la camera lors de son instanciation en lancement de partie
-                 * Soit RPC pour mettre à jour limiter camera dans playerDataBaseScript 
-                }
-                catch (UnityException e)
-                {
-                    return;
-                }
-                */
+            {   
+                camBorder = floor.transform.FindChild("camBorder").gameObject.transform;
+                Camera.current.GetComponent<CameraLimitDeplacement>().setPlaneLimit(camBorder);
             }
             else
             {

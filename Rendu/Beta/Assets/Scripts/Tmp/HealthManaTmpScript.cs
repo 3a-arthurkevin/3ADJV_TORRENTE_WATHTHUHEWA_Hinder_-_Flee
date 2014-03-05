@@ -26,12 +26,6 @@ public class HealthManaTmpScript : MonoBehaviour {
         m_currentHealth = 100;
         m_maxHealth = 100;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-        	
-	}
 
     public bool getZeroLifePoint()
     {
