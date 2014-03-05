@@ -88,7 +88,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
                 m_players.Add(newPlayer, null);
                 m_playerReady.Add(newPlayer, false);
 
-                if (++m_currentPlayer == m_maxPlayers)
+                if (m_players.Count == m_maxPlayers)
                     initialiseGame();
             }
         }
@@ -106,8 +106,6 @@ public class PlayerDataBaseScript : MonoBehaviour {
         }
         else
             Debug.LogError("Player not found");
-        
-        --m_currentPlayer;
         
         pauseGame();
     }
@@ -133,7 +131,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
         {
             NetworkPlayer player = m_players.ElementAt(i).Key;
 
-            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnForLevelOne(), Quaternion.identity, int.Parse(player.ToString()));
+
+            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawn(), Quaternion.identity, int.Parse(player.ToString()));
 
             transformPlayer.name = "Survivor" + player.ToString();
 
