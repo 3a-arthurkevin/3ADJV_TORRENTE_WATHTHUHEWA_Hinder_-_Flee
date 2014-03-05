@@ -43,7 +43,17 @@ public class ConfigLevelManager : MonoBehaviour
         return levelOne;
     }
 
-    public static Vector3 getNextSpawnForLevelOne()
+    public static Vector3 getNextSpawn()
+    {
+        if (Application.loadedLevelName == "Level_1")
+            return getNextSpawnForLevelOne();
+        else if (Application.loadedLevelName == "Level_2")
+            return getNextSpawnForLevelTwo();
+
+        return Vector3.zero;
+    }
+
+    private static Vector3 getNextSpawnForLevelOne()
     {
         if (m_spawn == null)
             fillSpawnLevelOne();
@@ -55,6 +65,25 @@ public class ConfigLevelManager : MonoBehaviour
     }
 
     private static void fillSpawnLevelOne()
+    {
+        m_spawn = new List<Vector3>();
+
+        m_spawn.Add(new Vector3(10, 1, 70));
+        m_spawn.Add(new Vector3(30, 1, 70));
+    }
+
+    private static Vector3 getNextSpawnForLevelTwo()
+    {
+        if (m_spawn == null)
+            fillSpawnLevelTwo();
+
+        if (m_currentSpawn == m_spawn.Count)
+            m_currentSpawn = 0;
+
+        return m_spawn[m_currentSpawn++];
+    }
+
+    private static void fillSpawnLevelTwo()
     {
         m_spawn = new List<Vector3>();
 
