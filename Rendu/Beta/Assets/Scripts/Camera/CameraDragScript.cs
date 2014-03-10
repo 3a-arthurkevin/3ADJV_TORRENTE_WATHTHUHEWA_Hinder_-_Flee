@@ -32,8 +32,8 @@ public class CameraDragScript : MonoBehaviour
         {
             m_scriptFollow.enabled = false;
 
-            var mouvementX = Input.GetAxis("Mouse X");
-            var mouvementY = Input.GetAxis("Mouse Y");
+            float mouvementX = Input.GetAxis("Mouse X");
+            float mouvementY = Input.GetAxis("Mouse Y");
 
             if (!(m_scriptLimit.blockMoveY(m_transformCamera) < 0) && (mouvementY > 0))
             {

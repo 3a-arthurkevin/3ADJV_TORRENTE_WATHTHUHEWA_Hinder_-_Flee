@@ -35,7 +35,7 @@ public class CameraZoomScript : MonoBehaviour
 
     void LateUpdate()
     {
-        var mouvement = Input.GetAxis("Mouse ScrollWheel");
+        float mouvement = Input.GetAxis("Mouse ScrollWheel");
         mouvement = Mathf.Clamp(mouvement, -1, 1);
 
         if (mouvement > 0 && !(m_scriptLimit.blockMoveY(m_transformCamera) > 0))

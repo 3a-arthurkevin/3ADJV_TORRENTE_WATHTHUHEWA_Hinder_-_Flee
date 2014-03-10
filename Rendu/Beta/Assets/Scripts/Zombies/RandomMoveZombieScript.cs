@@ -71,7 +71,7 @@ public class RandomMoveZombieScript : MonoBehaviour {
             m_directionChange = false;
         }
 
-        var direction = m_curCorner - m_zombie.position;
+        Vector3 direction = m_curCorner - m_zombie.position;
         direction.Set(direction.x, 0, direction.z);
 
         if (direction.sqrMagnitude < m_minDistance)
