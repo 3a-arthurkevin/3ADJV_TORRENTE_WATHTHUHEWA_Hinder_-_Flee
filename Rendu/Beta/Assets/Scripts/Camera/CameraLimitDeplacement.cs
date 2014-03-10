@@ -1,41 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraLimitDeplacement : MonoBehaviour {
+public class CameraLimitDeplacement : MonoBehaviour
+{
 
     [SerializeField]
-    private Transform m_planeMap;
+    private Transform m_planeLimit;
 
     [SerializeField]
-    private float m_limitX;
+    private float m_planeSizeLeftAndRight = 4.5f;
 
     [SerializeField]
-    private float m_limitZ;
+    private float m_planeSizeUp = 3f;
 
-
-    public void setFloar(Transform floar)
-    {
-        m_planeMap = floar;
-        m_limitX = m_planeMap.position.x + (m_planeMap.localScale.x * 4.5f);
-        m_limitZ = m_planeMap.position.z /*+ (m_planeMap.localScale.z * 6f)*/;
-    }
+    [SerializeField]
+    private float m_planeSizeDown = 7f;
 
     void Start()
     {
-        m_limitX = m_planeMap.position.x + (m_planeMap.localScale.x * 4.5f);
-        m_limitZ = m_planeMap.position.z /*+ (m_planeMap.localScale.z * 6f)*/;
+        m_planeLimit = GameObject.Find("CamBorder0").transform;
+        setPlaneLimit(m_planeLimit);
+    }
+
+    public void setPlaneLimit(Transform planeLimit)
+    {
+        m_planeLimit = planeLimit;
     }
 
     public int blockMoveX(Transform cameraTransform)
     {
         int typeOfBlockX;
 
-        if (cameraTransform.position.x >= m_limitX)
+        //Block coté droite
+        if (cameraTransform.position.x >= (m_planeLimit.position.x + (m_planeLimit.localScale.x * m_planeSizeLeftAndRight)))
+        {
             typeOfBlockX = 1;
-        else if (cameraTransform.position.x <= -m_limitX)
+        }
+        //Block coté gauche
+        else if (cameraTransform.position.x <= (m_planeLimit.position.x - (m_planeLimit.localScale.x * m_planeSizeLeftAndRight)))
+        {
             typeOfBlockX = -1;
+        }
+        //Ok
         else
+        {
             typeOfBlockX = 0;
+        }
 
         return typeOfBlockX;
     }
@@ -44,12 +54,21 @@ public class CameraLimitDeplacement : MonoBehaviour {
     {
         int typeOfBlockZ = 0;
 
-        if (cameraTransform.position.z >= m_limitZ + (m_planeMap.localScale.z * 3f))
+        //Block en haut
+        if (cameraTransform.position.z >= (m_planeLimit.position.z + (m_planeLimit.localScale.z * m_planeSizeUp)))
+        {
             typeOfBlockZ = 1;
-        else if (cameraTransform.position.z <= -(m_limitZ + (m_planeMap.localScale.z * 7f)))
+        }
+        //Block en bas
+        else if (cameraTransform.position.z <= (m_planeLimit.position.z - (m_planeLimit.localScale.z * m_planeSizeDown)))
+        {
             typeOfBlockZ = -1;
+        }
+        //Ok
         else
+        {
             typeOfBlockZ = 0;
+        }
 
         return typeOfBlockZ;
     }

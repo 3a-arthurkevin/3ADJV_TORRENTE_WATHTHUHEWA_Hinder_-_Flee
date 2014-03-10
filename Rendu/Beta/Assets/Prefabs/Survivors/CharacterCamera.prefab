@@ -90,9 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97423ecd9b0401842bcc1d28ad5aa6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_transformCamera: {fileID: 400000}
+  m_transformCamera: {fileID: 0}
   m_moveSpeed: 3
-  m_scriptZoom: {fileID: 11400004}
+  m_scriptFollow: {fileID: 0}
+  m_scriptLimit: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,9 +106,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_transformCharacter: {fileID: 0}
-  m_transformCamera: {fileID: 400000}
+  m_transformCamera: {fileID: 0}
   m_cameraPosition: {x: 0, y: 0, z: 0}
   m_scriptZoom: {fileID: 11400006}
+  m_positionResetX: 0
+  m_positionResetY: 7
+  m_positionResetZ: -7
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,11 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afac068a64b9b0542964915707a4eea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_transformCamera: {fileID: 400000}
+  m_transformCamera: {fileID: 0}
   m_mousePosition: {x: 0, y: 0}
   m_activeZoneBegin: .899999976
   m_activeZoneEnd: .99000001
   m_moveSpeed: 3
+  m_scriptLimit: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,27 +140,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa494309003aae6449bfdfa31893f45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_transformCamera: {fileID: 400000}
+  m_transformCamera: {fileID: 0}
   m_scrollSpeed: 15
   m_scrollLimitMin: 0
-  m_scrollLimiteMax: 15
+  m_scrollLimitMax: 15
   m_nbScroll: 7
   m_nbScrollDefault: 7
   m_cameraPosition: {x: 0, y: 0, z: 0}
+  m_scriptLimit: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95f4ffe63a477a049812fbc1895c76ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_planeMap: {fileID: 0}
-  m_limitX: 0
-  m_limitZ: 0
+  m_planeLimit: {fileID: 0}
+  m_planeSizeLeftAndRight: 4.5
+  m_planeSizeUp: 3
+  m_planeSizeDown: 7
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
