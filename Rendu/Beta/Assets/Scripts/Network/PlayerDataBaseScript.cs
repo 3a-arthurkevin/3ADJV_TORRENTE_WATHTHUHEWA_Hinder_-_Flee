@@ -125,7 +125,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private void initialiseGame()
     {//Instancie toute les préfabs et supprime la liste m_beforeGame
 
-        var moveManagerSurvivor = GetComponent<MoveManagerSurvivorScript>();
+        MoveManagerSurvivorScript moveManagerSurvivor = GetComponent<MoveManagerSurvivorScript>();
 
         for(int i = 0; i < m_players.Count; ++i)
         {
@@ -166,7 +166,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {//Positionne la camera sur le survivor
         //Et fait les différente initialisation du client
 
-        var character = GameObject.Find("Survivor" + Network.player.ToString());
+        GameObject character = GameObject.Find("Survivor" + Network.player.ToString());
         
         Debug.LogError(Network.player.ToString());
 
@@ -195,7 +195,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     [RPC]
     void clientIsInit(NetworkPlayer player)
     {//Reçois un message du client pour prévenir qu'il est prêt
-        //La game ne démarre seulement quand tous les clients sont prêt
+        //La partie ne démarre seulement quand tous les clients sont prêt
 
         if (Network.isServer)
         {
@@ -228,10 +228,13 @@ public class PlayerDataBaseScript : MonoBehaviour {
     [RPC]
     void LaunchGame()
     {
-        var cam = GameObject.Find("CharacterCamera");
+        GameObject cam = GameObject.Find("CharacterCamera");
 
         if (cam == null)
+        {
             Debug.LogError("Failed find camera");
+            return;
+        }
 
         cam.camera.enabled = true;
         Debug.LogError("Game launched");

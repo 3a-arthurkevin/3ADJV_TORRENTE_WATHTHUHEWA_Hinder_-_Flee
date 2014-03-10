@@ -27,8 +27,8 @@ public class CameraDragScript : MonoBehaviour
         {
             m_scriptZoom.enabled = false;
 
-            var mouvementX = Input.GetAxis("Mouse X");
-            var mouvementY = Input.GetAxis("Mouse Y");
+            float mouvementX = Input.GetAxis("Mouse X");
+            float mouvementY = Input.GetAxis("Mouse Y");
 
             m_transformCamera.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
             m_transformCamera.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;

@@ -31,7 +31,7 @@ public class FollowMoveZombieScript : MonoBehaviour {
 	{//Follow Transform m_follow
 		if(m_follow != null)
 		{
-			var direction = m_follow.position - m_zombiePos.position;
+			Vector3 direction = m_follow.position - m_zombiePos.position;
 			direction.Set(direction.x, 0, direction.z);
 
             if (direction.sqrMagnitude > m_minDistance)

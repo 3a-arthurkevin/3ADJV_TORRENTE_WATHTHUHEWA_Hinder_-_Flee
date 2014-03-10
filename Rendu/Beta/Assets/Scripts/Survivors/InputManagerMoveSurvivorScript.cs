@@ -30,11 +30,12 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                var ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
+                Ray ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
                 
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("Ground")))
                     m_networkView.RPC("setTarget", RPCMode.Server, Network.player, hit.point);
+
             }
         }
 	}
@@ -45,11 +46,14 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
         if (Network.isServer)
         {
             m_target.position = targetPosition;
-            
-            var gameManager = GameObject.Find("GameManager");
+
+            GameObject gameManager = GameObject.Find("GameManager");
 
             if (gameManager == null)
+            {
                 Debug.LogError("gameManager Failed");
+                return;
+            }
 
             MoveManagerSurvivorScript moveManagerSurvivor = gameManager.GetComponent<MoveManagerSurvivorScript>();
             moveManagerSurvivor.setTarget(player, m_target);

@@ -4,18 +4,20 @@ using System.Collections.Generic;
 
 public class MoveManagerSurvivorScript : MonoBehaviour
 {
+    [SerializeField]
+    private NetworkView m_networkView;
 
     [SerializeField]
-    private float m_minDistance = 2;
+    private float m_minDistance = 2f;
 
     [SerializeField]
-    private float m_defaultSpeed = 2;
+    private float m_defaultSpeed = 2f;
 
     class MoveData
     {
         private NavMeshPath m_path = null;
         private bool m_isMoved = false;
-        private float m_speed = 2;
+        private float m_speed = 2f;
         private Vector3 m_curCorner;
         private uint m_numCorner = 0;
         private Transform m_survivorPosition = null;
@@ -59,92 +61,139 @@ public class MoveManagerSurvivorScript : MonoBehaviour
 
     void Start()
     {
-        if (Network.isClient)
-            enabled = false;
+        if (m_networkView == null)
+            m_networkView = networkView;
 
         m_players = new Dictionary<NetworkPlayer, MoveData>();
     }
 
     public void addPlayer(NetworkPlayer player, Transform transformPlayer)
     {
-        MoveData data = new MoveData();
-        data.Speed = m_defaultSpeed;
-        data.Position = transformPlayer;
-        data.RigidBody = transformPlayer.rigidbody;
+        if (Network.isServer)
+        {
+            MoveData data = new MoveData();
+            data.Speed = m_defaultSpeed;
+            data.Position = transformPlayer;
+            data.RigidBody = transformPlayer.rigidbody;
 
-        m_players.Add(player, data);
+            m_networkView.RPC("addPlayerInClient", RPCMode.Others, player, transformPlayer.name);
+            m_players.Add(player, data);
+        }
+    }
+
+    [RPC]
+    public void addPlayerInClient(NetworkPlayer player, string NameOfPlayerGameObject)
+    {
+        if (Network.isClient)
+        {
+            MoveData data = new MoveData();
+            GameObject gameObjectOfPlayer = GameObject.Find(NameOfPlayerGameObject);
+
+            if (gameObjectOfPlayer == null)
+            {
+                Debug.LogError("Player" + player.ToString() + " not found in Scene");
+                return;
+            }
+            else
+                Debug.LogError("Player " + player.ToString() + " Added");
+
+            data.Position = gameObjectOfPlayer.transform;
+            data.RigidBody = data.Position.rigidbody;
+            data.Speed = m_defaultSpeed;
+
+            m_players.Add(player, data);
+        }
     }
 
     public void setTarget(NetworkPlayer player, Transform target)
     {//Calcul du path
      //Commencement du déplacement des survivant
-
-        MoveData data = null;
-
-        if (m_players.TryGetValue(player, out data) && data != null)
+        if (Network.isServer)
         {
-            var path = getCalcPath(data.Position.position, target.position);
+            MoveData data = null;
 
-            if (path != null)
+            if (m_players.TryGetValue(player, out data) && data != null)
             {
-                data.Path = path;
-                data.NumCorner = 1;
+                NavMeshPath path = getCalcPath(data.Position.position, target.position);
+
+                if (path != null)
+                {
+                    data.Path = path;
+                    data.NumCorner = 1;
+                    //Envoyé la mise à jour du NavMeshPath à tous les clients
+                    m_networkView.RPC("UpdatePathClient", RPCMode.OthersBuffered, player, target.position);
+                }
+                else
+                {
+                    data.Path = null;
+                    data.NumCorner = 0;
+                }
+
+                data.IsMoved = false;
             }
-            else
-            {
-                data.Path = null;
-                data.NumCorner = 0;
-            }
-            
-            data.IsMoved = false;
-            data.RigidBody.velocity = Vector3.zero;
         }
+    }
 
+    [RPC]
+    public void UpdatePathClient(NetworkPlayer player, Vector3 targetPosition)
+    {
+        if (Network.isClient)
+        {
+            MoveData data = null;
+
+            if (m_players.TryGetValue(player, out data) && data != null)
+            {
+                NavMeshPath path = getCalcPath(data.Position.position, targetPosition);
+
+                if (path != null)
+                {
+                    data.Path = path;
+                    data.NumCorner = 1;
+                }
+                else
+                {
+                    data.Path = null;
+                    data.NumCorner = 0;
+                    Debug.LogError("Failed calculated path");
+                }
+
+                data.IsMoved = false;
+            }
+        }
     }
 
     void FixedUpdate()
     {//Move each survivor
-
         MoveData data;
 
-        foreach (var item in m_players)
+        foreach (KeyValuePair<NetworkPlayer, MoveData> item in m_players)
         {
-            //Manage move de chaque player
             data = item.Value;
 
             if (data.Path != null)
             {
-                var direction = data.Path.corners[data.NumCorner] - data.Position.position;
+                Vector3 direction = data.Path.corners[data.NumCorner] - data.Position.position;
+                direction.y = 0;
 
-                if (data.IsMoved)
+                if (direction.sqrMagnitude < m_minDistance)
                 {
-                    if (direction.sqrMagnitude < m_minDistance)
-                    {
-                        if ((data.NumCorner + 1) >= data.Path.corners.Length)
-                        {
-                            data.RigidBody.velocity = Vector3.zero;
-                            data.Path = null;
-                        }
-                        else
-                            data.Position.LookAt(data.Path.corners[++data.NumCorner]);
+                    if ((data.NumCorner + 1) >= data.Path.corners.Length)
+                        data.Path = null;
 
-                        data.IsMoved = false;
-                        return;
-                    }
+                    else
+                        data.Position.LookAt(data.Path.corners[++data.NumCorner]);
+
+                    data.IsMoved = false;
                 }
                 else
-                {
-                    data.RigidBody.velocity = Vector3.zero;
-                    data.RigidBody.AddForce(direction.normalized * data.Speed, ForceMode.Impulse);
-                    data.IsMoved = true;
-                }
+                    data.Position.position += direction.normalized * data.Speed * Time.deltaTime;
             }
         }
     }
 
     private NavMeshPath getCalcPath(Vector3 origin, Vector3 wantToGo)
     {
-        var path = new NavMeshPath();
+        NavMeshPath path = new NavMeshPath();
         NavMesh.CalculatePath(origin, wantToGo, -1, path);
 
         if (path.corners.Length > 1)
