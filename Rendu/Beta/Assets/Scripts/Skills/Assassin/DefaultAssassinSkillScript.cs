@@ -25,7 +25,7 @@ public class DefaultAssassinSkill : MonoBehaviour, ISkillScript
     private DefenseBonusMalusScript malusDefense = new DefenseBonusMalusScript(-0.10f);
 
     //Utilisé dans PlayerStatsManager
-    float ISkillScript.UseSkill()
+    public float UseSkill()
     {
         return malusDefense.getAlterValue();
     }

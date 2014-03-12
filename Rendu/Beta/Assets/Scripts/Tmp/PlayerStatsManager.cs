@@ -5,7 +5,7 @@ public class PlayerStatsManager : MonoBehaviour
 {
     //Object sur lequel le script est attaché --> le survivant ou zombie
     [SerializeField]
-    private GameObject m_parentGameObject;
+    private GameObject m_playerCharacter;
 
     //Toutes les stats du joueurs (dont celle pouvant etre modifié par bonus malus)
 
@@ -25,7 +25,7 @@ public class PlayerStatsManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_parentGameObject = gameObject;
+        m_playerCharacter = gameObject;
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class PlayerStatsManager : MonoBehaviour
     //Vu qu'on a un interface Skill, on regarde son type pour savoir quelle stat modifié
     public void applySkillAlteration(int idSkill)
     {
-        WeaponInfo weapon = m_parentGameObject.GetComponent<WeaponInfo>();
+        WeaponInfo weapon = m_playerCharacter.GetComponent<WeaponInfo>();
 
         ISkillScript skillUsed = weapon.getSkill(idSkill);
 

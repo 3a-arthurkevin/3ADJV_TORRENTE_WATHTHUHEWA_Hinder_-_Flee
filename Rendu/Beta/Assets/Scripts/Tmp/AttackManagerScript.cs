@@ -18,6 +18,14 @@ public class AttackManagerScript : MonoBehaviour
     [SerializeField]
     private int m_idSkill = -1;
 
+    //Personnage attaquant
+    [SerializeField]
+    private GameObject attacker;
+
+    //Personnage attaquée
+    [SerializeField]
+    private GameObject attacked;
+
     //[SerializeField]
     //private NetworkView m_networkView;
 
@@ -32,22 +40,21 @@ public class AttackManagerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if (Network.isClient)
+        m_idSkill = findInputSkill();
+        if (m_idSkill >= 0)
         {
-            m_idSkill = pushButtonAttack();
-            if (m_idSkill >= 0)
+            //Recherche de l'arme dans l'inventaire
+            //weaponEquiped = inventoryManager.getWeaponEquiped()
+            if (doesAttackHasHit(m_idSkill))
             {
-                if (doesAttackHasHit(m_idSkill))
-                {
-                    applyAttackEffect(m_idSkill);
-                }
+                applyAttackEffect(m_idSkill);
             }
         }
 	}
 
 
     //Pour savoir si le bouton appuyé est un bouton d'attaque
-    private int pushButtonAttack()
+    private int findInputSkill()
     {
         //Id par défaut = -1
         int idAttack = -1;

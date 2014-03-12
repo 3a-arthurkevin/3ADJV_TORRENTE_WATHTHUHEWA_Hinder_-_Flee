@@ -1,4 +1,4 @@
-Arthur:
+﻿Arthur:
 			
 	=> Téléportation
 		=> Zombie après le rendu alpha
@@ -8,5 +8,6 @@ Arthur:
 	
 Kevin :
 	=> Camera
-		- Borner la camera à l'étage du joueur
+		- Limiter => attention, revoir comment appliquer le plane Limiter
+			     La c'est avec le nom rentré en dur avec GameObject.Find() --> a faire lors du spawn joueur
 		
