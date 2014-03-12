@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Items\IItem.cs" />
      <Compile Include="Assets\Scripts\Manager\MoveManagerSurvivorScript.cs" />
+     <Compile Include="Assets\Scripts\Manager\MoveManagerZombieScript.cs" />
      <Compile Include="Assets\Scripts\Network\PlayerDataBaseScript.cs" />
      <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
      <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />
@@ -87,7 +88,7 @@
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\FollowMoveZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\GetRandomPositionScript.cs" />
-     <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScript.cs" />
+     <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScriptOld.cs" />
      <Compile Include="Assets\Scripts\Zombies\RandomMoveZombieScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

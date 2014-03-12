@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveManagerZombieScript : MonoBehaviour {
+public class MoveManagerZombieScriptOld : MonoBehaviour {
 	[SerializeField]
 	private FollowMoveZombieScript m_followScript;
 
