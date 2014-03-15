@@ -49,7 +49,7 @@ public class RandomMoveZombieScript : MonoBehaviour {
 
     void changeDirection()
     {
-        m_direction = GetRandomPositionScript.getRandomPoint(m_manager.AtIsFloor).Position;
+        //m_direction = GetRandomPositionScript.getRandomPoint(m_manager.AtIsFloor).Position;
         m_directionChange = true;
     }
 

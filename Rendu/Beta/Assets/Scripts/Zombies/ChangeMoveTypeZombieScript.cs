@@ -7,11 +7,11 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		m_manager.Follow(col.transform);
+		//m_manager.Follow(col.transform);
 	}
 
 	void OnTriggerExit(Collider col)
 	{
-		m_manager.UnFollow();
+		//m_manager.UnFollow();
 	}
 }
