@@ -21,16 +21,16 @@ public class ConfigLevelManager : MonoBehaviour
         switch (Application.loadedLevelName)
         {
             case "Level_1":
-                LoadLevelOne();
+        ConfigLevelManager.LoadLevelOne();
                 break;
             
             case "Level_2":
-                LoadLevelTwo();
+                ConfigLevelManager.LoadLevelTwo();
                 break;
         }
     }
 
-    void LoadLevelOne()
+    static void LoadLevelOne()
     {
         //Load Spawn Survivor
         m_spawnSurvivor.Add(new List<Vector3>());
@@ -60,24 +60,40 @@ public class ConfigLevelManager : MonoBehaviour
         m_movePointZombie[1].Add(new Vector3(0, 0, 0));
     }
 
-    void LoadLevelTwo()
+    static void LoadLevelTwo()
     {
     }
 
     public static Vector3 getNextSpawnSurvivor()
     {
-        ++m_currentSpawnLevelSuvivor;
-
-        if (m_currentSpawnLevelSuvivor > m_spawnSurvivor[m_currentSpawnLevelSuvivor].Count)
+        if (m_currentSpawnSurvivor >= m_spawnSurvivor[m_currentSpawnLevelSuvivor].Count)
         {
             ++m_currentSpawnLevelSuvivor;
             m_currentSpawnSurvivor = 0;
 
-            if (m_currentSpawnLevelSuvivor > m_spawnSurvivor.Count)
+            if (m_currentSpawnLevelSuvivor >= m_spawnSurvivor.Count)
                 m_currentSpawnLevelSuvivor = 0;
         }
 
-        return m_spawnSurvivor[m_currentSpawnLevelSuvivor][m_currentSpawnSurvivor];
+        return m_spawnSurvivor[m_currentSpawnLevelSuvivor][m_currentSpawnSurvivor++];
+    }
+
+    public static Vector3 getRandomSpawnZombie(int level)
+    {
+        if (level >= m_spawnZombie.Count || level < 0)
+            return m_spawnZombie[0][0];
+        
+        else
+            return m_spawnZombie[level][Random.Range(0, m_spawnZombie[level].Count)];
+    }
+
+    public static Vector3 getRandomMoveZombie(int level)
+    {
+        if (level >= m_movePointZombie.Count || level < 0)
+            return m_movePointZombie[0][0];
+
+        else
+            return m_movePointZombie[level][Random.Range(0, m_movePointZombie[level].Count)];
     }
     
     /*

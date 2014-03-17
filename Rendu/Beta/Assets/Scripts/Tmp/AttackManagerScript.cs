@@ -8,8 +8,8 @@ public class AttackManagerScript : MonoBehaviour
 {
 
     //Represente le GameObject arme du joueur qui attaque
-    [SerializeField]
-    private GameObject m_parentGameObject;
+    /*[SerializeField]
+    private GameObject m_parentGameObject;*/
 
     //Info sur l'arme du joueur qui attaque --> obtenue grace à m_parentGameObject
     //On regarde dans l'inventaire ?
@@ -26,15 +26,15 @@ public class AttackManagerScript : MonoBehaviour
     [SerializeField]
     private bool aiming = false;
 
-    [SerializeField]
-    private bool clientHasAim = false;
+    /*[SerializeField]
+    private bool clientHasAim = false;*/
 
     //Pour savoir si l'attaque doit être lancer (juste après avoir viser pour la skill)
-    [SerializeField]
-    private bool lunchAttackAnimation = false;
+    /*[SerializeField]
+    private bool lunchAttackAnimation = false;*/
 
-    [SerializeField]
-    private bool coolDownOk = false; // --> à mettre sur la skill
+    /*[SerializeField]
+    private bool coolDownOk = false; // --> à mettre sur la skill*/
 
     //Personnage attaquée
     [SerializeField]
@@ -46,7 +46,7 @@ public class AttackManagerScript : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-        m_parentGameObject = gameObject;
+        //m_parentGameObject = gameObject;
         //m_weaponEquiped = m_parentGameObject.GetComponent<WeaponInfo>();
         //m_networkView = gameObject.GetComponent<NetworkView>();
 	}

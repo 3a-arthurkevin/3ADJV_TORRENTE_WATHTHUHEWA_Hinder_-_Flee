@@ -29,7 +29,6 @@ public class GetRandomPositionScript : MonoBehaviour {
     private static void loadPoint()
     {
         //Rempli la list m_allPoint de tous les points sur la Map
-        m_allPoint = ConfigLevelManager.getMovePointForFirtsLevel();
     }
 }
 

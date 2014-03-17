@@ -132,7 +132,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             NetworkPlayer player = m_players.ElementAt(i).Key;
 
 
-            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawn(), Quaternion.identity, int.Parse(player.ToString()));
+            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnSurvivor(), Quaternion.identity, int.Parse(player.ToString()));
 
             transformPlayer.name = "Survivor" + player.ToString();
 

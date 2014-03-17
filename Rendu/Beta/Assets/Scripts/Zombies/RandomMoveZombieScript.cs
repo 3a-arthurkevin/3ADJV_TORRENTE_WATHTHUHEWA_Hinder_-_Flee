@@ -9,8 +9,8 @@ public class RandomMoveZombieScript : MonoBehaviour {
     [SerializeField]
     private Vector3 m_direction;
 
-    [SerializeField]
-    private MoveManagerZombieScript m_manager;
+    /*[SerializeField]
+    private MoveManagerZombieScript m_manager;*/
 
     private NavMeshPath m_path;
     private bool m_directionChange;
