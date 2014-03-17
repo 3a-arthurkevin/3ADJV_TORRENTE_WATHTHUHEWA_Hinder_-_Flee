@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="cb128dfc-813e-4a54-9370-729c12c9e6ff" name="Move_Zombie" linkedPackageId="38fe259c-4194-4e11-9c46-988e7b4424ee" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="e8ce9c6c-d2a5-43b8-b5fd-de9b38f3d7ad">
+      <elementDefinition Id="b41df1f8-a489-41e0-9ff7-198f1130247b" />
+      <body>List de List&lt;Vector3&gt;
+Chaque index représente un étage et retourne une list de Vector3 réprésentant les points de pop</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="4317897c-c993-40d3-a793-c9942cd216bf">
+      <profileInstance Id="2b8d1071-8cbf-447d-bbd6-08ee085d0cfb" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="7498157e-f847-4835-af22-6507d151bd73">
+      <profileInstance Id="ab6a33c9-2d66-4182-bed9-bdccb7e8fd91" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b3ae6f77-6b65-4cc0-80f2-361dbfbab7dd" name="LevelConfig" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="902a38d2-196c-4ee7-bcbf-33e771aa1e92" />
+        <targetEnds>
+          <association Id="567d054e-3586-4dbf-bd15-067c414b5455" isDerived="false" sourceEndRoleName="LevelConfig" targetEndRoleName="List" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d76924ff-c508-449e-b965-09f32c65307f" LastKnownName="List" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ef98aa9e-d351-4ee6-9fa6-aa59cdc12d2d" name="LevelConfig" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3a77ab16-f620-4e6c-9e7f-3759be736c18" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0819e577-a49d-4606-b5d4-6fd9b1006c81" name="List" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="05fd4667-b647-4794-93aa-fed5dbe79d12" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d69a898c-f933-41a7-8f0a-77368d83faba" />
+          </association>
+        </targetEnds>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d76924ff-c508-449e-b965-09f32c65307f" name="List" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="04554a41-5cd0-4cbf-a18e-64811467b8f1" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="38fe259c-4194-4e11-9c46-988e7b4424ee" name="DC_Move_Zombie">
+    <elementDefinition Id="bf785bbc-6339-449d-b153-d6c5a3feb2a4" />
+  </package>
+</logicalClassDesignerModel>

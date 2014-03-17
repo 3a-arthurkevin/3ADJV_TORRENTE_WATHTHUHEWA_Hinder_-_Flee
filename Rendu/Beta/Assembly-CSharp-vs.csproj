@@ -83,7 +83,7 @@
      <Compile Include="Assets\Scripts\Utils\ConfigLevelManager.cs" />
      <Compile Include="Assets\Scripts\Utils\ConfigSkillManager.cs" />
      <Compile Include="Assets\Scripts\Utils\ConfigWeaponManager.cs" />
-     <Compile Include="Assets\Scripts\Utils\PointScript.cs" />
+     <Compile Include="Assets\Scripts\Utils\Point.cs" />
      <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\FollowMoveZombieScript.cs" />
