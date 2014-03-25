@@ -132,9 +132,6 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 Vector3 direction = data.Path.corners[data.NumCorner] - data.Position.position;
                 direction.y = 0;
 
-                if (Network.isClient)
-                    Debug.Log(direction.sqrMagnitude.ToString("F6") + " - " + m_minDistance);
-
                 if (direction.sqrMagnitude < m_minDistance)
                 {
                     if ((data.NumCorner + 1) >= data.Path.corners.Length)
