@@ -12,18 +12,18 @@ public class ConfigLevelManager : MonoBehaviour
     private static int m_currentSpawnSurvivor = 0;
     private static int m_currentSpawnLevelSuvivor = 0;
 
-    void Start()
+    public static void LoadLevel()
     {
-        m_spawnSurvivor     = new List<List<Vector3>>();
-        m_spawnZombie       = new List<List<Vector3>>();
-        m_movePointZombie   = new List<List<Vector3>>();
+        ConfigLevelManager.m_spawnSurvivor = new List<List<Vector3>>();
+        ConfigLevelManager.m_spawnZombie = new List<List<Vector3>>();
+        ConfigLevelManager.m_movePointZombie = new List<List<Vector3>>();
 
         switch (Application.loadedLevelName)
         {
             case "Level_1":
-        ConfigLevelManager.LoadLevelOne();
+                ConfigLevelManager.LoadLevelOne();
                 break;
-            
+
             case "Level_2":
                 ConfigLevelManager.LoadLevelTwo();
                 break;
@@ -39,25 +39,37 @@ public class ConfigLevelManager : MonoBehaviour
 
         //Load Spawn Zombie
         m_spawnZombie.Add(new List<Vector3>());
-        m_spawnZombie[0].Add(new Vector3(10.5f, 0, 95));
-        m_spawnZombie[0].Add(new Vector3(20, 0, 95));
-        m_spawnZombie[0].Add(new Vector3(-1, 0, 52));
-        m_spawnZombie[0].Add(new Vector3(30, 0, 52));
+        m_spawnZombie[0].Add(new Vector3(10.5f, 1, 95));
+        m_spawnZombie[0].Add(new Vector3(20, 1, 95));
+        m_spawnZombie[0].Add(new Vector3(-1, 1, 52));
+        m_spawnZombie[0].Add(new Vector3(30, 1, 52));
 
         m_spawnZombie.Add(new List<Vector3>());
-        m_spawnZombie[1].Add(new Vector3(30, 0, -60));
-        m_spawnZombie[1].Add(new Vector3(7, 0, -60));
+        m_spawnZombie[1].Add(new Vector3(30, 1, -60));
+        m_spawnZombie[1].Add(new Vector3(7, 1, -60));
 
         //Load Move point Zombie
         m_movePointZombie.Add(new List<Vector3>());
-        m_movePointZombie[0].Add(new Vector3(0, 0, 0));
-        m_movePointZombie[0].Add(new Vector3(0, 0, 0));
-        m_movePointZombie[0].Add(new Vector3(0, 0, 0));
-        m_movePointZombie[0].Add(new Vector3(0, 0, 0));
+        m_movePointZombie[0].Add(new Vector3(5, 1, 92));
+        m_movePointZombie[0].Add(new Vector3(21, 1, 92));
+        m_movePointZombie[0].Add(new Vector3(40, 1, 92));
+        m_movePointZombie[0].Add(new Vector3(9, 1, 62));
+        m_movePointZombie[0].Add(new Vector3(28, 1, 63));
+        m_movePointZombie[0].Add(new Vector3(40, 1, 72));
+        m_movePointZombie[0].Add(new Vector3(40, 1, 53));
+        m_movePointZombie[0].Add(new Vector3(25, 1, 53));
+        m_movePointZombie[0].Add(new Vector3(28, 1, 53));
+        m_movePointZombie[0].Add(new Vector3(13, 1, 53));
+        m_movePointZombie[0].Add(new Vector3(0, 1, 53));
+        m_movePointZombie[0].Add(new Vector3(0, 1, 75));
 
         m_movePointZombie.Add(new List<Vector3>());
-        m_movePointZombie[1].Add(new Vector3(0, 0, 0));
-        m_movePointZombie[1].Add(new Vector3(0, 0, 0));
+        m_movePointZombie[1].Add(new Vector3(17, 1, -34));
+        m_movePointZombie[1].Add(new Vector3(17, 1, -47));
+        m_movePointZombie[1].Add(new Vector3(24, 1, -34));
+        m_movePointZombie[1].Add(new Vector3(35, 1, -42));
+        m_movePointZombie[1].Add(new Vector3(35, 1, -63));
+        m_movePointZombie[1].Add(new Vector3(5, 1, -63));
     }
 
     static void LoadLevelTwo()
@@ -66,6 +78,9 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static Vector3 getNextSpawnSurvivor()
     {
+        if (m_spawnSurvivor == null)
+            ConfigLevelManager.LoadLevel();
+
         if (m_currentSpawnSurvivor >= m_spawnSurvivor[m_currentSpawnLevelSuvivor].Count)
         {
             ++m_currentSpawnLevelSuvivor;
@@ -80,6 +95,9 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static Vector3 getRandomSpawnZombie(int level)
     {
+        if (m_spawnZombie == null)
+            ConfigLevelManager.LoadLevel();
+
         if (level >= m_spawnZombie.Count || level < 0)
             return m_spawnZombie[0][0];
         
@@ -89,6 +107,9 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static Vector3 getRandomMoveZombie(int level)
     {
+        if (m_movePointZombie == null)
+            ConfigLevelManager.LoadLevel();
+
         if (level >= m_movePointZombie.Count || level < 0)
             return m_movePointZombie[0][0];
 

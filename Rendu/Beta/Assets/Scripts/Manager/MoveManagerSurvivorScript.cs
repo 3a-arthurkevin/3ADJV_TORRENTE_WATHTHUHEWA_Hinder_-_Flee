@@ -8,7 +8,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
     private NetworkView m_networkView;
 
     [SerializeField]
-    private float m_minDistance = 2f;
+    private float m_minDistance = 0.1f;
 
     [SerializeField]
     private float m_defaultSpeed = 2f;
@@ -17,6 +17,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
 
     void Start()
     {
+        
         if (m_networkView == null)
             m_networkView = networkView;
 
@@ -131,13 +132,20 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 Vector3 direction = data.Path.corners[data.NumCorner] - data.Position.position;
                 direction.y = 0;
 
+                if (Network.isClient)
+                    Debug.Log(direction.sqrMagnitude.ToString("F6") + " - " + m_minDistance);
+
                 if (direction.sqrMagnitude < m_minDistance)
                 {
                     if ((data.NumCorner + 1) >= data.Path.corners.Length)
                         data.Path = null;
 
                     else
-                        data.Position.LookAt(data.Path.corners[++data.NumCorner]);
+                    {
+                        Vector3 look = data.Path.corners[++data.NumCorner];
+                        look.y = data.Position.position.y;
+                        data.Position.LookAt(look);
+                    }
 
                     data.IsMoved = false;
                 }
