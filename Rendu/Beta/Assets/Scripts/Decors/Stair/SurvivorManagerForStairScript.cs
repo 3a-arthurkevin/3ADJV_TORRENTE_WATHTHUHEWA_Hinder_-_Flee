@@ -13,6 +13,9 @@ public class SurvivorManagerForStairScript : MonoBehaviour
     private Transform m_stairOut;
     private bool m_hasClicked;
 
+    [SerializeField]
+    private NetworkView m_networkView;
+
     void Awake()
     {
         m_cursorMode = CursorMode.Auto;
@@ -22,7 +25,7 @@ public class SurvivorManagerForStairScript : MonoBehaviour
 
     void OnMouseEnter()
     {
-        Cursor.SetCursor(m_cursor, m_hotSpot, m_cursorMode);
+         Cursor.SetCursor(m_cursor, m_hotSpot, m_cursorMode);
     }
 
     void OnMouseExit()
@@ -40,18 +43,51 @@ public class SurvivorManagerForStairScript : MonoBehaviour
         m_hasClicked = false;
     }
 
+    [RPC]
+    void setClickedStairForServer()
+    {
+        m_hasClicked = true;
+    }
+
+    [RPC]
+    void setClickedStairForAll()
+    {
+        m_hasClicked = false;
+    }
+
     void OnTriggerStay(Collider survivor)
     {
-        
-        if (m_hasClicked)
-        {//TP survivor
-            MoveManagerSurvivorScript moveManager = survivor.GetComponent<MoveManagerSurvivorScript>();
+        if (m_hasClicked && Network.isClient)
+        {
+            //envoyer en RPC m_hasClicked
+            m_networkView.RPC("setClickedStairForServer", RPCMode.Server);
+            survivor.gameObject.transform.position = m_stairOut.position + Vector3.up;
+            InputManagerMoveSurvivorScript inputManager = survivor.GetComponent<InputManagerMoveSurvivorScript>();
+            if (inputManager != null)
+            {
+                inputManager.getCharacterCamera().GetComponent<CameraResetOnCharacterScript>().resetCamera();
+            }
+        }
 
-            if (moveManager != null)
-                moveManager.teleport(m_stairOut.position);
-            
-            else
-                Debug.LogError("MoveManagerSurvivorScript not found");
+        if (m_hasClicked && Network.isServer)
+        {   
+            //TelePporter survivor
+            survivor.gameObject.transform.position = m_stairOut.position + Vector3.up;
+            //Envoyé en RPC la nouvelle position du client, et remettre son m_hasClicked à false
+            m_networkView.RPC("setClickedStairForAll", RPCMode.All);
         }
     }
+    /*
+    void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.Serialize(ref m_hasClicked);
+        }
+        else
+        {
+            stream.Serialize(ref m_hasClicked);
+        }
+    }
+    */
 }
