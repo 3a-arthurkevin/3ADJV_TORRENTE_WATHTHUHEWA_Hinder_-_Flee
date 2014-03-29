@@ -149,6 +149,8 @@ public class MoveManagerZombieScript : MonoBehaviour {
     public void Follow(Transform target)
     {
         m_survivor = target;
+
+        
     }
 
     public void Unfollow()
