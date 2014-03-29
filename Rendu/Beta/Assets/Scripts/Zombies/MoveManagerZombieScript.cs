@@ -55,17 +55,29 @@ public class MoveManagerZombieScript : MonoBehaviour {
     void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo message)
     {
         if (stream.isWriting)
-        {
             stream.Serialize(ref m_target);
-        }
+        
         else
-        {
             stream.Serialize(ref m_target);
-        }
     }
 
     void FixedUpdate()
     {
+
+        if (m_follow)
+        {
+            updatePath(m_data.Position.position, m_survivor.position);
+        }
+
+        Vector3 direction = Vector3.zero;
+
+        if (m_data.Path == null)
+        {
+            if (Network.isServer)
+            {
+            }
+        }
+
         /*
         if (Network.isClient)
         {//Client side
@@ -149,8 +161,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
     public void Follow(Transform target)
     {
         m_survivor = target;
-
-        
+        m_follow = true;
     }
 
     public void Unfollow()
@@ -163,6 +174,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
     public void setTarget(Vector3 target)
     {
         m_target = target;
+        updatePath(m_data.Position.position, target);
     }
 
     public void updatePath(Vector3 origin, Vector3 target)

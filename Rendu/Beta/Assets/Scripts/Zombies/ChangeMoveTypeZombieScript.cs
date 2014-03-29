@@ -4,6 +4,8 @@ using System.Collections;
 public class ChangeMoveTypeZombieScript : MonoBehaviour {
     [SerializeField]
     private MoveManagerZombieScript m_zombie;
+    
+    private Collider m_followed;
 
     void Start()
     {
@@ -16,11 +18,13 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
+        m_followed = col;
         m_zombie.Follow(col.transform);
     }
 
     void OnTriggerExit(Collider col)
     {
-        m_zombie.Unfollow();
+        if(m_followed == col)
+            m_zombie.Unfollow();
     }
 }
