@@ -17,6 +17,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
     private MoveData m_data;
 
     //Client
+    [SerializeField]
     private Vector3 m_target = Vector3.zero;
 
     //Server
@@ -51,8 +52,21 @@ public class MoveManagerZombieScript : MonoBehaviour {
         m_target = Vector3.zero;
     }
 
+    void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo message)
+    {
+        if (stream.isWriting)
+        {
+            stream.Serialize(ref m_target);
+        }
+        else
+        {
+            stream.Serialize(ref m_target);
+        }
+    }
+
     void FixedUpdate()
     {
+        /*
         if (Network.isClient)
         {//Client side
             Vector3 direction = m_target - m_data.Position.position;
@@ -71,13 +85,14 @@ public class MoveManagerZombieScript : MonoBehaviour {
                 if (m_data.Path == null)
                 {
                     m_data.NumCorner = 0;
-                    m_networkView.RPC("setTarget", RPCMode.Others, Vector3.zero);
+                    m_target = Vector3.zero;
                 }
                 else
                 {
                     m_data.NumCorner = 1;
                     direction = m_data.Path.corners[1] - m_data.Position.position;
-                    m_networkView.RPC("setTarget", RPCMode.Others, m_data.Path.corners[1]);
+                    m_data.Position.LookAt(m_data.Path.corners[1]);
+                    m_target = m_data.Path.corners[1];
                 }
             }
             else
@@ -108,11 +123,12 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
             direction.y = 0;
             m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
-        }
+        }*/
     }
 
     private void getRandomPath()
     {
+        /*
         if (Network.isServer)
         {
             Vector3 target = ConfigLevelManager.getRandomMoveZombie(m_atIsFloor);
@@ -121,37 +137,44 @@ public class MoveManagerZombieScript : MonoBehaviour {
             if (m_data.Path != null)
             {
                 m_data.NumCorner = 1;
-                m_networkView.RPC("setTarget", RPCMode.Others, m_data.Path.corners[1]);
+                m_target = m_data.Path.corners[1];
                 
                 Vector3 look = m_data.Path.corners[1];
                 look.y = m_data.Position.position.y;
                 m_data.Position.LookAt(look);
             }
-        }
+        }*/
     }
 
     public void Follow(Transform target)
     {
-        if (Network.isServer)
-        {
-            m_survivor = target;
-            m_follow = true;
-        }
+        m_survivor = target;
     }
 
     public void Unfollow()
     {
-        if (Network.isServer)
-        {
-            m_survivor = null;
-            m_follow = false;
-        }
+        m_survivor = null;
+        m_follow = false;
     }
 
     [RPC]
-    void setTarget(Vector3 target)
+    public void setTarget(Vector3 target)
     {
-        if (Network.isClient)
-            m_target = target;
+        m_target = target;
+    }
+
+    public void updatePath(Vector3 origin, Vector3 target)
+    {
+        m_data.Path = MoveUtilsScript.getCalcPath(origin, target);
+
+        if (m_data.Path != null)
+            m_data.NumCorner = 1;
+        
+        else
+        {
+            Debug.Log("Path not valid");
+            m_data.NumCorner = 0;
+            m_target = Vector3.zero;
+        }
     }
 }
