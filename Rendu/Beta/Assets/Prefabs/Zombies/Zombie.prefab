@@ -144,9 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 14800000}
-  m_atIsFloor: 0
-  m_defaultSpeed: 2
-  m_minDistance: 1
+  m_defaultSpeed: 3
+  m_minDistance: .100000001
   m_target: {x: 0, y: 0, z: 0}
   m_survivor: {fileID: 0}
 --- !u!114 &11400002

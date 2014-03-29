@@ -33,17 +33,9 @@ public class MoveManagerZombieScript : MonoBehaviour {
         m_data = new MoveData();
         m_data.Position = transform;
         m_data.Speed = m_defaultSpeed;
+        m_data.IsInFloor = 0;
         
         m_target = Vector3.zero;
-    }
-
-    void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo message)
-    {
-        if (stream.isWriting)
-            stream.Serialize(ref m_target);
-        
-        else
-            stream.Serialize(ref m_target);
     }
 
     void FixedUpdate()
@@ -51,18 +43,49 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
         if (m_follow)
         {
+            Debug.Log("Follow");
             genPath(m_data.Position.position, m_survivor.position);
         }
 
-        Vector3 direction = Vector3.zero;
-
         if (m_data.Path == null)
         {
+            Debug.Log("Path null");
             if (Network.isServer)
-            {
                 m_networkView.RPC("setTarget", RPCMode.All, ConfigLevelManager.getRandomMoveZombie(m_data.IsInFloor));
+            
+            return;
+        }
+
+        Vector3 direction = m_data.Path.corners[m_data.NumCorner] - m_data.Position.position;
+        direction.y = 0;
+
+        if (direction.sqrMagnitude < m_minDistance)
+        {
+            Debug.Log("Chemin trop court");
+
+            if ((m_data.NumCorner + 1) >= m_data.Path.corners.Length)
+            {
+                Debug.Log("Pas plus de corner");
+                
+                if (m_follow)
+                    return;
+
+                m_data.Path = null;
+                if (Network.isServer)
+                    m_networkView.RPC("setTarget", RPCMode.All, ConfigLevelManager.getRandomMoveZombie(m_data.IsInFloor));
+
+                return;
+            }
+            else
+            {
+                Debug.Log("Change direction");
+                Vector3 look = m_data.Path.corners[++m_data.NumCorner];
+                look.y = m_data.Position.position.y;
+                m_data.Position.LookAt(look);
             }
         }
+
+        m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
 
         /*
         if (Network.isClient)
@@ -165,6 +188,9 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
     public void genPath(Vector3 origin, Vector3 target)
     {
+
+        Debug.Log(target.ToString("F6"));
+
         m_data.Path = MoveUtilsScript.getCalcPath(origin, target);
 
         if (m_data.Path != null)
