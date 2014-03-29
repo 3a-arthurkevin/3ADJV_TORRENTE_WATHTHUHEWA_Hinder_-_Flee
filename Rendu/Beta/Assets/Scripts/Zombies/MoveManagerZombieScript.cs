@@ -13,11 +13,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
     private MoveData m_data;
 
-    //Client
-    [SerializeField]
-    private Vector3 m_target = Vector3.zero;
-
-    //Server
     [SerializeField]
     private Transform m_survivor;
     private bool m_follow = false;
@@ -34,8 +29,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
         m_data.Position = transform;
         m_data.Speed = m_defaultSpeed;
         m_data.IsInFloor = 0;
-        
-        m_target = Vector3.zero;
     }
 
     void FixedUpdate()
@@ -63,6 +56,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
                     return;
 
                 m_data.Path = null;
+
                 if (Network.isServer)
                     m_networkView.RPC("setTarget", RPCMode.All, ConfigLevelManager.getRandomMoveZombie(m_data.IsInFloor));
 
@@ -94,7 +88,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
     [RPC]
     public void setTarget(Vector3 target)
     {
-        m_target = target;
         genPath(m_data.Position.position, target);
     }
 
@@ -109,7 +102,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
         {
             Debug.Log("Path not valid");
             m_data.NumCorner = 0;
-            m_target = Vector3.zero;
         }
     }
 }
