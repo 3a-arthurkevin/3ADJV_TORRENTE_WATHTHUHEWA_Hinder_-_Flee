@@ -3838,6 +3838,7 @@ GameObject:
   - 4: {fileID: 113155851}
   - 114: {fileID: 113155853}
   - 135: {fileID: 113155852}
+  - 148: {fileID: 113155854}
   m_Layer: 15
   m_Name: SurvivorManager
   m_TagString: Untagged
@@ -3883,6 +3884,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 261915289}
+  m_networkView: {fileID: 113155854}
+--- !u!148 &113155854
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1663698509}
+  m_GameObject: {fileID: 113155850}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 113155853}
+  m_ViewID:
+    m_ID: 6
+    m_Type: 1
 --- !u!1 &113766794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7527,10 +7542,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildServer: 0
+  m_buildServer: 1
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
-  m_maxPlayers: 5
+  m_maxPlayers: 1
   m_SurvivorPrefab: {fileID: 400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
   m_CharacterCameraPrefab: {fileID: 400000, guid: af399dfd2b2376a46a6d13e5226e354b,
     type: 2}
@@ -8147,6 +8162,14 @@ Prefab:
       propertyPath: m_stairOut
       value: 
       objectReference: {fileID: 588243373}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
   m_RootGameObject: {fileID: 427862585}
@@ -13024,6 +13047,7 @@ GameObject:
   - 4: {fileID: 470898053}
   - 114: {fileID: 470898055}
   - 135: {fileID: 470898054}
+  - 148: {fileID: 470898056}
   m_Layer: 15
   m_Name: SurvivorManager
   m_TagString: Untagged
@@ -13069,6 +13093,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 588243373}
+  m_networkView: {fileID: 470898056}
+--- !u!148 &470898056
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 281643735}
+  m_GameObject: {fileID: 470898052}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 470898055}
+  m_ViewID:
+    m_ID: 5
+    m_Type: 1
 --- !u!1 &471812702
 GameObject:
   m_ObjectHideFlags: 0
@@ -16033,6 +16071,7 @@ GameObject:
   - 4: {fileID: 590428023}
   - 114: {fileID: 590428025}
   - 135: {fileID: 590428024}
+  - 148: {fileID: 590428026}
   m_Layer: 15
   m_Name: SurvivorManager
   m_TagString: Untagged
@@ -16078,6 +16117,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 1263457506}
+  m_networkView: {fileID: 590428026}
+--- !u!148 &590428026
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1489065839}
+  m_GameObject: {fileID: 590428022}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 590428025}
+  m_ViewID:
+    m_ID: 4
+    m_Type: 1
 --- !u!1001 &595703053
 Prefab:
   m_ObjectHideFlags: 0
@@ -17899,7 +17952,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 679422326}
   - 135: {fileID: 679422328}
-  - 114: {fileID: 679422327}
+  - 114: {fileID: 1400256116}
   m_Layer: 10
   m_Name: View
   m_TagString: Untagged
@@ -17918,19 +17971,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1400256119}
---- !u!114 &679422327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400006, guid: 0fb76991aff24124f8794e0357cd35ad,
-    type: 2}
-  m_PrefabInternal: {fileID: 852584836}
-  m_GameObject: {fileID: 679422325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c25c064ad0e0cb46b1bd2b184b2eb3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_manager: {fileID: 1400256115}
 --- !u!135 &679422328
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18893,11 +18933,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_buildServer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_maxPlayers
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_networkView
@@ -19041,11 +19081,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .213602066
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -28
+      value: -27.9785995
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -19091,6 +19131,14 @@ Prefab:
       propertyPath: m_stairOut
       value: 
       objectReference: {fileID: 635775808}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
   m_RootGameObject: {fileID: 986399320}
@@ -25081,7 +25129,7 @@ Transform:
   m_PrefabInternal: {fileID: 724148844}
   m_GameObject: {fileID: 986399320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: -28}
+  m_LocalPosition: {x: -2, y: .213602066, z: -27.9785995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 588243373}
@@ -26891,7 +26939,7 @@ GameObject:
   - 64: {fileID: 1068727859}
   - 23: {fileID: 1068727858}
   m_Layer: 0
-  m_Name: CamBorder0
+  m_Name: CamBorder1
   m_TagString: CamBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -34704,9 +34752,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1400256119}
   - 136: {fileID: 1400256118}
-  - 114: {fileID: 1400256117}
-  - 114: {fileID: 1400256116}
   - 114: {fileID: 1400256115}
+  - 54: {fileID: 1400256121}
+  - 148: {fileID: 1400256117}
   - 54: {fileID: 1400256120}
   m_Layer: 9
   m_Name: Zombie
@@ -34727,41 +34775,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e972b6a647a1e499b39cdd638bc8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_followScript: {fileID: 1400256117}
-  m_randomScript: {fileID: 1400256116}
+  m_networkView: {fileID: 1400256117}
   m_atIsFloor: 0
+  m_defaultSpeed: 2
+  m_minDistance: 1
+  m_survivor: {fileID: 0}
 --- !u!114 &1400256116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400002, guid: 0fb76991aff24124f8794e0357cd35ad,
     type: 2}
   m_PrefabInternal: {fileID: 852584836}
-  m_GameObject: {fileID: 1400256114}
+  m_GameObject: {fileID: 679422325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b4ffa179a47b9e4b928ecef79e7e928, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c25c064ad0e0cb46b1bd2b184b2eb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_zombie: {fileID: 1400256119}
-  m_manager: {fileID: 1400256115}
-  m_minDistance: 2
-  m_speed: 2
---- !u!114 &1400256117
-MonoBehaviour:
+  m_zombie: {fileID: 1400256115}
+--- !u!148 &1400256117
+NetworkView:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: 0fb76991aff24124f8794e0357cd35ad,
+  m_PrefabParentObject: {fileID: 14800000, guid: 0fb76991aff24124f8794e0357cd35ad,
     type: 2}
   m_PrefabInternal: {fileID: 852584836}
   m_GameObject: {fileID: 1400256114}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af661696b558eec4bb3121f6242f6b50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_zombiePos: {fileID: 1400256119}
-  m_follow: {fileID: 0}
-  m_minDistance: 2
-  m_speed: 2
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1400256119}
+  m_ViewID:
+    m_ID: 7
+    m_Type: 1
 --- !u!136 &1400256118
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34794,6 +34838,22 @@ Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1400256114}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &1400256121
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: 0fb76991aff24124f8794e0357cd35ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 852584836}
   m_GameObject: {fileID: 1400256114}
   serializedVersion: 2
   m_Mass: 1
@@ -37994,6 +38054,14 @@ Prefab:
       propertyPath: m_stairOut
       value: 
       objectReference: {fileID: 1263457506}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
   m_RootGameObject: {fileID: 1541930867}
@@ -41544,6 +41612,14 @@ Prefab:
       propertyPath: m_stairOut
       value: 
       objectReference: {fileID: 261915289}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_ID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
+      propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e8546df731b8754ebc40707d0873f9b, type: 2}
   m_RootGameObject: {fileID: 1005239626}
@@ -46314,6 +46390,7 @@ GameObject:
   - 4: {fileID: 1906835596}
   - 114: {fileID: 1906835598}
   - 135: {fileID: 1906835597}
+  - 148: {fileID: 1906835599}
   m_Layer: 15
   m_Name: SurvivorManager
   m_TagString: Untagged
@@ -46359,6 +46436,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 635775808}
+  m_networkView: {fileID: 1906835599}
+--- !u!148 &1906835599
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800000, guid: 2e8546df731b8754ebc40707d0873f9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 724148844}
+  m_GameObject: {fileID: 1906835595}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1906835598}
+  m_ViewID:
+    m_ID: 3
+    m_Type: 1
 --- !u!1 &1913325291
 GameObject:
   m_ObjectHideFlags: 0

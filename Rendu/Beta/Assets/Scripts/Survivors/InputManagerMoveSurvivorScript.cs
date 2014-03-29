@@ -70,4 +70,9 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     {
         m_characterCamera = cameraObject;
     }
+
+    public Camera getCharacterCamera()
+    {
+        return this.m_characterCamera;
+    }
 }
