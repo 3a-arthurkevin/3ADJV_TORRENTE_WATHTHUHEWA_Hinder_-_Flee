@@ -216,12 +216,12 @@ public class PlayerDataBaseScript : MonoBehaviour {
             {
                 Debug.LogError("Player not found for initialisation");
             }
-        }
 
-        //Tous à true ?
-        if (m_playerReady.All<KeyValuePair<NetworkPlayer, bool>>( item => item.Value == true))
-        {//Oui
-            m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
+            //Tous à true ?
+            if (m_playerReady.All<KeyValuePair<NetworkPlayer, bool>>(item => item.Value == true))
+            {//Oui
+                m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
+            }
         }
     }
 

@@ -68,7 +68,7 @@
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Items\IItem.cs" />
      <Compile Include="Assets\Scripts\Manager\MoveManagerSurvivorScript.cs" />
-     <Compile Include="Assets\Scripts\Manager\PopManagerScript.cs" />
+     <Compile Include="Assets\Scripts\Manager\PopZombiesManagerScript.cs" />
      <Compile Include="Assets\Scripts\Network\PlayerDataBaseScript.cs" />
      <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
      <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />

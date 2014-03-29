@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -40,7 +41,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildServer: 0
+  m_buildServer: 1
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
   m_maxPlayers: 2
@@ -59,8 +60,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29850f1f6c1e8a419e02fe970330d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_minDistance: 2
+  m_networkView: {fileID: 0}
+  m_minDistance: .100000001
   m_defaultSpeed: 2
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4db5aded0c6f884296d67c2b3ea783a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_waitingTime: 60
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1
