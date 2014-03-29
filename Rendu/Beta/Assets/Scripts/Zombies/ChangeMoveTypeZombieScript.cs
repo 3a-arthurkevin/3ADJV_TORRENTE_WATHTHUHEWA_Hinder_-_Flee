@@ -9,6 +9,7 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
     {
         if (m_zombie == null)
         {
+            Debug.LogError("MoveManagerZombieScript not found");
             enabled = false;
         }
     }
