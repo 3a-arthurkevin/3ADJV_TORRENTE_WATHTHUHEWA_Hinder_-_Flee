@@ -6,9 +6,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
     private NetworkView m_networkView;
 
     [SerializeField]
-    private int m_atIsFloor;
-
-    [SerializeField]
     private float m_defaultSpeed = 2f;
 
     [SerializeField]
@@ -24,18 +21,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
     [SerializeField]
     private Transform m_survivor;
     private bool m_follow = false;
-
-    public int AtIsFloor
-    {
-        get
-        {
-            return m_atIsFloor;
-        }
-        set
-        {
-            m_atIsFloor = value;
-        }
-    }
 
     void Start()
     {
@@ -66,7 +51,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
         if (m_follow)
         {
-            updatePath(m_data.Position.position, m_survivor.position);
+            genPath(m_data.Position.position, m_survivor.position);
         }
 
         Vector3 direction = Vector3.zero;
@@ -75,6 +60,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
         {
             if (Network.isServer)
             {
+                m_networkView.RPC("setTarget", RPCMode.All, ConfigLevelManager.getRandomMoveZombie(m_data.IsInFloor));
             }
         }
 
@@ -174,10 +160,10 @@ public class MoveManagerZombieScript : MonoBehaviour {
     public void setTarget(Vector3 target)
     {
         m_target = target;
-        updatePath(m_data.Position.position, target);
+        genPath(m_data.Position.position, target);
     }
 
-    public void updatePath(Vector3 origin, Vector3 target)
+    public void genPath(Vector3 origin, Vector3 target)
     {
         m_data.Path = MoveUtilsScript.getCalcPath(origin, target);
 
