@@ -76,7 +76,7 @@ public class ConfigLevelManager : MonoBehaviour
     {
     }
 
-    public static Vector3 getNextSpawnSurvivor()
+    public static Vector3 getNextSpawnSurvivor(out int level)
     {
         if (m_spawnSurvivor == null)
             ConfigLevelManager.LoadLevel();
@@ -90,6 +90,7 @@ public class ConfigLevelManager : MonoBehaviour
                 m_currentSpawnLevelSuvivor = 0;
         }
 
+        level = m_currentSpawnLevelSuvivor;
         return m_spawnSurvivor[m_currentSpawnLevelSuvivor][m_currentSpawnSurvivor++];
     }
 

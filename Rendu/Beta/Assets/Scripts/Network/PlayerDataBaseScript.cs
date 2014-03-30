@@ -80,9 +80,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
         if (m_currentPlayer < m_maxPlayers)
         {
             if (m_gameLauched)
-            {
                 Debug.LogError("Game is already lauched");
-            }
+
             else
             {
                 m_players.Add(newPlayer, null);
@@ -125,23 +124,20 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private void initialiseGame()
     {//Instancie toute les préfabs et supprime la liste m_beforeGame
 
-        MoveManagerSurvivorScript moveManagerSurvivor = GetComponent<MoveManagerSurvivorScript>();
-
+        int level = 0;
         for(int i = 0; i < m_players.Count; ++i)
         {
             NetworkPlayer player = m_players.ElementAt(i).Key;
 
+            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnSurvivor(out level), Quaternion.identity, int.Parse(player.ToString()));
 
-            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnSurvivor(), Quaternion.identity, int.Parse(player.ToString()));
-
+            transformPlayer.GetComponent<MoveManagerSurvivorScript>().MoveData.IsInFloor = level;
             transformPlayer.name = "Survivor" + player.ToString();
 
             NetworkView playerNetworkView = transformPlayer.networkView;
 
             playerNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player);
             playerNetworkView.RPC("SetName", RPCMode.OthersBuffered, player, "Survivor" + player.ToString());
-
-            moveManagerSurvivor.addPlayer(player, transformPlayer);
             
             m_players[player] = transformPlayer;
         }

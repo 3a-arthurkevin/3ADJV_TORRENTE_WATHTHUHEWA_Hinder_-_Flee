@@ -28,7 +28,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
         m_data = new MoveData();
         m_data.Position = transform;
         m_data.Speed = m_defaultSpeed;
-        m_data.IsInFloor = 0;
     }
 
     void FixedUpdate()

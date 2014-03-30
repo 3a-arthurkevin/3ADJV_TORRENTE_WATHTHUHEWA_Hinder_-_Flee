@@ -67,7 +67,6 @@
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportSurvivorToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
      <Compile Include="Assets\Scripts\Items\IItem.cs" />
-     <Compile Include="Assets\Scripts\Manager\MoveManagerSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Manager\PopZombiesManagerScript.cs" />
      <Compile Include="Assets\Scripts\Network\PlayerDataBaseScript.cs" />
      <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
@@ -75,6 +74,7 @@
      <Compile Include="Assets\Scripts\Survivors\ConfigSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
      <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
+     <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\AttackManagerScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\ConnexionScript.cs" />
      <Compile Include="Assets\Scripts\Tmp\EndGameConditionManager.cs" />
@@ -85,7 +85,6 @@
      <Compile Include="Assets\Scripts\Tmp\WeaponInfo.cs" />
      <Compile Include="Assets\Scripts\Utils\MoveData.cs" />
      <Compile Include="Assets\Scripts\Utils\MoveUtilsScript.cs" />
-     <Compile Include="Assets\Scripts\Utils\Point.cs" />
      <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
      <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScript.cs" />

@@ -18,10 +18,15 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     [SerializeField]
     private Transform m_prefabsTarget = null;
 
+    private MoveManagerSurvivorScript m_moveManager;
+
     void Start()
     {
         if (m_target == null)
             m_target = (Transform)Instantiate(m_prefabsTarget, Vector3.zero, Quaternion.identity);
+
+        if (m_moveManager == null)
+            m_moveManager = GetComponent<MoveManagerSurvivorScript>();
     }
 
 	void Update ()
@@ -34,29 +39,20 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
                 
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("Ground")))
-                    m_networkView.RPC("setTarget", RPCMode.Server, Network.player, hit.point);
+                    m_networkView.RPC("wantToGo", RPCMode.Server, Network.player, hit.point);
 
             }
         }
 	}
 
     [RPC]
-    void setTarget(NetworkPlayer player, Vector3 targetPosition)
+    void wantToGo(NetworkPlayer player, Vector3 targetPosition)
     {
         if (Network.isServer)
         {
             m_target.position = targetPosition;
 
-            GameObject gameManager = GameObject.Find("GameManager");
-
-            if (gameManager == null)
-            {
-                Debug.LogError("gameManager Failed");
-                return;
-            }
-
-            MoveManagerSurvivorScript moveManagerSurvivor = gameManager.GetComponent<MoveManagerSurvivorScript>();
-            moveManagerSurvivor.setTarget(player, m_target);
+            m_moveManager.setTarget(targetPosition);
         }
     }
 
