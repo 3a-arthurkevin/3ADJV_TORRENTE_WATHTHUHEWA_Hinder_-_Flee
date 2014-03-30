@@ -3,10 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PopZombiesManagerScript : MonoBehaviour {
+    [SerializeField]
+    private Transform m_prefabZombie;
+    
     private List<List<Transform>> m_listZombies;
+
     
     [SerializeField]
-    private float m_waitingTime = 60f;
+    private float m_waitingTime = 30f;
 
     private float m_timer = 0;
     private bool m_manage = false;
@@ -17,6 +21,7 @@ public class PopZombiesManagerScript : MonoBehaviour {
             enabled = false;
 
         m_listZombies = new List<List<Transform>>();
+        enabled = false;
     }
 
     void Update()
@@ -27,7 +32,8 @@ public class PopZombiesManagerScript : MonoBehaviour {
     public void init()
     {
         m_manage = true;
-        
+
+        enabled = true;
         StartCoroutine(managePop());
     }
 
@@ -36,7 +42,7 @@ public class PopZombiesManagerScript : MonoBehaviour {
         while(m_manage)
         {
 
-            yield return new WaitForSeconds(m_waitingTime);//Wait 60 seconde for re launch function
+            yield return new WaitForSeconds(m_waitingTime);
         }
     }
 
