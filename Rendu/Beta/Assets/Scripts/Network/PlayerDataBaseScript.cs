@@ -53,7 +53,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             Network.InitializeSecurity();
 
             //Si pc a une adresse public utilisé NAT sinon non
-            m_useNat = Network.HavePublicAddress();
+            m_useNat = !Network.HavePublicAddress();
 
             NetworkConnectionError err = Network.InitializeServer(m_maxPlayers, m_portNumber, m_useNat);
             

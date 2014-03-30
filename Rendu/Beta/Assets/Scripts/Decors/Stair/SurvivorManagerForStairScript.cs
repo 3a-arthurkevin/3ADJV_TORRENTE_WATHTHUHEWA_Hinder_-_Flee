@@ -52,9 +52,9 @@ public class SurvivorManagerForStairScript : MonoBehaviour
     void setClickedStairFromClientToServer(NetworkPlayer player)
     {
         m_hasClicked = true;
-        GameObject.Find("GameManager").GetComponent<MoveManagerSurvivorScript>().resetPathAfterStair(player);
+        //GameObject.Find("GameManager").GetComponent<MoveManagerSurvivorScript>().resetPathAfterStair(player);
         //Update de l'étage courant du player
-        GameObject.Find("GameManager").GetComponent<MoveManagerSurvivorScript>().getPlayerMoveData(player).IsInFloor = m_floorOfStairOut;
+        //GameObject.Find("GameManager").GetComponent<MoveManagerSurvivorScript>().getPlayerMoveData(player).IsInFloor = m_floorOfStairOut;
     }
 
     [RPC]
@@ -88,7 +88,7 @@ public class SurvivorManagerForStairScript : MonoBehaviour
                 inputManager.getCharacterCamera().GetComponent<CameraResetOnCharacterScript>().resetCamera();
 
                 string gameObjectName = "Floor";
-                gameObjectName += GameObject.Find("GameManager").GetComponent<MoveManagerSurvivorScript>().getPlayerMoveData(Network.player).IsInFloor.ToString();
+                //gameObjectName += GameObject.Find("GameManager").GetComponent<MoveManagerSurvivorScript>().getPlayerMoveData(Network.player).IsInFloor.ToString();
                 inputManager.getCharacterCamera().GetComponent<CameraLimitDeplacementScript>().setPlaneLimit(GameObject.Find(gameObjectName).transform.FindChild("CamBorder").transform);
             }
         }
