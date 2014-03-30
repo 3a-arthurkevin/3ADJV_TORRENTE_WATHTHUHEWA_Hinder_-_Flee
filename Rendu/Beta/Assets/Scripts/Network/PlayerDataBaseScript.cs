@@ -220,6 +220,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             if (m_playerReady.All<KeyValuePair<NetworkPlayer, bool>>(item => item.Value == true))
             {//Oui
                 m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
+                GetComponent<PopZombiesManagerScript>().init();
                 Instantiate(m_serverCamera, Vector3.zero + Vector3.up * 20, Quaternion.identity);
             }
         }

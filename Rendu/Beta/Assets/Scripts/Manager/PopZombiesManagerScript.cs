@@ -15,7 +15,7 @@ public class PopZombiesManagerScript : MonoBehaviour {
     private float m_timer = 0;
     private bool m_manage = false;
     
-    void Start()
+    void Awake()
     {
         if (Network.isClient)
             enabled = false;
@@ -32,7 +32,7 @@ public class PopZombiesManagerScript : MonoBehaviour {
     public void init()
     {
         m_manage = true;
-
+        m_listZombies.Add(new List<Transform>());
         enabled = true;
         StartCoroutine(managePop());
     }
@@ -41,7 +41,7 @@ public class PopZombiesManagerScript : MonoBehaviour {
     {
         while(m_manage)
         {
-
+            m_listZombies[0].Add((Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(0), Quaternion.identity, 0));
             yield return new WaitForSeconds(m_waitingTime);
         }
     }
