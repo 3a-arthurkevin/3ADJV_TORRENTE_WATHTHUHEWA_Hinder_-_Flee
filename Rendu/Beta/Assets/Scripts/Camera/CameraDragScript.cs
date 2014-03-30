@@ -13,7 +13,7 @@ public class CameraDragScript : MonoBehaviour
     private CameraFollowMouseScript m_scriptFollow;
 
     [SerializeField]
-    private CameraLimitDeplacement m_scriptLimit;
+    private CameraLimitDeplacementScript m_scriptLimit;
 
     //Pour pouvoir désactiver le script et joueur avec la camera quand on fait des tests
     //A enlever apres
@@ -21,7 +21,7 @@ public class CameraDragScript : MonoBehaviour
     {
         m_transformCamera = transform;
         m_scriptFollow = transform.GetComponent<CameraFollowMouseScript>();
-        m_scriptLimit = transform.GetComponent<CameraLimitDeplacement>();
+        m_scriptLimit = transform.GetComponent<CameraLimitDeplacementScript>();
     }
 
     // Update is called once per frame

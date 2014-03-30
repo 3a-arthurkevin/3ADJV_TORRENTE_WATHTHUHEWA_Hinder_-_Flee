@@ -25,12 +25,12 @@ public class CameraZoomScript : MonoBehaviour
     private Vector3 m_cameraPosition;
 
     [SerializeField]
-    private CameraLimitDeplacement m_scriptLimit;
+    private CameraLimitDeplacementScript m_scriptLimit;
 
     void Start()
     {
         m_transformCamera = transform;
-        m_scriptLimit = transform.GetComponent<CameraLimitDeplacement>();
+        m_scriptLimit = transform.GetComponent<CameraLimitDeplacementScript>();
     }
 
     void LateUpdate()

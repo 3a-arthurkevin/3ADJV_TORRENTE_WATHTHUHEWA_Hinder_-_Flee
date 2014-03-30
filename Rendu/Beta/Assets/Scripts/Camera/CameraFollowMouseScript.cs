@@ -19,12 +19,12 @@ public class CameraFollowMouseScript : MonoBehaviour
     private float m_moveSpeed = 3f;
 
     [SerializeField]
-    private CameraLimitDeplacement m_scriptLimit;
+    private CameraLimitDeplacementScript m_scriptLimit;
 
     void Start()
     {
         m_transformCamera = transform;
-        m_scriptLimit = transform.GetComponent<CameraLimitDeplacement>();
+        m_scriptLimit = transform.GetComponent<CameraLimitDeplacementScript>();
     }
 
     // Update is called once per frame

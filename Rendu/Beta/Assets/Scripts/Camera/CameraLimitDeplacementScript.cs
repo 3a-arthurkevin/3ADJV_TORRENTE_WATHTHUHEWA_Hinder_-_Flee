@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraLimitDeplacement : MonoBehaviour
+public class CameraLimitDeplacementScript : MonoBehaviour
 {
 
     [SerializeField]
@@ -18,7 +18,7 @@ public class CameraLimitDeplacement : MonoBehaviour
 
     void Start()
     {
-        m_planeLimit = GameObject.Find("CamBorder0").transform;
+        m_planeLimit = GameObject.Find("Floor0").transform.FindChild("CamBorder").transform;
         setPlaneLimit(m_planeLimit);
     }
 
