@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TeleportSurvivorToEndStairScript : MonoBehaviour {
-
+/*
     [SerializeField]
     private Transform m_stairOut;
     private bool m_hasClicked;
@@ -65,6 +65,7 @@ public class TeleportSurvivorToEndStairScript : MonoBehaviour {
 
     void OnTriggerStay(Collider survivor)
     {
+        /*
         if (m_hasClicked)
         {
             //TP survivor lors qu'il prend l'escalier
@@ -85,5 +86,6 @@ public class TeleportSurvivorToEndStairScript : MonoBehaviour {
                 Debug.LogError("Error 404 : No floor found");
             }
         }
-    }
+        
+    }*/
 }

@@ -152,14 +152,13 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         }
     }
 
-    
-
-    public void teleport(Vector3 position)
+    public MoveData getPlayerMoveData(NetworkPlayer player)
     {
-        /*
-        m_target = null;
-        transform.position = position;
-        m_characterCamera.GetComponent<CameraResetOnCharacterScript>().resetCamera();
-        */
+        return m_players[player];
+    }
+
+    public void resetPathAfterStair(NetworkPlayer player)
+    {
+        this.m_players[player].Path = null;
     }
 }
