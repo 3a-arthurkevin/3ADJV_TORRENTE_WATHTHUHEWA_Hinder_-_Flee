@@ -37,6 +37,9 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private Transform m_CharacterCameraPrefab;
 
     [SerializeField]
+    private Transform m_serverCamera;
+
+    [SerializeField]
     private NetworkView m_networkView;
 
     
@@ -217,6 +220,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             if (m_playerReady.All<KeyValuePair<NetworkPlayer, bool>>(item => item.Value == true))
             {//Oui
                 m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
+                Instantiate(m_serverCamera, Vector3.zero + Vector3.up * 20, Quaternion.identity);
             }
         }
     }
