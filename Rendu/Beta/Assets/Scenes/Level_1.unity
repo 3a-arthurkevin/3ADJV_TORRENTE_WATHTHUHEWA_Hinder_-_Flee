@@ -6209,6 +6209,18 @@ Prefab:
       propertyPath: m_ViewID.m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_buildServer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_idAdress
+      value: 127.0.0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_maxPlayers
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_RootGameObject: {fileID: 1343337635}
@@ -28397,10 +28409,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildServer: 0
+  m_buildServer: 1
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
-  m_maxPlayers: 1
+  m_maxPlayers: 5
   m_SurvivorPrefab: {fileID: 400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
   m_CharacterCameraPrefab: {fileID: 400000, guid: af399dfd2b2376a46a6d13e5226e354b,
     type: 2}
