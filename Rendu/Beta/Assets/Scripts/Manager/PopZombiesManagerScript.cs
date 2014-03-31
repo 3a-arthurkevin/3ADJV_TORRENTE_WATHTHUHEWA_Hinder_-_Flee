@@ -12,6 +12,9 @@ public class PopZombiesManagerScript : MonoBehaviour {
     [SerializeField]
     private float m_waitingTime = 30f;
 
+    [SerializeField]
+    private float m_ratio = 1.4f;
+
     private float m_timer = 0;
     private bool m_manage = false;
     
@@ -32,7 +35,11 @@ public class PopZombiesManagerScript : MonoBehaviour {
     public void init()
     {
         m_manage = true;
-        m_listZombies.Add(new List<Transform>());
+        int nbLevel = ConfigLevelManager.getNbLevel();
+
+        for(int i = 0; i < nbLevel; ++i)
+            m_listZombies.Add(new List<Transform>());
+
         enabled = true;
         StartCoroutine(managePop());
     }
@@ -41,7 +48,17 @@ public class PopZombiesManagerScript : MonoBehaviour {
     {
         while(m_manage)
         {
-            m_listZombies[0].Add((Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(0), Quaternion.identity, 0));
+            Transform tempZombie = null;
+
+            int nbLevel = m_listZombies.Count;
+            Debug.Log(nbLevel);
+            for (int i = 0; i < nbLevel; ++i)
+            {
+                tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(i), Quaternion.identity, 0);
+                tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = i;
+                m_listZombies[i].Add(tempZombie);
+                tempZombie = null;
+            }
             yield return new WaitForSeconds(m_waitingTime);
         }
     }

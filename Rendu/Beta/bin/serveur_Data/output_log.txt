@@ -11,7 +11,7 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\serveur_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\serveur_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\serveur_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.077 seconds
+- Completed reload, in  0.089 seconds
 desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -23,10 +23,56 @@ PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE
  
 (Filename: C Line: 0)
 
-1 Has remove at game
+2
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-PlayerDataBaseScript:OnPlayerDisconnected(NetworkPlayer) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Network\PlayerDataBaseScript.cs:105)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
+UnityEngine.MonoBehaviour:StartCoroutine_Auto(IEnumerator)
+UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator)
+PopZombiesManagerScript:init() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:44)
+PlayerDataBaseScript:clientIsInit(NetworkPlayer) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Network\PlayerDataBaseScript.cs:223)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
+ 
+(Filename: C Line: 0)
+
+2
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+<managePop>c__Iterator0:MoveNext() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Manager\PopZombiesManagerScript.cs:54)
  
 (Filename: C Line: 0)
 
