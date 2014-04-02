@@ -49,6 +49,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         if (m_buildServer)
         {
+            ConfigLevelManager.LoadLevel();
+
             m_players = new Dictionary<NetworkPlayer, Transform>();
             m_playerReady = new Dictionary<NetworkPlayer, bool>();
             m_playerRemoved = new List<NetworkPlayer>();
@@ -140,7 +142,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             NetworkView playerNetworkView = transformPlayer.networkView;
 
             playerNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player);
-            playerNetworkView.RPC("SetName", RPCMode.OthersBuffered, player, "Survivor" + player.ToString());
+            playerNetworkView.RPC("SetName", RPCMode.AllBuffered, player, "Survivor" + player.ToString());
             
             m_players[player] = transformPlayer;
         }
