@@ -19,7 +19,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         get { return m_data; }
         set { m_data = value; }
     }
-	
+
 	void Awake ()
     {
         if (m_networkView == null)
@@ -92,5 +92,36 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         
         else
             return true;
+    }
+
+
+    //Lorsque le joueur prend des escaliers --> appelé depuis le script SurvivorManagerForStairScript
+    [RPC]
+    void SurvivorTookStair(int floorOut, Vector3 stairOut, NetworkPlayer clientNetworkPlayer)
+    {
+        //Reset du path et update du floor courant et update de la position
+        this.m_data.Path = null;
+        this.m_data.IsInFloor = floorOut;
+        this.m_data.Position.position = stairOut + Vector3.up;
+
+        if (Network.isClient && Network.player == clientNetworkPlayer)
+        {
+            InputManagerMoveSurvivorScript inputManager = gameObject.transform.GetComponent<InputManagerMoveSurvivorScript>();
+            
+            string gameObjectName = "Floor";
+            gameObjectName += m_data.IsInFloor;
+
+            inputManager.getCharacterCamera().GetComponent<CameraLimitDeplacementScript>().setPlaneLimit(GameObject.Find(gameObjectName).transform.FindChild("CamBorder").transform);
+
+            inputManager.getCharacterCamera().GetComponent<CameraResetOnCharacterScript>().resetCamera();
+        }
+    }
+
+    public void tookStair(int floorOut, Vector3 stairOut, NetworkPlayer clientNetworkPlayer)
+    {
+        if (Network.isServer)
+        {
+            m_networkView.RPC("SurvivorTookStair", RPCMode.All, floorOut, stairOut, clientNetworkPlayer);
+        }
     }
 }
