@@ -4458,7 +4458,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_buildServer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
@@ -5113,7 +5113,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400366, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
   m_PrefabInternal: {fileID: 311822152}
   m_GameObject: {fileID: 260048491}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 15, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6902,6 +6902,38 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 14800000, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
       propertyPath: m_ViewID.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400784, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400784, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -4.37113883e-08
+      objectReference: {fileID: 0}
+    - target: {fileID: 400366, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 400366, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 400798, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 400798, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .707106829
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400016, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_floorOfStairOut
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
+      propertyPath: m_floorOfStairOut
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16816,7 +16848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 1394681766}
-  m_floorOfStairOut: 0
+  m_floorOfStairOut: 1
   m_hasClicked: 0
   m_networkView: {fileID: 795476042}
 --- !u!1 &799807246
@@ -18323,7 +18355,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400784, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
   m_PrefabInternal: {fileID: 311822152}
   m_GameObject: {fileID: 866624945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: -2, y: .213602066, z: -27.9785995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -28405,7 +28437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildServer: 0
+  m_buildServer: 1
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
   m_maxPlayers: 1
@@ -29854,7 +29886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 747301440}
-  m_floorOfStairOut: 0
+  m_floorOfStairOut: 1
   m_hasClicked: 0
   m_networkView: {fileID: 1398799338}
 --- !u!1 &1405077802
@@ -36718,7 +36750,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400798, guid: 8a6f95af93ff1e647b01887f7791593e, type: 2}
   m_PrefabInternal: {fileID: 311822152}
   m_GameObject: {fileID: 1779698124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -15, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
