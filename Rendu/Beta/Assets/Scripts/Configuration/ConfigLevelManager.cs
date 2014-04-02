@@ -86,8 +86,8 @@ public class ConfigLevelManager : MonoBehaviour
         m_movePointZombie[1].Add(new Vector3(5, 1, -63));
 
         //Pop zombie ratio
-        m_popZombieRatio.Add(0.2f);
-        m_popZombieRatio.Add(0.1f);
+        m_popZombieRatio.Add(0.4f);
+        m_popZombieRatio.Add(0.3f);
     }
 
     static void LoadLevelTwo()
