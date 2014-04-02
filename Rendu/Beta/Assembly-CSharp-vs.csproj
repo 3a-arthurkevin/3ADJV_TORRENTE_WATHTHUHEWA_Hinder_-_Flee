@@ -1,93 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{578EEFB7-C42E-0E64-E9FB-410224DD9F77}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<BaseDirectory>Assets</BaseDirectory>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{578EEFB7-C42E-0E64-E9FB-410224DD9F77}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_2;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_2;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
+    <Reference Include="System" />
     <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/UnityCrack/Editor/Data/Managed/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/UnityCrack/Editor/Data/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:/Program Files (x86)/UnityPro/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files (x86)/UnityPro/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BonusMalus\AttackBonusMalusMalusScript.cs" />
-     <Compile Include="Assets\Scripts\BonusMalus\CoolDownBonusMalusScript.cs" />
-     <Compile Include="Assets\Scripts\BonusMalus\DefenseBonusMalusScript.cs" />
-     <Compile Include="Assets\Scripts\BonusMalus\IBonusMalusScript.cs" />
-     <Compile Include="Assets\Scripts\BonusMalus\SpeedBonusMalusScript.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraDragScript.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraFollowMouseScript.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraLimitDeplacementScript.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraResetOnCharacterScript.cs" />
-     <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
-     <Compile Include="Assets\Scripts\Camera\ConfigCharacterCameraScript.cs" />
-     <Compile Include="Assets\Scripts\Configuration\ConfigLevelManager.cs" />
-     <Compile Include="Assets\Scripts\Configuration\ConfigSkillManager.cs" />
-     <Compile Include="Assets\Scripts\Configuration\ConfigWeaponManager.cs" />
-     <Compile Include="Assets\Scripts\Decors\Door\DoorOpenAndCloseScript.cs" />
-     <Compile Include="Assets\Scripts\Decors\Stair\ChangeCursorStairScript.cs" />
-     <Compile Include="Assets\Scripts\Decors\Stair\FloarLocationScript.cs" />
-     <Compile Include="Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs" />
-     <Compile Include="Assets\Scripts\Decors\Stair\TeleportSurvivorToEndStairScript.cs" />
-     <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
-     <Compile Include="Assets\Scripts\Items\IItem.cs" />
-     <Compile Include="Assets\Scripts\Manager\PopZombiesManagerScript.cs" />
-     <Compile Include="Assets\Scripts\Network\PlayerDataBaseScript.cs" />
-     <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
-     <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />
-     <Compile Include="Assets\Scripts\Survivors\ConfigSurvivorScript.cs" />
-     <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
-     <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
-     <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\AttackManagerScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\ConnexionScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\EndGameConditionManager.cs" />
-     <Compile Include="Assets\Scripts\Tmp\HealthManaTmpScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\PlayerDateClassScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\PlayerNameScript.cs" />
-     <Compile Include="Assets\Scripts\Tmp\PlayerStatsManager.cs" />
-     <Compile Include="Assets\Scripts\Tmp\WeaponInfo.cs" />
-     <Compile Include="Assets\Scripts\Utils\MoveData.cs" />
-     <Compile Include="Assets\Scripts\Utils\MoveUtilsScript.cs" />
-     <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
-     <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
-     <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScript.cs" />
+    <Compile Include="Assets\Scripts\BonusMalus\AttackBonusMalusMalusScript.cs" />
+    <Compile Include="Assets\Scripts\BonusMalus\CoolDownBonusMalusScript.cs" />
+    <Compile Include="Assets\Scripts\BonusMalus\DefenseBonusMalusScript.cs" />
+    <Compile Include="Assets\Scripts\BonusMalus\IBonusMalusScript.cs" />
+    <Compile Include="Assets\Scripts\BonusMalus\SpeedBonusMalusScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraDragScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraFollowMouseScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraLimitDeplacementScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraResetOnCharacterScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraZoomScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\ConfigCharacterCameraScript.cs" />
+    <Compile Include="Assets\Scripts\Configuration\ConfigLevelManager.cs" />
+    <Compile Include="Assets\Scripts\Configuration\ConfigSkillManager.cs" />
+    <Compile Include="Assets\Scripts\Configuration\ConfigWeaponManager.cs" />
+    <Compile Include="Assets\Scripts\Decors\Door\DoorOpenAndCloseScript.cs" />
+    <Compile Include="Assets\Scripts\Decors\Stair\ChangeCursorStairScript.cs" />
+    <Compile Include="Assets\Scripts\Decors\Stair\FloarLocationScript.cs" />
+    <Compile Include="Assets\Scripts\Decors\Stair\SurvivorManagerForStairScript.cs" />
+    <Compile Include="Assets\Scripts\Decors\Stair\TeleportSurvivorToEndStairScript.cs" />
+    <Compile Include="Assets\Scripts\Decors\Stair\TeleportZombieToEndStairScript.cs" />
+    <Compile Include="Assets\Scripts\Items\IItem.cs" />
+    <Compile Include="Assets\Scripts\Manager\PopZombiesManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Network\PlayerDataBaseScript.cs" />
+    <Compile Include="Assets\Scripts\Skills\Assassin\DefaultAssassinSkillScript.cs" />
+    <Compile Include="Assets\Scripts\Skills\ISkillScript.cs" />
+    <Compile Include="Assets\Scripts\Survivors\ConfigSurvivorScript.cs" />
+    <Compile Include="Assets\Scripts\Survivors\HealthManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Survivors\InputManagerMoveSurvivorScript.cs" />
+    <Compile Include="Assets\Scripts\Survivors\MoveManagerSurvivorScript.cs" />
+    <Compile Include="Assets\Scripts\Tmp\AttackManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Tmp\ConnexionScript.cs" />
+    <Compile Include="Assets\Scripts\Tmp\EndGameConditionManager.cs" />
+    <Compile Include="Assets\Scripts\Tmp\HealthManaTmpScript.cs" />
+    <Compile Include="Assets\Scripts\Tmp\PlayerDateClassScript.cs" />
+    <Compile Include="Assets\Scripts\Tmp\PlayerNameScript.cs" />
+    <Compile Include="Assets\Scripts\Tmp\PlayerStatsManager.cs" />
+    <Compile Include="Assets\Scripts\Tmp\WeaponInfo.cs" />
+    <Compile Include="Assets\Scripts\Utils\MoveData.cs" />
+    <Compile Include="Assets\Scripts\Utils\MoveUtilsScript.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AssassinDefaultWeaponScript.cs" />
+    <Compile Include="Assets\Scripts\Zombies\ChangeMoveTypeZombieScript.cs" />
+    <Compile Include="Assets\Scripts\Zombies\MoveManagerZombieScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -97,5 +98,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

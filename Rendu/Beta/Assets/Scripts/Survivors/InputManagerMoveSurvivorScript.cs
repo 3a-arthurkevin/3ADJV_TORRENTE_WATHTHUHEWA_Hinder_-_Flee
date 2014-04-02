@@ -71,4 +71,9 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     {
         return this.m_characterCamera;
     }
+
+    public NetworkPlayer getNetworkPlayer()
+    {
+        return this.m_owner;
+    }
 }
