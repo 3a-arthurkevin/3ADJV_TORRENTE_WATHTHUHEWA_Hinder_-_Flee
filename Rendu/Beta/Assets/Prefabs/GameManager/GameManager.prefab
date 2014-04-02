@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: GameManager
@@ -41,28 +40,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildServer: 1
+  m_buildServer: 0
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
-  m_maxPlayers: 2
+  m_maxPlayers: 1
   m_SurvivorPrefab: {fileID: 400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
   m_CharacterCameraPrefab: {fileID: 400000, guid: af399dfd2b2376a46a6d13e5226e354b,
     type: 2}
+  m_serverCamera: {fileID: 400000, guid: 5ef714d08e90a46469dc3a9c555e40a9, type: 2}
   m_networkView: {fileID: 14800000}
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a29850f1f6c1e8a419e02fe970330d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_networkView: {fileID: 0}
-  m_minDistance: .100000001
-  m_defaultSpeed: 2
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,7 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4db5aded0c6f884296d67c2b3ea783a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_waitingTime: 60
+  m_prefabZombie: {fileID: 400000, guid: 0fb76991aff24124f8794e0357cd35ad, type: 2}
+  m_waitingTime: 2
+  m_ratio: 1.39999998
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

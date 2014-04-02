@@ -13,11 +13,17 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
     private MoveData m_data;
 
+    public MoveData Data
+    {
+        get { return m_data; }
+        set { m_data = value; }
+    }
+
     [SerializeField]
     private Transform m_survivor;
     private bool m_follow = false;
 
-    void Start()
+    void Awake()
     {
         m_follow = false;
         m_survivor = null;

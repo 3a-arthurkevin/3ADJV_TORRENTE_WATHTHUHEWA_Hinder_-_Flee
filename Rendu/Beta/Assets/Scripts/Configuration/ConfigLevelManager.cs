@@ -117,92 +117,9 @@ public class ConfigLevelManager : MonoBehaviour
         else
             return m_movePointZombie[level][Random.Range(0, m_movePointZombie[level].Count)];
     }
-    
-    /*
-    static int m_currentSpawn = 0;
-    static List<Vector3> m_spawn = null;
 
-    public static List<List<Point>> getMovePointForFirtsLevel()
+    public static int getNbLevel()
     {
-        List<List<Point>> levelOne = new List<List<Point>>();
-        List<Point> firstFloor = new List<Point>();
-        Point point = new Point();
-
-        point.Level = 1;
-
-        point.Position = new Vector3(-10, 0, 0);
-        firstFloor.Add(point.Clone());
-
-        point.Position = new Vector3(0, 0, 0);
-        firstFloor.Add(point.Clone());
-
-        point.Position = new Vector3(10, 0, 0);
-        firstFloor.Add(point.Clone());
-
-        List<Point> secondFloor = new List<Point>();
-        point.Level = 2;
-
-        point.Position = new Vector3(-10, 0, -35);
-        secondFloor.Add(point.Clone());
-
-        point.Position = new Vector3(0, 0, -35);
-        secondFloor.Add(point.Clone());
-
-        point.Position = new Vector3(10, 0, -35);
-        secondFloor.Add(point.Clone());
-
-        levelOne.Add(firstFloor);
-        levelOne.Add(secondFloor);
-
-        return levelOne;
+        return m_spawnZombie.Count;
     }
-
-    public static Vector3 getNextSpawn()
-    {
-        if (Application.loadedLevelName == "Level_1")
-            return getNextSpawnForLevelOne();
-        else if (Application.loadedLevelName == "Level_2")
-            return getNextSpawnForLevelTwo();
-
-        return Vector3.zero;
-    }
-
-    private static Vector3 getNextSpawnForLevelOne()
-    {
-        if (m_spawn == null)
-            fillSpawnLevelOne();
-        
-        if (m_currentSpawn == m_spawn.Count)
-            m_currentSpawn = 0;
-
-        return m_spawn[m_currentSpawn++];
-    }
-
-    private static void fillSpawnLevelOne()
-    {
-        m_spawn = new List<Vector3>();
-
-        m_spawn.Add(new Vector3(10, 1, 70));
-        m_spawn.Add(new Vector3(30, 1, 70));
-    }
-
-    private static Vector3 getNextSpawnForLevelTwo()
-    {
-        if (m_spawn == null)
-            fillSpawnLevelTwo();
-
-        if (m_currentSpawn == m_spawn.Count)
-            m_currentSpawn = 0;
-
-        return m_spawn[m_currentSpawn++];
-    }
-
-    private static void fillSpawnLevelTwo()
-    {
-        m_spawn = new List<Vector3>();
-
-        m_spawn.Add(new Vector3(10, 1, 70));
-        m_spawn.Add(new Vector3(30, 1, 70));
-    }
-    */
 }

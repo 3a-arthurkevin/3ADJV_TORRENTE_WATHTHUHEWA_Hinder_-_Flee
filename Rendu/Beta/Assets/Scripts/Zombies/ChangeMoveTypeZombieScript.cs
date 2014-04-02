@@ -25,9 +25,6 @@ public class ChangeMoveTypeZombieScript : MonoBehaviour {
     void OnTriggerExit(Collider col)
     {
         if (m_followed == col)
-        {
-            Debug.Log("Same Exit");
             m_zombie.Unfollow();
-        }
     }
 }

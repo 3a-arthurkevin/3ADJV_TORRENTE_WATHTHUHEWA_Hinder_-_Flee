@@ -3,20 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PopZombiesManagerScript : MonoBehaviour {
+    [SerializeField]
+    private Transform m_prefabZombie;
+    
     private List<List<Transform>> m_listZombies;
+
     
     [SerializeField]
-    private float m_waitingTime = 60f;
+    private float m_waitingTime = 30f;
+
+    [SerializeField]
+    private float m_ratio = 1.4f;
 
     private float m_timer = 0;
     private bool m_manage = false;
     
-    void Start()
+    void Awake()
     {
         if (Network.isClient)
             enabled = false;
 
         m_listZombies = new List<List<Transform>>();
+        enabled = false;
     }
 
     void Update()
@@ -27,7 +35,12 @@ public class PopZombiesManagerScript : MonoBehaviour {
     public void init()
     {
         m_manage = true;
-        
+        int nbLevel = ConfigLevelManager.getNbLevel();
+
+        for(int i = 0; i < nbLevel; ++i)
+            m_listZombies.Add(new List<Transform>());
+
+        enabled = true;
         StartCoroutine(managePop());
     }
 
@@ -35,8 +48,18 @@ public class PopZombiesManagerScript : MonoBehaviour {
     {
         while(m_manage)
         {
+            Transform tempZombie = null;
 
-            yield return new WaitForSeconds(m_waitingTime);//Wait 60 seconde for re launch function
+            int nbLevel = m_listZombies.Count;
+            Debug.Log(nbLevel);
+            for (int i = 0; i < nbLevel; ++i)
+            {
+                tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(i), Quaternion.identity, 0);
+                tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = i;
+                m_listZombies[i].Add(tempZombie);
+                tempZombie = null;
+            }
+            yield return new WaitForSeconds(m_waitingTime);
         }
     }
 
