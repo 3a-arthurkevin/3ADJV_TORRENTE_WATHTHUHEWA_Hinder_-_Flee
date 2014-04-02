@@ -10,10 +10,10 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
     
     [SerializeField]
-    private float m_waitingTime = 30f;
+    private float m_respawnTime = 30f;
 
     [SerializeField]
-    private float m_ratio = 1.4f;
+    private float m_waveTime = 1f;
 
     private float m_timer = 0;
     private bool m_manage = false;
@@ -41,25 +41,41 @@ public class PopZombiesManagerScript : MonoBehaviour {
             m_listZombies.Add(new List<Transform>());
 
         enabled = true;
+        m_timer = 0;
         StartCoroutine(managePop());
     }
 
     IEnumerator managePop()
     {
+        int nbLevel = m_listZombies.Count;
+
         while(m_manage)
         {
-            Transform tempZombie = null;
-
-            int nbLevel = m_listZombies.Count;
-            Debug.Log(nbLevel);
             for (int i = 0; i < nbLevel; ++i)
             {
-                tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(i), Quaternion.identity, 0);
-                tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = i;
-                m_listZombies[i].Add(tempZombie);
-                tempZombie = null;
+                int nbCurZombie = m_listZombies[i].Count;
+                int nbZombieVoulu = (int)(m_timer * ConfigLevelManager.getPopZombieRatio(i));
+                
+                StartCoroutine(zombieLauncher(i, nbZombieVoulu - nbCurZombie));
             }
-            yield return new WaitForSeconds(m_waitingTime);
+            
+            yield return new WaitForSeconds(m_respawnTime);
+        }
+    }
+
+    IEnumerator zombieLauncher(int level, int nbZombie)
+    {
+        Transform tempZombie = null;
+        Debug.Log(level.ToString() + "==" + nbZombie.ToString());
+
+        for (int i = 0; i < nbZombie; ++i)
+        {
+            tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(i), Quaternion.identity, 0);
+            tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = level;
+            m_listZombies[level].Add(tempZombie);
+            tempZombie = null;
+
+            yield return new WaitForSeconds(m_waveTime);
         }
     }
 

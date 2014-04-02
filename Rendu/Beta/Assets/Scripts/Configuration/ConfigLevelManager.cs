@@ -4,19 +4,31 @@ using System.Collections.Generic;
 
 public class ConfigLevelManager : MonoBehaviour
 {
+    private static bool m_isLoad = false;
+    public static bool IsLoad
+    {
+        get { return m_isLoad; }
+    }
 
     private static List<List<Vector3>> m_spawnSurvivor;
     private static List<List<Vector3>> m_spawnZombie;
     private static List<List<Vector3>> m_movePointZombie;
+    private static List<float> m_popZombieRatio;
 
     private static int m_currentSpawnSurvivor = 0;
     private static int m_currentSpawnLevelSuvivor = 0;
+
+    void Awake()
+    {
+        ConfigLevelManager.LoadLevel();
+    }
 
     public static void LoadLevel()
     {
         ConfigLevelManager.m_spawnSurvivor = new List<List<Vector3>>();
         ConfigLevelManager.m_spawnZombie = new List<List<Vector3>>();
         ConfigLevelManager.m_movePointZombie = new List<List<Vector3>>();
+        ConfigLevelManager.m_popZombieRatio = new List<float>();
 
         switch (Application.loadedLevelName)
         {
@@ -28,6 +40,8 @@ public class ConfigLevelManager : MonoBehaviour
                 ConfigLevelManager.LoadLevelTwo();
                 break;
         }
+
+        ConfigLevelManager.m_isLoad = true;
     }
 
     static void LoadLevelOne()
@@ -70,6 +84,10 @@ public class ConfigLevelManager : MonoBehaviour
         m_movePointZombie[1].Add(new Vector3(35, 1, -42));
         m_movePointZombie[1].Add(new Vector3(35, 1, -63));
         m_movePointZombie[1].Add(new Vector3(5, 1, -63));
+
+        //Pop zombie ratio
+        m_popZombieRatio.Add(0.2f);
+        m_popZombieRatio.Add(0.1f);
     }
 
     static void LoadLevelTwo()
@@ -78,9 +96,6 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static Vector3 getNextSpawnSurvivor(out int level)
     {
-        if (m_spawnSurvivor == null)
-            ConfigLevelManager.LoadLevel();
-
         if (m_currentSpawnSurvivor >= m_spawnSurvivor[m_currentSpawnLevelSuvivor].Count)
         {
             ++m_currentSpawnLevelSuvivor;
@@ -96,9 +111,6 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static Vector3 getRandomSpawnZombie(int level)
     {
-        if (m_spawnZombie == null)
-            ConfigLevelManager.LoadLevel();
-
         if (level >= m_spawnZombie.Count || level < 0)
             return m_spawnZombie[0][0];
         
@@ -108,9 +120,6 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static Vector3 getRandomMoveZombie(int level)
     {
-        if (m_movePointZombie == null)
-            ConfigLevelManager.LoadLevel();
-
         if (level >= m_movePointZombie.Count || level < 0)
             return m_movePointZombie[0][0];
 
@@ -120,6 +129,27 @@ public class ConfigLevelManager : MonoBehaviour
 
     public static int getNbLevel()
     {
-        return m_spawnZombie.Count;
+        try
+        {
+            return m_spawnZombie.Count;
+        }
+        catch (System.Exception)
+        {
+            Debug.LogError("Out of bounds getNbLevel");
+            return -1;
+        }
+    }
+
+    public static float getPopZombieRatio(int level)
+    {
+        try
+        {
+            return m_popZombieRatio[level];
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Out of bounds getPopZombieRatio : " + level.ToString());
+            return 0;
+        }
     }
 }
