@@ -66,11 +66,10 @@ public class PopZombiesManagerScript : MonoBehaviour {
     IEnumerator zombieLauncher(int level, int nbZombie)
     {
         Transform tempZombie = null;
-        Debug.Log(level.ToString() + "==" + nbZombie.ToString());
 
         for (int i = 0; i < nbZombie; ++i)
         {
-            tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(i), Quaternion.identity, 0);
+            tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(level), Quaternion.identity, 0);
             tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = level;
             m_listZombies[level].Add(tempZombie);
             tempZombie = null;
