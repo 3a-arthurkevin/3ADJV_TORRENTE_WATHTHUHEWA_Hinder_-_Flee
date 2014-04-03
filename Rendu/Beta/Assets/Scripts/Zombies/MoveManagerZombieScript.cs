@@ -34,9 +34,10 @@ public class MoveManagerZombieScript : MonoBehaviour {
         m_data = new MoveData();
         m_data.Position = transform;
         m_data.Speed = m_defaultSpeed;
+        m_data.CharacterController = GetComponent<CharacterController>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
 
         if (m_follow)
@@ -75,7 +76,8 @@ public class MoveManagerZombieScript : MonoBehaviour {
             }
         }
 
-        m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
+        //m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
+        m_data.CharacterController.Move(direction.normalized * m_data.Speed * Time.deltaTime);
     }
 
     public void Follow(Transform target)

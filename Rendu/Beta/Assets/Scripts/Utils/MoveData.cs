@@ -10,6 +10,7 @@ public class MoveData
     private uint m_numCorner = 0;
     private Transform m_survivorPosition = null;
     private Rigidbody m_rigidBody = null;
+    private CharacterController m_characterController = null;
     private int m_isInFloor = 0;
 
     public NavMeshPath Path
@@ -43,6 +44,12 @@ public class MoveData
     {
         get { return m_rigidBody; }
         set { m_rigidBody = value; }
+    }
+
+    public CharacterController CharacterController
+    {
+        get { return m_characterController; }
+        set { m_characterController = value; }
     }
 
     public int IsInFloor

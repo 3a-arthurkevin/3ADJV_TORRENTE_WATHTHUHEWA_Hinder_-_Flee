@@ -13,6 +13,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 148: {fileID: 14800000}
   - 148: {fileID: 14800002}
+  - 143: {fileID: 14300000}
   m_Layer: 9
   m_Name: Zombie
   m_TagString: Untagged
@@ -183,6 +184,20 @@ CapsuleCollider:
   m_Radius: .5
   m_Height: 2
   m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &14300000
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: .5
+  m_SlopeLimit: 45
+  m_StepOffset: .300000012
+  m_SkinWidth: .0799999982
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!148 &14800000
 NetworkView:

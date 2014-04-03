@@ -2,9 +2,16 @@
 using System.Collections;
 
 public class MoveCube : MonoBehaviour {
-	
-    void FixedUpdate ()
+    private CharacterController m_controler;
+    public float m_speed = 2f;
+
+    void Start()
     {
-        transform.position += Vector3.right * 2 * Time.deltaTime;
+        m_controler = GetComponent<CharacterController>();
+    }
+
+    void Update ()
+    {
+        m_controler.Move(Vector3.right * m_speed * Time.deltaTime);
 	}
 }
