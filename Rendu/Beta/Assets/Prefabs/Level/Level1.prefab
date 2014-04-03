@@ -5490,6 +5490,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400652}
   - 65: {fileID: 6500078}
+  - 54: {fileID: 5400012}
   m_Layer: 30
   m_Name: Cubex10
   m_TagString: Untagged
@@ -9000,6 +9001,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 401070}
   - 65: {fileID: 6500126}
+  - 54: {fileID: 5400014}
   m_Layer: 30
   m_Name: Cubex10
   m_TagString: Untagged
@@ -15583,7 +15585,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 15, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18057,7 +18059,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
   m_LocalPosition: {x: -2, y: .213602066, z: -27.9785995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18140,7 +18142,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -15, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41190,6 +41192,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &5400012
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100652}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!54 &5400014
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101070}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!64 &6400000
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -42517,7 +42549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 400980}
-  m_floorOfStairOut: 0
+  m_floorOfStairOut: 1
   m_hasClicked: 0
   m_networkView: {fileID: 14800004}
 --- !u!114 &11400006
@@ -42593,7 +42625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cursor: {fileID: 2800000, guid: dbb27802e4674884a93028afa4dc2cf9, type: 3}
   m_stairOut: {fileID: 400522}
-  m_floorOfStairOut: 0
+  m_floorOfStairOut: 1
   m_hasClicked: 0
   m_networkView: {fileID: 14800006}
 --- !u!114 &11400018
