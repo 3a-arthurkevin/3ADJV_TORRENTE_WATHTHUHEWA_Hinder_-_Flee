@@ -23,8 +23,9 @@ public class TakeDamageEffect : IEffect
 
     public void SetParam(Dictionary<string, string> param)
     {
-        string damage = "";
-        if (param.TryGetValue("Damage", out damage))
-            m_damage = int.Parse(damage);
+        string parameter = "";
+        
+        if (param.TryGetValue("Damage", out parameter))
+            m_damage = int.Parse(parameter);
     }
 }

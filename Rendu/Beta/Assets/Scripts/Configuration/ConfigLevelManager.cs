@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ConfigLevelManager : MonoBehaviour
+public static class ConfigLevelManager
 {
     private static bool m_isLoad = false;
     public static bool IsLoad
@@ -17,11 +17,6 @@ public class ConfigLevelManager : MonoBehaviour
 
     private static int m_currentSpawnSurvivor = 0;
     private static int m_currentSpawnLevelSuvivor = 0;
-
-    void Awake()
-    {
-        ConfigLevelManager.LoadLevel();
-    }
 
     public static void LoadLevel()
     {

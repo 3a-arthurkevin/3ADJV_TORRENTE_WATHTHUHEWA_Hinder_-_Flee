@@ -4,11 +4,48 @@ using System.Collections.Generic;
 
 public abstract class ISkill
 {
-    [SerializeField]
-    private List<int> m_survivorEffectId;
-    private List<IEffect> m_survivorEffect;
+    private string m_name;
+    public string Name
+    {
+        get { return m_name; }
+        set { m_name = value; }
+    }
 
-    [SerializeField]
-    private List<int> m_zombieEffectId;
+    private string m_description;
+    public string Description
+    {
+        get { return m_description; }
+        set { m_description = value; }
+    }
+
+    private List<IEffect> m_survivorEffect;
     private List<IEffect> m_zombieEffect;
+
+    public ISkill()
+    {
+        m_survivorEffect = new List<IEffect>();
+        m_zombieEffect = new List<IEffect>();
+    }
+
+    public void LaunchSkill(GameObject target)
+    {
+        if (target.tag == "Zombie")
+            foreach (IEffect effect in m_zombieEffect)
+                effect.Apply(target);
+        else if (target.tag == "Survivor")
+            foreach (IEffect effect in m_survivorEffect)
+                effect.Apply(target);
+        else
+            Debug.Log("Skill not availiable for this target " + target.name);
+    }
+
+    public void addZombieEffect(IEffect effect)
+    {
+        m_zombieEffect.Add(effect);
+    }
+
+    public void addSurvivorEffect(IEffect effect)
+    {
+        m_survivorEffect.Add(effect);
+    }
 }
