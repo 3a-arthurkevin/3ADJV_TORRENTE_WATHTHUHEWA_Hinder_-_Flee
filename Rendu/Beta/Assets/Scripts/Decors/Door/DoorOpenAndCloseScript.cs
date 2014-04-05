@@ -9,7 +9,7 @@ public class DoorOpenAndCloseScript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         m_controller.SetInteger("numberOfCharacter", m_controller.GetInteger("numberOfCharacter") + 1);
-        //Debug.Log(other.tag);
+        Debug.Log(other.tag);
     }
 
     void OnTriggerExit(Collider other)
