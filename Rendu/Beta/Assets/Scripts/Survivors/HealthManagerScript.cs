@@ -4,12 +4,21 @@ using System.Collections;
 public class HealthManagerScript : MonoBehaviour {
 
     [SerializeField]
-    private int m_playerMaxLifePoint;
+    private int m_maxLifePoint;
 
     [SerializeField]
     private int m_currentLifePoint;
 
-    public void addLifePoint(int lifePointToAdd)
+    public int LifePoint
+    {
+        get { return m_currentLifePoint; }
+        set
+        {
+            m_currentLifePoint = Mathf.Clamp(m_currentLifePoint + value, 0, m_maxLifePoint);
+        }
+    }
+
+    /*public void addLifePoint(int lifePointToAdd)
     {
         m_currentLifePoint += lifePointToAdd;
 
@@ -23,7 +32,7 @@ public class HealthManagerScript : MonoBehaviour {
 
         if (m_currentLifePoint < 0)
             m_currentLifePoint = 0;
-    }
+    }*/
 
     public bool isDead()
     {
