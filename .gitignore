@@ -9,3 +9,9 @@
 /*.suo
 /*.user
 /*.pidb
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.pidb
