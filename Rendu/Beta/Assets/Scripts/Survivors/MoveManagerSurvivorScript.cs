@@ -28,9 +28,10 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         m_data = new MoveData();
         m_data.Speed = m_defaultSpeed;
         m_data.Position = transform;
+        m_data.CharacterController = GetComponent<CharacterController>();
 	}
 	
-	void FixedUpdate()
+	void Update()
     {
         if (m_data.Path != null)
         {
@@ -50,7 +51,10 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 }
             }
             else
-                m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
+            {
+                m_data.CharacterController.Move(direction.normalized * m_data.Speed * Time.deltaTime);
+                //m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
+            }
         }
 	}
 
