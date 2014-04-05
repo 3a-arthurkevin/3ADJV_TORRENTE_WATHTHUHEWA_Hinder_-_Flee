@@ -1,0 +1,24 @@
+<Skills>
+	<skill>
+		<id>0</id>
+		<Effects>
+			<effect>
+				<id>0</id>
+				<Params>
+					<damage>10</damage>
+				</Params>
+			</effect>
+		</Effects>
+	</skill>
+	<skill>
+		<id>0</id>
+		<Effects>
+			<effect>
+				<id>0</id>
+				<Params>
+					<damage>10</damage>
+				</Params>
+			</effect>
+		</Effects>
+	</skill>
+</Skills>
