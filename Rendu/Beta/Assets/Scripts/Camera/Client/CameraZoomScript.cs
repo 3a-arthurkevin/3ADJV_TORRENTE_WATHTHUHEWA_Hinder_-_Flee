@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraZoomScript : MonoBehaviour
 {
     [SerializeField]
-    private Transform m_transformCamera;
+    private Transform m_cameraTransform;
 
     [SerializeField]
     private float m_scrollSpeed = 15f;
@@ -22,15 +22,12 @@ public class CameraZoomScript : MonoBehaviour
     private float m_nbScrollDefault = 7f;
 
     [SerializeField]
-    private Vector3 m_cameraPosition;
-
-    [SerializeField]
-    private CameraLimitDeplacementScript m_scriptLimit;
+    private CharacterController m_characterController;
 
     void Start()
     {
-        m_transformCamera = transform;
-        m_scriptLimit = transform.GetComponent<CameraLimitDeplacementScript>();
+        m_cameraTransform = gameObject.transform;
+        m_characterController = gameObject.GetComponent<CharacterController>();
     }
 
     void LateUpdate()
@@ -38,19 +35,19 @@ public class CameraZoomScript : MonoBehaviour
         float mouvement = Input.GetAxis("Mouse ScrollWheel");
         mouvement = Mathf.Clamp(mouvement, -1, 1);
 
-        if (mouvement > 0 && !(m_scriptLimit.blockMoveY(m_transformCamera) > 0))
+        if (mouvement > 0)
         {
             if (m_nbScroll <= m_scrollLimitMax)
             {
-                m_transformCamera.position += m_transformCamera.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
+                m_characterController.Move(m_cameraTransform.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement);
                 m_nbScroll += mouvement;
             }
         }
         if (mouvement < 0)
         {
-            if (m_nbScroll >= m_scrollLimitMin && !(m_scriptLimit.blockMoveY(m_transformCamera) < 0))
+            if (m_nbScroll >= m_scrollLimitMin)
             {
-                m_transformCamera.position += m_transformCamera.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement;
+                m_characterController.Move(m_cameraTransform.rotation * Vector3.forward * Time.deltaTime * m_scrollSpeed * mouvement);
                 m_nbScroll += mouvement;
             }
         }

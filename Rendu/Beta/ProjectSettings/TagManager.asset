@@ -61,8 +61,8 @@ TagManager:
   User Layer 25: 
   User Layer 26: 
   User Layer 27: 
-  User Layer 28: CameraPlayer
-  User Layer 29: CameraPlayerLimiter
+  User Layer 28: 
+  User Layer 29: CameraPlayer
   User Layer 30: Wall
   User Layer 31: Door
   m_SortingLayers:

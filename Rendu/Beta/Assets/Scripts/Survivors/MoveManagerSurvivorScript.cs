@@ -111,11 +111,6 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         if (Network.isClient && Network.player == clientNetworkPlayer)
         {
             InputManagerMoveSurvivorScript inputManager = gameObject.transform.GetComponent<InputManagerMoveSurvivorScript>();
-            
-            string gameObjectName = "Floor";
-            gameObjectName += m_data.IsInFloor;
-
-            inputManager.getCharacterCamera().GetComponent<CameraLimitDeplacementScript>().setPlaneLimit(GameObject.Find(gameObjectName).transform.FindChild("CamBorder").transform);
 
             inputManager.getCharacterCamera().GetComponent<CameraResetOnCharacterScript>().resetCamera();
         }

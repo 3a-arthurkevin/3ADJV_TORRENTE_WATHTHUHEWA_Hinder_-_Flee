@@ -4,24 +4,20 @@ using System.Collections;
 public class CameraDragScript : MonoBehaviour
 {
     [SerializeField]
-    private Transform m_transformCamera;
-
-    [SerializeField]
     private float m_moveSpeed = 10f;
 
     [SerializeField]
     private CameraFollowMouseScript m_scriptFollow;
 
     [SerializeField]
-    private CameraLimitDeplacementScript m_scriptLimit;
+    private CharacterController m_characterController;
 
     //Pour pouvoir désactiver le script et joueur avec la camera quand on fait des tests
     //A enlever apres
     void Start()
     {
-        m_transformCamera = transform;
-        m_scriptFollow = transform.GetComponent<CameraFollowMouseScript>();
-        m_scriptLimit = transform.GetComponent<CameraLimitDeplacementScript>();
+        m_scriptFollow = gameObject.GetComponent<CameraFollowMouseScript>();
+        m_characterController = gameObject.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -35,22 +31,22 @@ public class CameraDragScript : MonoBehaviour
             float mouvementX = Input.GetAxis("Mouse X");
             float mouvementY = Input.GetAxis("Mouse Y");
 
-            if (!(m_scriptLimit.blockMoveY(m_transformCamera) < 0) && (mouvementY > 0))
+            if (mouvementY > 0)
             {
-                m_transformCamera.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
+                m_characterController.Move(Vector3.back * mouvementY * Time.deltaTime * m_moveSpeed);
             }
-            else if (!(m_scriptLimit.blockMoveY(m_transformCamera) > 0) && (mouvementY < 0))
+            else if (mouvementY < 0)
             {
-                m_transformCamera.position -= Vector3.forward * mouvementY * Time.deltaTime * m_moveSpeed;
+                 m_characterController.Move(Vector3.back * mouvementY * Time.deltaTime * m_moveSpeed);
             }
 
-            if (!(m_scriptLimit.blockMoveX(m_transformCamera) < 0) && (mouvementX > 0))
+            if (mouvementX > 0)
             {
-                m_transformCamera.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;
+                 m_characterController.Move(Vector3.left * mouvementX * Time.deltaTime * m_moveSpeed);
             }
-            else if (!(m_scriptLimit.blockMoveX(m_transformCamera) > 0) && (mouvementX < 0))
+            else if (mouvementX < 0)
             {
-                m_transformCamera.position -= Vector3.right * mouvementX * Time.deltaTime * m_moveSpeed;
+                 m_characterController.Move(Vector3.left * mouvementX * Time.deltaTime * m_moveSpeed);
             }
         }
         else

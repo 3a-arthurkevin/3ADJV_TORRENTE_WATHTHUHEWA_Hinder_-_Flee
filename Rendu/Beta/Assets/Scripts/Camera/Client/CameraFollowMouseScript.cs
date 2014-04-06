@@ -4,9 +4,6 @@ using System.Collections;
 public class CameraFollowMouseScript : MonoBehaviour
 {
     [SerializeField]
-    private Transform m_transformCamera;
-
-    [SerializeField]
     private Vector2 m_mousePosition;
 
     [SerializeField]
@@ -19,12 +16,11 @@ public class CameraFollowMouseScript : MonoBehaviour
     private float m_moveSpeed = 3f;
 
     [SerializeField]
-    private CameraLimitDeplacementScript m_scriptLimit;
+    private CharacterController m_characterManager;
 
     void Start()
     {
-        m_transformCamera = transform;
-        m_scriptLimit = transform.GetComponent<CameraLimitDeplacementScript>();
+        m_characterManager = gameObject.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -33,23 +29,23 @@ public class CameraFollowMouseScript : MonoBehaviour
         m_mousePosition = Vector3.zero;
         m_mousePosition.Set(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);
 
-        if ((m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd) && !(m_scriptLimit.blockMoveX(m_transformCamera) < 0))
+        if ((m_mousePosition.x <= 1 - m_activeZoneBegin) && (m_mousePosition.x >= 1 - m_activeZoneEnd))
         {
-            m_transformCamera.position += Vector3.left * Time.deltaTime * m_moveSpeed;
+            m_characterManager.Move(Vector3.left * Time.deltaTime * m_moveSpeed);
         }
-        else if ((m_mousePosition.x >= m_activeZoneBegin) && (m_mousePosition.x <= m_activeZoneEnd) && !(m_scriptLimit.blockMoveX(m_transformCamera) > 0))
+        else if ((m_mousePosition.x >= m_activeZoneBegin) && (m_mousePosition.x <= m_activeZoneEnd))
         {
-            m_transformCamera.position += Vector3.right * Time.deltaTime * m_moveSpeed;
+            m_characterManager.Move(Vector3.right * Time.deltaTime * m_moveSpeed);
         }
 
 
-        if ((m_mousePosition.y <= 1 - m_activeZoneBegin) && (m_mousePosition.y >= 1 - m_activeZoneEnd) && !(m_scriptLimit.blockMoveY(m_transformCamera) < 0))
+        if ((m_mousePosition.y <= 1 - m_activeZoneBegin) && (m_mousePosition.y >= 1 - m_activeZoneEnd))
         {
-            m_transformCamera.position += Vector3.back * Time.deltaTime * m_moveSpeed;
+            m_characterManager.Move(Vector3.back * Time.deltaTime * m_moveSpeed);
         }
-        else if ((m_mousePosition.y >= m_activeZoneBegin) && (m_mousePosition.y <= m_activeZoneEnd) && !(m_scriptLimit.blockMoveY(m_transformCamera) > 0))
+        else if ((m_mousePosition.y >= m_activeZoneBegin) && (m_mousePosition.y <= m_activeZoneEnd))
         {
-            m_transformCamera.position += Vector3.forward * Time.deltaTime * m_moveSpeed;
+            m_characterManager.Move(Vector3.forward * Time.deltaTime * m_moveSpeed);
         }
     }
 }
