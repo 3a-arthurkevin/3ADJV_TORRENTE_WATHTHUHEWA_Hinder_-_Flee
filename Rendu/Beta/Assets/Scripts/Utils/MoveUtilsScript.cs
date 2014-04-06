@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveUtilsScript : MonoBehaviour {
+public static class MoveUtilsScript
+{
 
     static public NavMeshPath getCalcPath(Vector3 origin, Vector3 wantToGo)
     {

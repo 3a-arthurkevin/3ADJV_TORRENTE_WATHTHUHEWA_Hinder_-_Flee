@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SkillFactory : MonoBehaviour {
+public static class SkillFactory
+{
+    public static ISkill getSkill(int skillId)
+    {
+        ISkill skill = null;
+        
+        switch (skillId)
+        {
+            case 1:
+                skill = new SingleTargetSkill();
+                break;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+            default:
+                throw new System.ArgumentException();
+        }
+
+        return skill;
+    }
 }
