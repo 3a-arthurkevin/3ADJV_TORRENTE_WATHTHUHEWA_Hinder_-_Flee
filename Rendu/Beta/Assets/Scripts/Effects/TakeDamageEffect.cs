@@ -17,8 +17,9 @@ public class TakeDamageEffect : IEffect
 
         if (healthManager == null)
             Debug.LogError("Target haven't health Manager");
-
-        healthManager.LifePoint -= m_damage;
+        
+        else
+            healthManager.LifePoint -= m_damage;
     }
 
     public void SetParam(Dictionary<string, string> param)
