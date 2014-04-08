@@ -34,6 +34,15 @@ public abstract class ISkill
         m_zombieEffect = new List<IEffect>();
     }
 
+    public virtual void StartSkill()
+    {
+    }
+
+    public virtual void StopSkill()
+    {
+
+    }
+
     public virtual void LaunchSkill(GameObject target)
     {
         if (target.tag == "Zombie")
@@ -46,6 +55,8 @@ public abstract class ISkill
         
         else
             Debug.Log("Skill not availiable for this target " + target.name);
+
+        StopSkill();
     }
 
     public void addZombieEffect(IEffect effect)

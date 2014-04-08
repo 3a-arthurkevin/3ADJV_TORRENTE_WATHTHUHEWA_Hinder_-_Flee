@@ -6,4 +6,5 @@ public interface IEffect
 {
     void Apply(GameObject target);
     void SetParam(Dictionary<string, string> param);
+    void SetParam(string name, string value);
 }

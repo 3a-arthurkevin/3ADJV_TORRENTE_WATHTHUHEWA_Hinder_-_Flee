@@ -11,6 +11,16 @@ public class TakeDamageEffect : IEffect
         set { Damage = value; }
     }
 
+    public TakeDamageEffect() : base()
+    {
+        m_damage = 10;
+    }
+
+    public TakeDamageEffect(int damage) : base()
+    {
+        m_damage = damage;
+    }
+
     public void Apply(GameObject target)
     {
         HealthManagerScript healthManager = target.GetComponent<HealthManagerScript>();
@@ -28,5 +38,11 @@ public class TakeDamageEffect : IEffect
         
         if (param.TryGetValue("Damage", out parameter))
             m_damage = int.Parse(parameter);
+    }
+
+    public void SetParam(string name, string value)
+    {
+        if (name == "Damage")
+            m_damage = int.Parse(value);
     }
 }
