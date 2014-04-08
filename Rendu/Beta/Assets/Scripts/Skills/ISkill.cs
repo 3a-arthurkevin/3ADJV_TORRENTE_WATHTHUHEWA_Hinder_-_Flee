@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 public abstract class ISkill
 {
+    private Animation m_animation;
+    public Animation Animation
+    {
+        get { return m_animation; }
+        set { m_animation = value; }
+    }
+
     private string m_name;
     public string Name
     {
@@ -27,14 +34,16 @@ public abstract class ISkill
         m_zombieEffect = new List<IEffect>();
     }
 
-    public void LaunchSkill(GameObject target)
+    public virtual void LaunchSkill(GameObject target)
     {
         if (target.tag == "Zombie")
             foreach (IEffect effect in m_zombieEffect)
                 effect.Apply(target);
+
         else if (target.tag == "Survivor")
             foreach (IEffect effect in m_survivorEffect)
                 effect.Apply(target);
+        
         else
             Debug.Log("Skill not availiable for this target " + target.name);
     }
