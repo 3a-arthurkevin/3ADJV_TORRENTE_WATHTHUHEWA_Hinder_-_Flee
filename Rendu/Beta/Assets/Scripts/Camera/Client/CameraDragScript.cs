@@ -31,9 +31,6 @@ public class CameraDragScript : MonoBehaviour
             float mouvementX = Input.GetAxis("Mouse X");
             float mouvementY = Input.GetAxis("Mouse Y");
 
-            Debug.LogError("X : " + mouvementX.ToString());
-            Debug.LogError("Y : " + mouvementY.ToString());
-
             if (mouvementY > 0)
             {
                 m_characterController.Move(Vector3.back * mouvementY * Time.deltaTime * m_moveSpeed);
