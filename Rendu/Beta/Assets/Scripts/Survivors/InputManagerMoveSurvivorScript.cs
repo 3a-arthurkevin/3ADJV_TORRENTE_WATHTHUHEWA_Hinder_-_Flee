@@ -33,7 +33,7 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     {
         if (Network.isClient && m_owner == Network.player)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetButtonDown("MoveCharacter"))
             {
                 Ray ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
                 

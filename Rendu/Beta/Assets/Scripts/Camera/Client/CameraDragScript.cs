@@ -24,12 +24,15 @@ public class CameraDragScript : MonoBehaviour
     void LateUpdate()
     {
         //Si le clique droit de la souris est maintenu
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (Input.GetButton("MoveCamera"))
         {
             m_scriptFollow.enabled = false;
 
             float mouvementX = Input.GetAxis("Mouse X");
             float mouvementY = Input.GetAxis("Mouse Y");
+
+            Debug.LogError("X : " + mouvementX.ToString());
+            Debug.LogError("Y : " + mouvementY.ToString());
 
             if (mouvementY > 0)
             {
