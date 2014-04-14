@@ -9,7 +9,7 @@ public static class EffectsFactory
 
         switch (idEffect)
         {
-            case 1:
+            case 0:
                 effect = new TakeDamageEffect();
                 break;
 

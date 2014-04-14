@@ -14,7 +14,7 @@ public class MoveCameraScript : MonoBehaviour {
 	
 	void Update ()
     {
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetButtonDown("MoveCamera"))
         {
 
             m_oldPosition = Input.mousePosition;
@@ -23,7 +23,7 @@ public class MoveCameraScript : MonoBehaviour {
 
             m_wheelClicked = true;
         }
-        else if (Input.GetMouseButtonUp(2))
+        else if (Input.GetButtonUp("MoveCamera"))
             m_wheelClicked = false;
 	}
 
