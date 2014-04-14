@@ -106,7 +106,7 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         //Reset du path et update du floor courant et update de la position
         this.m_data.Path = null;
         this.m_data.IsInFloor = floorOut;
-        this.m_data.Position.position = stairOut + Vector3.up;
+        this.m_data.Position.position = stairOut;
 
         if (Network.isClient && Network.player == clientNetworkPlayer)
         {
