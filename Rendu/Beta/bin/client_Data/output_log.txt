@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\client_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.069 seconds
+- Completed reload, in  0.161 seconds
 desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -40,8 +40,4 @@ UnityEngine.Debug:LogError(Object)
 PlayerDataBaseScript:LaunchGame() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Network\PlayerDataBaseScript.cs:243)
  
 (Filename: C Line: 0)
-
-The server has disconnected from the client. Most likely the server has shut down.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Network/NetworkManager.cpp Line: 740)
 
