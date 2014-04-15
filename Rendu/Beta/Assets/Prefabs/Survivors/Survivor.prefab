@@ -32,6 +32,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 143: {fileID: 14300000}
+  - 114: {fileID: 11400006}
   m_Layer: 11
   m_Name: Survivor
   m_TagString: Survivant
@@ -146,6 +147,19 @@ MonoBehaviour:
   m_networkView: {fileID: 14800000}
   m_defaultSpeed: 2
   m_defaultMinDistance: .100000001
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963dbb696befd934784b90c07ce16949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_networkView: {fileID: 0}
+  m_skillId: 00000000000000000000000000000000
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
