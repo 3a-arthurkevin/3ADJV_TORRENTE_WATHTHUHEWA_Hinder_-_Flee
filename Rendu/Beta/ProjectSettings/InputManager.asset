@@ -5,7 +5,7 @@ InputManager:
   m_ObjectHideFlags: 0
   m_Axes:
   - serializedVersion: 3
-    m_Name: MoveCharacter
+    m_Name: MainButton
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

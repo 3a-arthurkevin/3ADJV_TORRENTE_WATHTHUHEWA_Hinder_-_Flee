@@ -11,6 +11,13 @@ public abstract class ISkill
         set { m_animation = value; }
     }
 
+    private WeaponManagerScript m_weaponManager;
+    public WeaponManagerScript WeaponManager
+    {
+        get { return m_weaponManager; }
+        set { m_weaponManager = value; }
+    }
+
     private string m_name;
     public string Name
     {
@@ -25,6 +32,20 @@ public abstract class ISkill
         set { m_description = value; }
     }
 
+    private float m_coolDownDuration;
+    public float CoolDownDuration
+    {
+        get { return m_coolDownDuration; }
+        set { m_coolDownDuration = value; }
+    }
+
+    private float m_coolDown;
+    public float CoolDown
+    {
+        get { return m_coolDown; }
+        set { m_coolDown = value; }
+    }
+
     private List<IEffect> m_survivorEffect;
     private List<IEffect> m_zombieEffect;
 
@@ -34,22 +55,20 @@ public abstract class ISkill
         m_zombieEffect = new List<IEffect>();
     }
 
-    public virtual void StartSkill()
-    {
-    }
 
-    public virtual void StopSkill()
-    {
+    abstract public void StartSkill();
+    abstract public void StopSkill();
+    abstract public bool CheckLaunch(Vector3 hit, string targetName);
 
-    }
-
-    public virtual void LaunchSkill(GameObject target)
+    public virtual void LaunchSkill(Vector3 hit, string targetName)
     {
-        if (target.tag == "Zombie")
+        GameObject target = GameObject.Find(targetName);
+
+        if (target.tag.Substring(0, 6) == "Zombie")
             foreach (IEffect effect in m_zombieEffect)
                 effect.Apply(target);
 
-        else if (target.tag == "Survivor")
+        else if (target.tag.Substring(0, 8) == "Survivor")
             foreach (IEffect effect in m_survivorEffect)
                 effect.Apply(target);
         
