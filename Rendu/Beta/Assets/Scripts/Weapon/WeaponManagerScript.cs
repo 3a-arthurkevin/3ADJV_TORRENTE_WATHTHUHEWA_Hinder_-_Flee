@@ -5,9 +5,19 @@ public class WeaponManagerScript : MonoBehaviour
 {
     [SerializeField]
     private NetworkPlayer m_owner;
+    public NetworkPlayer Owner
+    {
+        get { return m_owner; }
+        set { m_owner = value; }
+    }
 
     [SerializeField]
     private Camera m_characterCamera;
+    public Camera CharacterCamera
+    {
+        get { return m_characterCamera; }
+        set { m_characterCamera = value; }
+    }
 
     [SerializeField]
     private NetworkView m_networkView = null;
