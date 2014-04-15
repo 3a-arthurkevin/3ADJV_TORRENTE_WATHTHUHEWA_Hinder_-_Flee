@@ -39,6 +39,12 @@ public class Slot
         return this.m_quantity;
     }
 
+    public void addItem(int id, int quantity)
+    {
+        this.m_idItem = id;
+        this.m_quantity = quantity;
+    }
+
     public void resetSlot()
     {
         this.m_idItem = -1;
