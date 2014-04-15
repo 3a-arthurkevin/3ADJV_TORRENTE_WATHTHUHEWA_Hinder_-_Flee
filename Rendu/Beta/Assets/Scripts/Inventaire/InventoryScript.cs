@@ -12,6 +12,8 @@ public class InventoryScript : MonoBehaviour
     
     List<Slot> m_inventory;
 
+    int m_indexOfLastItem = 0;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -36,11 +38,19 @@ public class InventoryScript : MonoBehaviour
 
     public void AddItem(int idItemToAdd/*, int quantityToAdd*/)
     {
+        bool findItemInInventory = false;
+
         foreach (Slot slotInventory in m_inventory)
         {
             if (slotInventory.id == idItemToAdd)
             {
                 slotInventory.setQuantity(1/*quantityToAdd*/, m_quantityMaxForOneItem);
+                findItemInInventory = true;
+            }
+            
+            if(!findItemInInventory && m_indexOfLastItem < 10)
+            {
+                m_inventory[m_indexOfLastItem].addItem(idItemToAdd, 1);
             }
         }
     }
