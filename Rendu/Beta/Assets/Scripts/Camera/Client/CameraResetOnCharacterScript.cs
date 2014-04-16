@@ -17,6 +17,9 @@ public class CameraResetOnCharacterScript : MonoBehaviour
     private CameraZoomScript m_scriptZoom;
 
     [SerializeField]
+    private CameraFollowMouseScript m_scriptFollow;
+
+    [SerializeField]
     private float m_positionResetX = 0f;
 
     [SerializeField]
@@ -29,15 +32,24 @@ public class CameraResetOnCharacterScript : MonoBehaviour
     {
         m_transformCamera = transform;
         m_scriptZoom = transform.GetComponent<CameraZoomScript>();
+        m_scriptFollow = transform.GetComponent<CameraFollowMouseScript>();
         resetCamera();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButtonDown("ResetCamera"))
+        {
+            m_scriptFollow.enabled = false;
+        }
+        else if (Input.GetButton("ResetCamera"))
         {
             resetCamera();
+        }
+        else if (Input.GetButtonUp("ResetCamera"))
+        {
+            m_scriptFollow.enabled = true;
         }
     }
 

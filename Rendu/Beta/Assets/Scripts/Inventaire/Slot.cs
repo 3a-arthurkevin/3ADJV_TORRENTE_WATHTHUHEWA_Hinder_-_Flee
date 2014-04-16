@@ -14,41 +14,40 @@ public class Slot
     }
 
     //Constructeur 1
-    public Slot()
+    public Slot(int pQuantiteMax)
     {
         this.m_idItem = -1;
         this.m_quantity = 0;
+        this.m_maxQuantity = pQuantiteMax;
     }
 
     //Constructeur 2
-    public Slot(int pId, int pQuantite)
+    public Slot(int pId, int pQuantite, int pQuantityMax)
     {
         this.m_idItem = pId;
         this.m_quantity = pQuantite;
+        this.m_maxQuantity = pQuantityMax;
     }
 
     //Propriété Id
     public int id
     {
-        get { return m_idItem; }
-        set { m_idItem = value; }
+        get { return this.m_idItem; }
+        set { this.m_idItem = value; }
     }
 
-    //Pour pouvoir modifier facilement la quantité Max d'un object 
-    //Pas de propriété mais getter et setter --> paramètre quantityMax est SerializedField de InventoryScript
-    public void setQuantityToAdd(int value, int quantityMax)
+    public int quantity
     {
-        this.m_quantity += value;
+        get { return this.m_quantity; }
+        set 
+        { 
+            this.m_idItem = value;
 
-        if (this.m_quantity > quantityMax)
-        {
-            this.m_quantity = quantityMax;
+            if (this.m_idItem > m_maxQuantity)
+            {
+                this.m_idItem = m_maxQuantity;
+            }
         }
-    }
-
-    public int getQuantity()
-    {
-        return this.m_quantity;
     }
 
     //Set un slot (utilisé quand l'inventaire ne comporte pas l'item que l'on veut ajouter)
