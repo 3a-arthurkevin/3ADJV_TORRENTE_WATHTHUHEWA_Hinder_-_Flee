@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 14800000}
   m_quantityMaxForOneItem: 10
-  m_nbSlotInventory: 6
+  m_nbSlotInventory: 3
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
