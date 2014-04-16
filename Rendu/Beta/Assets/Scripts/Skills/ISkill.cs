@@ -4,50 +4,57 @@ using System.Collections.Generic;
 
 public abstract class ISkill
 {
-    private Animation m_animation;
+    protected Animation m_animation;
     public Animation Animation
     {
         get { return m_animation; }
         set { m_animation = value; }
     }
 
-    private WeaponManagerScript m_weaponManager;
+    protected WeaponManagerScript m_weaponManager;
     public WeaponManagerScript WeaponManager
     {
         get { return m_weaponManager; }
         set { m_weaponManager = value; }
     }
 
-    private string m_name;
+    protected string m_name;
     public string Name
     {
         get { return m_name; }
         set { m_name = value; }
     }
 
-    private string m_description;
+    protected string m_description;
     public string Description
     {
         get { return m_description; }
         set { m_description = value; }
     }
 
-    private float m_coolDownDuration;
+    protected float m_coolDownDuration;
     public float CoolDownDuration
     {
         get { return m_coolDownDuration; }
         set { m_coolDownDuration = value; }
     }
 
-    private float m_coolDown;
+    protected float m_coolDown;
     public float CoolDown
     {
         get { return m_coolDown; }
         set { m_coolDown = value; }
     }
 
-    private List<IEffect> m_survivorEffect;
-    private List<IEffect> m_zombieEffect;
+    protected float m_maxRange;
+    public float Range
+    {
+        get { return m_maxRange; }
+        set { m_maxRange = value; }
+    }
+
+    protected List<IEffect> m_survivorEffect;
+    protected List<IEffect> m_zombieEffect;
 
     public ISkill()
     {

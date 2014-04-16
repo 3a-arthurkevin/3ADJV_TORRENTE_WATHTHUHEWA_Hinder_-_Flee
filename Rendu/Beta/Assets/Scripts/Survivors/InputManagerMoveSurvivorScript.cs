@@ -60,13 +60,15 @@ public class InputManagerMoveSurvivorScript : MonoBehaviour
     public void SetPlayer(NetworkPlayer owner)
     {
         m_owner = owner;
-        GetComponent<WeaponManagerScript>().Owner = owner;
+        WeaponManagerScript weapon = GetComponentInChildren<WeaponManagerScript>();
+        weapon.SetPlayer(owner);
     }
 
     public void setCameraTransform(Camera cameraObject)
     {
         m_characterCamera = cameraObject;
-        GetComponent<WeaponManagerScript>().CharacterCamera = cameraObject;
+        WeaponManagerScript weapon = GetComponentInChildren<WeaponManagerScript>();
+        weapon.SetCamera(cameraObject);
     }
 
     public Camera getCharacterCamera()
