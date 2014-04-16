@@ -8,12 +8,12 @@ public class SingleTargetSkill : ISkill
 
     public override void StartSkill()
     {
-        Debug.Log("Start Single Target Skill");
+        Debug.LogError("Start Single Target Skill");
     }
 
     public override void StopSkill()
     {
-        Debug.Log("Stop Single Target Skill");
+        Debug.LogError("Stop Single Target Skill");
     }
 
     public override bool CheckLaunch(Vector3 hit)
@@ -24,6 +24,7 @@ public class SingleTargetSkill : ISkill
 
     public override void LaunchSkill(Vector3 hit)
     {//Lancement du Skill
+        Debug.LogError("Instanciate Projectil");
         GameObject projectile = (GameObject)Resources.Load("Prefabs/Projectiles/Projectile");
 
         LaunchProjectileSingleTargetScript launch = projectile.GetComponent<LaunchProjectileSingleTargetScript>();
