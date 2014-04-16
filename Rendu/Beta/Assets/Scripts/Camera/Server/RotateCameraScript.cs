@@ -22,10 +22,10 @@ public class RotateCameraScript : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("RotateCameraServer"))
             m_rightClicked = true;
 
-        else if(Input.GetMouseButtonUp(1))
+        else if (Input.GetButtonUp("RotateCameraServer"))
             m_rightClicked = false;
     }
 	

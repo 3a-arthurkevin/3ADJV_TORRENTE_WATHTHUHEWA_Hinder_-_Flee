@@ -48,6 +48,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 114: {fileID: 11400006}
+  - 148: {fileID: 14800002}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_name: Batte de base balle
   m_characterCamera: {fileID: 0}
-  m_networkView: {fileID: 0}
+  m_networkView: {fileID: 14800002}
   m_skillId: 00000000000000000000000000000000
   m_player: {fileID: 0}
 --- !u!136 &13600000
@@ -226,6 +227,18 @@ NetworkView:
   m_Enabled: 1
   m_StateSynchronization: 1
   m_Observed: {fileID: 400002}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800002
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400004}
   m_ViewID:
     m_ID: 0
     m_Type: 0

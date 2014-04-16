@@ -111,4 +111,10 @@ public class MoveManagerZombieScript : MonoBehaviour {
             m_data.NumCorner = 0;
         }
     }
+
+    [RPC]
+    void SetName(string newName)
+    {
+        name = newName;
+    }
 }
