@@ -110,6 +110,7 @@ MonoBehaviour:
   m_transformCamera: {fileID: 400000}
   m_cameraPosition: {x: 0, y: 0, z: 0}
   m_scriptZoom: {fileID: 0}
+  m_scriptFollow: {fileID: 0}
   m_positionResetX: 0
   m_positionResetY: 7
   m_positionResetZ: -7
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_mousePosition: {x: 0, y: 0}
   m_activeZoneBegin: .899999976
   m_activeZoneEnd: .99000001
-  m_moveSpeed: 3
+  m_moveSpeed: 10
   m_characterManager: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
