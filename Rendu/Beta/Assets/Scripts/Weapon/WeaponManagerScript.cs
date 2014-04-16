@@ -4,6 +4,10 @@ using System.Collections;
 public class WeaponManagerScript : MonoBehaviour
 {
     [SerializeField]
+    private Texture2D m_viseurCursor;
+    private Vector2 m_hotSpot = Vector2.zero;
+
+    [SerializeField]
     private string m_name;
     public string Name
     {
@@ -64,11 +68,9 @@ public class WeaponManagerScript : MonoBehaviour
                 Debug.Log("Skill : " + i.ToString() + " not found");
 
             else
-            {
                 skill.WeaponManager = this;
-                m_coolDown[i] = 0f;
-            }
 
+            m_coolDown[i] = 0f;
             m_skills[i] = skill;
         }
     }
@@ -116,10 +118,8 @@ public class WeaponManagerScript : MonoBehaviour
                     RaycastHit hit;
 
                     if (Physics.Raycast(ray, out hit, 100f))
-                    {
                         m_networkView.RPC("CheckLaunchSkill", RPCMode.Server, hit.point);
-                    }
-
+                    
                     else
                         m_networkView.RPC("StopSkill", RPCMode.All, false, -1);
                 }
@@ -135,11 +135,15 @@ public class WeaponManagerScript : MonoBehaviour
             if (!m_underSkill && skill >= 0 && skill < 4)
             {
                 if (m_skills[skill].CoolDown == 0f)
-                    m_networkView.RPC("StartSkill", player, skill);
-
+                {
+                    m_networkView.RPC("StartSkill", RPCMode.All, skill);
+                    m_underSkill = true;
+                }
                 else
                     Debug.Log("CoolDown not finish for skill : " + skill.ToString());
             }
+            else
+                Debug.Log("Skill allready Launch");
         }
     }
     
@@ -147,10 +151,11 @@ public class WeaponManagerScript : MonoBehaviour
     void StartSkill(int skill)
     {
         if (Network.player == m_owner)
-        {
-            m_skills[skill].StartSkill();
-            m_idSkillLaunch = skill;
-        }
+            Cursor.SetCursor(m_viseurCursor, m_hotSpot, CursorMode.Auto);
+
+        m_skills[skill].StartSkill();
+        m_underSkill = true;
+        m_idSkillLaunch = skill;
     }
 
     [RPC]
@@ -162,20 +167,27 @@ public class WeaponManagerScript : MonoBehaviour
                 m_networkView.RPC("LaunchSkill", RPCMode.All, hit);
 
             else
+            {
+                m_networkView.RPC("StopSkill", RPCMode.All);
                 m_skills[m_idSkillLaunch].StopSkill();
+            }
 
         }
     }
 
     [RPC]
-    void LaunchSkill(Vector3 hit, string hitName)
+    void LaunchSkill(Vector3 hit)
     {
         m_skills[m_idSkillLaunch].LaunchSkill(hit);
+        m_networkView.RPC("StopSkill", RPCMode.All);
     }
 
     [RPC]
     void StopSkill()
     {
+        if (Network.isClient && Network.player == m_owner)
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
         m_skills[m_idSkillLaunch].StopSkill();
         SetUnderSkill(false, -1);
     }

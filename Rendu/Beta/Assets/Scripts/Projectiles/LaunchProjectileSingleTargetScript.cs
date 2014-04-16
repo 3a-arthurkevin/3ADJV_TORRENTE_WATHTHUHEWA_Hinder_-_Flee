@@ -62,13 +62,26 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
     void Update()
     {
         if (m_isLaunch)
-            m_transform.position += m_target * Time.deltaTime * m_speed;
+        {
+            Vector3 direction = m_transform.position - m_target;
+
+            if (direction.sqrMagnitude > 0.2f)
+                m_transform.position += direction.normalized * Time.deltaTime * m_speed;
+
+            else
+                if (Network.isServer)
+                    Network.Destroy(gameObject);            
+        }
     }
 
     void OnTriggerEnter(Collider col)
     {
         if (Network.isServer)
-            m_networkView.RPC("ApplyEffect", RPCMode.All, col.networkView.viewID);
+            if (col.tag == "Zombie" || col.tag == "Survivor")
+                m_networkView.RPC("ApplyEffect", RPCMode.All, col.networkView.viewID);
+            
+            else
+                Network.Destroy(gameObject);
     }
 
     [RPC]
