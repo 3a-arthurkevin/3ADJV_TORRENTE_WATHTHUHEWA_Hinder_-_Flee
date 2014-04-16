@@ -52,7 +52,6 @@ public class InventoryScript : MonoBehaviour
         {
             if (m_inventory[i].id == idItemToAdd)
             {
-                m_inventory[i].quantity += 1;
                 indexToAdd = i;
                 findItemInInventory = true;
             }
@@ -66,13 +65,13 @@ public class InventoryScript : MonoBehaviour
         
         if (findItemInInventory || indexFreeExist)
         {
-            //m_inventory[indexToAdd].addItem(idItemToAdd, 1);
             m_networkView.RPC("addItemToInventoryForAll", RPCMode.All, idItemToAdd, indexToAdd);
             canAddItemToInventory = true;
+            Debug.LogError("Item ajouter dans l'inventaire de " + gameObject.name);
         }
         else
         {
-            Debug.LogError("Plus de place dans l'inventaire pour un nouvel Item");
+            Debug.LogError("Plus de place dans l'inventaire pour un nouvel Item pour " + gameObject.name);
             canAddItemToInventory = false;
         }
         return canAddItemToInventory;
