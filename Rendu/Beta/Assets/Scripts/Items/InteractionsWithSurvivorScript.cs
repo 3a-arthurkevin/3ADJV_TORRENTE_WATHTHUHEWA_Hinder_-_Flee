@@ -5,10 +5,10 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
 
     [SerializeField]
     private int m_idItem = 0;
-
+    /*
     [SerializeField]
     private string m_description = "Item test";
-
+    
     [SerializeField]
     private int m_quantity = 1;
 
@@ -17,7 +17,7 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
 
     [SerializeField]
     private MeshFilter m_ItemMeshFilter;
-
+    */
     [SerializeField]
     private NetworkView m_networkView;
 
