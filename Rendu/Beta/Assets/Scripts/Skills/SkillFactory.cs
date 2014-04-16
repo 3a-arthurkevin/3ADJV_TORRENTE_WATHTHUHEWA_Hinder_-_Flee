@@ -13,31 +13,18 @@ public static class SkillFactory
             case 0:
                 skill = new SingleTargetSkill();
 
-                try
-                {
-                    effect = EffectsFactory.getEffect(0);
-                    effect.SetParam("Damage", "10");
-                    skill.addSurvivorEffect(effect);
-                }
-                catch (System.ArgumentException)
-                {
-                    Debug.Log("Skill not exist");
-                }
+                effect = EffectsFactory.getEffect(0);
+                effect.SetParam("Damage", "10");
+                skill.addSurvivorEffect(effect);
 
-                try
-                {
-                    effect = EffectsFactory.getEffect(0);
-                    effect.SetParam("Damage", "20");
-                    skill.addZombieEffect(effect);
-                }
-                catch (System.ArgumentException)
-                {
-                    Debug.Log("Skill not exist");
-                }
+                effect = EffectsFactory.getEffect(0);
+                effect.SetParam("Damage", "20");
+                skill.addZombieEffect(effect);
                 break;
 
             default:
-                throw new System.ArgumentException();
+                Debug.Log("Skill not found");
+                break;
         }
 
         return skill;

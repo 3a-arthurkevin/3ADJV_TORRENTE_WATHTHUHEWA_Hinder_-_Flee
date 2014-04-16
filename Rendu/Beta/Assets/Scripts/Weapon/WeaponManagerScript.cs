@@ -58,17 +58,18 @@ public class WeaponManagerScript : MonoBehaviour
 
         for (int i = 0; i < 4; ++i)
         {
-            try
+            ISkill skill = SkillFactory.getSkill(m_skillId[i]);
+
+            if (skill == null)
+                Debug.Log("Skill : " + i.ToString() + " not found");
+
+            else
             {
-                m_skills[i] = SkillFactory.getSkill(m_skillId[i]);
-                m_skills[i].WeaponManager = this;
+                skill.WeaponManager = this;
                 m_coolDown[i] = 0f;
             }
-            catch (System.ArgumentException)
-            {
-                Debug.Log("Skill : " + i.ToString() + " not found");
-                m_skills[i] = null;
-            }
+
+            m_skills[i] = skill;
         }
     }
 
