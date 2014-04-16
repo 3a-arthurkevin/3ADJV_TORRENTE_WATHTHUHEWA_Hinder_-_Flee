@@ -35,8 +35,10 @@ public class CameraResetOnCharacterScript : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
+        {
             resetCamera();
+        }
     }
 
     public void resetCamera()
