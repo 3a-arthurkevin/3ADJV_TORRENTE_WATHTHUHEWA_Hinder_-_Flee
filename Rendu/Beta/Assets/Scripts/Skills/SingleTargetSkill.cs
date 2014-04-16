@@ -4,8 +4,7 @@ using System.Collections;
 public class SingleTargetSkill : ISkill
 {
     public SingleTargetSkill() : base()
-    {
-    }
+    {}
 
     public override void StartSkill()
     {
@@ -27,5 +26,6 @@ public class SingleTargetSkill : ISkill
 
     public override void LaunchSkill(Vector3 hit, string targetName)
     {
+        m_coolDown = m_coolDownDuration;
     }
 }

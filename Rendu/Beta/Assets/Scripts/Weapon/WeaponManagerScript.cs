@@ -108,18 +108,17 @@ public class WeaponManagerScript : MonoBehaviour
                     m_networkView.RPC("wantStartSkill", RPCMode.Server, Network.player, wantLaunchSkill);
             }
             else
-            {
+            {//Under skill
                 if (Input.GetButtonDown("MainButton"))
                 {
                     Ray ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
 
                     if (Physics.Raycast(ray, out hit, 100f))
-                    {
                         m_networkView.RPC("CheckLaunchSkill", RPCMode.Server, hit.point, hit.collider.name);
-                    }
+
                     else
-                        m_networkView.RPC("SetUnderSkill", RPCMode.All, false, -1);
+                        m_networkView.RPC("StopSkill", RPCMode.All, false, -1);
                 }
             }
         }
@@ -140,7 +139,7 @@ public class WeaponManagerScript : MonoBehaviour
             }
         }
     }
-
+    
     [RPC]
     void StartSkill(int skill)
     {
@@ -169,6 +168,13 @@ public class WeaponManagerScript : MonoBehaviour
     void LaunchSkill(Vector3 hit, string hitName)
     {
         m_skills[m_idSkillLaunch].LaunchSkill(hit, hitName);
+    }
+
+    [RPC]
+    void StopSkill()
+    {
+        m_skills[m_idSkillLaunch].StopSkill();
+        SetUnderSkill(false, -1);
     }
 
     [RPC]

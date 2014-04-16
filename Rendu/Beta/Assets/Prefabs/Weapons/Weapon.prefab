@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
+  - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -38,10 +39,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963dbb696befd934784b90c07ce16949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_name: Base Weapon
   m_characterCamera: {fileID: 0}
-  m_networkView: {fileID: 0}
+  m_networkView: {fileID: 14800000}
   m_skillId: 00000000000000000000000000000000
   m_player: {fileID: 0}
+--- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
