@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponFactory : MonoBehaviour {
+public static class WeaponFactory
+{
+    [SerializeField]
+    private static GameObject m_prefabs;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public static GameObject getWeaponById(int idWeapon)
+    {
+        return (GameObject)GameObject.Instantiate(m_prefabs);
+    }
 }

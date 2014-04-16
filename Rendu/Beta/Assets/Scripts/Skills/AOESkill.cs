@@ -16,14 +16,14 @@ public class AOESkill : ISkill
         Debug.Log("Stop AOE Skill");
     }
 
-    public override bool CheckLaunch(Vector3 hit, string targetName)
-    {
+    public override bool CheckLaunch(Vector3 hit)
+    {//Check range et aute donnée
         Debug.Log("CheckLaunch AOE");
         return true;
     }
 
-    public override void LaunchSkill(Vector3 hit, string targetName)
-    {
-        m_coolDown = m_coolDownDuration;
+    public override void LaunchSkill(Vector3 hit)
+    {//Lancement du skill
+        base.LaunchSkill(hit);
     }
 }

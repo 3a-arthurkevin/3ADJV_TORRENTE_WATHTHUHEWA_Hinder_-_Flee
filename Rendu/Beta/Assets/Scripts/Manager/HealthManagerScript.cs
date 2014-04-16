@@ -6,7 +6,6 @@ public class HealthManagerScript : MonoBehaviour {
     [SerializeField]
     private int m_maxLifePoint;
 
-    [SerializeField]
     private int m_currentLifePoint;
 
     public int LifePoint
@@ -14,7 +13,10 @@ public class HealthManagerScript : MonoBehaviour {
         get { return m_currentLifePoint; }
         set
         {
-            m_currentLifePoint = Mathf.Clamp(m_currentLifePoint + value, 0, m_maxLifePoint);
+            m_currentLifePoint += value;
+
+            if (m_currentLifePoint <= 0)
+                Died();
         }
     }
 
@@ -33,6 +35,11 @@ public class HealthManagerScript : MonoBehaviour {
         if (m_currentLifePoint < 0)
             m_currentLifePoint = 0;
     }*/
+
+    void Died()
+    {
+        
+    }
 
     public bool isDead()
     {

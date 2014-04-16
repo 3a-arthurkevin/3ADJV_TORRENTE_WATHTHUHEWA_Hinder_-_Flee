@@ -109,13 +109,15 @@ public class WeaponManagerScript : MonoBehaviour
             }
             else
             {//Under skill
-                if (Input.GetButtonDown("MainButton"))
+                if (Input.GetButtonDown("LaunchSkill"))
                 {
                     Ray ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
 
                     if (Physics.Raycast(ray, out hit, 100f))
-                        m_networkView.RPC("CheckLaunchSkill", RPCMode.Server, hit.point, hit.collider.name);
+                    {
+                        m_networkView.RPC("CheckLaunchSkill", RPCMode.Server, hit.point);
+                    }
 
                     else
                         m_networkView.RPC("StopSkill", RPCMode.All, false, -1);
@@ -151,12 +153,12 @@ public class WeaponManagerScript : MonoBehaviour
     }
 
     [RPC]
-    void CheckLaunchSkill(Vector3 hit, string hitName)
+    void CheckLaunchSkill(Vector3 hit)
     {
         if(Network.isServer)
         {
-            if (m_skills[m_idSkillLaunch].CheckLaunch(hit, hitName))
-                m_networkView.RPC("LaunchSkill", RPCMode.All, hit, hitName);
+            if (m_skills[m_idSkillLaunch].CheckLaunch(hit))
+                m_networkView.RPC("LaunchSkill", RPCMode.All, hit);
 
             else
                 m_skills[m_idSkillLaunch].StopSkill();
@@ -167,7 +169,7 @@ public class WeaponManagerScript : MonoBehaviour
     [RPC]
     void LaunchSkill(Vector3 hit, string hitName)
     {
-        m_skills[m_idSkillLaunch].LaunchSkill(hit, hitName);
+        m_skills[m_idSkillLaunch].LaunchSkill(hit);
     }
 
     [RPC]

@@ -33,6 +33,8 @@ TagManager:
   - 
   - 
   - 
+  - 
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -50,7 +52,7 @@ TagManager:
   User Layer 14: StairZombieTeleport
   User Layer 15: StairSurvivorTeleport
   User Layer 16: Cube
-  User Layer 17: 
+  User Layer 17: Projectile
   User Layer 18: 
   User Layer 19: 
   User Layer 20: 
