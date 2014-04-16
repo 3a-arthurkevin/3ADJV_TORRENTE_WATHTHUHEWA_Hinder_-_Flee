@@ -71,7 +71,10 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
 
             else
                 if (Network.isServer)
-                    Network.Destroy(gameObject);            
+                {
+                    Debug.LogError("Destroy Projo");
+                    Network.Destroy(gameObject);
+                }
         }
     }
 
@@ -80,9 +83,12 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
         if (Network.isServer)
             if (col.tag == "Zombie" || col.tag == "Survivor")
                 m_networkView.RPC("ApplyEffect", RPCMode.All, col.networkView.viewID);
-            
+
             else
+            {
+                Debug.LogError("Destroy Projo");
                 Network.Destroy(gameObject);
+            }
     }
 
     [RPC]
@@ -107,6 +113,9 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
                 effect.Apply(target);
 
         if (Network.isServer)
+        {
+            Debug.LogError("Destroy Projo");
             Network.Destroy(gameObject);
+        }
     }
 }

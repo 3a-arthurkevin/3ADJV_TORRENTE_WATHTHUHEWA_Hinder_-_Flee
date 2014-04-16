@@ -193,7 +193,7 @@ MonoBehaviour:
   m_characterCamera: {fileID: 0}
   m_networkView: {fileID: 14800002}
   m_skillId: 00000000000000000000000000000000
-  m_player: {fileID: 0}
+  m_player: {fileID: 400002}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

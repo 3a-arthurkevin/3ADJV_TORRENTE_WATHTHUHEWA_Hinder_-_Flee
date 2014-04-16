@@ -13,6 +13,8 @@ public static class SkillFactory
             case 0:
                 skill = new SingleTargetSkill();
 
+                skill.CoolDownDuration = 12f;
+
                 effect = EffectsFactory.getEffect(0);
                 effect.SetParam("Damage", "10");
                 skill.addSurvivorEffect(effect);

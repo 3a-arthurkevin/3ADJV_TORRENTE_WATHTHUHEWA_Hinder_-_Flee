@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class ProjectilesFactoryScript
 {
@@ -8,6 +9,8 @@ public static class ProjectilesFactoryScript
      * du contenu du fichier de config
      */
 
+    //private static List<GameObject> m_listProjectile = new List<GameObject>();
+
     public static GameObject getProjectileById(int idProjectile)
     {
         GameObject projectile = null;
@@ -15,7 +18,8 @@ public static class ProjectilesFactoryScript
         switch (idProjectile)
         {
             case 0:
-                projectile = (GameObject)Resources.Load("Prefabs/Projectils/");
+                projectile = (GameObject)Resources.Load("Prefabs/Projectiles/Projectile");
+                
                 break;
 
             default:

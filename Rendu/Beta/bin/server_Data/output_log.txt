@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\server_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\server_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\bin\server_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.067 seconds
+- Completed reload, in  0.088 seconds
 desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -24,115 +24,6 @@ Server start
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
 PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Network\PlayerDataBaseScript.cs:68)
- 
-(Filename: C Line: 0)
-
-Start
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:wantStartSkill(NetworkPlayer, Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:152)
- 
-(Filename: C Line: 0)
-
-Server : True
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:StartSkill(Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:167)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:wantStartSkill(NetworkPlayer, Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:153)
- 
-(Filename: C Line: 0)
-
-Start Single Target Skill
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-SingleTargetSkill:StartSkill() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Skills\SingleTargetSkill.cs:11)
-WeaponManagerScript:StartSkill(Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:172)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:wantStartSkill(NetworkPlayer, Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:153)
- 
-(Filename: C Line: 0)
-
-CheckLaunc TargetSkill
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-SingleTargetSkill:CheckLaunch(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Skills\SingleTargetSkill.cs:21)
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:185)
- 
-(Filename: C Line: 0)
-
-Launch skill
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:187)
- 
-(Filename: C Line: 0)
-
-Server : True
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:203)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:188)
- 
-(Filename: C Line: 0)
-
-Launch id : 2
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:204)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:188)
- 
-(Filename: C Line: 0)
-
-Instanciate Projectil
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-SingleTargetSkill:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Skills\SingleTargetSkill.cs:27)
-WeaponManagerScript:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:206)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:188)
- 
-(Filename: C Line: 0)
-
-StopSkill
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:StopSkill() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:214)
-WeaponManagerScript:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:208)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:188)
- 
-(Filename: C Line: 0)
-
-Stop Single Target Skill
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-SingleTargetSkill:StopSkill() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Skills\SingleTargetSkill.cs:16)
-WeaponManagerScript:StopSkill() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:218)
-WeaponManagerScript:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:208)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:188)
- 
-(Filename: C Line: 0)
-
-SetUnder : -1
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-WeaponManagerScript:SetUnderSkill(Boolean, Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:225)
-WeaponManagerScript:StopSkill() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:219)
-WeaponManagerScript:LaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:208)
-UnityEngine.NetworkView:Internal_RPC(NetworkView, String, RPCMode, Object[])
-UnityEngine.NetworkView:RPC(String, RPCMode, Object[])
-WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Weapon\WeaponManagerScript.cs:188)
  
 (Filename: C Line: 0)
 
@@ -245,10 +136,10 @@ WeaponManagerScript:CheckLaunchSkill(Vector3) (at C:\Users\Arthur\Documents\GitH
  
 (Filename: C Line: 0)
 
-1 Has remove at game
+Start Projo
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
-PlayerDataBaseScript:OnPlayerDisconnected(NetworkPlayer) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Network\PlayerDataBaseScript.cs:107)
+LaunchProjectileSingleTargetScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Beta\Assets\Scripts\Projectiles\LaunchProjectileSingleTargetScript.cs:58)
  
 (Filename: C Line: 0)
 
