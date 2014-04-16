@@ -7,19 +7,19 @@ public class CameraZoomScript : MonoBehaviour
     private Transform m_cameraTransform;
 
     [SerializeField]
-    private float m_scrollSpeed = 15f;
+    private float m_scrollSpeed = 50f;
 
     [SerializeField]
     private int m_scrollLimitMin = 0;
 
     [SerializeField]
-    private int m_scrollLimitMax = 15;
+    private int m_scrollLimitMax = 4;
 
     [SerializeField]
-    private float m_nbScroll = 7f;
+    private float m_nbScroll = 2f;
 
     [SerializeField]
-    private float m_nbScrollDefault = 7f;
+    private float m_nbScrollDefault = 2f;
 
     [SerializeField]
     private CharacterController m_characterController;
@@ -33,7 +33,7 @@ public class CameraZoomScript : MonoBehaviour
     void LateUpdate()
     {
         float mouvement = Input.GetAxis("Mouse ScrollWheel");
-        mouvement = Mathf.Clamp(mouvement, -1, 1);
+        //mouvement = Mathf.Clamp(mouvement, -1, 1);
 
         if (mouvement > 0)
         {

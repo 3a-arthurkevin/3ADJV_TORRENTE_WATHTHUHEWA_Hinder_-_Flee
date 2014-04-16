@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97423ecd9b0401842bcc1d28ad5aa6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: 3
+  m_moveSpeed: 15
   m_scriptFollow: {fileID: 0}
   m_characterController: {fileID: 0}
 --- !u!114 &11400002
@@ -141,11 +141,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cameraTransform: {fileID: 0}
-  m_scrollSpeed: 15
+  m_scrollSpeed: 50
   m_scrollLimitMin: 0
-  m_scrollLimitMax: 15
-  m_nbScroll: 7
-  m_nbScrollDefault: 7
+  m_scrollLimitMax: 4
+  m_nbScroll: 2
+  m_nbScrollDefault: 2
   m_characterController: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:

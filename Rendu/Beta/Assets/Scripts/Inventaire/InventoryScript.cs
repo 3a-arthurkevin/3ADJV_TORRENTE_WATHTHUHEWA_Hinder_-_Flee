@@ -4,15 +4,17 @@ using System.Collections.Generic;
 
 public class InventoryScript : MonoBehaviour
 {
+    /*
     [SerializeField]
     int m_quantityMaxForOneItem = 10;
+    */
 
     [SerializeField]
     int m_nbSlotInventory = 10;
     
     List<Slot> m_inventory;
 
-    int m_indexOfLastItem = 0;
+    int m_indexOfFirstSlotAvailable = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -28,7 +30,7 @@ public class InventoryScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	
+        
 	}
 
     public Slot getItem(int index)
@@ -40,23 +42,32 @@ public class InventoryScript : MonoBehaviour
     {
         bool findItemInInventory = false;
 
-        foreach (Slot slotInventory in m_inventory)
+        for(int i = 0; i < m_indexOfFirstSlotAvailable; i++)
         {
-            if (slotInventory.id == idItemToAdd)
+            if (m_inventory[i].id == idItemToAdd)
             {
-                slotInventory.setQuantity(1/*quantityToAdd*/, m_quantityMaxForOneItem);
+                m_inventory[i].setQuantityToAdd(1/*quantityToAdd*/, /*m_quantityMaxForOneItem*/ 10);
                 findItemInInventory = true;
             }
             
-            if(!findItemInInventory && m_indexOfLastItem < 10)
-            {
-                m_inventory[m_indexOfLastItem].addItem(idItemToAdd, 1);
-            }
+        }
+
+        if (!findItemInInventory && m_indexOfFirstSlotAvailable < 10)
+        {
+            m_inventory[m_indexOfFirstSlotAvailable].addItem(idItemToAdd, 1);
+            //PROBLEME ICI --> Revoir la gestion des slot lors de l'ajout et suppression
+            //List.ElementAt() ne fonctionne pas --> pourquoi ?
+            m_indexOfFirstSlotAvailable++;
+        }
+        else
+        {
+            Debug.LogError("Plus de place dans l'inventaire pour une nouvel Item");
         }
     }
 
-    public void throwItem(int idItemToThrow)
+    public void throwItem(int indexItemToThrow)
     {
-        m_inventory[idItemToThrow].resetSlot(); 
+        m_inventory[indexItemToThrow].resetSlot();
+        m_indexOfFirstSlotAvailable = indexItemToThrow;
     }
 }
