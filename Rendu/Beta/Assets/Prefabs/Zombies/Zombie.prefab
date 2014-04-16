@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 14800000}
-  m_defaultSpeed: 3
+  m_defaultSpeed: 1
   m_minDistance: .100000001
   m_survivor: {fileID: 0}
 --- !u!114 &11400002

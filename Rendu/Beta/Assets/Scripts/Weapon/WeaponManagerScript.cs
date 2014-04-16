@@ -4,6 +4,14 @@ using System.Collections;
 public class WeaponManagerScript : MonoBehaviour
 {
     [SerializeField]
+    private string m_name;
+    public string Name
+    {
+        get { return m_name; }
+        set { m_name = value; }
+    }
+
+    [SerializeField]
     private NetworkPlayer m_owner;
     public NetworkPlayer Owner
     {
@@ -170,13 +178,12 @@ public class WeaponManagerScript : MonoBehaviour
         m_idSkillLaunch = skill;
     }
 
-    [RPC]
-    void setPlayer(NetworkPlayer player)
+    public void SetPlayer(NetworkPlayer player)
     {
         m_owner = player;
     }
 
-    void setCamera(Camera camera)
+    public void SetCamera(Camera camera)
     {
         m_characterCamera = camera;
     }

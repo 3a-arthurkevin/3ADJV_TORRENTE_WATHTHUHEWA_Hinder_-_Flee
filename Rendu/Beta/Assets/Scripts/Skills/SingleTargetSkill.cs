@@ -19,7 +19,13 @@ public class SingleTargetSkill : ISkill
 
     public override bool CheckLaunch(Vector3 hit, string targetName)
     {
-        Debug.Log("Check Launch Single");
-        return true;
+        if (targetName.Substring(0, 6) == "Zombie" || targetName.Substring(0, 8) == "Survivor")
+            return true;
+
+        return false;
+    }
+
+    public override void LaunchSkill(Vector3 hit, string targetName)
+    {
     }
 }
