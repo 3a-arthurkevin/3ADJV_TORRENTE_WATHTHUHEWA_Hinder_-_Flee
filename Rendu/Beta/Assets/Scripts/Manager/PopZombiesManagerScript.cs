@@ -7,9 +7,6 @@ public class PopZombiesManagerScript : MonoBehaviour {
     private Transform m_prefabZombie;
     
     private List<List<Transform>> m_listZombies;
-
-    private Object m_lock = new Object();
-    private int m_idZombie = 0;
     
     [SerializeField]
     private float m_respawnTime = 30f;
@@ -73,12 +70,6 @@ public class PopZombiesManagerScript : MonoBehaviour {
         {
             tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(level), Quaternion.identity, 0);
             
-            lock(m_lock)
-            {
-                tempZombie.name = "Zombie" + m_idZombie;
-                ++m_idZombie;
-            }
-            tempZombie.networkView.RPC("SetName", RPCMode.Others, tempZombie.name);
             tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = level;
             m_listZombies[level].Add(tempZombie);
             tempZombie = null;

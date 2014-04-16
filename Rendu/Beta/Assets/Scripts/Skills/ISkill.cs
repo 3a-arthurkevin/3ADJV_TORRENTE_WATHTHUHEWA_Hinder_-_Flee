@@ -65,24 +65,11 @@ public abstract class ISkill
 
     abstract public void StartSkill();
     abstract public void StopSkill();
-    abstract public bool CheckLaunch(Vector3 hit, string targetName);
+    abstract public bool CheckLaunch(Vector3 hit);
 
-    public virtual void LaunchSkill(Vector3 hit, string targetName)
+    public virtual void LaunchSkill(Vector3 hit)
     {
-        GameObject target = GameObject.Find(targetName);
-
-        if (target.tag.Substring(0, 6) == "Zombie")
-            foreach (IEffect effect in m_zombieEffect)
-                effect.Apply(target);
-
-        else if (target.tag.Substring(0, 8) == "Survivor")
-            foreach (IEffect effect in m_survivorEffect)
-                effect.Apply(target);
-        
-        else
-            Debug.Log("Skill not availiable for this target " + target.name);
-
-        StopSkill();
+        m_coolDown = m_coolDownDuration;
     }
 
     public void addZombieEffect(IEffect effect)
