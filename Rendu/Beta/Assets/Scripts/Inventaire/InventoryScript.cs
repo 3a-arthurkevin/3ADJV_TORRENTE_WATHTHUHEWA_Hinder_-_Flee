@@ -5,12 +5,15 @@ using System.Collections.Generic;
 public class InventoryScript : MonoBehaviour
 {
     [SerializeField]
-    int m_quantityMaxForOneItem = 10;
+    private NetworkView m_networkView;
 
     [SerializeField]
-    int m_nbSlotInventory = 6;
+    private int m_quantityMaxForOneItem = 10;
+
+    [SerializeField]
+    private int m_nbSlotInventory = 6;
     
-    List<Slot> m_inventory;
+    private List<Slot> m_inventory;
 
 
 	void Start () 
@@ -37,11 +40,12 @@ public class InventoryScript : MonoBehaviour
     }
 
     //Pour l'instant quantité 1 lorsque l'on trouve un objet
-    public void AddItem(int idItemToAdd/*, int quantityToAdd*/)
+    public bool AddItem(int idItemToAdd/*, int quantityToAdd*/)
     {
+        bool canAddItemToInventory = false;
         bool findItemInInventory = false;
         bool indexFreeExist = false;
-        int indexFree = -1;
+        int indexToAdd = -1;
 
         int i = 0;
         while(i < m_nbSlotInventory && !findItemInInventory)
@@ -49,24 +53,35 @@ public class InventoryScript : MonoBehaviour
             if (m_inventory[i].id == idItemToAdd)
             {
                 m_inventory[i].quantity += 1;
+                indexToAdd = i;
                 findItemInInventory = true;
             }
             else if (!indexFreeExist && m_inventory[i].id == -1)
             {
                 indexFreeExist = true;
-                indexFree = i;
+                indexToAdd = i;
             }
             i++;
         }
-
-        if (!findItemInInventory && indexFreeExist)
+        
+        if (findItemInInventory || indexFreeExist)
         {
-            m_inventory[indexFree].addItem(idItemToAdd, 1);
+            //m_inventory[indexToAdd].addItem(idItemToAdd, 1);
+            m_networkView.RPC("addItemToInventoryForAll", RPCMode.All, idItemToAdd, indexToAdd);
+            canAddItemToInventory = true;
         }
         else
         {
             Debug.LogError("Plus de place dans l'inventaire pour un nouvel Item");
+            canAddItemToInventory = false;
         }
+        return canAddItemToInventory;
+    }
+
+    [RPC]
+    void addItemToInventoryForAll(int idItemToAdd/*, int quantityToAdd*/, int indexInventory)
+    {
+        m_inventory[indexInventory].addItem(idItemToAdd, 1);
     }
 
     public void throwItem(int indexItemToThrow)

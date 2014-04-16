@@ -50,11 +50,11 @@ public class Slot
         }
     }
 
-    //Set un slot (utilisé quand l'inventaire ne comporte pas l'item que l'on veut ajouter)
+    //Set un slot
     public void addItem(int id, int quantity)
     {
         this.m_idItem = id;
-        this.m_quantity = quantity;
+        this.m_quantity += quantity;
     }
 
     //Quand on jette un objet de l'inventaire

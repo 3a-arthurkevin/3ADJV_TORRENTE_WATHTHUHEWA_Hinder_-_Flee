@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400010}
   m_Layer: 11
   m_Name: Survivor
   m_TagString: Survivor
@@ -204,7 +205,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxLifePoint: 100
-  m_currentLifePoint: 100
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45e773a34826ce4d8498808ede181bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_networkView: {fileID: 14800000}
+  m_quantityMaxForOneItem: 10
+  m_nbSlotInventory: 6
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -40,7 +40,7 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
         if (!m_hasClicked && Network.isClient)
         {
             m_hasClicked = true;
-            m_networkView.RPC("hasClickedTrueForServer", RPCMode.Server, Network.player);
+            m_networkView.RPC("hasClickedTrueForServer", RPCMode.Server);
         }
     }
 
@@ -49,7 +49,7 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
         if (m_hasClicked && Network.isClient)
         {
             m_hasClicked = false;
-            m_networkView.RPC("hasClickedFalseForServer", RPCMode.Server, Network.player);
+            m_networkView.RPC("hasClickedFalseForServer", RPCMode.Server);
         }
     }
 
@@ -71,8 +71,23 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
         {
             if (m_hasClicked)
             {
-                
+                if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
+                {
+                    Debug.LogError("Objet ajouté à l'inventaire pour" + survivor.gameObject.name);
+                    m_networkView.RPC("selfDestroy", RPCMode.All);
+                }
+                else
+                {
+                    Debug.LogError("Impossibilité d'ajouter cette objet à l'inventaire de " + survivor.gameObject.name);
+                }
             }
         }
+    }
+
+    [RPC]
+    void selfDestroy()
+    {
+        Debug.LogError("Destruction de l'objet");
+        Destroy(this.gameObject);
     }
 }
