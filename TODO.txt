@@ -1,13 +1,10 @@
 ﻿Arthur:
-			
-	=> Téléportation
-		=> Zombie après le rendu alpha
-	=> Réseaux
-		=> Fix déplacement survivor
-		=> Déplacement de la Camera
+	=> Skill
+		=> Revoir le WeaponManagerScript
+			=> SetPlayer appelé par l'inputManagerMove
+				=> Changé ça par l'instanciation de l'arme par le PlayerDatabaseScript
+				=> Puis config de l'arme par le PlayerDatabaseScript
 	
 Kevin :
-	=> Camera
-		- Limiter => attention, revoir comment appliquer le plane Limiter
-			     La c'est avec le nom rentré en dur avec GameObject.Find() --> a faire lors du spawn joueur
+	=> Inventaire
 		

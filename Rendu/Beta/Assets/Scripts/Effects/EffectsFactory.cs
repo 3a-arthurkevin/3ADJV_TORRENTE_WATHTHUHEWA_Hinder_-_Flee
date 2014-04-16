@@ -14,7 +14,8 @@ public static class EffectsFactory
                 break;
 
             default :
-                throw new System.ArgumentException();
+                Debug.Log("Effect not found");
+                break;
         }
 
         return effect;

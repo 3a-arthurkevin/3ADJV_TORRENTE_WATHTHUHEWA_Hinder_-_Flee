@@ -128,6 +128,8 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     private void initialiseGame()
     {//Instancie toute les préfabs et supprime la liste m_beforeGame
+        if (Network.isClient)
+            return;
 
         int level = 0;
         for(int i = 0; i < m_players.Count; ++i)
