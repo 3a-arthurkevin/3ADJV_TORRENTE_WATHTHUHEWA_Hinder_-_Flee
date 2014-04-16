@@ -55,6 +55,7 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
 
     void Start()
     {
+        Debug.LogError("Start Projo");
         if (m_transform)
             m_transform = transform;
     }
