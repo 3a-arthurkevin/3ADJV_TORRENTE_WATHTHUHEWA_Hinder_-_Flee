@@ -26,4 +26,9 @@ public class AOESkill : ISkill
     {//Lancement du skill
         base.LaunchSkill(hit);
     }
+
+    public override void ApplyEffect(GameObject target)
+    {
+        
+    }
 }

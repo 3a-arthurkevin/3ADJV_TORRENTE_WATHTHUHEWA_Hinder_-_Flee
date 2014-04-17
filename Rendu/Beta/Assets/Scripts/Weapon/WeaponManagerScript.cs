@@ -122,7 +122,7 @@ public class WeaponManagerScript : MonoBehaviour
                     Ray ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
 
-                    if (Physics.Raycast(ray, out hit, 100f))
+                    if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
                         m_networkView.RPC("CheckLaunchSkill", RPCMode.Server, hit.point);
                     else
                         m_networkView.RPC("StopSkill", RPCMode.All);

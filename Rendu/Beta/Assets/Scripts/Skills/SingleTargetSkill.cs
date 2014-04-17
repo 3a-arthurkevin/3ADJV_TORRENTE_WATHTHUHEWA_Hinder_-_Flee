@@ -25,20 +25,32 @@ public class SingleTargetSkill : ISkill
     public override void LaunchSkill(Vector3 hit)
     {//Lancement du Skill
         Debug.LogError("Instanciate Projectil");
-        if (Network.isServer)
+        GameObject prefab_projectile = ProjectilesFactoryScript.getProjectileById(0);
+        
+        if (prefab_projectile == null)
         {
-            GameObject prefab_projectile = ProjectilesFactoryScript.getProjectileById(0);
-
-            GameObject projectile = (GameObject)Network.Instantiate(prefab_projectile, m_weaponManager.Player.position, m_weaponManager.Player.rotation, 0);
-
-            LaunchProjectileSingleTargetScript launch = projectile.GetComponent<LaunchProjectileSingleTargetScript>();
-
-            launch.EffectSurvivor = m_survivorEffect;
-            launch.EffectZombie = m_zombieEffect;
-            launch.Launcher = Network.player;
-            launch.Target = hit;
+            Debug.Log("Projectile not found");
+            return;
         }
 
+        GameObject projectile = (GameObject)GameObject.Instantiate(prefab_projectile, m_weaponManager.Player.position, m_weaponManager.Player.rotation);
+        LaunchProjectileSingleTargetScript launch = projectile.GetComponent<LaunchProjectileSingleTargetScript>();
+
+        launch.Launcher = Network.player;
+        launch.ApplyEffect = ApplyEffect;
+        launch.Target = hit;
+
         base.LaunchSkill(hit);
+    }
+
+    public override void ApplyEffect(GameObject target)
+    {
+        if (target.tag == "Zombie")
+            foreach (IEffect effect in m_zombieEffect)
+                effect.Apply(target);
+
+        else if (target.tag == "Survivor")
+            foreach (IEffect effect in m_survivorEffect)
+                effect.Apply(target);
     }
 }

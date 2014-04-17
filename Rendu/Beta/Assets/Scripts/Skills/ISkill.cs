@@ -66,6 +66,7 @@ public abstract class ISkill
     abstract public void StartSkill();
     abstract public void StopSkill();
     abstract public bool CheckLaunch(Vector3 hit);
+    abstract public void ApplyEffect(GameObject target);
 
     public virtual void LaunchSkill(Vector3 hit)
     {
