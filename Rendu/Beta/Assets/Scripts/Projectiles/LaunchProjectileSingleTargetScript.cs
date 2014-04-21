@@ -7,9 +7,6 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
     [SerializeField]
     private Transform m_transform;
 
-    [SerializeField]
-    private Rigidbody m_rigidBody;
-
     private NetworkPlayer m_launcher;
     public NetworkPlayer Launcher
     {
@@ -38,8 +35,7 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
         {
             m_target = value;
             m_isLaunch = true;
-            Debug.Log((m_target - m_transform.position).ToString("F6"));
-            m_rigidBody.AddForce(m_target - m_transform.position);
+            m_target.y = 0;
         }
     }
 
@@ -54,9 +50,6 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
     void Start()
     {
         Debug.LogError("Start Projo");
-        if (m_rigidBody == null)
-            m_rigidBody = rigidbody;
-
         if (m_transform == null)
             m_transform = transform;
     }
@@ -67,8 +60,11 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
         {
             Vector3 direction = m_target - m_transform.position;
             direction.y = 0f;
-            
-            if (direction.sqrMagnitude < 0.2f)
+
+            if (direction.sqrMagnitude > 0.2f)
+                m_transform.position += direction.normalized * Time.deltaTime * m_speed;
+
+            else
             {
                 Debug.LogError("Destroy Projo");
                 Destroy(gameObject);
