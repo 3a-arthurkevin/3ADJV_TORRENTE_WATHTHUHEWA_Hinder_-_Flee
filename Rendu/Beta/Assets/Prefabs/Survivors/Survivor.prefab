@@ -218,8 +218,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_networkView: {fileID: 14800000}
+  m_characterCamera: {fileID: 0}
   m_quantityMaxForOneItem: 2
-  m_nbSlotInventory: 1
+  m_nbSlotInventory: 2
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

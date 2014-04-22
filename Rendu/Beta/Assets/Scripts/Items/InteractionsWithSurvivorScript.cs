@@ -22,14 +22,27 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
 
     [SerializeField]
     private MeshFilter m_ItemMeshFilter;
-    */
+    
     [SerializeField]
     private NetworkView m_networkView;
 
     private bool m_hasClicked;
 
     private bool m_destroy = false;
+    */
 
+    public int getId()
+    {
+        return m_idItem;
+    }
+    /*
+    public int getQuantity()
+    {
+        return m_quantity;
+    }
+    */
+
+    /*
     //Quand clique enfoncé sur un gameobject Item, boolean mis à true pour client seulement et serveur
     void OnMouseDown()
     {
@@ -98,12 +111,12 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
             }
         }
     } 
-    */
+    
     [RPC]
     void selfDestroy()
     {
         Debug.LogError("Destruction de l'objet");
         Destroy(this.gameObject);
     }
-
+    */
 }
