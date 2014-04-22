@@ -42,6 +42,8 @@ public class GUIClientScript : MonoBehaviour
 
     void Start()
     {
+        if (Network.isServer)
+            enabled = false;
         /*
         Decoupage de l'ecran client en tableau pour placer la GUI
           
@@ -76,55 +78,52 @@ public class GUIClientScript : MonoBehaviour
         boxItem = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y + layoutBottom.height * 0.5f, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
         boxMap = new Rect(layoutBottom.x + layoutBottom.width * 0.8f, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height);
     }
-	
-	
-	void OnGUI()
+
+
+    void OnGUI()
     {
-		if(Network.isClient)
-		{
-			if (m_display)
-			{
-				GUI.Box(boxImagePerso, "ImagePerso");
-				GUI.Box(boxStatsPerso, "StatsPerso");
-				GUI.Box(boxInventaire, "Inventaire");
+        if (m_display)
+        {
+            GUI.Box(boxImagePerso, "ImagePerso");
+            GUI.Box(boxStatsPerso, "StatsPerso");
+            GUI.Box(boxInventaire, "Inventaire");
 
-				if (GUI.Button(boxHideUnHideLayoutTopLeft, "Hide"))
-				{
-					hideGUITopLeft();
-				}
-			}
-			else
-			{
-				if (GUI.Button(boxHideUnHideLayoutTopLeft, "Unhide"))
-				{
-					unhideGUITopLeft();
-				}
-			}
+            if (GUI.Button(boxHideUnHideLayoutTopLeft, "Hide"))
+            {
+                hideGUITopLeft();
+            }
+        }
+        else
+        {
+            if (GUI.Button(boxHideUnHideLayoutTopLeft, "Unhide"))
+            {
+                unhideGUITopLeft();
+            }
+        }
 
-			GUI.Box(boxEtatPerso, "Etat Perso");
-			GUI.Box(boxArme, "Arme");
-			GUI.Box(boxEquipement, "Equipement");
-			GUI.Box(boxSkill, "Skills");
-			GUI.Box(boxItem, "Items");
-			GUI.Box(boxMap, "Map");
+        GUI.Box(boxEtatPerso, "Etat Perso");
+        GUI.Box(boxArme, "Arme");
+        GUI.Box(boxEquipement, "Equipement");
+        GUI.Box(boxSkill, "Skills");
+        GUI.Box(boxItem, "Items");
+        GUI.Box(boxMap, "Map");
 
-			/*
-			// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-			if (GUI.Button(new Rect(20, 40, 80, 20), "Level 1"))
-			{
-				Application.LoadLevel(1);
-			}
+        /*
+        // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
+        if (GUI.Button(new Rect(20, 40, 80, 20), "Level 1"))
+        {
+            Application.LoadLevel(1);
+        }
 
-			// Make the second button.
-			if (GUI.Button(new Rect(20, 70, 80, 20), "Level 2"))
-			{
-				Application.LoadLevel(2);
-			}
-				* */
-		}
+        // Make the second button.
+        if (GUI.Button(new Rect(20, 70, 80, 20), "Level 2"))
+        {
+            Application.LoadLevel(2);
+        }
+            * */
     }
-	
-	
+
+
     void hideGUITopLeft()
     {
         boxHideUnHideLayoutTopLeft.Set(layoutTopLeft.x + layoutTopLeft.width * 0.33f, layoutTopLeft.y, layoutTopLeft.width * 0.33f, 20);
