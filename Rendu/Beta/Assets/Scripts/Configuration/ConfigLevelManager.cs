@@ -41,54 +41,13 @@ public static class ConfigLevelManager
 
     static void LoadLevelOne()
     {
-        /*
-        //Load Spawn Survivor
-        m_spawnSurvivor.Add(new List<Vector3>());
-        m_spawnSurvivor[0].Add(new Vector3(10, 1, 70));
-        m_spawnSurvivor[0].Add(new Vector3(30, 1, 70));
-
-        //Load Spawn Zombie
-        m_spawnZombie.Add(new List<Vector3>());
-        m_spawnZombie[0].Add(new Vector3(10.5f, 1, 95));
-        m_spawnZombie[0].Add(new Vector3(20, 1, 95));
-        m_spawnZombie[0].Add(new Vector3(-1, 1, 52));
-        m_spawnZombie[0].Add(new Vector3(30, 1, 52));
-
-        m_spawnZombie.Add(new List<Vector3>());
-        m_spawnZombie[1].Add(new Vector3(30, 1, -60));
-        m_spawnZombie[1].Add(new Vector3(7, 1, -60));
-
-        //Load Move point Zombie
-        m_movePointZombie.Add(new List<Vector3>());
-        m_movePointZombie[0].Add(new Vector3(5, 1, 92));
-        m_movePointZombie[0].Add(new Vector3(21, 1, 92));
-        m_movePointZombie[0].Add(new Vector3(40, 1, 92));
-        m_movePointZombie[0].Add(new Vector3(9, 1, 62));
-        m_movePointZombie[0].Add(new Vector3(28, 1, 63));
-        m_movePointZombie[0].Add(new Vector3(40, 1, 72));
-        m_movePointZombie[0].Add(new Vector3(40, 1, 53));
-        m_movePointZombie[0].Add(new Vector3(25, 1, 53));
-        m_movePointZombie[0].Add(new Vector3(28, 1, 53));
-        m_movePointZombie[0].Add(new Vector3(13, 1, 53));
-        m_movePointZombie[0].Add(new Vector3(0, 1, 53));
-        m_movePointZombie[0].Add(new Vector3(0, 1, 75));
-
-        m_movePointZombie.Add(new List<Vector3>());
-        m_movePointZombie[1].Add(new Vector3(17, 1, -34));
-        m_movePointZombie[1].Add(new Vector3(17, 1, -47));
-        m_movePointZombie[1].Add(new Vector3(24, 1, -34));
-        m_movePointZombie[1].Add(new Vector3(35, 1, -42));
-        m_movePointZombie[1].Add(new Vector3(35, 1, -63));
-        m_movePointZombie[1].Add(new Vector3(5, 1, -63));
-
         //Pop zombie ratio
         m_popZombieRatio.Add(0.4f);
         m_popZombieRatio.Add(0.2f);
-        */
+
         /*Foreach Empty GameObject in Pop gameObject in Floor gameObject
          * get world position and add into List of Vector3
          */
-
         GameObject root = GameObject.Find("Level_1");
         
         if (root == null)
@@ -102,9 +61,13 @@ public static class ConfigLevelManager
 
         for (int i = 0; i < nbChild; ++i)
         {
-            Transform floor = rootTransform.GetChild(i);
-            if (floor.name.Substring(0, 5) == "Floor")
+            //Transform floor = rootTransform.GetChild(i);
+            Transform floor = rootTransform.Find("Floor" + i.ToString());
+
+            if (floor != null && floor.name.Substring(0, 5) == "Floor")
             {
+                Debug.LogError(floor.name);
+
                 //Pop point
                 Transform pop = floor.Find("Pop");
                 m_spawnSurvivor.Add(new List<Vector3>());
@@ -138,7 +101,7 @@ public static class ConfigLevelManager
                     }
                 }
 
-                Transform movePoint = rootTransform.Find("MovePoint");
+                Transform movePoint = floor.Find("MovePoint");
                 m_movePointZombie.Add(new List<Vector3>());
 
                 if (movePoint == null)
