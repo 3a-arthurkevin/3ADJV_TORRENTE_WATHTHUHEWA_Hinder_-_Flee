@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InteractionsWithSurvivorScript : MonoBehaviour {
+public class InteractionsWithSurvivorScript : MonoBehaviour
+{
+
+    /*
+        Script attaché aux gameObject Items
+    */
 
     [SerializeField]
     private int m_idItem = 0;
@@ -23,59 +28,50 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
 
     private bool m_hasClicked;
 
-	// Use this for initialization
-	void Start () 
-    {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
-	}
-    /*
+    private bool m_destroy = false;
+
+    //Quand clique enfoncé sur un gameobject Item, boolean mis à true pour client seulement et serveur
     void OnMouseDown()
     {
         if (!m_hasClicked && Network.isClient)
         {
             m_hasClicked = true;
-            m_networkView.RPC("hasClickedTrueForServer", RPCMode.Server);
+            m_networkView.RPC("hasClickedForServer", RPCMode.Server, true);
         }
     }
 
+    //Quand clique relaché sur un gameobject Item, boolean mis à false (état par défaut) pour client et serveur
     void OnMouseUp()
     {
         if (m_hasClicked && Network.isClient)
         {
             m_hasClicked = false;
-            m_networkView.RPC("hasClickedFalseForServer", RPCMode.Server);
+            m_networkView.RPC("hasClickedForServer", RPCMode.Server, false);
         }
     }
 
     [RPC]
-    void hasClickedTrueForServer()
+    void hasClickedForServer(bool click)
     {
-        m_hasClicked = true;
+        m_hasClicked = click;
     }
 
-    [RPC]
-    void hasClickedFalseForServer()
-    {
-        m_hasClicked = false;
-    }
-
+    //Le serveur check si le client a cliqué sur un Item lorsqu'il est dans 
+    //la zone de détection de ce dernier pour pouvoir le ramasser
+    //C'est la fonction AddItem qui effectue l'ajout ou le non ajout
+    //selon l'espace dans l'inventaire du survivant
+    //Destruction gameObject (si Item ramassé) dans la scene mais concervation de ses infos (id/quantité) dans inventaire survivant
     void OnTriggerStay(Collider survivor)
     {
         if (Network.isServer)
         {
-            if (m_hasClicked)
+            if (m_hasClicked && !m_destroy)
             {
                 if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
                 {
                     Debug.LogError("Objet ajouté à l'inventaire pour" + survivor.gameObject.name);
-                    //m_networkView.RPC("selfDestroy", RPCMode.All);
-                    selfDestroy();
+                    Network.Destroy(this.gameObject);
+                    m_destroy = true;
                 }
                 else
                 {
@@ -84,23 +80,30 @@ public class InteractionsWithSurvivorScript : MonoBehaviour {
             }
         }
     }
-    */
 
+    /*
     void OnTriggerEnter(Collider survivor)
     {
-        if (Network.isServer)
+        if (Network.isServer && !m_destroy)
         {
             if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
             {
+                Debug.Log("Trying to pick an item");
                 m_networkView.RPC("selfDestroy", RPCMode.All);
+                m_destroy = true;
+            }
+            else
+            {  
+                Debug.LogError("Plus de place dans l'inventaire"); 
             }
         }
     } 
-
+    */
     [RPC]
     void selfDestroy()
     {
         Debug.LogError("Destruction de l'objet");
         Destroy(this.gameObject);
     }
+
 }
