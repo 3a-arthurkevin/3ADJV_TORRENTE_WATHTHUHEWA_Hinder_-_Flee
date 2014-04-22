@@ -41,6 +41,7 @@ public static class ConfigLevelManager
 
     static void LoadLevelOne()
     {
+        /*
         //Load Spawn Survivor
         m_spawnSurvivor.Add(new List<Vector3>());
         m_spawnSurvivor[0].Add(new Vector3(10, 1, 70));
@@ -82,7 +83,81 @@ public static class ConfigLevelManager
 
         //Pop zombie ratio
         m_popZombieRatio.Add(0.4f);
-        m_popZombieRatio.Add(0.3f);
+        m_popZombieRatio.Add(0.2f);
+        */
+        /*Foreach Empty GameObject in Pop gameObject in Floor gameObject
+         * get world position and add into List of Vector3
+         */
+
+        GameObject root = GameObject.Find("Level_1");
+        
+        if (root == null)
+        {
+            Debug.LogError("Level_1 not found");
+            return;
+        }
+
+        Transform rootTransform = root.transform;
+        int nbChild = rootTransform.childCount;
+
+        for (int i = 0; i < nbChild; ++i)
+        {
+            Transform floor = rootTransform.GetChild(i);
+            if (floor.name.Substring(0, 5) == "Floor")
+            {
+                //Pop point
+                Transform pop = floor.Find("Pop");
+                m_spawnSurvivor.Add(new List<Vector3>());
+                m_spawnZombie.Add(new List<Vector3>());
+
+                if (pop == null)
+                    Debug.LogError("In Floor : " + i + ", no Pop gameobject found");
+
+                else
+                {
+                    Transform popSurvivor = pop.Find("Survivor");
+                    
+                    if (popSurvivor == null)
+                        Debug.LogError("Survivor GameObject not found in Pop GameObject");
+                    else
+                    {
+                        int nbPoint = popSurvivor.childCount;
+                        for (int point = 0; point < nbPoint; ++point)
+                            m_spawnSurvivor[i].Add(popSurvivor.GetChild(point).transform.position);
+                    }
+
+                    Transform popZombie = pop.Find("Zombie");
+
+                    if (popZombie == null)
+                        Debug.LogError("Zombie GameObject not found in Pop GameObject");
+                    else
+                    {
+                        int nbPoint = popSurvivor.childCount;
+                        for (int point = 0; point < nbPoint; ++point)
+                            m_spawnZombie[i].Add(popZombie.GetChild(point).transform.position);
+                    }
+                }
+
+                Transform movePoint = rootTransform.Find("MovePoint");
+                m_movePointZombie.Add(new List<Vector3>());
+
+                if (movePoint == null)
+                    Debug.LogError("In Floor : " + i + ", no MovePoint gameobject found");
+                else
+                {
+                    Transform movePointZombie = movePoint.Find("Zombie");
+
+                    if (movePointZombie == null)
+                        Debug.LogError("Zombie GameObject not found in MovePoint GameObject");
+                    else
+                    {
+                        int nbPoint = movePointZombie.childCount;
+                        for (int point = 0; point < nbPoint; ++point)
+                            m_movePointZombie[i].Add(movePointZombie.GetChild(point).transform.position);
+                    }
+                }
+            }
+        }
     }
 
     static void LoadLevelTwo()
@@ -129,20 +204,6 @@ public static class ConfigLevelManager
         //Pop zombie ratio
         m_popZombieRatio.Add(0.4f);
         m_popZombieRatio.Add(0.2f);
-
-        /*Foreach Empty GameObject in Pop gameObject in Floor gameObject
-         * get world position and add into List of Vector3
-         */
-
-        GameObject root = GameObject.Find("Level_1");
-
-        if (root == null)
-        {
-            Debug.LogError("Level_1 not found");
-            return;
-        }
-
-
     }
 
     public static Vector3 getNextSpawnSurvivor(out int level)
