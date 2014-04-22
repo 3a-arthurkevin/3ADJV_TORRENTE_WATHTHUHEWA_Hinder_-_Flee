@@ -128,7 +128,21 @@ public static class ConfigLevelManager
 
         //Pop zombie ratio
         m_popZombieRatio.Add(0.4f);
-        m_popZombieRatio.Add(0.3f);
+        m_popZombieRatio.Add(0.2f);
+
+        /*Foreach Empty GameObject in Pop gameObject in Floor gameObject
+         * get world position and add into List of Vector3
+         */
+
+        GameObject root = GameObject.Find("Level_1");
+
+        if (root == null)
+        {
+            Debug.LogError("Level_1 not found");
+            return;
+        }
+
+
     }
 
     public static Vector3 getNextSpawnSurvivor(out int level)
