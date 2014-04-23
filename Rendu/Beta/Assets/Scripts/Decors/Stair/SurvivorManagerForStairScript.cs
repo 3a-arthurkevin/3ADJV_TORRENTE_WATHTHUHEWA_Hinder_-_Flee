@@ -17,77 +17,24 @@ public class SurvivorManagerForStairScript : MonoBehaviour
     private int m_floorOfStairOut;
 
     [SerializeField]
-    private bool m_hasClicked;
-
-    [SerializeField]
     private NetworkView m_networkView;
 
-    private Dictionary<NetworkPlayer, bool> m_survivorWhoWantToTakeStair;
+    private bool m_wantToTakeStair = false;
 
     void Awake()
     {
         m_cursorMode = CursorMode.Auto;
         m_hotSpot = Vector2.zero;
-        m_hasClicked = false;
-        m_survivorWhoWantToTakeStair = new Dictionary<NetworkPlayer, bool>();
     }
 
     void OnMouseEnter()
     {
-        //Debug.LogError("Cursor Stair");
         Cursor.SetCursor(m_cursor, m_hotSpot, m_cursorMode);
     }
 
     void OnMouseExit()
     {
-        //Debug.LogError("Cursor normal");
         Cursor.SetCursor(null, m_hotSpot, m_cursorMode);
-    }
-
-    void OnMouseDown()
-    {
-        //Debug.LogError("click down");
-        if (!m_hasClicked && Network.isClient)
-        {
-            m_hasClicked = true;
-            m_networkView.RPC("hasClickedTrueForServer", RPCMode.Server, Network.player);
-        }
-    }
-
-    void OnMouseUp()
-    {
-        //Debug.LogError("click Up");
-        if (m_hasClicked && Network.isClient)
-        {
-            m_hasClicked = false;
-            m_networkView.RPC("hasClickedFalseForServer", RPCMode.Server, Network.player);
-        }
-    }
-
-    [RPC]
-    void hasClickedTrueForServer(NetworkPlayer clientKey)
-    {
-        m_hasClicked = true;
-
-        if (m_survivorWhoWantToTakeStair.ContainsKey(clientKey))
-        {
-            m_survivorWhoWantToTakeStair[clientKey] = true;
-        }
-        else
-        {
-            m_survivorWhoWantToTakeStair.Add(clientKey, true);
-        }
-    }
-
-    [RPC]
-    void hasClickedFalseForServer(NetworkPlayer clientKey)
-    {
-        m_hasClicked = false;
-
-        if (m_survivorWhoWantToTakeStair.ContainsKey(clientKey))
-        {
-            m_survivorWhoWantToTakeStair[clientKey] = false;
-        }
     }
 
     //Mise à jour du floor courant du survivor, Reset du path, update position survivor apres avoir pris escalier 
@@ -96,23 +43,45 @@ public class SurvivorManagerForStairScript : MonoBehaviour
         survivor.gameObject.GetComponent<MoveManagerSurvivorScript>().tookStair(floorOut, m_stairOut.position, clientNetworkPlayer);
     }
 
-    void OnTriggerEnter(Collider survivor)
+    void OnTriggerStay(Collider survivor)
     {
-        if (Network.isServer)
+        if (survivor.gameObject.layer == LayerMask.NameToLayer("Survivor"))
         {
-            NetworkPlayer tmpNetworkPlayer = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
-            if (!m_survivorWhoWantToTakeStair.ContainsKey(tmpNetworkPlayer))
+            if (Network.isClient)
             {
-                m_survivorWhoWantToTakeStair.Add(tmpNetworkPlayer, true);
+                if (Input.GetMouseButtonDown(0))
+                {
+
+                    Ray ray = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getCharacterCamera().ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("StairSurvivorTeleport")))
+                    {
+                        if (!m_wantToTakeStair)
+                        {
+                            m_wantToTakeStair = true;
+                            m_networkView.RPC("setBoolTakeStair", RPCMode.Server, true);
+                        }
+                    }
+                }
             }
-            else
+            if (Network.isServer)
             {
-                m_survivorWhoWantToTakeStair[tmpNetworkPlayer] = true;
+                if (m_wantToTakeStair)
+                {
+                    NetworkPlayer tmpNetworkPlayer = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
+
+                    updateSurvivorPathAndCurrentFloorAndPostion(survivor, m_floorOfStairOut, tmpNetworkPlayer);
+
+                    m_networkView.RPC("setBoolTakeStair", RPCMode.All, false);
+                }
             }
-
-            updateSurvivorPathAndCurrentFloorAndPostion(survivor, m_floorOfStairOut, tmpNetworkPlayer);
-
-            m_survivorWhoWantToTakeStair[tmpNetworkPlayer] = false;
         }
+    }
+
+    [RPC]
+    private void setBoolTakeStair(bool value)
+    {
+        m_wantToTakeStair = value;
     }
 }

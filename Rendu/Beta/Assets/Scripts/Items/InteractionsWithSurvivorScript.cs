@@ -22,14 +22,12 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
 
     [SerializeField]
     private MeshFilter m_ItemMeshFilter;
-    
+    */
     [SerializeField]
     private NetworkView m_networkView;
-
-    private bool m_hasClicked;
-
-    private bool m_destroy = false;
-    */
+    
+    private bool m_wantToPickItem = false;
+    
 
     public int getId()
     {
@@ -42,31 +40,10 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
     }
     */
 
-    /*
-    //Quand clique enfoncé sur un gameobject Item, boolean mis à true pour client seulement et serveur
-    void OnMouseDown()
-    {
-        if (!m_hasClicked && Network.isClient)
-        {
-            m_hasClicked = true;
-            m_networkView.RPC("hasClickedForServer", RPCMode.Server, true);
-        }
-    }
-
-    //Quand clique relaché sur un gameobject Item, boolean mis à false (état par défaut) pour client et serveur
-    void OnMouseUp()
-    {
-        if (m_hasClicked && Network.isClient)
-        {
-            m_hasClicked = false;
-            m_networkView.RPC("hasClickedForServer", RPCMode.Server, false);
-        }
-    }
-
     [RPC]
-    void hasClickedForServer(bool click)
+    void setBoolWantToPickItem(bool click)
     {
-        m_hasClicked = click;
+        m_wantToPickItem = click;
     }
 
     //Le serveur check si le client a cliqué sur un Item lorsqu'il est dans 
@@ -76,19 +53,40 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
     //Destruction gameObject (si Item ramassé) dans la scene mais concervation de ses infos (id/quantité) dans inventaire survivant
     void OnTriggerStay(Collider survivor)
     {
-        if (Network.isServer)
+        if (survivor.gameObject.layer == LayerMask.NameToLayer("Survivor"))
         {
-            if (m_hasClicked && !m_destroy)
+            if (Network.isClient)
             {
-                if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Debug.LogError("Objet ajouté à l'inventaire pour" + survivor.gameObject.name);
-                    Network.Destroy(this.gameObject);
-                    m_destroy = true;
+                    Ray ray = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getCharacterCamera().ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, 1000, 1 << LayerMask.NameToLayer("Item")))
+                    {
+                        if (!m_wantToPickItem)
+                        {
+                            m_wantToPickItem = true;
+                            m_networkView.RPC("setBoolWantToPickItem", RPCMode.Server, true);
+                        }
+                    }
                 }
-                else
+            }
+            if (Network.isServer)
+            {
+                if (m_wantToPickItem)
                 {
-                    Debug.LogError("Impossibilité d'ajouter cette objet à l'inventaire de " + survivor.gameObject.name);
+                    if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
+                    {
+                        Debug.LogError("Objet ajouté à l'inventaire pour" + gameObject.name);
+                        m_wantToPickItem = false;
+                        Network.Destroy(this.gameObject);
+                    }
+                    else
+                    {
+                        Debug.LogError("Impossibilité d'ajouter cette objet à l'inventaire de " + gameObject.name);
+                        m_networkView.RPC("setBoolWantToPickItem", RPCMode.All, false);
+                    }
                 }
             }
         }
