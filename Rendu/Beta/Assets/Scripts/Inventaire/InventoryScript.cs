@@ -15,7 +15,6 @@ public class InventoryScript : MonoBehaviour
 
     private List<Slot> m_inventory;
 
-
     void Start()
     {
         m_inventory = new List<Slot>();
@@ -24,15 +23,8 @@ public class InventoryScript : MonoBehaviour
         {
             m_inventory.Add(new Slot(m_quantityMaxForOneItem));
         }
-    }
 
-    // Update is called once per frame
-    /*
-	void Update () 
-    {
-        
-	}
-    */
+    }
 
     public Slot getItem(int index)
     {
