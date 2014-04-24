@@ -66,8 +66,6 @@ public static class ConfigLevelManager
 
             if (floor != null && floor.name.Substring(0, 5) == "Floor")
             {
-                Debug.LogError(floor.name);
-
                 //Pop point
                 Transform pop = floor.Find("Pop");
                 m_spawnSurvivor.Add(new List<Vector3>());

@@ -124,6 +124,7 @@ public class WeaponManagerScript : MonoBehaviour
 
                     if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
                         m_networkView.RPC("CheckLaunchSkill", RPCMode.Server, hit.point);
+
                     else
                         m_networkView.RPC("StopSkill", RPCMode.All);
                 }

@@ -14,6 +14,7 @@ public static class SkillFactory
                 skill = new SingleTargetSkill();
 
                 skill.CoolDownDuration = 12f;
+                skill.Range = 10f;
 
                 effect = EffectsFactory.getEffect(0);
                 effect.SetParam("Damage", "10");

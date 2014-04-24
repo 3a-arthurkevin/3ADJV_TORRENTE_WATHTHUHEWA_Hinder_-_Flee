@@ -36,9 +36,10 @@ public class SingleTargetSkill : ISkill
         GameObject projectile = (GameObject)GameObject.Instantiate(prefab_projectile, m_weaponManager.Player.position, m_weaponManager.Player.rotation);
         LaunchProjectileSingleTargetScript launch = projectile.GetComponent<LaunchProjectileSingleTargetScript>();
 
-        launch.Launcher = Network.player;
+        launch.Launcher = m_weaponManager.Player.networkView.viewID;
         launch.ApplyEffect = ApplyEffect;
-        launch.Target = hit;
+        launch.Direction = hit;
+        launch.Limit = m_maxRange;
 
         base.LaunchSkill(hit);
     }

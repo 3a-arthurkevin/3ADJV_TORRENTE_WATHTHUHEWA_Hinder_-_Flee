@@ -7,8 +7,9 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
     [SerializeField]
     private Transform m_transform;
 
-    private NetworkPlayer m_launcher;
-    public NetworkPlayer Launcher
+    private Collider m_launcherCollider;
+    private NetworkViewID m_launcher;
+    public NetworkViewID Launcher
     {
         get { return m_launcher; }
         set { m_launcher = value; }
@@ -27,15 +28,24 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
         get { return m_isLaunch; }
     }
 
-    private Vector3 m_target = Vector3.zero;
-    public Vector3 Target
+    private Vector3 m_direction = Vector3.zero;
+    public Vector3 Direction
     {
-        get { return m_target; }
+        get { return m_direction; }
         set
         {
-            m_target = value;
+            m_direction = (value - m_transform.position).normalized;
+            m_direction.y = 0;
+        }
+    }
+
+    private Vector3 m_limit = Vector3.zero;
+    public float Limit
+    {
+        set
+        {
+            m_limit = (m_direction * value) + m_transform.position;
             m_isLaunch = true;
-            m_target.y = 0;
         }
     }
 
@@ -49,7 +59,6 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
 
     void Start()
     {
-        Debug.LogError("Start Projo");
         if (m_transform == null)
             m_transform = transform;
     }
@@ -58,30 +67,33 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
     {
         if (m_isLaunch)
         {
-            Vector3 direction = m_target - m_transform.position;
-            direction.y = 0f;
+            Vector3 distance = m_limit - m_transform.position;
 
-            if (direction.sqrMagnitude > 0.2f)
-                m_transform.position += direction.normalized * Time.deltaTime * m_speed;
+            if (distance.sqrMagnitude > 0.1f)
+                m_transform.position += distance.normalized * Time.deltaTime * m_speed;
 
             else
-            {
-                Debug.LogError("Destroy Projo");
                 Destroy(gameObject);
-            }
         }
     }
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.LogError("TriggerEnter");
+        Debug.Log("Trigger Enter");
 
         if (col.tag == "Zombie" || col.tag == "Survivor")
         {
-            GameObject target = col.gameObject;
-            m_applyEffect(target);
-        }
+            if (col.networkView.viewID != m_launcher)
+            {
+                if(Network.isServer)
+                    m_applyEffect(col.gameObject);
 
+                Destroy(gameObject);
+            }
+            else
+                return;
+        }
+        
         Destroy(gameObject);
     }
 }

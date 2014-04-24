@@ -1,44 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthManagerScript : MonoBehaviour {
+public class HealthManagerScript : MonoBehaviour
+{
+    [SerializeField]
+    private NetworkView m_networkView;
 
     [SerializeField]
     private int m_maxLifePoint;
 
     private int m_currentLifePoint;
 
+    void Start()
+    {
+        m_currentLifePoint = m_maxLifePoint;
+
+        if (m_networkView == null)
+            m_networkView = networkView;
+    }
+
     public int LifePoint
     {
         get { return m_currentLifePoint; }
         set
         {
-            m_currentLifePoint += value;
-
+            m_currentLifePoint = value;
+            Debug.LogError(m_currentLifePoint);
             if (m_currentLifePoint <= 0)
                 Died();
         }
     }
 
-    /*public void addLifePoint(int lifePointToAdd)
+    [RPC]
+    public void AddLifePoint(int hp)
     {
-        m_currentLifePoint += lifePointToAdd;
-
-        if (m_currentLifePoint > m_playerMaxLifePoint)
-            m_currentLifePoint = m_playerMaxLifePoint;
+        if (Network.isServer)
+        {
+            m_networkView.RPC("AddLifePoint", RPCMode.Others, hp);
+            LifePoint += hp;
+        }
+        else
+            LifePoint = hp;
     }
-
-    public void removeLifePoint(int lifePointToRemove)
-    {
-        m_currentLifePoint -= lifePointToRemove;
-
-        if (m_currentLifePoint < 0)
-            m_currentLifePoint = 0;
-    }*/
 
     void Died()
     {
+        Debug.LogError("Zombie died");
         
+        if(Network.isServer)
+            Network.Destroy(gameObject);
     }
 
     public bool isDead()
