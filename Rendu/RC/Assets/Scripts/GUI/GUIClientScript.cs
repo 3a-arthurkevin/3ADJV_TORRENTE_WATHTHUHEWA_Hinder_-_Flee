@@ -74,7 +74,7 @@ public class GUIClientScript : MonoBehaviour
         boxEtatPerso = new Rect(layoutBottom.x, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height);
         boxArme = new Rect(layoutBottom.x + layoutBottom.width * 0.2f, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height * 0.5f);
         boxEquipement = new Rect(layoutBottom.x + layoutBottom.width * 0.2f, layoutBottom.y + layoutBottom.height * 0.5f, layoutBottom.width * 0.2f, layoutBottom.height * 0.5f);
-        boxSkill = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
+        //boxSkill = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
         boxItem = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y + layoutBottom.height * 0.5f, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
         boxMap = new Rect(layoutBottom.x + layoutBottom.width * 0.8f, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height);
     }
@@ -104,7 +104,7 @@ public class GUIClientScript : MonoBehaviour
         GUI.Box(boxEtatPerso, "Etat Perso");
         GUI.Box(boxArme, "Arme");
         GUI.Box(boxEquipement, "Equipement");
-        GUI.Box(boxSkill, "Skills");
+        //GUI.Box(boxSkill, "Skills");
         GUI.Box(boxItem, "Items");
         GUI.Box(boxMap, "Map");
 

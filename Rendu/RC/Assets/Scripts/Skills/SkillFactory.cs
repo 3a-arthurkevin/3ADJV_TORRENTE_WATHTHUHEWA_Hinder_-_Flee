@@ -12,7 +12,7 @@ public static class SkillFactory
         {
             case 0:
                 skill = new SingleTargetSkill();
-
+                skill.Name = "Petite BaBalle";
                 skill.CoolDownDuration = 12f;
                 skill.Range = 10f;
 

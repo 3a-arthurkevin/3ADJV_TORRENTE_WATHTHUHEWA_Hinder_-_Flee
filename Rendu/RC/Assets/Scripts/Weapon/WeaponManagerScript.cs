@@ -37,7 +37,6 @@ public class WeaponManagerScript : MonoBehaviour
     [SerializeField]
     private int[] m_skillId = new int[4];
     private ISkill[] m_skills = new ISkill[4];
-    private float[] m_coolDown = new float[4];
 
     private int m_idSkillLaunch = 0;
     private bool m_underSkill = false;
@@ -55,6 +54,16 @@ public class WeaponManagerScript : MonoBehaviour
         set { m_player = value; }
     }
 
+    /* GUI PART */
+    //private int m_nbCelluleX = 10;
+    private int m_nbCelluleY = 10;
+    private float m_screenWidth = Screen.width;
+    private float m_screenHeight = Screen.height;
+    //private float m_largeurCellule;
+    private float m_hauteurCellule;
+    private Rect layoutBottom;
+    private Rect boxSkill;
+
     void Start()
     {
         if (m_networkView == null)
@@ -70,9 +79,16 @@ public class WeaponManagerScript : MonoBehaviour
             else
                 skill.WeaponManager = this;
 
-            m_coolDown[i] = 0f;
             m_skills[i] = skill;
         }
+
+        //GUI PArt
+        m_screenWidth = Screen.width;
+        m_screenHeight = Screen.height;
+        //m_largeurCellule = m_screenWidth / m_nbCelluleX;
+        m_hauteurCellule = m_screenHeight / m_nbCelluleY;
+        layoutBottom = new Rect(0, m_screenHeight - m_hauteurCellule * 2, m_screenWidth, m_hauteurCellule * 2);
+        boxSkill = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
     }
 
     void Update()
@@ -211,5 +227,28 @@ public class WeaponManagerScript : MonoBehaviour
     public void SetCamera(Camera camera)
     {
         m_characterCamera = camera;
+    }
+
+    void OnGUI()
+    {
+        if (Network.player == m_owner)
+        {
+            GUILayout.BeginArea(boxSkill, new GUIStyle("Box"));
+            GUILayout.BeginHorizontal();
+
+            foreach(ISkill skill in m_skills)
+            {
+                GUILayout.BeginVertical();
+                GUILayout.Label(skill.Name);
+
+                if (skill.CoolDown > 0)
+                    GUILayout.Label(skill.CoolDown.ToString("F2"));
+
+                GUILayout.EndVertical();
+            }
+
+            GUILayout.EndHorizontal();
+            GUILayout.EndArea();
+        }
     }
 }
