@@ -10,6 +10,7 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
 
     [SerializeField]
     private int m_idItem = 0;
+
     /*
     [SerializeField]
     private string m_description = "Item test";

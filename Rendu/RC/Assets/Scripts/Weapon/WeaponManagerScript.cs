@@ -4,6 +4,10 @@ using System.Collections;
 public class WeaponManagerScript : MonoBehaviour
 {
     [SerializeField]
+    private Font m_zombieFont;
+    private GUIStyle m_guiStyle;
+
+    [SerializeField]
     private Texture2D m_viseurCursor;
     private Vector2 m_hotSpot = Vector2.zero;
 
@@ -89,6 +93,9 @@ public class WeaponManagerScript : MonoBehaviour
         m_hauteurCellule = m_screenHeight / m_nbCelluleY;
         layoutBottom = new Rect(0, m_screenHeight - m_hauteurCellule * 2, m_screenWidth, m_hauteurCellule * 2);
         boxSkill = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
+
+        m_guiStyle = new GUIStyle("Label");
+        m_guiStyle.font = m_zombieFont;
     }
 
     void Update()
@@ -239,10 +246,10 @@ public class WeaponManagerScript : MonoBehaviour
             foreach(ISkill skill in m_skills)
             {
                 GUILayout.BeginVertical();
-                GUILayout.Label(skill.Name);
+                GUILayout.Label(skill.Name, m_guiStyle);
 
                 if (skill.CoolDown > 0)
-                    GUILayout.Label(skill.CoolDown.ToString("F2"));
+                    GUILayout.Label(skill.CoolDown.ToString("F2"), m_guiStyle);
 
                 GUILayout.EndVertical();
             }
