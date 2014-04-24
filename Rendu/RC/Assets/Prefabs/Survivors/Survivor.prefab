@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963dbb696befd934784b90c07ce16949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_zombieFont: {fileID: 12800000, guid: ced2fcb1149ca984bbe842d33ef6ae4c, type: 3}
   m_viseurCursor: {fileID: 2800000, guid: 92a66af97d46e124e88f260b0204b8c3, type: 3}
   m_name: Batte de base balle
   m_characterCamera: {fileID: 0}
