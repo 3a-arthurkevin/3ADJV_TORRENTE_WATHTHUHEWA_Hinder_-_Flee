@@ -79,7 +79,8 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Trigger Enter");
+
+        Debug.Log("Trigger Launch :" + col.tag);
 
         if (col.tag == "Zombie" || col.tag == "Survivor")
         {
