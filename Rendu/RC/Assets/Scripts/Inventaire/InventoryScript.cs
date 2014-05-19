@@ -17,11 +17,11 @@ public class InventoryScript : MonoBehaviour
 
 
     /* GUI PART */
-    private int m_nbCelluleX = 10;
+    //private int m_nbCelluleX = 10;
     private int m_nbCelluleY = 10;
     private float m_screenWidth = Screen.width;
     private float m_screenHeight = Screen.height;
-    private float m_largeurCellule;
+    //private float m_largeurCellule;
     private float m_hauteurCellule;
     private Rect layoutBottom;
     private Rect boxItem;
@@ -35,10 +35,10 @@ public class InventoryScript : MonoBehaviour
             m_inventory.Add(new Slot(m_quantityMaxForOneItem));
         }
 
-        //GUI PArt
+        //GUI Part
         m_screenWidth = Screen.width;
         m_screenHeight = Screen.height;
-        m_largeurCellule = m_screenWidth / m_nbCelluleX;
+        //m_largeurCellule = m_screenWidth / m_nbCelluleX;
         m_hauteurCellule = m_screenHeight / m_nbCelluleY;
         layoutBottom = new Rect(0, m_screenHeight - m_hauteurCellule * 2, m_screenWidth, m_hauteurCellule * 2);
         boxItem = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y + layoutBottom.height * 0.5f, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
