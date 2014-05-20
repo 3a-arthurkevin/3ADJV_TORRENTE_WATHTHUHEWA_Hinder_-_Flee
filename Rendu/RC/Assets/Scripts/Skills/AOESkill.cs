@@ -8,17 +8,14 @@ public class AOESkill : ISkill
 
     public override void StartSkill()
     {
-        Debug.Log("Start AOE Skill");
     }
 
     public override void StopSkill()
     {
-        Debug.Log("Stop AOE Skill");
     }
 
     public override bool CheckLaunch(Vector3 hit)
-    {//Check range et aute donnée
-        Debug.Log("CheckLaunch AOE");
+    {//Check range et autre donnée
         return true;
     }
 

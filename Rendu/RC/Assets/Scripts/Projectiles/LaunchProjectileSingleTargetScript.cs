@@ -7,7 +7,6 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
     [SerializeField]
     private Transform m_transform;
 
-    private Collider m_launcherCollider;
     private NetworkViewID m_launcher;
     public NetworkViewID Launcher
     {
@@ -79,22 +78,12 @@ public class LaunchProjectileSingleTargetScript : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-
-        Debug.Log("Trigger Launch :" + col.tag);
-
-        if (col.tag == "Zombie" || col.tag == "Survivor")
+        if (col.networkView.viewID != m_launcher)
         {
-            if (col.networkView.viewID != m_launcher)
-            {
-                if(Network.isServer)
-                    m_applyEffect(col.gameObject);
-
-                Destroy(gameObject);
-            }
-            else
-                return;
+            if(Network.isServer)
+                m_applyEffect(col.gameObject);
         }
-        
-        Destroy(gameObject);
+        else
+            Destroy(gameObject);
     }
 }

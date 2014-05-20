@@ -7,23 +7,25 @@ public class LaunchAOEProjectileScript : MonoBehaviour
     [SerializeField]
     private Transform m_transform;
 
-    private NetworkPlayer m_launcher;
-    public NetworkPlayer Launcher
+    private NetworkViewID m_launcher;
+    public NetworkViewID Launcher
     {
         get { return m_launcher; }
         set { m_launcher = value; }
     }
 
-    private List<IEffect> m_effectZombie;
-    public List<IEffect> EffectZombie
+    private float m_speed;
+    public float Speed
     {
-        set { m_effectZombie = value; }
+        get { return m_speed; }
+        set { m_speed = value; }
     }
 
-    private List<IEffect> m_effectSurvivor;
-    public List<IEffect> EffectSurvivor
+    private float m_minDistance;
+    public float MinDistance
     {
-        set { m_effectSurvivor = value; }
+        get { return m_minDistance; }
+        set { m_minDistance = value; }
     }
 
     private float m_duration = 0f;
@@ -50,36 +52,57 @@ public class LaunchAOEProjectileScript : MonoBehaviour
         }
     }
 
+    public float m_timer;
+
+    private float m_aoeSize;
+    public float AoeSize
+    {
+        get { return m_aoeSize; }
+        set { m_aoeSize = value; }
+    }
+
+    public delegate void ApplySkillEffect(GameObject target);
+    private ApplySkillEffect m_applyEffect;
+    public ApplySkillEffect ApplyEffect
+    {
+        get { return m_applyEffect; }
+        set { m_applyEffect = value; }
+    }
+
     void Start()
     {
         if (m_transform)
             m_transform = transform;
+
+        m_timer = 0;
     }
 
     void Update()
     {
         if (m_isLaunch)
         {
-            m_duration -= Time.deltaTime;
-            if (m_duration <= 0f)
+            m_timer += Time.deltaTime;
+
+            if (m_timer >= m_duration)
                 Destroy(gameObject);
         }
+        else
+        {
+            m_transform.position += m_target * m_speed * Time.deltaTime;
+
+            if ((m_transform.position - m_target).sqrMagnitude <= m_minDistance)
+            {
+                m_isLaunch = true;
+                m_transform.localScale = new Vector3(m_aoeSize, 0.1f, m_aoeSize);
+            }
+        }
+            
     }
 
     void OnTriggerEnter(Collider col)
-    {//Applique les effets à la cible rencontrer si Survivor ou Zombie
+    {
         if (m_isLaunch)
-        {
-            if (col.tag == "Zombie")
-                foreach (IEffect effect in m_effectZombie)
-                    effect.Apply(col.gameObject);
-
-            else if (col.tag == "Survivor")
-                foreach (IEffect effect in m_effectSurvivor)
-                    effect.Apply(col.gameObject);
-
-            else
-                Debug.Log("Collide with wall");
-        }
+            if (col.networkView.viewID != m_launcher)
+                m_applyEffect(col.gameObject);
     }
 }
