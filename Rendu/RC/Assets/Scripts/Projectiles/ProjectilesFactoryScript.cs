@@ -18,8 +18,11 @@ public static class ProjectilesFactoryScript
         switch (idProjectile)
         {
             case 0:
-                projectile = (GameObject)Resources.Load("Prefabs/Projectiles/Projectile");
-                
+                projectile = (GameObject)Resources.Load("Prefabs/Projectiles/ProjectileSingleTarget");
+                break;
+
+            case 1:
+                projectile = (GameObject)Resources.Load("Prefabs/Projectiles/ProjectileAOE");
                 break;
 
             default:

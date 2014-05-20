@@ -142,7 +142,7 @@ public class WeaponManagerScript : MonoBehaviour
             {//Under skill
                 if (Input.GetButtonDown("LaunchSkill"))
                 {
-                    Ray ray = m_characterCamera.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = m_characterCamera.ScreenPointToRay(new Vector3(Input.mousePosition.x + (m_viseurCursor.texelSize.x / 2), Input.mousePosition.y - (m_viseurCursor.texelSize.y / 2), 0));
                     RaycastHit hit;
 
                     if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
