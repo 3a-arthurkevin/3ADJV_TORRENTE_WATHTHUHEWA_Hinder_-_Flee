@@ -24,6 +24,15 @@ public class SurvivorManagerForStairScript : MonoBehaviour
 
     private Dictionary<NetworkPlayer, bool> m_survivorWhoWantToTakeStair;
 
+    void OnDrawGizmos()
+    {
+        //Si remplissage des champs correctement (normalement avec le transform de l'escalier se sorti et son n° d'étage)
+        if (m_stairOut != null && m_floorOfStairOut != -1)
+        {
+             Debug.DrawLine(this.transform.position, m_stairOut.transform.position, Color.blue);
+        }
+    }
+
     void Awake()
     {
         m_cursorMode = CursorMode.Auto;
