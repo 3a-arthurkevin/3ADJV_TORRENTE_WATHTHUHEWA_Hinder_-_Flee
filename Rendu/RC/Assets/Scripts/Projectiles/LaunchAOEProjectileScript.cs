@@ -41,6 +41,12 @@ public class LaunchAOEProjectileScript : MonoBehaviour
         get { return m_isLaunch; }
     }
 
+    private bool m_goToTarget = false;
+    public bool GoToTarget
+    {
+        get { return m_goToTarget; }
+    }
+
     private Vector3 m_target = Vector3.zero;
     public Vector3 Target
     {
@@ -48,7 +54,7 @@ public class LaunchAOEProjectileScript : MonoBehaviour
         set
         {
             m_target = value;
-            m_isLaunch = true;
+            m_goToTarget = true;
         }
     }
 
@@ -92,6 +98,7 @@ public class LaunchAOEProjectileScript : MonoBehaviour
 
             if ((m_transform.position - m_target).sqrMagnitude <= m_minDistance)
             {
+                m_goToTarget = false;
                 m_isLaunch = true;
                 m_transform.localScale = new Vector3(m_aoeSize, 0.1f, m_aoeSize);
             }

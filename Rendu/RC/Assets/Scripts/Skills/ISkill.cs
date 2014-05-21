@@ -46,11 +46,11 @@ public abstract class ISkill
         set { m_coolDown = value; }
     }
 
-    protected float m_maxRange;
+    protected float m_range;
     public float Range
     {
-        get { return m_maxRange; }
-        set { m_maxRange = value; }
+        get { return m_range; }
+        set { m_range = value; }
     }
 
     protected List<IEffect> m_survivorEffect;
@@ -66,7 +66,59 @@ public abstract class ISkill
     abstract public void StartSkill();
     abstract public void StopSkill();
     abstract public bool CheckLaunch(Vector3 hit);
-    abstract public void ApplyEffect(GameObject target);
+    
+    public virtual void ApplyEffect(GameObject target)
+    {
+        if (target.tag == "Zombie")
+            foreach (IEffect effect in m_zombieEffect)
+                effect.Apply(target);
+
+        else if (target.tag == "Survivor")
+            foreach (IEffect effect in m_survivorEffect)
+                effect.Apply(target);
+    }
+    
+    public virtual void setParameters(Dictionary<string, string> parameterList)
+    {
+        foreach(KeyValuePair<string, string> parameter in parameterList)
+            setParameter(parameter.Key, parameter.Value);
+    }
+
+    public virtual void setParameter(string key, string value)
+    {
+        if (key == "Name")
+            m_name = value;
+
+        else if (key == "Description")
+            m_description = value;
+
+        else if (key == "CoolDownDuration")
+        {
+            try
+            {
+                m_coolDownDuration = float.Parse(value);
+            }
+            catch(System.FormatException)
+            {
+                Debug.Log("Error number format for CoolDownDuration parameter");
+            }
+        }
+        else if (key == "Range")
+        {
+            try
+            {
+                m_range = float.Parse(value);
+            }
+            catch (System.FormatException)
+            {
+                Debug.Log("Error number format for Range parameter");
+            }
+        }
+        else if (key == "")
+        {
+
+        }
+    }
 
     public virtual void LaunchSkill(Vector3 hit)
     {

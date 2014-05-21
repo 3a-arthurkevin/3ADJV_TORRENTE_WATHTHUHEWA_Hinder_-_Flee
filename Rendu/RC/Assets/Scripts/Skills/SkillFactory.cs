@@ -25,6 +25,15 @@ public static class SkillFactory
                 skill.addZombieEffect(effect);
                 break;
 
+            case 1:
+                AOESkill aoeSkill = new AOESkill();
+                aoeSkill.Name = "AOE";
+                aoeSkill.CoolDownDuration = 12f;
+                aoeSkill.AoeRange = 2f;
+                
+                skill = aoeSkill;
+                break;
+
             default:
                 Debug.Log("Skill not found");
                 break;

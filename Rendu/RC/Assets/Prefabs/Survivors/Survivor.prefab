@@ -194,7 +194,7 @@ MonoBehaviour:
   m_name: Batte de base balle
   m_characterCamera: {fileID: 0}
   m_networkView: {fileID: 14800002}
-  m_skillId: 00000000000000000000000000000000
+  m_skillId: 01000000000000000100000000000000
   m_player: {fileID: 400002}
 --- !u!114 &11400008
 MonoBehaviour:
