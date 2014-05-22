@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SingleTargetSkill : ISkill
 {
@@ -31,20 +32,15 @@ public class SingleTargetSkill : ISkill
 
         launch.Launcher = m_weaponManager.Player.networkView.viewID;
         launch.ApplyEffect = ApplyEffect;
+        launch.Speed = 2f;
         launch.Direction = hit;
-        launch.Limit = m_maxRange;
+        launch.Limit = m_range;
 
         base.LaunchSkill(hit);
     }
 
-    public override void ApplyEffect(GameObject target)
+    public override void setParameter(string key, string value)
     {
-        if (target.tag == "Zombie")
-            foreach (IEffect effect in m_zombieEffect)
-                effect.Apply(target);
-
-        else if (target.tag == "Survivor")
-            foreach (IEffect effect in m_survivorEffect)
-                effect.Apply(target);
+        base.setParameter(key, value);
     }
 }
