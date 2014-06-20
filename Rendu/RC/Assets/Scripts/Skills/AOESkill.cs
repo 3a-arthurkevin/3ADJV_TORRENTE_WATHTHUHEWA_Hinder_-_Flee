@@ -11,6 +11,13 @@ public class AOESkill : ISkill
         set { m_aoeRange = value; }
     }
 
+    private float m_duration = 0f;
+    public float Duration
+    {
+        get { return m_duration; }
+        set { m_duration = value; }
+    }
+
     public AOESkill() : base()
     {}
 
@@ -40,13 +47,12 @@ public class AOESkill : ISkill
         launch.Launcher = m_weaponManager.Player.networkView.viewID;
         launch.ApplyEffect = ApplyEffect;
         launch.Speed = 2f;
-        
+
+        launch.Duration = m_duration;
+        launch.AoeSize = m_aoeRange;
+        launch.Target = hit;
 
         base.LaunchSkill(hit);
-    }
-
-    public override void ApplyEffect(GameObject target)
-    {
         
     }
 

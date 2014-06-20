@@ -69,13 +69,18 @@ public abstract class ISkill
     
     public virtual void ApplyEffect(GameObject target)
     {
-        if (target.tag == "Zombie")
-            foreach (IEffect effect in m_zombieEffect)
-                effect.Apply(target);
+        switch (target.tag)
+        {
+            case "Zombie":
+                foreach (IEffect effect in m_survivorEffect)
+                    effect.Apply(target);
+                break;
 
-        else if (target.tag == "Survivor")
-            foreach (IEffect effect in m_survivorEffect)
-                effect.Apply(target);
+            case "Survivor":
+                foreach (IEffect effect in m_zombieEffect)
+                    effect.Apply(target);
+                break;
+        }
     }
     
     public virtual void setParameters(Dictionary<string, string> parameterList)

@@ -3,16 +3,6 @@
   dslVersion="1.0.0.0"
   Id="187f565a-1507-402a-8ce0-67547efc9169"
   name="ModelingProject1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="2fe2c526-b309-4918-ba7e-32585c448f7b">
-      <body>SelfEffects</body>
-    </comment>
-    <comment
-      Id="81a7fa6f-9465-475b-a520-ec0f1a8933f6">
-      <body>TargetEffects</body>
-    </comment>
-  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -341,6 +331,165 @@
           <operation
             Id="7793aa97-5b76-4984-9919-3aed06c8543f"
             name="Lauch"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="60e41cf5-25e5-46d0-a6e8-5aec993a0566"
+        name="MonoBehavior"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="3e82cbb4-c5b3-4e22-a99e-8693062605a9"
+        name="ISkill"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="83c34477-dab4-42b8-aeaa-14f601a80efd">
+            <classMoniker
+              Id="60e41cf5-25e5-46d0-a6e8-5aec993a0566"
+              LastKnownName="MonoBehavior"
+              LastKnownLocation="ModelingProject1.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributes>
+          <property
+            Id="7522aee7-4a11-434c-bc4a-e01519083a11"
+            name="Range"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5ae97e41-ecba-470f-a1a1-adaa45637a3e"
+            name="ZombieEffect"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="13a1e373-0af7-404d-bf41-35a836457e8f"
+            name="SurvivorEffects"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e26f36bd-7258-4dea-b942-01a7fc0a1513"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2177473b-5f00-42de-a870-1bdd5a692776"
+            name="Desc"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2655f8bd-0572-407e-a9b2-6c11dde418c6"
+            name="CoolDown"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="68e39121-f49b-4248-b516-5cfd8e2e1322"
+            name="ApplyEffects"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7203267e-d7c5-4d56-9d79-14e3229eb58f"
+        name="AOE"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ecaf8df2-c114-4244-b752-7333333e6d9b">
+            <interfaceMoniker
+              Id="3e82cbb4-c5b3-4e22-a99e-8693062605a9"
+              LastKnownName="ISkill"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0abce02a-7baf-4077-8ebe-6ecd1b461c8d"
+            name="ApplyEffects"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f7b36fd2-a901-4d31-a966-14be285237f7"
+        name="Single"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="81231959-f509-48ef-b4d3-b88b1a9db274">
+            <interfaceMoniker
+              Id="3e82cbb4-c5b3-4e22-a99e-8693062605a9"
+              LastKnownName="ISkill"
+              LastKnownLocation="ModelingProject1.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ea449c83-7891-4ce1-b363-4c58d63731bb"
+            name="ApplyEffects"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

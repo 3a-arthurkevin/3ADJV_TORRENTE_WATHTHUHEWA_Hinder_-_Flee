@@ -29,7 +29,17 @@ public static class SkillFactory
                 AOESkill aoeSkill = new AOESkill();
                 aoeSkill.Name = "AOE";
                 aoeSkill.CoolDownDuration = 12f;
-                aoeSkill.AoeRange = 2f;
+                aoeSkill.Range = 10f;
+                aoeSkill.AoeRange = 1f;
+                aoeSkill.Duration = 5f;
+
+                effect = EffectsFactory.getEffect(0);
+                effect.SetParam("Damage", "20");
+                aoeSkill.addZombieEffect(effect);
+
+                effect = EffectsFactory.getEffect(0);
+                effect.SetParam("Damage", "10");
+                aoeSkill.addSurvivorEffect(effect);
                 
                 skill = aoeSkill;
                 break;

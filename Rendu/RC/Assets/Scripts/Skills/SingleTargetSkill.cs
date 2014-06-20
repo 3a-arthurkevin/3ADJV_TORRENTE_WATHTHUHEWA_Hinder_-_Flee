@@ -17,6 +17,7 @@ public class SingleTargetSkill : ISkill
 
     public override bool CheckLaunch(Vector3 hit)
     {//Check range and another data
+
         return true;
     }
 

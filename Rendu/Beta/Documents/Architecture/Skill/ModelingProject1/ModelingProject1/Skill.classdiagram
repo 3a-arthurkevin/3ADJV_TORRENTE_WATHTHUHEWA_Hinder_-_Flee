@@ -1,204 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b89210a8-a102-4bd7-9725-b9e05d5464cd" name="Skill" linkedPackageId="09ddcf98-6efa-45d4-8fbe-7767717a38ac" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <ownedCommentsInternal>
-    <comment Id="e0a2bbf2-f03b-456f-9d29-57b269c3724c">
-      <elementDefinition Id="2fe2c526-b309-4918-ba7e-32585c448f7b" />
-      <body>SelfEffects</body>
-    </comment>
-    <comment Id="b107d67c-b484-44d5-8a76-9291c39eb4b2">
-      <elementDefinition Id="81a7fa6f-9465-475b-a520-ec0f1a8933f6" />
-      <body>TargetEffects</body>
-    </comment>
-  </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="d2487ee3-8c76-4ac8-8edb-967e5f5bb9b5">
-      <profileInstance Id="4d5431a3-e5cd-4d71-90cf-4783c9320922" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a9dbb7ee-e201-4c56-9696-861338b4b193">
-      <profileInstance Id="c5f58199-c739-442b-bb7a-9b0e2453e01f" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <Interface Id="dee3f81d-86c7-4c42-abc5-7a1cdb1962e7" name="IEffects" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="03719c53-c5ab-4f28-a00b-14f038a3b6ab" />
-        <ownedOperations>
-          <operation Id="976ac303-e5f8-4cf7-9c63-4ee091a1a124" name="Apply" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="9a506eb5-41a7-4be7-874a-fac03e714929" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="5a8f807c-1f04-4314-89b1-1943abaaebfd" name="GameObject target" direction="In" isUnique="false">
-                  <elementDefinition Id="654a0f94-5708-40b8-9ac8-458b400258f8" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperations>
-      </Interface>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <class Id="326dac4a-678e-4a8f-8838-5a74a8d3df17" name="TakeDamage" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="3171ee67-cc77-4cdc-8710-ed77a458b97b" />
-        <suppliersInternal>
-          <interfaceRealization Id="b49f5510-d31c-4fae-8366-cedec06ceb9f">
-            <interfaceMoniker Id="dee3f81d-86c7-4c42-abc5-7a1cdb1962e7" LastKnownName="IEffects" />
-            <elementDefinition Id="c5041503-ec27-4b60-bea3-900f9a2fd157" />
-          </interfaceRealization>
-        </suppliersInternal>
-        <ownedAttributesInternal>
-          <property Id="f7b69df9-8b7f-4eca-aaca-1c2b487c123c" name="m_degats" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="471f093f-ab2e-4010-86d6-d339eb6e3e31" />
-          </property>
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="1f525750-908c-4549-a974-7450ed53616d" name="Apply" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="249ce67a-a790-431e-a530-46db8c96ce09" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="93f32793-fc77-4431-ab4d-503d20f19970" name="GameObject target" direction="In" isUnique="false">
-                  <elementDefinition Id="05d68a28-6596-4040-92ea-ed1714b902f5" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
+      <class Id="f44b4a42-513c-4ee9-8347-4e76446b4598" name="MonoBehavior" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="60e41cf5-25e5-46d0-a6e8-5aec993a0566" />
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="c5892ed0-9aa7-4a4c-81dd-3adf75d9b898" name="Heal" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="42aff249-6730-403e-9dbf-718b0e5e4572" />
+      <Interface Id="5c2b7661-5422-4d73-be21-ef077108bbb5" name="ISkill" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3e82cbb4-c5b3-4e22-a99e-8693062605a9" />
         <suppliersInternal>
-          <interfaceRealization Id="bbeaa4fc-eaad-4871-94a7-1a109a468854">
-            <interfaceMoniker Id="dee3f81d-86c7-4c42-abc5-7a1cdb1962e7" LastKnownName="IEffects" />
-            <elementDefinition Id="993391ea-acc1-40be-9931-45046fa5db03" />
-          </interfaceRealization>
+          <dependency Id="3ad7e3c1-c07c-4630-8660-36ad9c3948d5">
+            <classMoniker Id="f44b4a42-513c-4ee9-8347-4e76446b4598" LastKnownName="MonoBehavior" />
+            <elementDefinition Id="83c34477-dab4-42b8-aeaa-14f601a80efd" />
+          </dependency>
         </suppliersInternal>
-        <ownedAttributesInternal>
-          <property Id="13afbe31-6034-4515-9ef2-4371d339f179" name="m_pv" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="1e8775ea-e745-453d-9c94-ffabd4a892b9" />
-          </property>
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="166ece24-55ad-445a-8b02-ac660554c819" name="Apply" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="8609e93e-6b49-40be-988a-16561494f5b6" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="c2aafa44-bf0d-4841-b23a-94057ad6f5ce" name="GameObject target" direction="In" isUnique="false">
-                  <elementDefinition Id="27c89fde-f904-4fbb-b80a-078e7033c5f9" />
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
-      <Interface Id="a148ed61-d0cc-4b52-9154-a83360059c5f" name="ISKill" isAbstract="false" isLeaf="false">
-        <elementDefinition Id="5d27ad4f-5055-4b49-be5e-05688d98b94f" />
-        <targetEnds>
-          <association Id="45076a16-9047-4146-96f8-ca21f10bb985" isDerived="false" sourceEndRoleName="ISKill" targetEndRoleName="IEffects" isLeaf="false" isAbstract="false">
-            <interfaceMoniker Id="dee3f81d-86c7-4c42-abc5-7a1cdb1962e7" LastKnownName="IEffects" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="34cfb4a0-d0e8-4ddc-b853-3b4647cd97d1" name="ISKill" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString Id="9e52feb8-7c00-4476-acc0-99929128f352" name="Lower" value="*">
-                      <elementDefinition Id="dc59537e-b319-45b9-9e35-1223794e0f44" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="0238dd79-3ce7-4b8d-b73e-e526a71391b2" name="Upper" value="*">
-                      <elementDefinition Id="1e2633e3-fe55-4b48-a19b-dc89aecc60ed" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="f902bc88-090f-46cc-8202-c276649e28ee" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="ab0abe79-1ad6-4d50-b7ff-94da7a3aa25d" name="IEffects" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="7549c2a6-4edf-49f1-8fb8-e09df38e91ea" name="Lower" value="*">
-                      <elementDefinition Id="edaf880e-8ac9-4439-8490-7511e33acf08" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="c04d407f-00da-4efd-8ee6-daacf1d500c9" name="Upper" value="*">
-                      <elementDefinition Id="d804aba0-8e10-416b-9000-efb26268f2a3" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="f3f40ffc-68fd-4e8d-af6f-d70b7c3196a2" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="b6008145-e4bf-43c7-a335-f9b23747c87c" />
-          </association>
-          <association Id="cef3e1fb-edbb-49c1-bbba-e3da10f8ecfd" isDerived="false" sourceEndRoleName="ISKill" targetEndRoleName="IEffects" isLeaf="false" name="*" isAbstract="false">
-            <interfaceMoniker Id="dee3f81d-86c7-4c42-abc5-7a1cdb1962e7" LastKnownName="IEffects" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="28c880c6-0412-49c1-b184-759dfe58dbd7" name="ISKill" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
-                  <lowerValueInternal>
-                    <literalString Id="70100181-e706-4306-a061-9dcd4fc17a84" name="Lower" value="*">
-                      <elementDefinition Id="b585f7c8-6f49-4ed4-8bd0-eb1949ebec50" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="bb8f7000-c050-4ff9-a98b-5463d12d5b5e" name="Upper" value="*">
-                      <elementDefinition Id="f61f8b46-339a-49dd-9c91-f81e9132b1d4" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="4521aac6-69ea-46f1-9d37-bb9d33711dc0" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="6641a1b4-4157-47e7-aeee-92182197fe2c" name="IEffects" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="8be7152f-cce6-42a6-a50d-7201373a2a71" name="Lower" value="*">
-                      <elementDefinition Id="15074362-969b-463d-80fc-8fcf46fbe51b" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="7e689610-637e-49d8-be70-44fd6da25ca1" name="Upper" value="*">
-                      <elementDefinition Id="1804c56a-1cfc-43bf-b1e3-a23f3da3e2f8" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="8cfd78a3-925d-4303-9cec-bed25850e35a" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="b60b3a44-c4a7-493b-b529-9c50e86c693b" />
-          </association>
-        </targetEnds>
         <ownedAttributes>
-          <property Id="755a60d9-efc4-4934-b8f2-5de0c95234c5" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="3cbe659a-b059-4c34-97b7-ab9072e4b61e" />
+          <property Id="3bc5a11c-35df-4057-9cc4-95b461e501fc" name="Range" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7522aee7-4a11-434c-bc4a-e01519083a11" />
+          </property>
+          <property Id="bd09b0d7-834f-42e6-9ea1-a1302fa78897" name="ZombieEffect" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5ae97e41-ecba-470f-a1a1-adaa45637a3e" />
+          </property>
+          <property Id="a6280b0c-b382-473d-914e-859a298d530b" name="SurvivorEffects" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="13a1e373-0af7-404d-bf41-35a836457e8f" />
+          </property>
+          <property Id="d1179c60-b65a-411f-962b-434f15c041e5" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e26f36bd-7258-4dea-b942-01a7fc0a1513" />
+          </property>
+          <property Id="89f87090-3f74-4c09-8495-b3405fddd1ad" name="Desc" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2177473b-5f00-42de-a870-1bdd5a692776" />
+          </property>
+          <property Id="bcabb073-2fdd-47a0-802d-42e242fc77e7" name="CoolDown" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2655f8bd-0572-407e-a9b2-6c11dde418c6" />
           </property>
         </ownedAttributes>
         <ownedOperations>
-          <operation Id="797937ed-56fe-4466-9e38-d087c5ca7761" name="Lauch" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="ce4e7bdc-6f14-40a5-bb69-8d4ab291ce52" />
+          <operation Id="2e085dee-e016-4c26-9212-fb7da485332f" name="ApplyEffects" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="68e39121-f49b-4248-b516-5cfd8e2e1322" />
           </operation>
         </ownedOperations>
       </Interface>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="250c1d09-8e84-4d40-bb75-09616677b8c6" name="HitPunch" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="147a9862-7f18-44de-8eaa-c1d32c793479" />
+      <class Id="2a23b611-7008-4a37-8394-1747c870fe8a" name="AOE" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7203267e-d7c5-4d56-9d79-14e3229eb58f" />
         <suppliersInternal>
-          <interfaceRealization Id="3e27d398-191f-4ee5-9c65-e20d15a6a72d">
-            <interfaceMoniker Id="a148ed61-d0cc-4b52-9154-a83360059c5f" LastKnownName="ISKill" />
-            <elementDefinition Id="a9de4f76-5e5d-4ae5-b657-2dfb357ccae0" />
+          <interfaceRealization Id="8c66275c-e5f5-4740-af69-d57ec81ac175">
+            <interfaceMoniker Id="5c2b7661-5422-4d73-be21-ef077108bbb5" LastKnownName="ISkill" />
+            <elementDefinition Id="ecaf8df2-c114-4244-b752-7333333e6d9b" />
           </interfaceRealization>
         </suppliersInternal>
         <ownedOperationsInternal>
-          <operation Id="53daa593-ef85-47e2-a9d3-0424a27c1bb0" name="Lauch" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="7793aa97-5b76-4984-9919-3aed06c8543f" />
+          <operation Id="728611d7-ccd6-4599-96d9-aeed4a1ca5da" name="ApplyEffects" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0abce02a-7baf-4077-8ebe-6ecd1b461c8d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f679ec08-7ad3-48c2-a280-50824324d142" name="Single" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f7b36fd2-a901-4d31-a966-14be285237f7" />
+        <suppliersInternal>
+          <interfaceRealization Id="fbcebca4-2048-4d79-b4a3-450687d0e276">
+            <interfaceMoniker Id="5c2b7661-5422-4d73-be21-ef077108bbb5" LastKnownName="ISkill" />
+            <elementDefinition Id="81231959-f509-48ef-b4d3-b88b1a9db274" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="5010b012-4366-4fe0-a4f0-c893d733f6ee" name="ApplyEffects" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ea449c83-7891-4ce1-b363-4c58d63731bb" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -206,5 +77,19 @@
   </packagedElements>
   <package Id="09ddcf98-6efa-45d4-8fbe-7767717a38ac" name="ModelingProject1">
     <elementDefinition Id="187f565a-1507-402a-8ce0-67547efc9169" />
+    <profileInstances>
+      <packageHasProfileInstances Id="d2487ee3-8c76-4ac8-8edb-967e5f5bb9b5">
+        <profileInstance Id="4d5431a3-e5cd-4d71-90cf-4783c9320922" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a9dbb7ee-e201-4c56-9696-861338b4b193">
+        <profileInstance Id="c5f58199-c739-442b-bb7a-9b0e2453e01f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
