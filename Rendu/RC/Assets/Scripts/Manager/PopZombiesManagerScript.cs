@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class PopZombiesManagerScript : MonoBehaviour {
     [SerializeField]
     private Transform m_prefabZombie;
+
+    [SerializeField]
+    private GameObject ConfigLevelManager;
+    private ConfigLevelManager m_configLevelManagerScript;
     
     private List<List<Transform>> m_listZombies;
     
@@ -24,6 +29,13 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
         m_listZombies = new List<List<Transform>>();
         enabled = false;
+
+        m_configLevelManagerScript = ConfigLevelManager.GetComponent<ConfigLevelManager>();
+    }
+
+    void Start()
+    {
+        
     }
 
     void Update()
@@ -33,13 +45,13 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
     public void init()
     {
-        m_manage = true;
-        int nbLevel = ConfigLevelManager.getNbLevel();
+        int nbLevel = m_configLevelManagerScript.getNbLevel();
 
         for(int i = 0; i < nbLevel; ++i)
             m_listZombies.Add(new List<Transform>());
 
         enabled = true;
+        m_manage = true;
         m_timer = 0;
         StartCoroutine(managePop());
     }
@@ -53,7 +65,7 @@ public class PopZombiesManagerScript : MonoBehaviour {
             for (int i = 0; i < nbLevel; ++i)
             {
                 int nbCurZombie = m_listZombies[i].Count;
-                int nbZombieVoulu = (int)(m_timer * ConfigLevelManager.getPopZombieRatio(i));
+                int nbZombieVoulu = (int)(m_timer * m_configLevelManagerScript.getPopZombieRatio(i));
                 
                 StartCoroutine(zombieLauncher(i, nbZombieVoulu - nbCurZombie));
             }
@@ -68,9 +80,12 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
         for (int i = 0; i < nbZombie; ++i)
         {
-            tempZombie = (Transform)Network.Instantiate(m_prefabZombie, ConfigLevelManager.getRandomSpawnZombie(level), Quaternion.identity, 0);
-            
-            tempZombie.GetComponent<MoveManagerZombieScript>().Data.IsInFloor = level;
+            tempZombie = (Transform)Network.Instantiate(m_prefabZombie, m_configLevelManagerScript.getRandomSpawnZombie(level), Quaternion.identity, 0);
+
+            MoveManagerZombieScript move = tempZombie.GetComponent<MoveManagerZombieScript>();
+            move.Data.IsInFloor = level;
+            move.ConfigLevelManager = m_configLevelManagerScript;
+
             m_listZombies[level].Add(tempZombie);
             tempZombie = null;
 

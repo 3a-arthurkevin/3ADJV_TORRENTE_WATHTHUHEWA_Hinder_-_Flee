@@ -3,6 +3,14 @@ using System.Collections;
 
 public class MoveManagerZombieScript : MonoBehaviour {
     [SerializeField]
+    private ConfigLevelManager m_configLevel;
+    public ConfigLevelManager ConfigLevelManager
+    {
+        get { return m_configLevel; }
+        set { m_configLevel = value; }
+    }
+    
+    [SerializeField]
     private NetworkView m_networkView;
 
     [SerializeField]
@@ -46,7 +54,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
         if (m_data.Path == null)
         {
             if (Network.isServer)
-                m_networkView.RPC("setTarget", RPCMode.All, ConfigLevelManager.getRandomMoveZombie(m_data.IsInFloor));
+                m_networkView.RPC("setTarget", RPCMode.All, m_configLevel.getRandomMoveZombie(m_data.IsInFloor));
             
             return;
         }
@@ -64,7 +72,7 @@ public class MoveManagerZombieScript : MonoBehaviour {
                 m_data.Path = null;
 
                 if (Network.isServer)
-                    m_networkView.RPC("setTarget", RPCMode.All, ConfigLevelManager.getRandomMoveZombie(m_data.IsInFloor));
+                    m_networkView.RPC("setTarget", RPCMode.All, m_configLevel.getRandomMoveZombie(m_data.IsInFloor));
 
                 return;
             }
@@ -76,7 +84,6 @@ public class MoveManagerZombieScript : MonoBehaviour {
             }
         }
 
-        //m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
         m_data.CharacterController.Move(direction.normalized * m_data.Speed * Time.deltaTime);
     }
 

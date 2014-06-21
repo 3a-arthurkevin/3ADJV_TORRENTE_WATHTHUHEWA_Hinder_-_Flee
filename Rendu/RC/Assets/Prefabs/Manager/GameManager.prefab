@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prefabZombie: {fileID: 400000, guid: 0fb76991aff24124f8794e0357cd35ad, type: 2}
+  m_spawnManager: {fileID: 0}
   m_respawnTime: 10
   m_waveTime: 1
 --- !u!114 &11400006

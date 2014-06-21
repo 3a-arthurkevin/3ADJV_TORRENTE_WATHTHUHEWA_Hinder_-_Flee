@@ -3,13 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-//Script qui manage la liste des player/connexion joueur et serveur
-//Script attaché à un emptyObject GameManager
-//Script accessbile par le HealthManager Script ...
-
 public class PlayerDataBaseScript : MonoBehaviour {
 
-    //Stocke le Transform + le NetworkPlayer durant la game
+    [SerializeField]
+    private ConfigLevelManager m_configLevelManager;
+
     private Dictionary<NetworkPlayer, Transform> m_players;
     private Dictionary<NetworkPlayer, bool> m_playerReady;
     private List<NetworkPlayer> m_playerRemoved;
@@ -49,15 +47,12 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         if (m_buildServer)
         {
-            ConfigLevelManager.LoadLevel();
-
             m_players = new Dictionary<NetworkPlayer, Transform>();
             m_playerReady = new Dictionary<NetworkPlayer, bool>();
             m_playerRemoved = new List<NetworkPlayer>();
 
             Network.InitializeSecurity();
 
-            //Si pc a une adresse public utilisé NAT sinon non
             m_useNat = !Network.HavePublicAddress();
 
             NetworkConnectionError err = Network.InitializeServer(m_maxPlayers, m_portNumber, m_useNat);
@@ -80,8 +75,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     }
 
     void OnPlayerConnected(NetworkPlayer newPlayer)
-    {//Nouveau joueur se connect au serveur
-
+    {
         if (m_currentPlayer < m_maxPlayers)
         {
             if (m_gameLauched)
@@ -127,7 +121,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     }
 
     private void initialiseGame()
-    {//Instancie toute les préfabs et supprime la liste m_beforeGame
+    {
         if (Network.isClient)
             return;
 
@@ -136,7 +130,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
         {
             NetworkPlayer player = m_players.ElementAt(i).Key;
 
-            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, ConfigLevelManager.getNextSpawnSurvivor(out level), Quaternion.identity, int.Parse(player.ToString()));
+            Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, m_configLevelManager.getNextSpawnSurvivor(out level), Quaternion.identity, int.Parse(player.ToString()));
 
             transformPlayer.GetComponent<MoveManagerSurvivorScript>().MoveData.IsInFloor = level;
             transformPlayer.name = "Survivor" + player.ToString();
@@ -166,9 +160,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     [RPC]
     public void InitClient()
-    {//Positionne la camera sur le survivor
-        //Et fait les différente initialisation du client
-
+    {
         GameObject character = GameObject.Find("Survivor" + Network.player.ToString());
         
         Debug.LogError(Network.player.ToString());
@@ -197,9 +189,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     [RPC]
     void clientIsInit(NetworkPlayer player)
-    {//Reçois un message du client pour prévenir qu'il est prêt
-        //La partie ne démarre seulement quand tous les clients sont prêt
-
+    {
         if (Network.isServer)
         {
             bool playerInit = false;
