@@ -25,7 +25,7 @@ public class HealthManagerScript : MonoBehaviour
         set
         {
             m_currentLifePoint = value;
-            Debug.LogError(m_currentLifePoint);
+
             if (m_currentLifePoint <= 0)
                 Died();
         }
@@ -46,8 +46,8 @@ public class HealthManagerScript : MonoBehaviour
     void Died()
     {
         Debug.LogError("Zombie died");
-        
-        if(Network.isServer)
+
+        if (Network.isServer)
             Network.Destroy(gameObject);
     }
 

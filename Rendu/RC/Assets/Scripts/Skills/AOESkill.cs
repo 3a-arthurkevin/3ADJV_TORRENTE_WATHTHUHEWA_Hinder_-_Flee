@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class AOESkill : ISkill
+public abstract class AOESkill : ISkill
 {
     private float m_aoeRange = 1f;
     public float AoeRange
@@ -20,22 +20,10 @@ public class AOESkill : ISkill
 
     public AOESkill() : base()
     {}
-
-    public override void StartSkill()
-    {
-    }
-
-    public override void StopSkill()
-    {
-    }
-
-    public override bool CheckLaunch(Vector3 hit)
-    {
-        return true;
-    }
-
+    
     public override void LaunchSkill(Vector3 hit)
     {
+    /*    
         GameObject prefabProjectile = ProjectilesFactoryScript.getProjectileById(1);
 
         if (prefabProjectile == null)
@@ -53,7 +41,7 @@ public class AOESkill : ISkill
         launch.Target = hit;
 
         base.LaunchSkill(hit);
-        
+      */  
     }
 
     public override void setParameter(string key, string value)
@@ -72,4 +60,11 @@ public class AOESkill : ISkill
         else
             base.setParameter(key, value);
     }
+
+    public override bool canLaunchSkill(Vector3 hit)
+    {
+        return true;
+    }
+
+    protected override abstract void init();
 }

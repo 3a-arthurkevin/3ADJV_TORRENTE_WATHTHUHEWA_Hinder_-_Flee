@@ -11,8 +11,8 @@ public abstract class ISkill
         set { m_animation = value; }
     }
 
-    protected WeaponManagerScript m_weaponManager;
-    public WeaponManagerScript WeaponManager
+    protected BaseWeaponManagerScript m_weaponManager;
+    public BaseWeaponManagerScript WeaponManager
     {
         get { return m_weaponManager; }
         set { m_weaponManager = value; }
@@ -60,12 +60,8 @@ public abstract class ISkill
     {
         m_survivorEffect = new List<IEffect>();
         m_zombieEffect = new List<IEffect>();
+        init();
     }
-
-
-    abstract public void StartSkill();
-    abstract public void StopSkill();
-    abstract public bool CheckLaunch(Vector3 hit);
     
     public virtual void ApplyEffect(GameObject target)
     {
@@ -124,6 +120,9 @@ public abstract class ISkill
 
         }
     }
+
+    public abstract bool canLaunchSkill(Vector3 hit);
+    protected abstract void init();
 
     public virtual void LaunchSkill(Vector3 hit)
     {

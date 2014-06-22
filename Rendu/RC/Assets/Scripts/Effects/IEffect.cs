@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public interface IEffect
+public abstract class IEffect
 {
-    void Apply(GameObject target);
-    void SetParam(Dictionary<string, string> param);
-    void SetParam(string name, string value);
+    public abstract void Apply(GameObject target);
+
+    public abstract void SetParam(Dictionary<string, string> param);
+
+    public abstract void SetParam(string name, string value);
 }

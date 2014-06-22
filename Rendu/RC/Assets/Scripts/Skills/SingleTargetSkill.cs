@@ -2,24 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class SingleTargetSkill : ISkill
+public abstract class SingleTargetSkill : ISkill
 {
     public SingleTargetSkill() : base()
     {}
-
-    public override void StartSkill()
-    {
-    }
-
-    public override void StopSkill()
-    {
-    }
-
-    public override bool CheckLaunch(Vector3 hit)
-    {//Check range and another data
-
-        return true;
-    }
 
     public override void LaunchSkill(Vector3 hit)
     {//Lancement du Skill
@@ -44,4 +30,11 @@ public class SingleTargetSkill : ISkill
     {
         base.setParameter(key, value);
     }
+
+    public override bool canLaunchSkill(Vector3 hit)
+    {
+        return true;
+    }
+
+    protected override abstract void init();
 }
