@@ -22,8 +22,6 @@ public class SurvivorManagerForStairScript : MonoBehaviour
     [SerializeField]
     private NetworkView m_networkView;
 
-    private Dictionary<NetworkPlayer, bool> m_survivorWhoWantToTakeStair;
-
     void OnDrawGizmos()
     {
         //Si remplissage des champs correctement (normalement avec le transform de l'escalier se sorti et son n° d'étage)
@@ -38,7 +36,6 @@ public class SurvivorManagerForStairScript : MonoBehaviour
         m_cursorMode = CursorMode.Auto;
         m_hotSpot = Vector2.zero;
         m_hasClicked = false;
-        m_survivorWhoWantToTakeStair = new Dictionary<NetworkPlayer, bool>();
     }
 
     void OnMouseEnter()
@@ -77,26 +74,12 @@ public class SurvivorManagerForStairScript : MonoBehaviour
     void hasClickedTrueForServer(NetworkPlayer clientKey)
     {
         m_hasClicked = true;
-
-        if (m_survivorWhoWantToTakeStair.ContainsKey(clientKey))
-        {
-            m_survivorWhoWantToTakeStair[clientKey] = true;
-        }
-        else
-        {
-            m_survivorWhoWantToTakeStair.Add(clientKey, true);
-        }
     }
 
     [RPC]
     void hasClickedFalseForServer(NetworkPlayer clientKey)
     {
         m_hasClicked = false;
-
-        if (m_survivorWhoWantToTakeStair.ContainsKey(clientKey))
-        {
-            m_survivorWhoWantToTakeStair[clientKey] = false;
-        }
     }
 
     //Mise à jour du floor courant du survivor, Reset du path, update position survivor apres avoir pris escalier 
@@ -110,18 +93,9 @@ public class SurvivorManagerForStairScript : MonoBehaviour
         if (Network.isServer)
         {
             NetworkPlayer tmpNetworkPlayer = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
-            if (!m_survivorWhoWantToTakeStair.ContainsKey(tmpNetworkPlayer))
-            {
-                m_survivorWhoWantToTakeStair.Add(tmpNetworkPlayer, true);
-            }
-            else
-            {
-                m_survivorWhoWantToTakeStair[tmpNetworkPlayer] = true;
-            }
 
             updateSurvivorPathAndCurrentFloorAndPostion(survivor, m_floorOfStairOut, tmpNetworkPlayer);
-
-            m_survivorWhoWantToTakeStair[tmpNetworkPlayer] = false;
+            m_hasClicked = false;
         }
     }
 }

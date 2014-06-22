@@ -55,10 +55,10 @@ public class InventoryScript : MonoBehaviour
             foreach (Slot slot in m_inventory)
             {
                 GUILayout.BeginVertical();
-                if (slot.id == -1)
+                if (slot.Id == -1)
                     GUILayout.Label("Vide");
                 else
-                    GUILayout.Label("id : " + slot.id.ToString() + "\n " + "quantité : " + slot.quantity);
+                    GUILayout.Label("id : " + slot.Id.ToString() + "\n " + "quantité : " + slot.Quantity);
 
                 GUILayout.EndVertical();
             }
@@ -97,12 +97,12 @@ public class InventoryScript : MonoBehaviour
         int i = 0;
         while (i < m_nbSlotInventory && !findItemInInventory)
         {
-            if (m_inventory[i].id == idItemToAdd)
+            if (m_inventory[i].Id == idItemToAdd)
             {
                 indexToAdd = i;
                 findItemInInventory = true;
             }
-            else if (!indexFreeExist && m_inventory[i].id == -1)
+            else if (!indexFreeExist && m_inventory[i].Id == -1)
             {
                 indexFreeExist = true;
                 indexToAdd = i;
@@ -132,5 +132,52 @@ public class InventoryScript : MonoBehaviour
     public void throwItem(int indexItemToThrow)
     {
         m_inventory[indexItemToThrow].resetSlot();
+    }
+
+    public void checkIfInputForItem()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        { 
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+
+        }
+    }
+
+    public bool checkItemQuantity(int slotPosition)
+    {
+        bool slotIsOk = false;
+        if (m_inventory[slotPosition] != null)
+        {
+            if (m_inventory[slotPosition].Id != -1 && m_inventory[slotPosition].Quantity > 0)
+            {
+                slotIsOk = true;
+            }
+        }
+
+        return slotIsOk;
+    }
+
+    public void useItem(int slotPosition)
+    {
+ 
     }
 }

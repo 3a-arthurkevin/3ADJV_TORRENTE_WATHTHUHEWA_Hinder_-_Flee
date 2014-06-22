@@ -82,24 +82,6 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
         }
     }
 
-    /*
-    void OnTriggerEnter(Collider survivor)
-    {
-        if (Network.isServer && !m_destroy)
-        {
-            if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
-            {
-                Debug.Log("Trying to pick an item");
-                m_networkView.RPC("selfDestroy", RPCMode.All);
-                m_destroy = true;
-            }
-            else
-            {  
-                Debug.LogError("Plus de place dans l'inventaire"); 
-            }
-        }
-    } 
-    */
     [RPC]
     void selfDestroy()
     {
