@@ -898,6 +898,10 @@ Prefab:
       propertyPath: m_Name
       value: ZombieSpawnPoint_Floor0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
+      propertyPath: pointType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
   m_RootGameObject: {fileID: 1920786401}
@@ -2218,6 +2222,10 @@ Prefab:
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
       value: ZombieSpawnPoint_Floor0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
+      propertyPath: pointType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
@@ -4008,6 +4016,10 @@ Prefab:
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
       value: ZombieSpawnPoint_Floor0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
+      propertyPath: pointType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
@@ -6914,7 +6926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db64bb225e20aa4bbdbb07b08369b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  pointType: 1
   m_transform: {fileID: 881009190}
 --- !u!4 &881009190
 Transform:
@@ -8062,7 +8074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db64bb225e20aa4bbdbb07b08369b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  pointType: 1
   m_transform: {fileID: 1058682651}
 --- !u!4 &1058682651
 Transform:
@@ -8473,6 +8485,10 @@ Prefab:
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
       value: ZombieSpawnPoint_Floor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
+      propertyPath: pointType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
@@ -9914,7 +9930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db64bb225e20aa4bbdbb07b08369b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  pointType: 1
   m_transform: {fileID: 1374833949}
 --- !u!4 &1374833949
 Transform:
@@ -10557,6 +10573,10 @@ Prefab:
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
       value: ZombieSpawnPoint_Floor0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
+      propertyPath: pointType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
@@ -11557,6 +11577,10 @@ Prefab:
       propertyPath: m_Name
       value: ZombieSpawnPoint_Floor1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
+      propertyPath: pointType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
   m_RootGameObject: {fileID: 1646229810}
@@ -11773,7 +11797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db64bb225e20aa4bbdbb07b08369b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  pointType: 1
   m_transform: {fileID: 1646229812}
 --- !u!4 &1646229812
 Transform:
@@ -13737,7 +13761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db64bb225e20aa4bbdbb07b08369b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  pointType: 1
   m_transform: {fileID: 1920786403}
 --- !u!4 &1920786403
 Transform:
@@ -14860,7 +14884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db64bb225e20aa4bbdbb07b08369b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointType: 0
+  pointType: 1
   m_transform: {fileID: 2093333863}
 --- !u!4 &2093333863
 Transform:
