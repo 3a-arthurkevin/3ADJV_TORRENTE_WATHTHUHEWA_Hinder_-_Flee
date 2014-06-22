@@ -24,14 +24,14 @@ public class Slot
     }
 
     //Propriété Id
-    public int id
+    public int Id
     {
         get { return this.m_idItem; }
         set { this.m_idItem = value; }
     }
 
     //Propriété Quantity
-    public int quantity
+    public int Quantity
     {
         get { return this.m_quantity; }
         set
@@ -46,7 +46,7 @@ public class Slot
     }
 
     //Propriété maxQuantity
-    public int maxQuantity
+    public int MaxQuantity
     {
         get { return this.m_maxQuantity; }
         set { this.m_maxQuantity = value; }
