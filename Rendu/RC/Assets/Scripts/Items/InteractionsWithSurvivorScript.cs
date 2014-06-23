@@ -3,7 +3,6 @@ using System.Collections;
 
 public class InteractionsWithSurvivorScript : MonoBehaviour
 {
-
     /*
         Script attaché aux gameObject Items
     */

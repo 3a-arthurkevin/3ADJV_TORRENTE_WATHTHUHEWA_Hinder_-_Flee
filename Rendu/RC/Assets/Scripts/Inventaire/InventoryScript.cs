@@ -13,8 +13,19 @@ public class InventoryScript : MonoBehaviour
     [SerializeField]
     private int m_nbSlotInventory = 6;
 
+    [SerializeField]
+    private Transform m_playerTranform;
+
+    [SerializeField]
+    private Camera m_playerCamera;
+
     private List<Slot> m_inventory;
 
+    private int m_slotUse = -1;
+    private bool m_aimingToPutItem = false;
+
+    private DirectUseItemScript m_tmpDirect;
+    private AfterAimingItemUseScript m_tmpAfter;
 
     /* GUI PART */
     //private int m_nbCelluleX = 10;
@@ -70,12 +81,12 @@ public class InventoryScript : MonoBehaviour
 
 
     // Update is called once per frame
-    /*
+    
 	void Update () 
     {
-        
+        checkIfInputForItem();   
 	}
-    */
+    
 
     public Slot getItem(int index)
     {
@@ -136,48 +147,88 @@ public class InventoryScript : MonoBehaviour
 
     public void checkIfInputForItem()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        { 
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        if(Network.isClient && m_networkView.owner == Network.player)
         {
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-
-        }
-    }
-
-    public bool checkItemQuantity(int slotPosition)
-    {
-        bool slotIsOk = false;
-        if (m_inventory[slotPosition] != null)
-        {
-            if (m_inventory[slotPosition].Id != -1 && m_inventory[slotPosition].Quantity > 0)
+            //En attendte d'une touche pour utiliser une objet
+            if (!m_aimingToPutItem)
             {
-                slotIsOk = true;
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                    m_slotUse = 0;
+                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                    m_slotUse = 1;
+                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                    m_slotUse = 2;
+                else if (Input.GetKeyDown(KeyCode.Alpha4))
+                    m_slotUse = 3;
+                else if (Input.GetKeyDown(KeyCode.Alpha5))
+                    m_slotUse = 4;
+                else if (Input.GetKeyDown(KeyCode.Alpha6))
+                    m_slotUse = 5;
+
+                if (m_slotUse >= 0 && m_slotUse <= 5)
+                    m_networkView.RPC("checkItemQuantity", RPCMode.Server, m_slotUse);
+            }
+            //En attante d'un clique pour poser un objet piège
+            else
+            {
+                if (Input.GetButtonDown("LaunchSkill"))
+                {
+                    Ray ray = m_playerCamera.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
+                    {
+                        m_tmpAfter = (AfterAimingItemUseScript)m_inventory[m_slotUse].Item;
+
+                        if (Vector3.Distance(m_playerTranform.position, hit.point) < m_tmpAfter.Range)
+                        {
+                            //créer le gameObject et le placer sur la map
+                        }
+                        else
+                        {
+                            Debug.LogError("Click out of range to put item, try putting closer");
+                            //Lancer un son indiquant que le clique is not ok
+                        }
+                    }
+                    else if (Input.anyKeyDown)
+                        m_networkView.RPC("cancelItemUse", RPCMode.All);
+                        //Exit mode de visé pour poser objet
+                }
             }
         }
-
-        return slotIsOk;
     }
 
-    public void useItem(int slotPosition)
+    [RPC]
+    public void checkItemQuantity(int slotPosition)
     {
- 
+        if (Network.isServer)
+        {
+            if (m_inventory[slotPosition] != null)
+            {
+                if (m_inventory[slotPosition].Id != -1 && m_inventory[slotPosition].Quantity > 0)
+                    m_networkView.RPC("wantToUseItem", RPCMode.All, slotPosition);
+                else
+                    Debug.LogError("Pas d'item utilisable dans ce slot");
+            }
+        }
+    }
+
+    [RPC]
+    public void wantToUseItem(int slotPosition)
+    {
+        if (!m_inventory[slotPosition].Item.IsDirect)
+            m_aimingToPutItem = true;
+        else
+            useItem(slotPosition, Vector3.zero);
+    }
+
+    [RPC]
+    public void cancelItemUse()
+    {
+        m_aimingToPutItem = false;
+    }
+
+    public void useItem(int slotPosition, Vector3 clickPosition)
+    {
+        m_inventory[slotPosition].Item.useItem(m_networkView, clickPosition);
     }
 }

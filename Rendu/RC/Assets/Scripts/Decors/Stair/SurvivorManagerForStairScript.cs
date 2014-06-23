@@ -88,13 +88,13 @@ public class SurvivorManagerForStairScript : MonoBehaviour
         survivor.gameObject.GetComponent<MoveManagerSurvivorScript>().tookStair(floorOut, m_stairOut.position, clientNetworkPlayer);
     }
 
-    void OnTriggerEnter(Collider survivor)
+    void OnTriggerStay(Collider survivor)
     {
-        if (Network.isServer)
+        if (Network.isServer && m_hasClicked == true)
         {
             NetworkPlayer tmpNetworkPlayer = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
-
             updateSurvivorPathAndCurrentFloorAndPostion(survivor, m_floorOfStairOut, tmpNetworkPlayer);
+            
             m_hasClicked = false;
         }
     }
