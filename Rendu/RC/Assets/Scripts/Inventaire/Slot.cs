@@ -6,6 +6,7 @@ public class Slot
     private int m_idItem;
     private int m_quantity;
     private int m_maxQuantity;
+    private ItemBaseScript m_item;
 
     //Constructeur 1
     public Slot(int pQuantiteMax)
@@ -50,6 +51,13 @@ public class Slot
     {
         get { return this.m_maxQuantity; }
         set { this.m_maxQuantity = value; }
+    }
+
+    //Propriété maxQuantity
+    public ItemBaseScript Item
+    {
+        get { return this.m_item; }
+        set { this.m_item = value; }
     }
 
     //Vérification de l'espace dans le slot (utilisé avant d'ajouter un item)
