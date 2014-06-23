@@ -167,8 +167,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     [RPC]
     protected void StartSkill(int skill)
     {
-        Debug.LogError("StartSkill");
-
         if (Network.player == m_owner)
             Cursor.SetCursor(m_viseurCursor, m_hotSpot, CursorMode.Auto);
 
@@ -179,8 +177,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     [RPC]
     protected void CheckLaunchSkill(Vector3 hit)
     {
-        Debug.LogError("CheckLaunchSkill");
-
         if (Network.isServer)
         {
             if (m_skills[m_idSkillLaunch].canLaunchSkill(hit))
@@ -194,8 +190,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     [RPC]
     protected void LaunchSkill(Vector3 hit)
     {
-        Debug.LogError("LaunchSkill");
-
         m_skills[m_idSkillLaunch].LaunchSkill(hit);
         StopSkill();
     }
@@ -203,8 +197,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     [RPC]
     protected void StopSkill()
     {
-        Debug.LogError("StopSkill");
-
         if (Network.isClient && Network.player == m_owner)
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 

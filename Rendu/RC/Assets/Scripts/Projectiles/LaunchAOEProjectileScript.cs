@@ -52,7 +52,10 @@ public class LaunchAOEProjectileScript : IProjectile
                 m_transform.position += distance.normalized * Time.deltaTime * m_speed;
 
             else
+            {
+                m_transform.localScale = new Vector3(m_aoeSize, m_aoeSize, 0.1);
                 m_arrived = true;
+            }
         }
     }
 

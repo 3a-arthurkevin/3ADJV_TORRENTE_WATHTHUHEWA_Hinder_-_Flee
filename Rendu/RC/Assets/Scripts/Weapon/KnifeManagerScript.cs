@@ -13,12 +13,12 @@ public class KnifeManagerScript : BaseWeaponManagerScript
         cp.WeaponManager = this;
         m_skills[1] = cp;
 
-        cp = new CoupDeCouteau();
-        cp.WeaponManager = this;
-        m_skills[2] = cp;
+        PiegeDeCouteau pc = new PiegeDeCouteau();
+        pc.WeaponManager = this;
+        m_skills[2] = pc;
 
-        cp = new CoupDeCouteau();
-        cp.WeaponManager = this;
-        m_skills[3] = cp;
+        pc = new PiegeDeCouteau();
+        pc.WeaponManager = this;
+        m_skills[3] = pc;
     }
 }

@@ -23,10 +23,10 @@ public class LaunchProjectileSingleTargetScript : IProjectile
     {
         if (col.networkView.viewID != m_launcher)
         {
-            if(Network.isServer)
+            if (Network.isServer)
                 m_applyEffect(col.gameObject);
+            else
+                Destroy(gameObject);
         }
-        else
-            Destroy(gameObject);
     }
 }
