@@ -6,6 +6,8 @@ public class LaunchAOEProjectileScript : IProjectile
 {
     private float m_timer;
 
+    private List<Transform> m_alreadyHit;
+
     private float m_duration = 0f;
     public float Duration
     {
@@ -40,11 +42,12 @@ public class LaunchAOEProjectileScript : IProjectile
             m_transform = transform;
 
         m_timer = 0;
+        m_alreadyHit = new List<Transform>();
     }
 
     void FixedUpdate()
     {
-        if (m_isLaunch)
+        if (m_isLaunch && !m_arrived)
         {
             Vector3 distance = m_target - m_transform.position;
 
@@ -53,7 +56,7 @@ public class LaunchAOEProjectileScript : IProjectile
 
             else
             {
-                m_transform.localScale = new Vector3(m_aoeSize, m_aoeSize, 0.1);
+                m_transform.localScale = new Vector3(m_aoeSize, 0.1f, m_aoeSize);
                 m_arrived = true;
             }
         }
@@ -72,8 +75,11 @@ public class LaunchAOEProjectileScript : IProjectile
 
     void OnTriggerEnter(Collider col)
     {
-        if (m_arrived)
+        if (m_arrived && !m_alreadyHit.Contains(col.transform))
             if (col.networkView.viewID != m_launcher)
+            {
                 m_applyEffect(col.gameObject);
+                m_alreadyHit.Add(col.transform);
+            }
     }
 }

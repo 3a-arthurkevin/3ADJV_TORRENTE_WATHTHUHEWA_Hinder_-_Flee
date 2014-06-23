@@ -12639,6 +12639,10 @@ Prefab:
       propertyPath: m_configLevelManager
       value: 
       objectReference: {fileID: 921634779}
+    - target: {fileID: 11400004, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_waveTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_RootGameObject: {fileID: 280049091}
