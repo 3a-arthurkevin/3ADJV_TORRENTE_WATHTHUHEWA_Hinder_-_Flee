@@ -168,32 +168,6 @@ public class InventoryScript : MonoBehaviour
                 if (m_slotUse >= 0 && m_slotUse <= 5)
                     m_networkView.RPC("checkItemQuantity", RPCMode.Server, m_slotUse);
             }
-            //En attante d'un clique pour poser un objet piège
-            else
-            {
-                if (Input.GetButtonDown("LaunchSkill"))
-                {
-                    Ray ray = m_playerCamera.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-                    if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
-                    {
-                        m_tmpAfter = (AfterAimingItemUseScript)m_inventory[m_slotUse].Item;
-
-                        if (Vector3.Distance(m_playerTranform.position, hit.point) < m_tmpAfter.Range)
-                        {
-                            //créer le gameObject et le placer sur la map
-                        }
-                        else
-                        {
-                            Debug.LogError("Click out of range to put item, try putting closer");
-                            //Lancer un son indiquant que le clique is not ok
-                        }
-                    }
-                    else if (Input.anyKeyDown)
-                        m_networkView.RPC("cancelItemUse", RPCMode.All);
-                        //Exit mode de visé pour poser objet
-                }
-            }
         }
     }
 
@@ -213,22 +187,8 @@ public class InventoryScript : MonoBehaviour
     }
 
     [RPC]
-    public void wantToUseItem(int slotPosition)
-    {
-        if (!m_inventory[slotPosition].Item.IsDirect)
-            m_aimingToPutItem = true;
-        else
-            useItem(slotPosition, Vector3.zero);
-    }
-
-    [RPC]
-    public void cancelItemUse()
+    public void StopItemUse()
     {
         m_aimingToPutItem = false;
-    }
-
-    public void useItem(int slotPosition, Vector3 clickPosition)
-    {
-        m_inventory[slotPosition].Item.useItem(m_networkView, clickPosition);
     }
 }

@@ -5,7 +5,9 @@ public abstract class ItemBaseScript : MonoBehaviour
 {
     protected string m_name;
     protected string m_description;
-    protected bool m_directUse;
+    protected NetworkView m_networkView;
+    protected Camera m_playerCamera;
+    protected Transform m_playerTransform;
     //private MeshRenderer m_itemMeshRenderer;
     //private MeshFilter m_ItemMeshFilter;
 
@@ -26,13 +28,7 @@ public abstract class ItemBaseScript : MonoBehaviour
         set { m_description = value; }
     }
 
-    public bool IsDirect
-    {
-        get { return m_directUse; }
-        set { m_directUse = value; }
-    }
-
     protected abstract void init();
 
-    public abstract void useItem(NetworkView networkView, Vector3 clickPostion);
+    public abstract void useItem(NetworkView networkView, Vector3 postion);
 }
