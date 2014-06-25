@@ -38,6 +38,9 @@ public class HealthManagerScript : MonoBehaviour
     private Rect layoutBottom;
     private Rect boxEtatPerso;
     private Rect labelLifePoint;
+    //private Rect labelAvenir; 
+    
+    GUIStyle centeredTextStyle;
 
     void Start()
     {
@@ -54,8 +57,11 @@ public class HealthManagerScript : MonoBehaviour
 
         layoutBottom = new Rect(0, m_screenHeight - m_hauteurCellule * 2, m_screenWidth, m_hauteurCellule * 2);
         boxEtatPerso = new Rect(layoutBottom.x, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height);
-        labelLifePoint = new Rect(boxEtatPerso.x + (boxEtatPerso.width / 2), boxEtatPerso.y + 40, boxEtatPerso.width, 30);
+        labelLifePoint = new Rect(boxEtatPerso.x, boxEtatPerso.y + (0.25f * boxEtatPerso.height), boxEtatPerso.width, boxEtatPerso.height);
+        //labelAvenir = new Rect(boxEtatPerso.x, boxEtatPerso.y + (0.50f * boxEtatPerso.height), boxEtatPerso.width, boxEtatPerso.height);
 
+        centeredTextStyle  = new GUIStyle();
+        centeredTextStyle.alignment = TextAnchor.UpperCenter;
     }
 
     public int LifePoint
@@ -115,10 +121,11 @@ public class HealthManagerScript : MonoBehaviour
 
     void OnGUI()
     {
-        if(Network.player == m_owner)
+        if(Network.player == m_owner && Network.isClient)
         {
             GUI.Box(boxEtatPerso, "Etat Perso");
-            GUI.Label(labelLifePoint, m_currentLifePoint + "/" + m_maxLifePoint);
+            GUI.Label(labelLifePoint, "Vie : " + m_currentLifePoint + "/" + m_maxLifePoint, centeredTextStyle);
+            //GUI.Label(labelAvenir, "Label Avenir", centeredTextStyle);
         }
     }
 }

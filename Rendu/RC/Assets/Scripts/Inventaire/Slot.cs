@@ -4,44 +4,53 @@ using System.Collections;
 public class Slot
 {
     private int m_idItem;
+    private string m_name;
+    private string m_description;
+    private float m_range;
     private int m_quantity;
     private int m_maxQuantity;
-    private ItemBaseScript m_item;
 
-    //Constructeur 1
+    //Constructeur (sert lors de l'init de l'inventaire)
     public Slot(int pQuantiteMax)
     {
-        this.m_idItem = -1;
-        this.m_quantity = 0;
-        this.m_maxQuantity = pQuantiteMax;
-    }
-
-    //Constructeur 2
-    public Slot(int pId, int pQuantite, int pQuantityMax)
-    {
-        this.m_idItem = pId;
-        this.m_quantity = pQuantite;
-        this.m_maxQuantity = pQuantityMax;
+        m_idItem = -1;
+        m_name = "-";
+        m_description = "-";
+        m_quantity = 0;
+        m_maxQuantity = pQuantiteMax;
+        m_range = -1;
     }
 
     //Propriété Id
     public int Id
     {
-        get { return this.m_idItem; }
-        set { this.m_idItem = value; }
+        get { return m_idItem; }
+        set { m_idItem = value; }
+    }
+
+    public string Name
+    {
+        get { return m_name; }
+        set { m_name = value; }
+    }
+
+    public string Description
+    {
+        get { return m_description; }
+        set { m_description = value; }
     }
 
     //Propriété Quantity
     public int Quantity
     {
-        get { return this.m_quantity; }
+        get { return m_quantity; }
         set
         {
-            this.m_idItem = value;
+            m_quantity = value;
 
-            if (this.m_idItem > m_maxQuantity)
+            if (m_idItem > m_maxQuantity)
             {
-                this.m_idItem = m_maxQuantity;
+                m_idItem = m_maxQuantity;
             }
         }
     }
@@ -49,50 +58,57 @@ public class Slot
     //Propriété maxQuantity
     public int MaxQuantity
     {
-        get { return this.m_maxQuantity; }
-        set { this.m_maxQuantity = value; }
+        get { return m_maxQuantity; }
+        set { m_maxQuantity = value; }
     }
 
-    //Propriété maxQuantity
-    public ItemBaseScript Item
+    //Property Range
+    public float Range
     {
-        get { return this.m_item; }
-        set { this.m_item = value; }
+        get { return m_range; }
+        set { m_range = value; }
     }
 
     //Vérification de l'espace dans le slot (utilisé avant d'ajouter un item)
     public bool checkQuantityBeforeAddItem(int quantity)
     {
         bool check = true;
-        if (m_quantity >= m_maxQuantity)
+        if (m_quantity + quantity > m_maxQuantity)
         {
             check = false;
         }
         return check;
     }
 
-    //Set un slot (utilisé pour l'ajout d'un Item existant et inexistant dans l'inventaire )
-    public void addItem(int id, int quantity)
+    public void addQuantity(int quantityToAdd)
     {
-        this.m_idItem = id;
-        if (m_quantity + quantity <= m_maxQuantity)
-        {
-            this.m_quantity += quantity;
-        }
-        else if (m_quantity < m_maxQuantity && m_quantity + quantity >= m_maxQuantity)
-        {
-            this.m_quantity = m_maxQuantity;
-        }
-        else
-        {
-            //Debug.LogError("L'inventaire ne peut contenir l'objet " + id + " que " + m_maxQuantity + " fois");
-        }
+        m_quantity += quantityToAdd;
+        if (m_quantity + quantityToAdd > m_maxQuantity)
+            m_quantity = m_maxQuantity;
+    }
+
+    //Set un slot (utilisé pour l'ajout d'un Item existant et inexistant dans l'inventaire )
+    public void addNewItem(int id, string name, string description, float range, int quantity)
+    {
+        m_idItem = id;
+        m_name = name;
+        m_description = description;
+        m_range = range;
+        addQuantity(quantity);
+    }
+
+    public void addItemQuantity(int quantity)
+    {
+        addQuantity(quantity);
     }
 
     //Quand le joueur jette un objet de l'inventaire
     public void resetSlot()
     {
-        this.m_idItem = -1;
-        this.m_quantity = 0;
+        m_idItem = -1;
+        m_name = "-";
+        m_description = "-";
+        m_quantity = 0;
+        m_range = -1;
     }
 }
