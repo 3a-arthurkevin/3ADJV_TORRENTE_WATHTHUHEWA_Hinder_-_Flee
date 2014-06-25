@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class BaseWeaponManagerScript : MonoBehaviour
+public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
 {
     [SerializeField]
     protected Font m_zombieFont;
@@ -11,13 +11,7 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     protected Texture2D m_viseurCursor;
     protected Vector2 m_hotSpot = Vector2.zero;
 
-    [SerializeField]
-    protected string m_name;
-    public string Name
-    {
-        get { return m_name; }
-        set { m_name = value; }
-    }
+    
 
     [SerializeField]
     protected NetworkPlayer m_owner;
@@ -36,9 +30,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     }
 
     [SerializeField]
-    protected NetworkView m_networkView = null;
-
-    [SerializeField]
     protected ISkill[] m_skills = new ISkill[4];
 
     protected int m_idSkillLaunch = 0;
@@ -47,14 +38,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     {
         get { return m_underSkill; }
         set { m_underSkill = value; }
-    }
-
-    [SerializeField]
-    protected Transform m_player;
-    public Transform Player
-    {
-        get { return m_player; }
-        set { m_player = value; }
     }
 
     /* GUI PART */
@@ -66,8 +49,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     protected float m_hauteurCellule;
     protected Rect layoutBottom;
     protected Rect boxSkill;
-
-    protected abstract void initSkill();
 
     protected void Start()
     {
@@ -94,7 +75,7 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
                     m_skills[i].CoolDown = 0f;
             }
 
-        if (Network.isClient && Network.player == m_owner)
+        if (Network.player == m_owner)
         {
             if (!m_underSkill)
             {
@@ -189,7 +170,7 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     }
 
     [RPC]
-    protected void LaunchSkill(Vector3 hit)
+    protected override void LaunchSkill(Vector3 hit)
     {
         m_skills[m_idSkillLaunch].LaunchSkill(hit);
         StopSkill();

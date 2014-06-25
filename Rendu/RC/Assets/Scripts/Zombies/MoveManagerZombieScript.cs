@@ -29,7 +29,16 @@ public class MoveManagerZombieScript : MonoBehaviour {
 
     [SerializeField]
     private Transform m_survivor;
+    public Transform Surivor
+    {
+        get { return m_survivor; }
+    }
+
     private bool m_follow = false;
+    public bool IsFollowing
+    {
+        get { return m_follow; }
+    }
 
     void Awake()
     {

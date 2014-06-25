@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KnifeManagerScript : BaseWeaponManagerScript
+public class KnifeWeaponManagerScript : BaseSurvivorWeaponManagerScript
 {
     protected override void initSkill()
     {

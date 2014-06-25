@@ -46,13 +46,11 @@ public class SurvivorManagerForStairScript : MonoBehaviour
 
     void OnMouseExit()
     {
-        //Debug.LogError("Cursor normal");
         Cursor.SetCursor(null, m_hotSpot, m_cursorMode);
     }
 
     void OnMouseDown()
     {
-        //Debug.LogError("click down");
         if (!m_hasClicked && Network.isClient)
         {
             m_hasClicked = true;
@@ -62,7 +60,6 @@ public class SurvivorManagerForStairScript : MonoBehaviour
 
     void OnMouseUp()
     {
-        //Debug.LogError("click Up");
         if (m_hasClicked && Network.isClient)
         {
             m_hasClicked = false;

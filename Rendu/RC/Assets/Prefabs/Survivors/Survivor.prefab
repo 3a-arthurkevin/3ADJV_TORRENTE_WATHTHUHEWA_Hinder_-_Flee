@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470a31ef3960f1f409e3e1bf3a8132c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_name: Knife
+  m_networkView: {fileID: 14800000}
+  m_weaponOwner: {fileID: 400004}
   m_zombieFont: {fileID: 12800000, guid: ced2fcb1149ca984bbe842d33ef6ae4c, type: 3}
   m_viseurCursor: {fileID: 2800000, guid: 92a66af97d46e124e88f260b0204b8c3, type: 3}
-  m_name: Knife
   m_characterCamera: {fileID: 0}
-  m_networkView: {fileID: 14800000}
-  m_player: {fileID: 400004}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

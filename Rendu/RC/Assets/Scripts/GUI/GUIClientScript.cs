@@ -71,7 +71,7 @@ public class GUIClientScript : MonoBehaviour
 
         layoutBottom = new Rect(0, m_screenHeight - m_hauteurCellule * 2, m_screenWidth, m_hauteurCellule * 2);
 
-        boxEtatPerso = new Rect(layoutBottom.x, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height);
+        //boxEtatPerso = new Rect(layoutBottom.x, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height);
         boxArme = new Rect(layoutBottom.x + layoutBottom.width * 0.2f, layoutBottom.y, layoutBottom.width * 0.2f, layoutBottom.height * 0.5f);
         boxEquipement = new Rect(layoutBottom.x + layoutBottom.width * 0.2f, layoutBottom.y + layoutBottom.height * 0.5f, layoutBottom.width * 0.2f, layoutBottom.height * 0.5f);
         //boxSkill = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
@@ -101,7 +101,7 @@ public class GUIClientScript : MonoBehaviour
             }
         }
 
-        GUI.Box(boxEtatPerso, "Etat Perso");
+        //GUI.Box(boxEtatPerso, "Etat Perso");
         GUI.Box(boxArme, "Arme");
         GUI.Box(boxEquipement, "Equipement");
         //GUI.Box(boxSkill, "Skills");

@@ -11,8 +11,8 @@ public abstract class ISkill
         set { m_animation = value; }
     }
 
-    protected BaseWeaponManagerScript m_weaponManager;
-    public BaseWeaponManagerScript WeaponManager
+    protected BaseWeaponManager m_weaponManager;
+    public BaseWeaponManager WeaponManager
     {
         get { return m_weaponManager; }
         set { m_weaponManager = value; }
@@ -43,7 +43,13 @@ public abstract class ISkill
     public float CoolDown
     {
         get { return m_coolDown; }
-        set { m_coolDown = value; }
+        set
+        {
+            m_coolDown = value;
+
+            if (m_coolDown < 0)
+                m_coolDown = 0;
+        }
     }
 
     protected float m_range;
@@ -73,8 +79,6 @@ public abstract class ISkill
                 break;
 
             case "Survivor":
-                Debug.LogError("Survivor effects");
-
                 foreach (IEffect effect in m_survivorEffect)
                     effect.Apply(target);
                 break;

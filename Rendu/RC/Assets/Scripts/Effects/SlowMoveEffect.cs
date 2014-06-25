@@ -24,12 +24,10 @@ public class SlowMoveEffect : IEffect
 
         if (m_target.tag.Equals("Zombie"))
         {
-            Debug.LogError("Zombie effect");
             target.GetComponent<MoveManagerZombieScript>().StartCoroutine(ReduceSpeed());
         }
         else if (m_target.tag.Equals("Survivor"))
         {
-            Debug.LogError("Survivor effect");
             target.GetComponent<MoveManagerSurvivorScript>().StartCoroutine(ReduceSpeed());
         }
         else
@@ -40,7 +38,6 @@ public class SlowMoveEffect : IEffect
     {
         if (m_target.tag.Equals("Zombie"))
         {
-            Debug.LogError("Zombie effect");
             MoveManagerZombieScript move = m_target.GetComponent<MoveManagerZombieScript>();
 
             move.Data.Speed -= m_speedReduce;
@@ -53,7 +50,6 @@ public class SlowMoveEffect : IEffect
         }
         else if (m_target.tag.Equals("Survivor"))
         {
-            Debug.LogError("Survivor effect");
             MoveManagerSurvivorScript move = m_target.GetComponent<MoveManagerSurvivorScript>();
 
             move.MoveData.Speed -= m_speedReduce;
@@ -65,9 +61,7 @@ public class SlowMoveEffect : IEffect
             m_target = null;
         }
         else
-        {
             Debug.LogError("Target can't be slow");
-        }
     }
 
     public override void SetParam(System.Collections.Generic.Dictionary<string, string> param)

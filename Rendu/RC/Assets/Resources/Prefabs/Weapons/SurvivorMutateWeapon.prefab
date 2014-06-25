@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: SurvivorMutateWeapon
   m_TagString: Untagged
@@ -39,12 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70edf852690d13c428bb8a4411fac154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_zombieFont: {fileID: 12800000, guid: ced2fcb1149ca984bbe842d33ef6ae4c, type: 3}
-  m_viseurCursor: {fileID: 2800000, guid: 92a66af97d46e124e88f260b0204b8c3, type: 3}
-  m_name: ZombieWeapon
-  m_characterCamera: {fileID: 0}
+  m_name: 
   m_networkView: {fileID: 14800000}
   m_player: {fileID: 0}
+  m_zombieFont: {fileID: 12800000, guid: ced2fcb1149ca984bbe842d33ef6ae4c, type: 3}
+  m_viseurCursor: {fileID: 2800000, guid: 92a66af97d46e124e88f260b0204b8c3, type: 3}
+  m_characterCamera: {fileID: 0}
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

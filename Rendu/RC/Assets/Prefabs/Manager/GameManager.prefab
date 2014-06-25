@@ -42,10 +42,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_configLevelManager: {fileID: 0}
-  m_buildServer: 1
+  m_buildServer: 0
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
-  m_maxPlayers: 2
+  m_maxPlayers: 1
   m_SurvivorPrefab: {fileID: 400004, guid: 25fdf185357b6eb43b6398fb85cb903b, type: 2}
   m_CharacterCameraPrefab: {fileID: 400000, guid: af399dfd2b2376a46a6d13e5226e354b,
     type: 2}

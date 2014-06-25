@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ZombiWeaponManagerScript : BaseWeaponManagerScript
+public class SurvivorMutateWeaponManagerScript : BaseSurvivorWeaponManagerScript
 {
     protected override void initSkill()
     {

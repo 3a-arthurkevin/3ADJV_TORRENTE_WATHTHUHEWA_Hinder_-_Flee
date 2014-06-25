@@ -8,8 +8,8 @@ public class CoupDePoingZombie : SingleTargetSkill
     {
         m_name = "Coup de Poing";
         m_description = "Donne un coup de poing.";
-        m_coolDownDuration = 5f;
-        m_range = 10f;
+        m_coolDownDuration = 2f;
+        m_range = 2f;
 
         m_survivorEffect.Add(new TakeDamageEffect(10));
     }

@@ -31,9 +31,7 @@ public class TakeDamageEffect : IEffect
             Debug.LogError("Target haven't health Manager");
 
         else
-        {
             healthManager.RemoveLifePoint(m_damage);
-        }
     }
 
     public override void SetParam(Dictionary<string, string> param)
