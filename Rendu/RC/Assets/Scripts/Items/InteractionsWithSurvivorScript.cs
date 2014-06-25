@@ -79,7 +79,7 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
         {
             if (m_hasClicked && !m_destroy)
             {
-                InventoryItemScript inventaire = survivor.gameObject.GetComponent<InventoryItemScript>();
+                InventoryItemScript inventaire = survivor.GetComponentInChildren<InventoryItemScript>();
                 int slotPosition = inventaire.itemExistInInventory((int) m_idItem);
                 bool itemPicked = true;
 
