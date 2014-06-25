@@ -53,7 +53,6 @@ public class MoveManagerSurvivorScript : MonoBehaviour
             else
             {
                 m_data.CharacterController.Move(direction.normalized * m_data.Speed * Time.deltaTime);
-                //m_data.Position.position += direction.normalized * m_data.Speed * Time.deltaTime;
             }
         }
 	}

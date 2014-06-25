@@ -68,12 +68,12 @@ public abstract class ISkill
         switch (target.tag)
         {
             case "Zombie":
-                foreach (IEffect effect in m_survivorEffect)
+                foreach (IEffect effect in m_zombieEffect)
                     effect.Apply(target);
                 break;
 
             case "Survivor":
-                foreach (IEffect effect in m_zombieEffect)
+                foreach (IEffect effect in m_survivorEffect)
                     effect.Apply(target);
                 break;
         }

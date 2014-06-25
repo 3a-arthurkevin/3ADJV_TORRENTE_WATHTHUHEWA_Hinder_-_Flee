@@ -81,9 +81,6 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
         layoutBottom = new Rect(0, m_screenHeight - m_hauteurCellule * 2, m_screenWidth, m_hauteurCellule * 2);
         boxSkill = new Rect(layoutBottom.x + layoutBottom.width * 0.4f, layoutBottom.y, layoutBottom.width * 0.4f, layoutBottom.height * 0.5f);
 
-        m_guiStyle = new GUIStyle("Label");
-        m_guiStyle.font = m_zombieFont;
-
         initSkill();
     }
 
@@ -139,6 +136,10 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
 
                     else
                         m_networkView.RPC("StopSkill", RPCMode.All);
+                }
+                else if(Input.GetKeyDown(KeyCode.Escape))
+                {
+                    m_networkView.RPC("StopSkill", RPCMode.All);
                 }
             }
         }
@@ -224,6 +225,8 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     {
         if (Network.player == m_owner)
         {
+            m_guiStyle = new GUIStyle("Label");
+            m_guiStyle.font = m_zombieFont;
             GUILayout.BeginArea(boxSkill, new GUIStyle("Box"));
             GUILayout.BeginHorizontal();
 

@@ -32,8 +32,7 @@ public class TakeDamageEffect : IEffect
 
         else
         {
-            Debug.LogError("TakeDamage");
-            healthManager.AddLifePoint(-m_damage);
+            healthManager.LifePoint -= m_damage;
         }
     }
 

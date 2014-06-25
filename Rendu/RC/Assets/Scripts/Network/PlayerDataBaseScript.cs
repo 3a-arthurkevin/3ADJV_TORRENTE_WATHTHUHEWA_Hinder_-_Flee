@@ -163,8 +163,6 @@ public class PlayerDataBaseScript : MonoBehaviour {
     {
         GameObject character = GameObject.Find("Survivor" + Network.player.ToString());
         
-        Debug.LogError(Network.player.ToString());
-
         if (character == null)
             Debug.LogError("Character non trouvé");
 

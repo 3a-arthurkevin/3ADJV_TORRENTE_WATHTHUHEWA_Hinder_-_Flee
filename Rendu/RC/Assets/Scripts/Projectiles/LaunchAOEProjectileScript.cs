@@ -75,8 +75,9 @@ public class LaunchAOEProjectileScript : IProjectile
 
     void OnTriggerEnter(Collider col)
     {
+
         if (m_arrived && !m_alreadyHit.Contains(col.transform))
-            if (col.networkView.viewID != m_launcher)
+            if (col.networkView != null && col.networkView.viewID != m_launcher)
             {
                 m_applyEffect(col.gameObject);
                 m_alreadyHit.Add(col.transform);

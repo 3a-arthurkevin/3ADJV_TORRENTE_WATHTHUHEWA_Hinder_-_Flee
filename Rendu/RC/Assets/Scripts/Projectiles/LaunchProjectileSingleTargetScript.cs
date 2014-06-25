@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LaunchProjectileSingleTargetScript : IProjectile
 {
-
+    private bool m_alreadyHit = false;
     void FixedUpdate()
     {
         if (m_isLaunch)
@@ -21,12 +21,15 @@ public class LaunchProjectileSingleTargetScript : IProjectile
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.networkView.viewID != m_launcher)
+        if (col.networkView.viewID != m_launcher && !m_alreadyHit)
         {
             if (Network.isServer)
+            {
                 m_applyEffect(col.gameObject);
-            else
-                Destroy(gameObject);
+                m_alreadyHit = true;
+            }
+
+            Destroy(gameObject);
         }
     }
 }

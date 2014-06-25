@@ -18,6 +18,13 @@ public abstract class AOESkill : ISkill
         set { m_duration = value; }
     }
 
+    protected float m_speed = 2f;
+    public float Speed
+    {
+        get { return m_speed; }
+        set { m_speed = value; }
+    }
+
     public AOESkill() : base()
     {}
     
@@ -33,7 +40,7 @@ public abstract class AOESkill : ISkill
 
         launch.Launcher = m_weaponManager.Player.networkView.viewID;
         launch.ApplyEffect = ApplyEffect;
-        launch.Speed = 2f;
+        launch.Speed = m_speed;
 
         launch.Duration = m_duration;
         launch.AoeSize = m_aoeRange;
