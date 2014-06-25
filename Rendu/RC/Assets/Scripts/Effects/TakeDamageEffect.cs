@@ -32,7 +32,7 @@ public class TakeDamageEffect : IEffect
 
         else
         {
-            healthManager.LifePoint -= m_damage;
+            healthManager.RemoveLifePoint(m_damage);
         }
     }
 

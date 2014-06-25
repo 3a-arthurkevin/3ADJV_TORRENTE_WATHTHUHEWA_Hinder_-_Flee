@@ -55,6 +55,8 @@ public class MoveManagerSurvivorScript : MonoBehaviour
                 m_data.CharacterController.Move(direction.normalized * m_data.Speed * Time.deltaTime);
             }
         }
+        else
+            m_data.CharacterController.Move(Vector3.zero);
 	}
 
     public void setTarget(Vector3 target)

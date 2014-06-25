@@ -73,6 +73,8 @@ public abstract class ISkill
                 break;
 
             case "Survivor":
+                Debug.LogError("Survivor effects");
+
                 foreach (IEffect effect in m_survivorEffect)
                     effect.Apply(target);
                 break;

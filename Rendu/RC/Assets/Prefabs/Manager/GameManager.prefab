@@ -41,11 +41,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buildServer: 0
+  m_configLevelManager: {fileID: 0}
+  m_buildServer: 1
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
-  m_maxPlayers: 1
-  m_SurvivorPrefab: {fileID: 400002, guid: 84ff89e086d212c4d95e12f714da5fab, type: 2}
+  m_maxPlayers: 2
+  m_SurvivorPrefab: {fileID: 400004, guid: 25fdf185357b6eb43b6398fb85cb903b, type: 2}
   m_CharacterCameraPrefab: {fileID: 400000, guid: af399dfd2b2376a46a6d13e5226e354b,
     type: 2}
   m_serverCamera: {fileID: 400000, guid: 5ef714d08e90a46469dc3a9c555e40a9, type: 2}
@@ -62,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_prefabZombie: {fileID: 400000, guid: 0fb76991aff24124f8794e0357cd35ad, type: 2}
-  m_spawnManager: {fileID: 0}
+  ConfigLevelManager: {fileID: 0}
   m_respawnTime: 10
   m_waveTime: 1
 --- !u!114 &11400006

@@ -87,7 +87,7 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
     protected void Update()
     {
         for (int i = 0; i < 4; ++i)
-            if (m_skills[i].CoolDown != 0f)
+            if (m_skills[i] != null && m_skills[i].CoolDown != 0f)
             {
                 m_skills[i].CoolDown -= Time.deltaTime;
                 if (m_skills[i].CoolDown < 0)
@@ -152,13 +152,13 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
         {
             if (!m_underSkill && skill >= 0 && skill < 4)
             {
-                if (m_skills[skill].CoolDown == 0f)
+                if (m_skills[skill] != null && m_skills[skill].CoolDown == 0f)
                 {
                     m_networkView.RPC("StartSkill", RPCMode.All, skill);
                     m_underSkill = true;
                 }
                 else
-                    Debug.LogError("CoolDown not finish for skill : " + skill.ToString());
+                    Debug.LogError("Skill " + skill.ToString() + " is not availiable");
             }
             else
                 Debug.LogError("Skill allready Launch");
@@ -232,6 +232,9 @@ public abstract class BaseWeaponManagerScript : MonoBehaviour
 
             foreach (ISkill skill in m_skills)
             {
+                if (skill == null)
+                    continue;
+
                 GUILayout.BeginVertical();
                 GUILayout.Label(skill.Name, m_guiStyle);
 

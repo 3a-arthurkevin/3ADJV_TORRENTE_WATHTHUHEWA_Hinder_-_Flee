@@ -136,7 +136,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9338077e1c1abe84bba1b5aa150b79d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_characterType: 1
   m_networkView: {fileID: 14800002}
   m_maxLifePoint: 100
 --- !u!114 &11400006
