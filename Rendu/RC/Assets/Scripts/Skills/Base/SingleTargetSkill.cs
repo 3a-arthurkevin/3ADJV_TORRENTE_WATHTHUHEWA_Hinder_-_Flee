@@ -23,8 +23,6 @@ public abstract class SingleTargetSkill : ISkill
         launch.Direction = hit;
         launch.Limit = m_range;
 
-        Debug.LogError("LaunchSkill");
-
         base.LaunchSkill(hit);
     }
 

@@ -88,8 +88,6 @@ public class HealthManagerScript : MonoBehaviour
         if (Network.isServer)
             m_networkView.RPC("RemoveLifePoint", RPCMode.Others, hp);
 
-        Debug.LogError("Remobe lifePoint");
-
         m_currentLifePoint = Mathf.Clamp(m_currentLifePoint - hp, 0, m_maxLifePoint);
 
         if (m_currentLifePoint <= 0)
@@ -115,7 +113,7 @@ public class HealthManagerScript : MonoBehaviour
 
     void OnGUI()
     {
-        if(Network.player == m_owner)
+        if(Network.isClient && Network.player == m_owner)
         {
             GUI.Box(boxEtatPerso, "Etat Perso");
             GUI.Label(labelLifePoint, m_currentLifePoint + "/" + m_maxLifePoint);

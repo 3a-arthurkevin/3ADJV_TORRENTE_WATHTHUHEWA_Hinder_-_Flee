@@ -34,13 +34,8 @@ public abstract class BaseZombieWeaponManagerScript : BaseWeaponManager
         if(m_skill.CoolDown == 0f && m_moveManager.IsFollowing)
         {
             Vector3 direction = m_moveManager.Surivor.position - m_weaponOwner.position;
-
-            Debug.LogError("d : " + direction.sqrMagnitude.ToString("F6") + ", r: " + m_skill.Range.ToString());
-
             if(direction.sqrMagnitude <= m_skill.Range)
-            {
                 m_networkView.RPC("LaunchSkill", RPCMode.All, m_moveManager.Data.Path.corners[m_moveManager.Data.NumCorner]);
-            }
         }
     }
 

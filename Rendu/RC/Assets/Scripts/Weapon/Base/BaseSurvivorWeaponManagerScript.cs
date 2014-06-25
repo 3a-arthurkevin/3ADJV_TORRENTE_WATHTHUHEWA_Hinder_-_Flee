@@ -75,7 +75,7 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
                     m_skills[i].CoolDown = 0f;
             }
 
-        if (Network.player == m_owner)
+        if (Network.isClient && Network.player == m_owner)
         {
             if (!m_underSkill)
             {
@@ -149,7 +149,7 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
     [RPC]
     protected void StartSkill(int skill)
     {
-        if (Network.player == m_owner)
+        if (Network.isClient && Network.player == m_owner)
             Cursor.SetCursor(m_viseurCursor, m_hotSpot, CursorMode.Auto);
 
         m_underSkill = true;
@@ -204,7 +204,7 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
 
     protected void OnGUI()
     {
-        if (Network.player == m_owner)
+        if (Network.isClient && Network.player == m_owner)
         {
             m_guiStyle = new GUIStyle("Label");
             m_guiStyle.font = m_zombieFont;
