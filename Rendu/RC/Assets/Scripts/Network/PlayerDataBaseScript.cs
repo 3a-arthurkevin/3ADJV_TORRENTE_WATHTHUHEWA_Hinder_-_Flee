@@ -132,6 +132,9 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
             Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, m_configLevelManager.getNextSpawnSurvivor(out level), Quaternion.identity, int.Parse(player.ToString()));
 
+            if (transformPlayer.GetComponent<MoveManagerSurvivorScript>() == null)
+                Debug.LogError("Error MoveManager");
+
             transformPlayer.GetComponent<MoveManagerSurvivorScript>().MoveData.IsInFloor = level;
             transformPlayer.name = "Survivor" + player.ToString();
 

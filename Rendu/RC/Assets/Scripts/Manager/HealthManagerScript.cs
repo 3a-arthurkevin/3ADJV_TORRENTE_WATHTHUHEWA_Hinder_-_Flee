@@ -42,6 +42,9 @@ public class HealthManagerScript : MonoBehaviour
     
     GUIStyle centeredTextStyle;
 
+    [SerializeField]
+    private AudioClip m_hitAudio;
+
     void Start()
     {
         m_currentLifePoint = m_maxLifePoint;
@@ -96,6 +99,9 @@ public class HealthManagerScript : MonoBehaviour
 
         m_currentLifePoint = Mathf.Clamp(m_currentLifePoint - hp, 0, m_maxLifePoint);
 
+        if(Network.isClient)
+            StartCoroutine(playHitSound());
+
         if (m_currentLifePoint <= 0)
             Died();
     }
@@ -110,6 +116,8 @@ public class HealthManagerScript : MonoBehaviour
 
         if (Network.isServer)
             Network.Destroy(gameObject);
+
+        gameObject.SetActive(false);
     }
 
     public bool isDead()
@@ -127,5 +135,20 @@ public class HealthManagerScript : MonoBehaviour
             GUI.Label(labelLifePoint, "Vie : " + m_currentLifePoint + "/" + m_maxLifePoint, centeredTextStyle);
             //GUI.Label(labelAvenir, "Label Avenir", centeredTextStyle);
         }
+    }
+
+    IEnumerator playHitSound()
+    {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        AudioClip previousClip = audioSource.clip;
+
+        audioSource.clip = m_hitAudio;
+        audioSource.Play();
+        
+        yield return new WaitForSeconds(m_hitAudio.length);
+
+        audioSource.clip = previousClip;
+        audioSource.Play();
+
     }
 }
