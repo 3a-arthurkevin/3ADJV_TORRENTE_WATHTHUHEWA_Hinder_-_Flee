@@ -15,8 +15,8 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\bin\server_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\bin\server_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\bin\server_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.092 seconds
-desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
+- Completed reload, in  0.072 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\bin\server_Data\Managed\System.Core.dll (this message is harmless)
@@ -25,5 +25,49 @@ UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:LogError(Object)
 PlayerDataBaseScript:Start() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Network\PlayerDataBaseScript.cs:63)
  
+(Filename: C Line: 0)
+
+1 Has remove at game
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogError(Object)
+PlayerDataBaseScript:OnPlayerDisconnected(NetworkPlayer) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Network\PlayerDataBaseScript.cs:101)
+ 
+(Filename: C Line: 0)
+
+Survivor died
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:LogError(Object)
+HealthManagerScript:Died() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Manager\HealthManagerScript.cs:112)
+HealthManagerScript:RemoveLifePoint(Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Manager\HealthManagerScript.cs:106)
+TakeDamageEffect:Apply(GameObject) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Effects\TakeDamageEffect.cs:34)
+ISkill:ApplyEffect(GameObject) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Skills\Base\ISkill.cs:83)
+LaunchProjectileSingleTargetScript:OnTriggerEnter(Collider) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Projectiles\LaunchProjectileSingleTargetScript.cs:28)
+ 
+(Filename: C Line: 0)
+
+View ID AllocatedID: 1 not found during lookup. Strange behaviour may occur
+UnityEngine.Network:INTERNAL_CALL_Destroy(NetworkViewID&)
+UnityEngine.Network:Destroy(NetworkViewID)
+UnityEngine.Network:Destroy(GameObject)
+HealthManagerScript:Died() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Manager\HealthManagerScript.cs:120)
+HealthManagerScript:RemoveLifePoint(Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Manager\HealthManagerScript.cs:106)
+TakeDamageEffect:Apply(GameObject) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Effects\TakeDamageEffect.cs:34)
+ISkill:ApplyEffect(GameObject) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Skills\Base\ISkill.cs:83)
+LaunchProjectileSingleTargetScript:OnTriggerEnter(Collider) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Projectiles\LaunchProjectileSingleTargetScript.cs:28)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Network/NetworkManager.cpp line 1676] 
+(Filename: C Line: 0)
+
+Couldn't destroy object because the associate network view was not found
+UnityEngine.Network:INTERNAL_CALL_Destroy(NetworkViewID&)
+UnityEngine.Network:Destroy(NetworkViewID)
+UnityEngine.Network:Destroy(GameObject)
+HealthManagerScript:Died() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Manager\HealthManagerScript.cs:120)
+HealthManagerScript:RemoveLifePoint(Int32) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Manager\HealthManagerScript.cs:106)
+TakeDamageEffect:Apply(GameObject) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Effects\TakeDamageEffect.cs:34)
+ISkill:ApplyEffect(GameObject) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Skills\Base\ISkill.cs:83)
+LaunchProjectileSingleTargetScript:OnTriggerEnter(Collider) (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\RC\Assets\Scripts\Projectiles\LaunchProjectileSingleTargetScript.cs:28)
+
+[C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Network/NetworkManager.cpp line 1384] 
 (Filename: C Line: 0)
 

@@ -13,6 +13,6 @@ public class PiegeDeCouteau : AOESkill
         m_aoeRange = 2f;
         m_description = "Lance un couteau sur le sol. Inflige des dégâts lorsqu'un adversaire marche dessus dans une rayon de " + m_aoeRange + "m";
 
-        m_zombieEffect.Add(new TakeDamageEffect(80));
+        m_zombieEffect.Add(new TakeDamageEffect(20));
     }
 }

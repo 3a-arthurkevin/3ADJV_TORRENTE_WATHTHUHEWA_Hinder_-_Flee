@@ -47,8 +47,11 @@ public class MoveManagerSurvivorScript : MonoBehaviour
             if (direction.sqrMagnitude < m_defaultMinDistance)
             {
                 if ((m_data.NumCorner + 1) >= m_data.Path.corners.Length)
+                {
+                    m_audioSource.clip = null;
+                    m_isWalking = false;
                     m_data.Path = null;
-
+                }
                 else
                 {
                     Vector3 look = m_data.Path.corners[++m_data.NumCorner];
@@ -60,12 +63,6 @@ public class MoveManagerSurvivorScript : MonoBehaviour
             {
                 m_data.CharacterController.Move(direction.normalized * m_data.Speed * Time.deltaTime);
             }
-        }
-        else
-        {
-            m_audioSource.clip = null;
-            m_isWalking = false;
-            m_data.CharacterController.Move(Vector3.zero);
         }
 	}
 

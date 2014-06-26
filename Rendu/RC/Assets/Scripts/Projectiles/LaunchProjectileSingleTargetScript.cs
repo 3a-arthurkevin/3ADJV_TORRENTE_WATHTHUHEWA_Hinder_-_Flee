@@ -21,6 +21,12 @@ public class LaunchProjectileSingleTargetScript : IProjectile
 
     void OnTriggerEnter(Collider col)
     {
+        if (col.tag == "Wall")
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (col.networkView.viewID != m_launcher && !m_alreadyHit)
         {
             if (Network.isServer)

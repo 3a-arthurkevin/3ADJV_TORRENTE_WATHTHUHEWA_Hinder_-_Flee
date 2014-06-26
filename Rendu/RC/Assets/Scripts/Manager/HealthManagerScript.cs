@@ -45,6 +45,9 @@ public class HealthManagerScript : MonoBehaviour
     [SerializeField]
     private AudioClip m_hitAudio;
 
+    private bool m_isDestroy = false;
+    private bool m_soundPlaying = false;
+
     void Start()
     {
         m_currentLifePoint = m_maxLifePoint;
@@ -114,10 +117,14 @@ public class HealthManagerScript : MonoBehaviour
         else if (m_characterType == CharacterType.Zombie)
             Debug.LogError("Zombie Died");
 
-        if (Network.isServer)
-            Network.Destroy(gameObject);
+        Network.RemoveRPCs(m_networkView.viewID);
 
-        gameObject.SetActive(false);
+        if (Network.isServer &&!m_isDestroy)
+        {
+            Network.Destroy(m_networkView.viewID);
+            m_isDestroy = true;
+        }
+            
     }
 
     public bool isDead()
@@ -139,16 +146,22 @@ public class HealthManagerScript : MonoBehaviour
 
     IEnumerator playHitSound()
     {
-        AudioSource audioSource = GetComponent<AudioSource>();
-        AudioClip previousClip = audioSource.clip;
+        if (!m_soundPlaying)
+        {
+            m_soundPlaying = true;
+            
+            AudioSource audioSource = GetComponent<AudioSource>();
+            AudioClip previousClip = audioSource.clip;
 
-        audioSource.clip = m_hitAudio;
-        audioSource.Play();
-        
-        yield return new WaitForSeconds(m_hitAudio.length);
+            audioSource.clip = m_hitAudio;
+            audioSource.Play();
 
-        audioSource.clip = previousClip;
-        audioSource.Play();
+            yield return new WaitForSeconds(m_hitAudio.length);
 
+            audioSource.clip = previousClip;
+            audioSource.Play();
+
+            m_soundPlaying = false;
+        }
     }
 }
