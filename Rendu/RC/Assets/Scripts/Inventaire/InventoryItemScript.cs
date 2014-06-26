@@ -15,10 +15,10 @@ public class InventoryItemScript : MonoBehaviour
 
     [SerializeField]
     private Camera m_playerCamera;
-    /*
+    
     [SerializeField]
     private GameObject m_rangeObject;
-    */
+    
     [SerializeField]
     private Texture2D m_viseurCursor;
 
@@ -48,7 +48,7 @@ public class InventoryItemScript : MonoBehaviour
     {
         m_owner = m_player.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
         m_playerCamera = m_player.GetComponent<InputManagerMoveSurvivorScript>().getCharacterCamera();
-        //m_rangeObject.GetComponent<MeshRenderer>().enabled = false;
+        m_rangeObject.GetComponent<MeshRenderer>().enabled = false;
 
         m_inventory = new List<Slot>();
 
@@ -178,8 +178,8 @@ public class InventoryItemScript : MonoBehaviour
         if (m_owner == owner)
         {
             Cursor.SetCursor(m_viseurCursor, Vector2.zero, CursorMode.Auto);
-            //m_rangeObject.GetComponent<MeshRenderer>().enabled = true;
-            //m_rangeObject.transform.localScale = new Vector3(range * 2, 0.1f, range * 2);
+            m_rangeObject.GetComponent<MeshRenderer>().enabled = true;
+            m_rangeObject.transform.localScale = new Vector3(range * 2, 0.05f, range * 2);
         }
     }
 
@@ -189,8 +189,8 @@ public class InventoryItemScript : MonoBehaviour
         if (m_owner == owner && m_isAiming == true)
         {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            //m_rangeObject.transform.localScale = new Vector3(1, 1, 1);
-            //m_rangeObject.GetComponent<MeshRenderer>().enabled = false;
+            m_rangeObject.transform.localScale = new Vector3(1, 1, 1);
+            m_rangeObject.GetComponent<MeshRenderer>().enabled = false;
         }
 
         m_slotToUse = -1;

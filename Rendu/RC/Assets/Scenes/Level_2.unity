@@ -7220,7 +7220,7 @@ MonoBehaviour:
   m_name: PiegeLoup
   m_description: Trap
   m_quantity: 2
-  m_range: 10
+  m_range: 4
   m_networkView: {fileID: 511874235}
 --- !u!4 &511874237
 Transform:
@@ -7631,7 +7631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_buildServer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
       propertyPath: m_configLevelManager
@@ -9484,7 +9484,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 757ad61e2004bb14a95b2e72a1d45305, type: 2}
       propertyPath: m_range
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 757ad61e2004bb14a95b2e72a1d45305, type: 2}
@@ -13754,7 +13754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_configLevelManager: {fileID: 751632247}
-  m_buildServer: 0
+  m_buildServer: 1
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
   m_maxPlayers: 1
