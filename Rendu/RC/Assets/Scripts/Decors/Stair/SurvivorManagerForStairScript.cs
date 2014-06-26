@@ -48,7 +48,7 @@ public class SurvivorManagerForStairScript : MonoBehaviour
     {
         Cursor.SetCursor(null, m_hotSpot, m_cursorMode);
     }
-
+/*
     void OnMouseDown()
     {
         if (!m_hasClicked && Network.isClient)
@@ -66,15 +66,15 @@ public class SurvivorManagerForStairScript : MonoBehaviour
             m_networkView.RPC("hasClickedFalseForServer", RPCMode.Server, Network.player);
         }
     }
-
+*/
     [RPC]
-    void hasClickedTrueForServer(NetworkPlayer clientKey)
+    void hasClickedTrueForServer()
     {
         m_hasClicked = true;
     }
 
     [RPC]
-    void hasClickedFalseForServer(NetworkPlayer clientKey)
+    void hasClickedFalseForServer()
     {
         m_hasClicked = false;
     }
@@ -87,12 +87,29 @@ public class SurvivorManagerForStairScript : MonoBehaviour
 
     void OnTriggerStay(Collider survivor)
     {
-        if (Network.isServer && m_hasClicked == true)
+        if (survivor.tag == "Survivor")
         {
-            NetworkPlayer tmpNetworkPlayer = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
-            updateSurvivorPathAndCurrentFloorAndPostion(survivor, m_floorOfStairOut, tmpNetworkPlayer);
-            
-            m_hasClicked = false;
+            InputManagerMoveSurvivorScript inputManagerTmp = survivor.GetComponent<InputManagerMoveSurvivorScript>();
+
+            if (Network.isClient && Network.player == survivor.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer())
+            {
+                if (Input.GetButtonDown("LaunchSkill"))
+                {
+                    Ray ray = inputManagerTmp.getCharacterCamera().ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("StairSurvivorTeleport")))
+                        m_networkView.RPC("hasClickedTrueForServer", RPCMode.Server);
+                }
+            }
+
+            if (Network.isServer && m_hasClicked == true)
+            {
+                NetworkPlayer tmpNetworkPlayer = survivor.gameObject.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
+                updateSurvivorPathAndCurrentFloorAndPostion(survivor, m_floorOfStairOut, tmpNetworkPlayer);
+
+                m_hasClicked = false;
+            }
         }
     }
 }

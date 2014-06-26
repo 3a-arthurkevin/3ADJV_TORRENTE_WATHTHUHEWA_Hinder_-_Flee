@@ -75,6 +75,23 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
     //Destruction gameObject (si Item ramassé) dans la scene mais concervation de ses infos (id/quantité) dans inventaire survivant
     void OnTriggerStay(Collider survivor)
     {
+        if (survivor.tag == "Survivor")
+        {
+            InputManagerMoveSurvivorScript inputManagerTmp = survivor.GetComponent<InputManagerMoveSurvivorScript>();
+
+            if (Network.isClient && Network.player == survivor.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer())
+            {
+                if (Input.GetButtonDown("LaunchSkill"))
+                {
+                    Ray ray = inputManagerTmp.getCharacterCamera().ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+
+                    if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Item")))
+                        m_networkView.RPC("hasClickedForServer", RPCMode.Server, true);
+                }
+            }
+        }
+
         if (Network.isServer)
         {
             if (m_hasClicked && !m_destroy)
