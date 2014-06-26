@@ -3,20 +3,32 @@ using System.Collections;
 
 public class InteractionsWithSurvivorScript : MonoBehaviour
 {
+    public enum ItemId
+    {
+        PiegeLoup,
+        Potion,
+        Autre
+    }
+
     /*
         Script attaché aux gameObject Items
     */
 
     [SerializeField]
-    private int m_idItem = 0;
+    private ItemId m_idItem;
 
-    /*
     [SerializeField]
-    private string m_description = "Item test";
+    private string m_name;
     
     [SerializeField]
-    private int m_quantity = 1;
+    private string m_description;
 
+    [SerializeField]
+    private int m_quantity;
+
+    [SerializeField]
+    private float m_range;
+    /*
     [SerializeField]
     private MeshRenderer m_itemMeshRenderer;
 
@@ -67,15 +79,28 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
         {
             if (m_hasClicked && !m_destroy)
             {
-                if (survivor.gameObject.GetComponent<InventoryScript>().AddItem(m_idItem))
+                InventoryItemScript inventaire = survivor.GetComponentInChildren<InventoryItemScript>();
+                int slotPosition = inventaire.itemExistInInventory((int) m_idItem);
+                bool itemPicked = true;
+
+                if(slotPosition >= 0)
                 {
-                    Debug.LogError("Objet ajouté à l'inventaire pour" + survivor.gameObject.name);
-                    Network.Destroy(this.gameObject);
-                    m_destroy = true;
+                    if (inventaire.getItem(slotPosition).checkQuantityBeforeAddItem((int)m_idItem))
+                        inventaire.addItemQuantityNetwork(slotPosition, m_quantity);
+                    else
+                        itemPicked = false;
                 }
                 else
                 {
-                    Debug.LogError("Impossibilité d'ajouter cette objet à l'inventaire de " + survivor.gameObject.name);
+                    slotPosition = inventaire.freeIndexExistInInventory();
+                    if (slotPosition >= 0)
+                        inventaire.addItemNetwork(slotPosition, (int)m_idItem, m_name, m_description, m_range, m_quantity);
+                }
+
+                if(itemPicked)
+                {
+                    m_destroy = true;
+                    Network.Destroy(this.gameObject);
                 }
             }
         }
@@ -84,7 +109,6 @@ public class InteractionsWithSurvivorScript : MonoBehaviour
     [RPC]
     void selfDestroy()
     {
-        Debug.LogError("Destruction de l'objet");
         Destroy(this.gameObject);
     }
 
