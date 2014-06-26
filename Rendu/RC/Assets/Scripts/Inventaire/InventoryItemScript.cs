@@ -162,7 +162,7 @@ public class InventoryItemScript : MonoBehaviour
             else
             {
                 Debug.LogError("Use item to myself");
-                m_networkView.RPC("useItem", RPCMode.All, m_slotToUse);
+                m_networkView.RPC("useItem", RPCMode.All, m_slotToUse, Vector3.zero);
                 m_networkView.RPC("stopItemUse", RPCMode.All, owner);
             }
         }
@@ -210,12 +210,10 @@ public class InventoryItemScript : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
                     m_networkView.RPC("checkCanPutItem", RPCMode.Server, hit.point, m_owner);
-                else
-                    Debug.LogError("Ground not Hit");
             }
             else if (!(Input.GetButtonDown("MoveCharacter") || Input.GetKeyDown(KeyCode.Space)))
             {
-                Debug.LogError("Cancel throw");
+                //Debug.LogError("Cancel throw");
                 m_networkView.RPC("stopItemUse", RPCMode.All, m_owner);
             }
         }
@@ -227,15 +225,13 @@ public class InventoryItemScript : MonoBehaviour
         if (Mathf.Abs(Vector3.Distance(m_player.transform.position, hitPosition)) <= m_inventory[m_slotToUse].Range)
         {
             Debug.LogError("Use item trap");
-            m_networkView.RPC("useItem", RPCMode.All, m_slotToUse);
+            m_networkView.RPC("useItem", RPCMode.All, m_slotToUse, hitPosition);
             m_networkView.RPC("stopItemUse", RPCMode.All, owner);
         }
-        else
-            Debug.LogError("Throw out of range");
     }
 
     [RPC]
-    public void useItem(int slotPosition)
+    public void useItem(int slotPosition, Vector3 hitPosition)
     {
         //appelle du script d'instanciation d'objet ?
         m_inventory[slotPosition].Quantity -= 1;
@@ -245,6 +241,14 @@ public class InventoryItemScript : MonoBehaviour
             resetSlot(slotPosition);
         }
 
+        GameObject itemPrefab = ItemFactoryScript.getItemById(m_inventory[slotPosition].Id);
+
+        if (itemPrefab == null)
+            return;
+
+        Debug.LogError("Item Existe");
+        GameObject itemGameObject = (GameObject)GameObject.Instantiate(itemPrefab, hitPosition, m_player.transform.localRotation);
+        itemGameObject.transform.position += Vector3.zero;
     }
 
 
