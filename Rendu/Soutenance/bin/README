@@ -1,0 +1,19 @@
+Tuto rapide sur la prise en main de Hinder & Flee
+
+Utilisation des binaires :
+Pour pouvoir jouer il faut d'abord lancer le server.exe, puis il faut lancer deux client.exe (un pour chauque joueur).
+
+Déplacement du Suvivant :
+Le suvivant se déplace à l'aide de la souris, il suffit d'utiliser le click droit de la souris à l'emplacement où l'on souhaite se déplacer.
+
+Déplacement de la camera:
+La camera se déplace lorsque la souris se trouve sur le bord de l'écran, il est possible de zoomer à l'aide de la molette de la souris. Si vous avez perdu de vue votre survivant il est possible de re-centrer la camera sur lui à l'aide de la touche espace
+
+Escalier:
+Les survivants peuvent prendre les escaliers pour se déplacer dans la map. Il suffit de se placer à proximité et d'utiliser le click gauche sur l'escalier.
+
+Compétences:
+4 Compétences sont disponible, pour le moment une simple boule verte est lancé et enlève des dégâts au zombie s'il il est touché. Pour lancer un skill il suffit d'appuyer sur une touche de lancement de skill (a, z, e, r), le curseur se change alors en viseur, il suffit d'utiliser le click gauche sur la carte pour indiquer la direction que la boule verte doit prendre. Le cooldown du skill est alors afficher dans l'interface prévue à cette effet.
+
+Objets:
+Une fois sur l'objet utiliser le click gauche pour le ramasser

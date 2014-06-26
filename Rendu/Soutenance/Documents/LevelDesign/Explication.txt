@@ -1,0 +1,80 @@
+Note pour mieux comprendre le LD
+
+- Le pop pour un boss est aléatoire, de plus, des zombie peuvent apparaitre ce cette endroit mais à petite dose
+
+- Le marchand se déplace sur la map, les points de pop figurant sont les différentes position vers lesquelle il se déplacera, donc 1 seul marchand sera à 1 seul point à pour un moment donné
+
+- Le brouillard de guerre présent dans le jeu permettra de voir l'ensemble de la salle dans lequelle le joueur se trouvera
+
+- Niveau formé de plusieurs étage, avec en général une intention particulière pas étages et parfois des mélanges dans un meme étages
+
+- Pop des Survivants
+Les points violets représente les points de spawn des suvivants. Au début de la partie le jeu va faire pop chaque survivant sur des point aléatoirement pour éviter une redondance.
+Il faut un certaint équilibre dans le nombre de spawn et leur posisitionnement, ne pas trop les rapprocher pour éviter une rencontre en debut de partie.
+
+- Pop des zombies
+Les points rouges représentent les positions possible d'apparition des zombies.
+Les zombie apparaitront ponctuellement durant la partie suivant un ratio défini (plus le ratio est élévé plus le nombre de zombie à l'étage sera important).
+Deplus le point de pop se trouvant au sous-sol a une spécificité, un boss a un pourcentage de chance d'apparaitre.
+
+
+- Pop du marchand
+Le marchand apprait tout le long de la partie, pour éviter que les survivant puisse connaître sa position plusieur endroit d'appararition sont possible.
+Après un certaint temps donné le marchand apparaît sur l'un des points. Après un certain il disparaît puis ré apparait à l'un des autres point disponible
+
+- Pop des objets
+Pour obliger le joueur à ce déplacer sur la carte il faut disséminer des objets sur celle-ci. Les points jaunes représentent le point d'apparaition d'objet.
+Au cours de la partie les objets appraissent aléatoirement pour forcer les suvivants à faire le tour de la carte.
+
+
+Haut gauche (Sous sol)
+
+Etage dans lequel se trouve un boss avec un tres bon item derriere lui
+
+L'ennemi garder un bon item en empechant le joueur de passer facilement --> interet de le battre
+
+Il loot beaucoup d'argent  --> intêret de le combatre
+
+Ennemi plus robuste et fort qu'un zombie normal, il ne se déplace pas (ou bien très peu) --> pour bloquer le passage
+Couloir très serré --> pour bloquer le passage
+
+De plus, ce genre d'étage ne doit pas contenir beaucuop d'ennemi pour eviter 
+de polluer l'espace pour les joueurs (Peu de pop zombie, ils pop au meme point que le boss)  --> ne pas rendre la salle injouable pour les joueurs voulant combattre le boss
+
+
+
+
+Haut droit (rez-de-chaussé)
+
+Etage avec plusieurs salles reliées entres elles
+
+Présence que d'un point d'entré et de sorti (l'escalier) avec marchand à coté --> favoriser l'affrontement entre survivant
+
+Objet présent à coté des points de pop zombies --> obligation de prendre un risque/attirer l'attention pour rammaser un item
+
+Un pop d'objet relativement eloigner des pop zombie et proche de l'escalier/marchand --> pour attier le joueur dans cette direction/lui permettre d'avoir un item facilement
+
+Point de pop survivant et zombie suffisement eloigner pour ne pas attirer les zombies directement sur le joueur --> rendre la jeu jouable en début de partie
+
+
+
+
+Bas gauche (Première étage)
+
+Etage relié à 2 étages --> sorte de hub + etage à architecture de petit cercle de 3 pieces --> favoriser l'affrontement
+
+Marchand à coté d'un point de pop zombie --> favoriser la prise de risque
+
+Point de pop survivant et zombie suffisement eloigner pour ne pas attirer les zombies directement sur le joueur --> rendre la jeu jouable en début de partie
+
+
+
+Bas droit (Dernier étage)
+
+Salle avec plein de piece genre couloir d'un hotel avec plein de chambre
+
+Plein de salle partout --> attiser la curiositer du joueur et voir toute les salles
+
+Un couloir long couloir avec très serré et un point de sortie --> danger de s'aventurer trop loin/ effet decor film d'horreur 
+
+Soit item soit zombie dans le salle --> effet de bonne ou mauvaise surpise, effet lotterie + présence d'un marchand
