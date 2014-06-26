@@ -158,7 +158,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             m_players[player] = transformPlayer;
         }
 
-        m_gameManager.initGame();
+        //m_gameManager.initGame();
         m_networkView.RPC("InitClient", RPCMode.OthersBuffered);
     }
 

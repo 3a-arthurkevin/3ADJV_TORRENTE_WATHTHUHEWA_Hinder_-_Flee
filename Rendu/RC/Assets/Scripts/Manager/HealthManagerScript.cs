@@ -108,22 +108,30 @@ public class HealthManagerScript : MonoBehaviour
         if(Network.isClient)
             StartCoroutine(playHitSound());
 
-        if (m_currentLifePoint <= 0)
+
+        if (Network.isServer && m_currentLifePoint <= 0)
             Died();
     }
 
     void Died()
     {
+        Debug.LogError("destroy ? " + m_isDestroy);
+
         if (m_characterType == CharacterType.Survivor)
             Debug.LogError("Survivor died");
 
         else if (m_characterType == CharacterType.Zombie)
             Debug.LogError("Zombie Died");
 
-        Network.RemoveRPCs(m_networkView.viewID);
+        //Network.RemoveRPCs(m_networkView.viewID);
 
-        if (Network.isServer &&!m_isDestroy)
+        if (!m_isDestroy)
         {
+            Debug.LogError("Destroy");
+
+            /*if (m_characterType == CharacterType.Zombie)
+                m_gameManager.m_popZombieManager.zombieDied(GetComponent<MoveManagerZombieScript>().Data.IsInFloor, transform);*/
+
             Network.Destroy(m_networkView.viewID);
             m_isDestroy = true;
         }
@@ -132,7 +140,7 @@ public class HealthManagerScript : MonoBehaviour
 
     public bool isDead()
     {
-        return (m_currentLifePoint == 0);
+        return (m_currentLifePoint <= 0);
     }
 
     void OnGUI()
