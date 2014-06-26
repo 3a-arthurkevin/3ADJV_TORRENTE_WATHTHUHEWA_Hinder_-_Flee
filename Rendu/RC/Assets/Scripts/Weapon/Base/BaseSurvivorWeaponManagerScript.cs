@@ -11,7 +11,7 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
     protected Texture2D m_viseurCursor;
     protected Vector2 m_hotSpot = Vector2.zero;
 
-    
+
 
     [SerializeField]
     protected NetworkPlayer m_owner;
@@ -32,7 +32,7 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
     [SerializeField]
     protected ISkill[] m_skills = new ISkill[4];
 
-    protected int m_idSkillLaunch = 0;
+    protected int m_idSkillLaunch = -1;
     protected bool m_underSkill = false;
     public bool UnderSkill
     {
@@ -118,7 +118,7 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
                     else
                         m_networkView.RPC("StopSkill", RPCMode.All);
                 }
-                else if(Input.GetKeyDown(KeyCode.Escape))
+                else if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     m_networkView.RPC("StopSkill", RPCMode.All);
                 }
@@ -210,14 +210,25 @@ public abstract class BaseSurvivorWeaponManagerScript : BaseWeaponManager
             m_guiStyle.font = m_zombieFont;
             GUILayout.BeginArea(boxSkill, new GUIStyle("Box"));
             GUILayout.BeginHorizontal();
+            ISkill skill;
 
-            foreach (ISkill skill in m_skills)
+            for (int i = 0; i < 4; ++i)
             {
+                skill = m_skills[i];
+
                 if (skill == null)
                     continue;
 
                 GUILayout.BeginVertical();
+
+                Color defaultColor = m_guiStyle.normal.textColor;
+
+                if (i == m_idSkillLaunch)
+                    m_guiStyle.normal.textColor = Color.blue;
+
                 GUILayout.Label(skill.Name, m_guiStyle);
+
+                m_guiStyle.normal.textColor = defaultColor;
 
                 if (skill.CoolDown > 0)
                     GUILayout.Label(skill.CoolDown.ToString("F2"), m_guiStyle);

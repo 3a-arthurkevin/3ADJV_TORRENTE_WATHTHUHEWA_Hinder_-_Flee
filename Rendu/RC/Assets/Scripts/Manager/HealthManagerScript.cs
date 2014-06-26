@@ -122,6 +122,8 @@ public class HealthManagerScript : MonoBehaviour
         if(Network.isClient && Network.player == m_owner)
         {
             GUI.Box(boxEtatPerso, "Etat Perso");
+
+            centeredTextStyle.normal.textColor = Color.red;
             GUI.Label(labelLifePoint, "Vie : " + m_currentLifePoint + "/" + m_maxLifePoint, centeredTextStyle);
             //GUI.Label(labelAvenir, "Label Avenir", centeredTextStyle);
         }
