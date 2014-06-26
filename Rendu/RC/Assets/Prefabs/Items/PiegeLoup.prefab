@@ -8,12 +8,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 33: {fileID: 3300000}
-  - 135: {fileID: 13500000}
-  - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
-  m_Layer: 27
+  - 23: {fileID: 2300000}
+  - 33: {fileID: 3300000}
+  - 135: {fileID: 13500000}
+  m_Layer: 28
   m_Name: PiegeLoup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: .0500000007, z: 2}
+  m_LocalPosition: {x: -7.96468353, y: 1, z: 115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: f7fe5882baada7247b54804905b59cf1, type: 2}
+  - {fileID: 2100000, guid: e3aeb89113eb5e944a9ef05aa703f490, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -67,11 +67,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0aba8c328519c488d73dfacc1ddc2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ae0e7fa956b0a94aa341e01639992e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_idItem: 0
+  m_name: "Piege \xE0 loup"
+  m_description: It's a trap !
+  m_quantity: 1
+  m_range: 6
   m_networkView: {fileID: 14800000}
-  m_effectDuration: 3
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -82,7 +86,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!148 &14800000
 NetworkView:

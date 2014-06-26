@@ -161,7 +161,6 @@ public class InventoryItemScript : MonoBehaviour
                 m_networkView.RPC("setAimingTrue", RPCMode.All, owner, (m_inventory[slotPosition].Range));
             else
             {
-                Debug.LogError("Use item to myself");
                 m_networkView.RPC("useItem", RPCMode.All, m_slotToUse, Vector3.zero);
                 m_networkView.RPC("stopItemUse", RPCMode.All, owner);
             }
@@ -195,8 +194,6 @@ public class InventoryItemScript : MonoBehaviour
 
         m_slotToUse = -1;
         m_isAiming = false;
-
-        Debug.LogError("Stop/Cancel use item");
     }
 
     public void checkInputToPutItem()
@@ -213,7 +210,6 @@ public class InventoryItemScript : MonoBehaviour
             }
             else if (!(Input.GetButtonDown("MoveCharacter") || Input.GetKeyDown(KeyCode.Space)))
             {
-                //Debug.LogError("Cancel throw");
                 m_networkView.RPC("stopItemUse", RPCMode.All, m_owner);
             }
         }
@@ -224,7 +220,6 @@ public class InventoryItemScript : MonoBehaviour
     {
         if (Mathf.Abs(Vector3.Distance(m_player.transform.position, hitPosition)) <= m_inventory[m_slotToUse].Range)
         {
-            Debug.LogError("Use item trap");
             m_networkView.RPC("useItem", RPCMode.All, m_slotToUse, hitPosition);
             m_networkView.RPC("stopItemUse", RPCMode.All, owner);
         }
@@ -233,22 +228,17 @@ public class InventoryItemScript : MonoBehaviour
     [RPC]
     public void useItem(int slotPosition, Vector3 hitPosition)
     {
-        //appelle du script d'instanciation d'objet ?
-        m_inventory[slotPosition].Quantity -= 1;
-
-        if (m_inventory[slotPosition].Quantity == 0)
-        {
-            resetSlot(slotPosition);
-        }
-
         GameObject itemPrefab = ItemFactoryScript.getItemById(m_inventory[slotPosition].Id);
 
         if (itemPrefab == null)
             return;
 
-        Debug.LogError("Item Existe");
         GameObject itemGameObject = (GameObject)GameObject.Instantiate(itemPrefab, hitPosition, m_player.transform.localRotation);
         itemGameObject.transform.position += Vector3.zero;
+
+        m_inventory[slotPosition].Quantity -= 1;
+        if (m_inventory[slotPosition].Quantity <= 0)
+            resetSlot(slotPosition);
     }
 
 

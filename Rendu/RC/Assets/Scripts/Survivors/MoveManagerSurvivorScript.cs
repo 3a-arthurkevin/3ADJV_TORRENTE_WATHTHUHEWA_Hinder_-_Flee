@@ -140,4 +140,9 @@ public class MoveManagerSurvivorScript : MonoBehaviour
             m_networkView.RPC("SurvivorTookStair", RPCMode.All, floorOut, stairOut, clientNetworkPlayer);
         }
     }
+
+    public float getDefaultSpeed()
+    {
+        return m_defaultSpeed;
+    }
 }

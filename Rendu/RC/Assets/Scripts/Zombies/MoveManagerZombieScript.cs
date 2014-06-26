@@ -133,4 +133,9 @@ public class MoveManagerZombieScript : MonoBehaviour {
     {
         name = newName;
     }
+
+    public float getDefaultSpeed()
+    {
+        return m_defaultSpeed;
+    }
 }
