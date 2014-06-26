@@ -9,6 +9,9 @@ public class HealthManagerScript : MonoBehaviour
         Survivor
     }
 
+    [SerializeField]
+    private GameManagerScript m_gameManager;
+
     private NetworkPlayer m_owner;
     public NetworkPlayer Owner
     {

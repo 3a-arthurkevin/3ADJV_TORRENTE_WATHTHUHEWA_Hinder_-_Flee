@@ -8,8 +8,17 @@ public class PlayerDataBaseScript : MonoBehaviour {
     [SerializeField]
     private ConfigLevelManager m_configLevelManager;
 
+    [SerializeField]
+    private GameManagerScript m_gameManager;
+
     private Dictionary<NetworkPlayer, Transform> m_players;
+    public Dictionary<NetworkPlayer, Transform> Players
+    {
+        get { return m_players; }
+    }
+
     private Dictionary<NetworkPlayer, bool> m_playerReady;
+    
     private List<NetworkPlayer> m_playerRemoved;
 
     [SerializeField]
@@ -43,6 +52,9 @@ public class PlayerDataBaseScript : MonoBehaviour {
     
     void Start() 
     {
+        if (m_gameManager == null)
+            m_gameManager = GetComponent<GameManagerScript>();
+
         Application.runInBackground = true;
 
         if (m_buildServer)
@@ -146,6 +158,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             m_players[player] = transformPlayer;
         }
 
+        m_gameManager.initGame();
         m_networkView.RPC("InitClient", RPCMode.OthersBuffered);
     }
 
