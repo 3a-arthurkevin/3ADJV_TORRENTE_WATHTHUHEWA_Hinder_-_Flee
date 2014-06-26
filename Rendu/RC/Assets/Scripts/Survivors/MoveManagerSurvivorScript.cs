@@ -13,14 +13,20 @@ public class MoveManagerSurvivorScript : MonoBehaviour
     private float m_defaultMinDistance = 0.1f;
 
     private MoveData m_data;
-
     public MoveData MoveData
     {
         get { return m_data; }
         set { m_data = value; }
     }
 
-	void Awake ()
+    [SerializeField]
+    private AudioSource m_audioSource;
+
+    [SerializeField]
+    private AudioClip m_walkingSound;
+    private bool m_isWalking = false;
+
+	void Awake()
     {
         if (m_networkView == null)
             m_networkView = networkView;
@@ -56,7 +62,11 @@ public class MoveManagerSurvivorScript : MonoBehaviour
             }
         }
         else
+        {
+            m_audioSource.clip = null;
+            m_isWalking = false;
             m_data.CharacterController.Move(Vector3.zero);
+        }
 	}
 
     public void setTarget(Vector3 target)
@@ -79,8 +89,17 @@ public class MoveManagerSurvivorScript : MonoBehaviour
         m_data.Path = MoveUtilsScript.getCalcPath(origin, target);
 
         if (m_data.Path != null)
+        {
             m_data.NumCorner = 1;
-
+            
+            if(Network.isClient && !m_isWalking)
+            {
+                m_audioSource.clip = m_walkingSound;
+                m_audioSource.Play();
+                m_audioSource.loop = true;
+                m_isWalking = true;
+            }
+        }
         else
         {
             Debug.Log("Path not valid");
