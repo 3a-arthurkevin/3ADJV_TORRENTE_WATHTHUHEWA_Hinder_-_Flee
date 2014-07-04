@@ -115,8 +115,6 @@ public class HealthManagerScript : MonoBehaviour
 
     void Died()
     {
-        Debug.LogError("destroy ? " + m_isDestroy);
-
         if (m_characterType == CharacterType.Survivor)
             Debug.LogError("Survivor died");
 

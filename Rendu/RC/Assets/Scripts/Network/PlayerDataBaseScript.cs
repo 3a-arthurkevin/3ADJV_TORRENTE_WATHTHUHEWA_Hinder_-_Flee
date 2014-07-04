@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class PlayerDataBaseScript : MonoBehaviour {
+public class PlayerDataBaseScript : MonoBehaviour
+{
 
     [SerializeField]
     private ConfigLevelManager m_configLevelManager;
 
     [SerializeField]
     private GameManagerScript m_gameManager;
+
+    [SerializeField]
+    private GUIClientScript m_guiClient;
 
     private Dictionary<NetworkPlayer, Transform> m_players;
     public Dictionary<NetworkPlayer, Transform> Players
@@ -18,7 +22,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     }
 
     private Dictionary<NetworkPlayer, bool> m_playerReady;
-    
+
     private List<NetworkPlayer> m_playerRemoved;
 
     [SerializeField]
@@ -26,7 +30,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
     [SerializeField]
     private int m_portNumber = 9090;
-    
+
     [SerializeField]
     private string m_idAdress = "127.0.0.1";
 
@@ -36,10 +40,11 @@ public class PlayerDataBaseScript : MonoBehaviour {
     private int m_maxPlayers = 2;
     private int m_currentPlayer = 0;
     private bool m_gameLauched = false;
+    private bool m_setupLaunch = false;
 
     [SerializeField]
     private Transform m_SurvivorPrefab;
-    
+
     [SerializeField]
     private Transform m_CharacterCameraPrefab;
 
@@ -49,41 +54,45 @@ public class PlayerDataBaseScript : MonoBehaviour {
     [SerializeField]
     private NetworkView m_networkView;
 
-    
-    void Start() 
+
+    void Start()
     {
         if (m_gameManager == null)
             m_gameManager = GetComponent<GameManagerScript>();
 
         Application.runInBackground = true;
+    }
 
-        if (m_buildServer)
-        {
-            m_players = new Dictionary<NetworkPlayer, Transform>();
-            m_playerReady = new Dictionary<NetworkPlayer, bool>();
-            m_playerRemoved = new List<NetworkPlayer>();
+    void setupServer()
+    {
+        m_players = new Dictionary<NetworkPlayer, Transform>();
+        m_playerReady = new Dictionary<NetworkPlayer, bool>();
+        m_playerRemoved = new List<NetworkPlayer>();
 
-            Network.InitializeSecurity();
+        Network.InitializeSecurity();
 
-            m_useNat = !Network.HavePublicAddress();
+        m_useNat = !Network.HavePublicAddress();
 
-            NetworkConnectionError err = Network.InitializeServer(m_maxPlayers, m_portNumber, m_useNat);
-            
-            if (err != NetworkConnectionError.NoError)
-                Debug.LogError(err.ToString());
-            else
-                Debug.LogError("Server start");
-        }
+        NetworkConnectionError err = Network.InitializeServer(m_maxPlayers, m_portNumber, m_useNat);
+
+        if (err != NetworkConnectionError.NoError)
+            Debug.LogError(err.ToString());
         else
-        {
-            
-            NetworkConnectionError err = Network.Connect(m_idAdress, m_portNumber);
+            Debug.LogError("Server start");
 
-            if (err != NetworkConnectionError.NoError)
-                Debug.LogError(err.ToString());
-            else
-                Debug.LogError("Client Connect");
-        }
+        m_setupLaunch = true;
+    }
+
+    void setupClient()
+    {
+        NetworkConnectionError err = Network.Connect(m_idAdress, m_portNumber);
+
+        if (err != NetworkConnectionError.NoError)
+            Debug.LogError(err.ToString());
+        else
+            Debug.LogError("Client Connect");
+
+        m_setupLaunch = true;
     }
 
     void OnPlayerConnected(NetworkPlayer newPlayer)
@@ -111,12 +120,12 @@ public class PlayerDataBaseScript : MonoBehaviour {
         if (removePlayer(oldPlayer))
         {
             Debug.LogError(oldPlayer.ToString() + " Has remove at game");
-            
+
             m_playerRemoved.Add(oldPlayer);
         }
         else
             Debug.LogError("Player not found");
-        
+
         pauseGame();
     }
 
@@ -138,7 +147,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             return;
 
         int level = 0;
-        for(int i = 0; i < m_players.Count; ++i)
+        for (int i = 0; i < m_players.Count; ++i)
         {
             NetworkPlayer player = m_players.ElementAt(i).Key;
 
@@ -154,7 +163,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
             playerNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player);
             playerNetworkView.RPC("SetName", RPCMode.AllBuffered, player, "Survivor" + player.ToString());
-            
+
             m_players[player] = transformPlayer;
         }
 
@@ -178,7 +187,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
     public void InitClient()
     {
         GameObject character = GameObject.Find("Survivor" + Network.player.ToString());
-        
+
         if (character == null)
             Debug.LogError("Character non trouvé");
 
@@ -197,6 +206,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
         configCameraScript.ConfigCameraAndSurvivor(camera, character.transform);
 
         camera.camera.enabled = false;
+        m_guiClient.enabled = true;
 
         m_networkView.RPC("clientIsInit", RPCMode.Server, Network.player);
     }
@@ -207,7 +217,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
         if (Network.isServer)
         {
             bool playerInit = false;
-            
+
             if (m_playerReady.TryGetValue(player, out playerInit))
             {
                 if (playerInit)
@@ -229,6 +239,7 @@ public class PlayerDataBaseScript : MonoBehaviour {
             {//Oui
                 m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
                 GetComponent<PopZombiesManagerScript>().init();
+
                 Instantiate(m_serverCamera, Vector3.zero + Vector3.up * 20, Quaternion.identity);
             }
         }
@@ -247,5 +258,48 @@ public class PlayerDataBaseScript : MonoBehaviour {
 
         cam.camera.enabled = true;
         Debug.LogError("Game launched");
+    }
+
+    /* attribut for GUI */
+    private Rect m_ipAddressLabel = new Rect(10, 10, 80, 20);
+    private Rect m_ipAddressField = new Rect(90, 10, 70, 20);
+    private Rect m_buildServerToggle = new Rect(10, 40, 100, 20);
+    private Rect m_maxPlayerLabel = new Rect(110, 40, 100, 20);
+    private Rect m_maxPlayerField = new Rect(190, 40, 30, 20);
+    private Rect m_LaunchButton = new Rect(10, 80, 70, 30);
+
+    void OnGUI()
+    {
+
+        if (!m_setupLaunch)
+        {
+            GUI.Label(m_ipAddressLabel, "Ip Address : ");
+            m_idAdress = GUI.TextField(m_ipAddressField, m_idAdress);
+            m_buildServer = GUI.Toggle(m_buildServerToggle, m_buildServer, "Build server");
+
+            if (m_buildServer)
+            {
+                GUI.Label(m_maxPlayerLabel, "Max player : ");
+                string value = GUI.TextField(m_maxPlayerField, m_maxPlayers.ToString());
+
+                try
+                {
+                    m_maxPlayers = int.Parse(value);
+                }
+                catch (System.FormatException)
+                {
+                    m_maxPlayers = 0;
+                }
+            }
+
+            if (GUI.Button(m_LaunchButton, "Launch"))
+            {
+                if (m_buildServer)
+                    setupServer();
+
+                else
+                    setupClient();
+            }
+        }
     }
 }
