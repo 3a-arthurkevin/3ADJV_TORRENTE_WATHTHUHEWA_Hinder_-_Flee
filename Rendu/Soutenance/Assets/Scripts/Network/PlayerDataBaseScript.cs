@@ -7,6 +7,9 @@ public class PlayerDataBaseScript : MonoBehaviour
 {
 
     [SerializeField]
+    private GameObject m_setupCamera;
+
+    [SerializeField]
     private ConfigLevelManager m_configLevelManager;
 
     [SerializeField]
@@ -252,6 +255,7 @@ public class PlayerDataBaseScript : MonoBehaviour
                 m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
                 m_gameLauched = true;
                 GetComponent<PopZombiesManagerScript>().init();
+                m_setupCamera.SetActive(false);
 
                 Instantiate(m_serverCamera, Vector3.zero + Vector3.up * 20, Quaternion.identity);
             }
@@ -268,7 +272,7 @@ public class PlayerDataBaseScript : MonoBehaviour
             Debug.LogError("Failed find camera");
             return;
         }
-
+        m_setupCamera.SetActive(false);
         cam.camera.enabled = true;
         m_gameLauched = true;
         Debug.LogError("Game launched");
@@ -316,9 +320,6 @@ public class PlayerDataBaseScript : MonoBehaviour
             }
         }
         else if(m_setupLaunch && ! m_gameLauched)
-        {
-            Debug.LogError("is Serv : " + Network.isServer + ", maxP : " + m_maxPlayers + ", curPlay:" + m_currentPlayer);
             GUI.Label(m_waitMessage, "En attente d'" + (m_maxPlayers - m_currentPlayer) + " joueurs");
-        }
     }
 }

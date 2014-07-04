@@ -20,31 +20,6 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private float m_timeOfEndGame = 60f;
 
-    /* Game Part */
-    [SerializeField]
-    private int m_maxPlayers = 2;
-    private int m_currentPlayer = 0;
-    private bool m_gameLauched = false;
-
-    [SerializeField]
-    private Transform m_SurvivorPrefab;
-
-    [SerializeField]
-    private Transform m_CharacterCameraPrefab;
-
-    [SerializeField]
-    private Transform m_serverCamera;
-
-    private Dictionary<NetworkPlayer, Transform> m_players;
-    public Dictionary<NetworkPlayer, Transform> Players
-    {
-        get { return m_players; }
-    }
-
-    private Dictionary<NetworkPlayer, bool> m_playerReady;
-
-    private List<NetworkPlayer> m_playerRemoved;
-
     void Start()
     {
         m_playerAreDead = new Dictionary<NetworkViewID, bool>();
