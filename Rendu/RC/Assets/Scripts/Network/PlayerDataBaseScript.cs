@@ -238,6 +238,7 @@ public class PlayerDataBaseScript : MonoBehaviour
             if (m_playerReady.All<KeyValuePair<NetworkPlayer, bool>>(item => item.Value == true))
             {//Oui
                 m_networkView.RPC("LaunchGame", RPCMode.OthersBuffered);
+                m_gameLauched = true;
                 GetComponent<PopZombiesManagerScript>().init();
 
                 Instantiate(m_serverCamera, Vector3.zero + Vector3.up * 20, Quaternion.identity);
@@ -257,6 +258,7 @@ public class PlayerDataBaseScript : MonoBehaviour
         }
 
         cam.camera.enabled = true;
+        m_gameLauched = true;
         Debug.LogError("Game launched");
     }
 
@@ -267,6 +269,7 @@ public class PlayerDataBaseScript : MonoBehaviour
     private Rect m_maxPlayerLabel = new Rect(110, 40, 100, 20);
     private Rect m_maxPlayerField = new Rect(190, 40, 30, 20);
     private Rect m_LaunchButton = new Rect(10, 80, 70, 30);
+    private Rect m_waitMessage = new Rect(Screen.width / 2, Screen.height / 2, 200, 20);
 
     void OnGUI()
     {
@@ -300,6 +303,10 @@ public class PlayerDataBaseScript : MonoBehaviour
                 else
                     setupClient();
             }
+        }
+        else if(m_setupLaunch && ! m_gameLauched)
+        {
+            GUI.Label(m_waitMessage, "En attente d'" + (m_maxPlayers - m_currentPlayer) + " joueurs");
         }
     }
 }

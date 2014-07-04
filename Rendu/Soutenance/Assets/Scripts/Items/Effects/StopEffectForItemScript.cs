@@ -26,7 +26,7 @@ public class StopEffectForItemScript : MonoBehaviour
             if (character.tag.Equals("Survivor") || character.tag.Equals("Zombie"))
             {
                 m_networkView.RPC("applyEffect", RPCMode.All, other.gameObject.networkView.viewID);
-                Network.Destroy(this.gameObject);
+                Network.Destroy(this.collider.gameObject);
             }
         }
     }

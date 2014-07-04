@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9338077e1c1abe84bba1b5aa150b79d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameManager: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_characterType: 0
   m_networkView: {fileID: 14800004}
   m_maxLifePoint: 100

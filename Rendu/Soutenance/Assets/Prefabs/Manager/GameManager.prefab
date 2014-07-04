@@ -12,6 +12,7 @@ GameObject:
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -42,7 +43,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_configLevelManager: {fileID: 0}
-  m_buildServer: 1
+  m_gameManager: {fileID: 11400002}
+  m_guiClient: {fileID: 11400006}
+  m_buildServer: 0
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
   m_maxPlayers: 1
@@ -51,6 +54,24 @@ MonoBehaviour:
     type: 2}
   m_serverCamera: {fileID: 400000, guid: 5ef714d08e90a46469dc3a9c555e40a9, type: 2}
   m_networkView: {fileID: 14800000}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5ebe5de22d6e347a80930bee663c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_playerDatabase: {fileID: 11400000}
+  m_popZombieManager: {fileID: 11400004}
+  m_timeOfEndGame: 60
+  m_maxPlayers: 2
+  m_SurvivorPrefab: {fileID: 0}
+  m_CharacterCameraPrefab: {fileID: 0}
+  m_serverCamera: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,7 +93,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba73d8721fe22b9478c5d3128a84a90b, type: 3}
   m_Name: 

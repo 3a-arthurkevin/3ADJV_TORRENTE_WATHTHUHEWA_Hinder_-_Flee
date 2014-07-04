@@ -7,9 +7,12 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private PlayerDataBaseScript m_playerDatabase;
 
-    private Dictionary<NetworkPlayer, int> m_playerScore;
+    [SerializeField]
+    public PopZombiesManagerScript m_popZombieManager;
 
-    private Dictionary<NetworkPlayer, bool> m_playerAreDead;
+    private Dictionary<NetworkViewID, int> m_playerScore;
+
+    private Dictionary<NetworkViewID, bool> m_playerAreDead;
 
     private bool m_lastPlayerAlive = false;
     private float m_timerEndGame = 0f;
@@ -17,23 +20,52 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private float m_timeOfEndGame = 60f;
 
+    /* Game Part */
+    [SerializeField]
+    private int m_maxPlayers = 2;
+    private int m_currentPlayer = 0;
+    private bool m_gameLauched = false;
+
+    [SerializeField]
+    private Transform m_SurvivorPrefab;
+
+    [SerializeField]
+    private Transform m_CharacterCameraPrefab;
+
+    [SerializeField]
+    private Transform m_serverCamera;
+
+    private Dictionary<NetworkPlayer, Transform> m_players;
+    public Dictionary<NetworkPlayer, Transform> Players
+    {
+        get { return m_players; }
+    }
+
+    private Dictionary<NetworkPlayer, bool> m_playerReady;
+
+    private List<NetworkPlayer> m_playerRemoved;
+
     void Start()
     {
-        m_playerAreDead = new Dictionary<NetworkPlayer, bool>();
-        m_playerScore = new Dictionary<NetworkPlayer, int>();
+        m_playerAreDead = new Dictionary<NetworkViewID, bool>();
+        m_playerScore = new Dictionary<NetworkViewID, int>();
 
         if (m_playerDatabase == null)
             m_playerDatabase = GetComponent<PlayerDataBaseScript>();
+
+        if (m_popZombieManager == null)
+            m_popZombieManager = GetComponent<PopZombiesManagerScript>();
     }
 
     public void initGame()
     {
         Dictionary<NetworkPlayer, Transform> players = m_playerDatabase.Players;
 
-        foreach(KeyValuePair<NetworkPlayer, Transform> pair in players)
+        foreach (KeyValuePair<NetworkPlayer, Transform> pair in players)
         {
-            m_playerAreDead.Add(pair.Key, false);
-            m_playerScore.Add(pair.Key, 0);
+            NetworkViewID nid = pair.Value.networkView.viewID;
+            m_playerScore.Add(nid, 0);
+            m_playerAreDead.Add(nid, false);
         }
     }
 
