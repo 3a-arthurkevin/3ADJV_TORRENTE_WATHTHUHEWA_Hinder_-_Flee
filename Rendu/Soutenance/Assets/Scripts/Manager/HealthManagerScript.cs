@@ -116,24 +116,30 @@ public class HealthManagerScript : MonoBehaviour
     void Died()
     {
         if (m_characterType == CharacterType.Survivor)
-            Debug.LogError("Survivor died");
+            SurvivorDied();
 
         else if (m_characterType == CharacterType.Zombie)
-            Debug.LogError("Zombie Died");
+            ZombieDied();
 
         //Network.RemoveRPCs(m_networkView.viewID);
+    }
+
+    private void SurvivorDied()
+    {
+        Debug.LogError("Survivor died");
+    }
+
+    private void ZombieDied()
+    {
+        Debug.LogError("Zombie Died");
+
+        m_gameManager.m_popZombieManager.zombieDied(GetComponent<MoveManagerZombieScript>().Data.IsInFloor, transform);
 
         if (!m_isDestroy)
         {
-            Debug.LogError("Destroy");
-
-            /*if (m_characterType == CharacterType.Zombie)
-                m_gameManager.m_popZombieManager.zombieDied(GetComponent<MoveManagerZombieScript>().Data.IsInFloor, transform);*/
-
             Network.Destroy(m_networkView.viewID);
             m_isDestroy = true;
         }
-            
     }
 
     public bool isDead()
