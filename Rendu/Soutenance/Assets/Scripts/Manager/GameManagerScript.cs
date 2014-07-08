@@ -55,6 +55,11 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+    void lunchTimer()
+    {
+ 
+    }
+
     void gameFinish()
     {
 
@@ -67,4 +72,20 @@ public class GameManagerScript : MonoBehaviour
 
         }
     }
+
+    /*
+     def checkSurvivorNumber()
+        --> check si il ne reste que 1 survivor
+            Renvoie -1 si plus de survivant
+                --> fonction qui breakerai la coroutine lancer pour le timer ??? (ca existe ???)
+            Renvoie 0 si que 1 survivant
+            Renvoie 1 si plus que 1 survivant
+     
+     
+      def lunchTimer();
+        --> lance coroutine qui quand timer et fini
+                -->si reste un joueur en vie dans la liste des survivant --> survivant gagne
+                       --> endGame(playerWinner);
+     
+     */
 }

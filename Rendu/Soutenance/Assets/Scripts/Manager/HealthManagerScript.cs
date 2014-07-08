@@ -120,18 +120,40 @@ public class HealthManagerScript : MonoBehaviour
 
         else if (m_characterType == CharacterType.Zombie)
             ZombieDied();
-
-        //Network.RemoveRPCs(m_networkView.viewID);
     }
 
     private void SurvivorDied()
     {
         Debug.LogError("Survivor died");
+
+        //Crée une animation vite fait avec l'animator de la capsule qui tombe par terre le temps de la mort du survivant ????
+            // --> permetterait d'avoir une animation en plus pour le quota d'anime à avoir d'après Vidal ?
+
+        /* --> logique lors du la transformation
+         * 
+         
+         récupérer le gameobject survivor (Le mettre en attribut en haut du script ou retourver dans gameManager)
+            RPC pour 
+                changer tag Survivor en Zombie
+                Désactivier le moveManagerSurvivor
+                Remplacer par/Ajouter moveManagerZombie
+                Remplacer son material par le material Violet (zombie joueur)
+         
+         timer before rePop (attente de 5 sec)
+            Le télépote à un point de pop zombie aléatoirement
+         
+         
+         
+         */
     }
 
     private void ZombieDied()
     {
         Debug.LogError("Zombie Died");
+
+        /*
+         timer befor repop --> utiliser l'animation de chut avant de lancer timer ?
+         */
 
         m_gameManager.m_popZombieManager.zombieDied(GetComponent<MoveManagerZombieScript>().Data.IsInFloor, transform);
 
