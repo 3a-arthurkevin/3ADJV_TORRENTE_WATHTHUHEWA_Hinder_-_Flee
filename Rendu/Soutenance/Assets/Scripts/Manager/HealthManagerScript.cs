@@ -126,8 +126,6 @@ public class HealthManagerScript : MonoBehaviour
 
         else if (m_characterType == CharacterType.Zombie)
             ZombieDied();
-
-        //Network.RemoveRPCs(m_networkView.viewID);
     }
 
     private void SurvivorDied()

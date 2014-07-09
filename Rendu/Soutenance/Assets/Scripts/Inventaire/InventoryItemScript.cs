@@ -161,8 +161,7 @@ public class InventoryItemScript : MonoBehaviour
                 m_networkView.RPC("setAimingTrue", RPCMode.All, owner, (m_inventory[slotPosition].Range));
             else
             {
-                m_networkView.RPC("useItem", RPCMode.All, m_slotToUse, Vector3.zero);
-                m_networkView.RPC("stopItemUse", RPCMode.All, owner);
+                m_networkView.RPC("directUseItem", RPCMode.All, m_slotToUse, owner);
             }
         }
         else
@@ -183,7 +182,7 @@ public class InventoryItemScript : MonoBehaviour
     }
 
     [RPC]
-    public void stopItemUse(NetworkPlayer owner)
+    public void stopItemUse(int slotPosition, NetworkPlayer owner)
     {
         if (m_owner == owner && m_isAiming == true)
         {
@@ -191,6 +190,10 @@ public class InventoryItemScript : MonoBehaviour
             m_rangeObject.transform.localScale = new Vector3(1, 1, 1);
             m_rangeObject.GetComponent<MeshRenderer>().enabled = false;
         }
+
+        m_inventory[slotPosition].Quantity -= 1;
+        if (m_inventory[slotPosition].Quantity <= 0)
+            resetSlot(slotPosition);
 
         m_slotToUse = -1;
         m_isAiming = false;
@@ -220,25 +223,27 @@ public class InventoryItemScript : MonoBehaviour
     {
         if (Mathf.Abs(Vector3.Distance(m_player.transform.position, hitPosition)) <= m_inventory[m_slotToUse].Range)
         {
-            m_networkView.RPC("useItem", RPCMode.All, m_slotToUse, hitPosition);
-            m_networkView.RPC("stopItemUse", RPCMode.All, owner);
+            useItem(m_slotToUse, hitPosition, owner);
         }
     }
 
-    [RPC]
-    public void useItem(int slotPosition, Vector3 hitPosition)
+    public void useItem(int slotPosition, Vector3 hitPosition, NetworkPlayer owner)
     {
         GameObject itemPrefab = ItemFactoryScript.getItemById(m_inventory[slotPosition].Id);
 
         if (itemPrefab == null)
             return;
 
-        GameObject itemGameObject = (GameObject)GameObject.Instantiate(itemPrefab, hitPosition, m_player.transform.localRotation);
-        itemGameObject.transform.position += Vector3.zero;
+        Network.Instantiate(itemPrefab, hitPosition, m_player.transform.localRotation, 0);
 
-        m_inventory[slotPosition].Quantity -= 1;
-        if (m_inventory[slotPosition].Quantity <= 0)
-            resetSlot(slotPosition);
+        m_networkView.RPC("stopItemUse", RPCMode.All, slotPosition, owner);
+    }
+
+    [RPC]
+    public void directUseItem(int slotPosition, NetworkPlayer owner)
+    {
+        
+        m_networkView.RPC("stopItemUse", RPCMode.All, m_owner);
     }
 
 
