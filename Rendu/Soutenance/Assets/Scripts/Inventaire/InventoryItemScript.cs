@@ -161,7 +161,7 @@ public class InventoryItemScript : MonoBehaviour
                 m_networkView.RPC("setAimingTrue", RPCMode.All, owner, (m_inventory[slotPosition].Range));
             else
             {
-                m_networkView.RPC("directUseItem", RPCMode.All, m_slotToUse, owner);
+                directUseItem(m_slotToUse, owner);
             }
         }
         else
@@ -242,6 +242,13 @@ public class InventoryItemScript : MonoBehaviour
     [RPC]
     public void directUseItem(int slotPosition, NetworkPlayer owner)
     {
+        GameObject itemPrefab = ItemFactoryScript.getItemById(m_inventory[slotPosition].Id);
+
+        if (itemPrefab == null)
+            return;
+
+        Network.Instantiate(itemPrefab, Vector3.zero, m_player.transform.localRotation, 0);
+
         
         m_networkView.RPC("stopItemUse", RPCMode.All, m_owner);
     }
