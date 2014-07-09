@@ -168,10 +168,18 @@ public class PlayerDataBaseScript : MonoBehaviour
 
             Transform transformPlayer = (Transform)Network.Instantiate(m_SurvivorPrefab, m_configLevelManager.getNextSpawnSurvivor(out level), Quaternion.identity, int.Parse(player.ToString()));
 
-            if (transformPlayer.GetComponent<MoveManagerSurvivorScript>() == null)
+            HealthManagerScript health = transformPlayer.GetComponent<HealthManagerScript>();
+
+            if (health == null)
+                Debug.LogError("Healt Manager not found on survivor");
+
+            health.GameManager = m_gameManager;
+
+            MoveManagerSurvivorScript moveSurvi = transformPlayer.GetComponent<MoveManagerSurvivorScript>();
+            if ( moveSurvi == null)
                 Debug.LogError("Error MoveManager");
 
-            transformPlayer.GetComponent<MoveManagerSurvivorScript>().MoveData.IsInFloor = level;
+            moveSurvi.MoveData.IsInFloor = level;
             transformPlayer.name = "Survivor" + player.ToString();
 
             NetworkView playerNetworkView = transformPlayer.networkView;
