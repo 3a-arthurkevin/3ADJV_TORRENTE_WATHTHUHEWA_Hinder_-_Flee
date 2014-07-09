@@ -13,4 +13,23 @@ public class CoupDePoingZombie : SingleTargetSkill
 
         m_survivorEffect.Add(new TakeDamageEffect(10));
     }
+
+    public override void LaunchSkill(Vector3 hit)
+    {
+        GameObject prefabProjectile = ProjectilesFactoryScript.getProjectileById(2);
+
+        if (prefabProjectile == null)
+            return;
+
+        GameObject projectile = (GameObject)GameObject.Instantiate(prefabProjectile, m_weaponManager.Player.position, m_weaponManager.Player.rotation);
+        LaunchProjectileSingleTargetScript launch = projectile.GetComponent<LaunchProjectileSingleTargetScript>();
+
+        launch.Launcher = m_weaponManager.Player.networkView.viewID;
+        launch.ApplyEffect = ApplyEffect;
+        launch.Speed = 2f;
+        launch.Direction = hit;
+        launch.Limit = m_range;
+
+        m_coolDown = m_coolDownDuration;
+    }
 }

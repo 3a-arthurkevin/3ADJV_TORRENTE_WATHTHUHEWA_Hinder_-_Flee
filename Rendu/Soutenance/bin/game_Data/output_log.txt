@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\bin\game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\bin\game_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\bin\game_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.081 seconds
+- Completed reload, in  0.077 seconds
 desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -52,7 +52,7 @@ Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_H
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\bin\game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\bin\game_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\bin\game_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.086 seconds
+- Completed reload, in  0.066 seconds
 desktop: 1366x768 60Hz; virtual: 2966x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -74,15 +74,15 @@ PlayerDataBaseScript:OnGUI() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE
 
 Game launched
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-PlayerDataBaseScript:LaunchGame() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\Assets\Scripts\Network\PlayerDataBaseScript.cs:278)
+UnityEngine.Debug:LogError(ObjGct)
+alme lDanaBcseed
+Unt:yLaunce.Gameg:InterC:\Useos\Arttu32, String, Object)
+UnityEngRENTE_WATg:LogErr_ornder_-_Fle
+e\RendDataBaseScnre\Assipt:LaunchGame() (at C:y\Users\ArtShrupr.cs:278)
  
-(Filename: C Line: 0)
-
-Game launched
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:LogError(Object)
-PlayerDataBaseScript:LaunchGame() (at C:\Users\Arthur\Documents\GitHub\3ADJV_TORRENTE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\Assets\Scripts\Network\PlayerDataBaseScript.cs:278)
+(Filename: C_LiOnR: 0E
+N
+TE_WATHTHUHEWA_Hinder_-_Flee\Rendu\Soutenance\Assets\Scripts\Network\PlayerDataBaseScript.cs:278)
  
 (Filename: C Line: 0)
 

@@ -25,6 +25,10 @@ public static class ProjectilesFactoryScript
                 projectile = (GameObject)Resources.Load("Prefabs/Projectiles/ProjectileAOE");
                 break;
 
+            case 2:
+                projectile = (GameObject)Resources.Load("Prefabs/Projectiles/ProjectileSingleSurvivorTarget");
+                break;
+
             default:
                 Debug.Log("Projectile not found");
                 break;
