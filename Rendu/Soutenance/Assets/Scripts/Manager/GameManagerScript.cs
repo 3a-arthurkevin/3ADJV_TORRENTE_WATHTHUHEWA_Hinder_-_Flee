@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameManagerScript : MonoBehaviour
 
     void Start()
     {
+        Debug.LogError("START GAME MANAGER");
         m_playerAreDead = new Dictionary<NetworkViewID, bool>();
         m_playerScore = new Dictionary<NetworkViewID, int>();
 
@@ -34,6 +36,11 @@ public class GameManagerScript : MonoBehaviour
 
     public void initGame()
     {
+        Debug.LogError("INIT");
+
+        if (m_playerAreDead == null)
+            Debug.LogError("INITNULL");
+
         Dictionary<NetworkPlayer, Transform> players = m_playerDatabase.Players;
 
         foreach (KeyValuePair<NetworkPlayer, Transform> pair in players)
@@ -55,9 +62,34 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    void gameFinish()
+    public void survivorDied(NetworkViewID survivor)
     {
 
+        if (m_playerAreDead == null)
+        {
+            Debug.LogError("NULL");
+            return;
+        }
+
+        if(!m_playerAreDead.ContainsKey(survivor))
+        {
+            Debug.LogError("Survivor not in m_playerAreDead");
+            return;
+        }
+
+        m_playerAreDead[survivor] = true;
+
+        int deadPlayer = m_playerAreDead.Where<KeyValuePair<NetworkViewID, bool>>(item => item.Value == true).Count();
+
+        if ( deadPlayer == m_playerAreDead.Count - 1)
+        {// One player stay Alive
+            m_lastPlayerAlive = true;
+        }
+    }
+
+    void gameFinish()
+    {
+        Debug.LogError("Game is finish");
     }
 
     void OnGUI()

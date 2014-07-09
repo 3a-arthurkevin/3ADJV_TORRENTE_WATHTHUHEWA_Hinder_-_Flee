@@ -34,6 +34,8 @@ public class HealthManagerScript : MonoBehaviour
 
     private int m_currentLifePoint;
     
+
+    /* GUI Part */
     private int m_nbCelluleY = 10;
     private int m_screenWidth;
     private int m_screenHeight;
@@ -48,6 +50,7 @@ public class HealthManagerScript : MonoBehaviour
     [SerializeField]
     private AudioClip m_hitAudio;
 
+    private bool m_alreadyDied = false;
     private bool m_isDestroy = false;
     private bool m_soundPlaying = false;
 
@@ -115,6 +118,9 @@ public class HealthManagerScript : MonoBehaviour
 
     void Died()
     {
+        if (m_alreadyDied)
+            return;
+
         if (m_characterType == CharacterType.Survivor)
             SurvivorDied();
 
@@ -127,19 +133,24 @@ public class HealthManagerScript : MonoBehaviour
     private void SurvivorDied()
     {
         Debug.LogError("Survivor died");
+
+        m_gameManager.survivorDied(m_networkView.viewID);
+
+        m_alreadyDied = true;
     }
 
     private void ZombieDied()
     {
         Debug.LogError("Zombie Died");
 
-        m_gameManager.m_popZombieManager.zombieDied(GetComponent<MoveManagerZombieScript>().Data.IsInFloor, transform);
-
         if (!m_isDestroy)
         {
+            m_gameManager.m_popZombieManager.zombieDied(GetComponent<MoveManagerZombieScript>().Data.IsInFloor, transform);
             Network.Destroy(m_networkView.viewID);
             m_isDestroy = true;
         }
+
+        m_alreadyDied = true;
     }
 
     public bool isDead()

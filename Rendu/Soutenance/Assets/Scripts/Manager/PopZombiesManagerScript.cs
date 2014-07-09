@@ -119,4 +119,12 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
         m_listZombies.Clear();
     }
+
+    void OnGUI()
+    {
+        if(Network.isServer)
+        {//Draw Stats of game (nbZombie pop, ...)
+
+        }
+    }
 }
