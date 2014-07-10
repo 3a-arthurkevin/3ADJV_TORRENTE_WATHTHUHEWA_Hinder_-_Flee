@@ -66,7 +66,6 @@ public class PopZombiesManagerScript : MonoBehaviour {
             {
                 int nbCurZombie = m_listZombies[i].Count;
                 int nbZombieVoulu = (int)(m_timer * m_configLevelManagerScript.getPopZombieRatio(i));
-                
                 StartCoroutine(zombieLauncher(i, nbZombieVoulu - nbCurZombie));
             }
             
@@ -91,6 +90,14 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
             yield return new WaitForSeconds(m_waveTime);
         }
+    }
+
+    public void stopManage()
+    {
+        m_manage = false;
+        StopAllCoroutines();
+        killAll();
+        enabled = false;
     }
 
     public void zombieDied(int level, Transform died)
