@@ -34,23 +34,22 @@ public class GUITutorialScript : MonoBehaviour
 
     void OnGUI()
     {
-        if (GUI.Button(boxButtonLeft, "Précédent"))
+        if (idImage > 0)
         {
-            if (idImage > 0)
+            if (GUI.Button(boxButtonLeft, "Précédent"))
             {
                 Vector3 vec = new Vector3(0, 0, -100);
                 idImage--;
                 m_camera.transform.position += vec ;
             }
         }
-        if (GUI.Button(boxButtonRight, "Suivant"))
+        if (idImage < idMax)
         {
-            Vector3 vec = new Vector3(0, 0, 100);
-            if (idImage < idMax)
+            if (GUI.Button(boxButtonRight, "Suivant"))
             {
+                Vector3 vec = new Vector3(0, 0, 100);
                 idImage++;
                 m_camera.transform.position += vec;
-
             }
         }
     }
