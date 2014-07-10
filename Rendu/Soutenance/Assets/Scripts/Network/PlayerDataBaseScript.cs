@@ -29,9 +29,6 @@ public class PlayerDataBaseScript : MonoBehaviour
     private List<NetworkPlayer> m_playerRemoved;
 
     [SerializeField]
-    private bool m_buildServer = true;
-
-    [SerializeField]
     private int m_portNumber = 9090;
 
     [SerializeField]
@@ -43,7 +40,6 @@ public class PlayerDataBaseScript : MonoBehaviour
     private int m_maxPlayers = 2;
     private int m_currentPlayer = 0;
     private bool m_gameLauched = false;
-    private bool m_setupLaunch = false;
 
     [SerializeField]
     private Transform m_SurvivorPrefab;
@@ -63,6 +59,7 @@ public class PlayerDataBaseScript : MonoBehaviour
         if (m_gameManager == null)
             m_gameManager = GetComponent<GameManagerScript>();
 
+       
         m_maxPlayers = ConnectionManagerScript.m_maxPlayers;
         m_idAdress = ConnectionManagerScript.m_idAdress;
 
@@ -92,7 +89,6 @@ public class PlayerDataBaseScript : MonoBehaviour
         else
             Debug.LogError("Server start");
 
-        m_setupLaunch = true;
     }
 
     void setupClient()
@@ -104,7 +100,6 @@ public class PlayerDataBaseScript : MonoBehaviour
         else
             Debug.LogError("Client Connect");
 
-        m_setupLaunch = true;
     }
 
     void OnPlayerConnected(NetworkPlayer newPlayer)
@@ -296,12 +291,12 @@ public class PlayerDataBaseScript : MonoBehaviour
     }
 
     /* attribut for GUI */
-    private Rect m_ipAddressLabel = new Rect(10, 10, 80, 20);
+    /*private Rect m_ipAddressLabel = new Rect(10, 10, 80, 20);
     private Rect m_ipAddressField = new Rect(90, 10, 70, 20);
     private Rect m_buildServerToggle = new Rect(10, 40, 100, 20);
     private Rect m_maxPlayerLabel = new Rect(110, 40, 100, 20);
     private Rect m_maxPlayerField = new Rect(190, 40, 30, 20);
-    private Rect m_LaunchButton = new Rect(10, 80, 70, 30);
+    private Rect m_LaunchButton = new Rect(10, 80, 70, 30);*/
     private Rect m_waitMessage = new Rect(Screen.width / 2, Screen.height / 2, 200, 20);
 
     void OnGUI()

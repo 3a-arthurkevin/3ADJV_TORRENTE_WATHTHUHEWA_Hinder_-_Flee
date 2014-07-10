@@ -12,6 +12,7 @@ public class ConnectionManagerScript : MonoBehaviour
     private Rect m_chooseLevelLabel = new Rect(10, 80, 120, 20);
     private Rect m_chooseLevelField = new Rect(150, 80, 30, 20);
     private Rect m_LaunchButton = new Rect(10, 120, 70, 20);
+    private Rect m_tutoButton = new Rect(Screen.width - 100, 20, 80, 20);
 
 
 
@@ -61,6 +62,11 @@ public class ConnectionManagerScript : MonoBehaviour
                 return;
 
             Application.LoadLevel("Level_" + ConnectionManagerScript.m_levelChoose.ToString());
+        }
+
+        if (GUI.Button(m_tutoButton, "didacticiel"))
+        {
+            Application.LoadLevel(3);
         }
     }
 }

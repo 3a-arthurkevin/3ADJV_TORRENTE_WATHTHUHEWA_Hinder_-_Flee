@@ -17,6 +17,9 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private GameObject m_survivorMutateWeapon;
 
+    [SerializeField]
+    private Material m_materialDiedSurvivor;
+
     private Dictionary<NetworkViewID, int> m_playerScore;
 
     private Dictionary<NetworkViewID, bool> m_playerAreDead;
@@ -137,8 +140,18 @@ public class GameManagerScript : MonoBehaviour
     IEnumerator mutatingSurvivor(GameObject survivor)
     {//Mutate survivor
 
+        survivor.GetComponent<MoveManagerSurvivorScript>().enabled = false;
         yield return new WaitForSeconds(5);
 
+        Transform sTrans = survivor.transform;
+        for (int i = 0; i < sTrans.childCount; ++i)
+            if (sTrans.GetChild(i).name == "SurvivantGraphics")
+            {
+                sTrans.GetChild(i).GetComponent<MeshRenderer>().material = m_materialDiedSurvivor;
+                break;
+            }
+
+        survivor.GetComponent<MoveManagerSurvivorScript>().enabled = true;
         m_survivorVientDeMourrir = false;
     }
 
@@ -192,7 +205,7 @@ public class GameManagerScript : MonoBehaviour
         {
             GUI.Label(m_finishMessagePosition, m_gameFinishMessage);
 
-            if (GUI.Button(m_ButtonQuit, "Quiter le jeu"))
+            if (GUI.Button(m_ButtonQuit, "Quitter le jeu"))
                 Application.Quit();
         }
 

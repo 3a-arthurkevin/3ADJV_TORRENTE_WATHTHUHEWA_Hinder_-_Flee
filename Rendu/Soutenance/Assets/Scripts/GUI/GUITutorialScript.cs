@@ -25,9 +25,9 @@ public class GUITutorialScript : MonoBehaviour
         m_screenWidth = Screen.width;
         m_screenHeight = Screen.height;
 
-        boxButtonLeft = new Rect(0, 0, 50, 50);
-        boxButtonRight = new Rect(m_screenWidth-50, 0, 50, 50);
-        boxButtonReturn = new Rect(m_screenWidth/2, 0, 50, 50);
+        boxButtonLeft = new Rect(0, 0, 80, 20);
+        boxButtonRight = new Rect(m_screenWidth-80, 0, 80, 20);
+        boxButtonReturn = new Rect(m_screenWidth/2, 0, 110, 20);
 	}
 	
 	// Update is called once per frame

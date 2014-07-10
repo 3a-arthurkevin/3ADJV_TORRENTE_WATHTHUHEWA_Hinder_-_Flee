@@ -1924,7 +1924,6 @@ MonoBehaviour:
   m_configLevelManager: {fileID: 921634779}
   m_gameManager: {fileID: 280049097}
   m_guiClient: {fileID: 280049096}
-  m_buildServer: 0
   m_portNumber: 9090
   m_idAdress: 127.0.0.1
   m_maxPlayers: 1
@@ -1973,6 +1972,8 @@ MonoBehaviour:
   m_playerDatabase: {fileID: 280049094}
   m_popZombieManager: {fileID: 280049092}
   m_survivorMutateWeapon: {fileID: 100000, guid: cd7bb0f353585844faeae389a4f9fb92,
+    type: 2}
+  m_materialDiedSurvivor: {fileID: 2100000, guid: f2883344d44b94747bd3dd5733aee3ba,
     type: 2}
   m_timeOfEndGame: 60
 --- !u!1 &287737305
@@ -8093,6 +8094,10 @@ Prefab:
       propertyPath: m_networkView
       value: 
       objectReference: {fileID: 280049093}
+    - target: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_materialDiedSurvivor
+      value: 
+      objectReference: {fileID: 2100000, guid: f2883344d44b94747bd3dd5733aee3ba, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_RootGameObject: {fileID: 280049091}
