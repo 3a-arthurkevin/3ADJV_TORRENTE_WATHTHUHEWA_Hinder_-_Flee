@@ -14,18 +14,29 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     public PopZombiesManagerScript m_popZombieManager;
 
+    [SerializeField]
+    private GameObject m_survivorMutateWeapon;
+
     private Dictionary<NetworkViewID, int> m_playerScore;
 
     private Dictionary<NetworkViewID, bool> m_playerAreDead;
 
     private bool m_lastPlayerAlive = false;
     private float m_timerEndGame = 0f;
+    private bool m_allPlayerLoose = false;
+    private bool m_gameFinish = false;
+
+    private bool m_survivorVientDeMourrir = false;
+    private NetworkPlayer m_owner;
 
     [SerializeField]
     private float m_timeOfEndGame = 60f;
 
     /* GUI PART */
     private Rect m_timerPosition = new Rect(Screen.width / 2, 20, 100, 25);
+    private Rect m_finishMessagePosition = new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 250, 25);
+    private Rect m_ButtonQuit = new Rect(Screen.width / 2 - 50, Screen.height / 2 + 50, 80, 25);
+    private string m_gameFinishMessage = "";
 
     void Start()
     {
@@ -70,15 +81,52 @@ public class GameManagerScript : MonoBehaviour
             return;
         }
 
-        m_playerAreDead[survivor] = true;
-
-        int deadPlayer = m_playerAreDead.Where<KeyValuePair<NetworkViewID, bool>>(item => item.Value == true).Count();
-
-        if ( deadPlayer == m_playerAreDead.Count - 1)
-        {// One player stay Alive
-            m_networkView.RPC("setLastAlive", RPCMode.OthersBuffered, true);
-            m_lastPlayerAlive = true;
+        if(m_lastPlayerAlive)
+        {
+            m_allPlayerLoose = true;
+            gameFinish();
         }
+        else
+        {
+            m_playerAreDead[survivor] = true;
+            m_networkView.RPC("mutateSurvivor", RPCMode.AllBuffered, survivor);
+
+            int deadPlayer = m_playerAreDead.Where<KeyValuePair<NetworkViewID, bool>>(item => item.Value == true).Count();
+
+            if (deadPlayer == m_playerAreDead.Count - 1)
+            {// One player stay Alive
+                m_networkView.RPC("setLastAlive", RPCMode.OthersBuffered, true);
+                m_lastPlayerAlive = true;
+            }
+        }
+    }
+
+    [RPC]
+    void mutateSurvivor(NetworkViewID id)
+    {
+        NetworkView mutatingSurvivorNetworkView = NetworkView.Find(id);
+
+        if (!mutatingSurvivorNetworkView)
+        {
+            Debug.LogError("Mutating Survivor not found");
+            return;
+        }
+
+        GameObject survivorUnderMutation = mutatingSurvivorNetworkView.gameObject;
+        m_owner = survivorUnderMutation.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
+
+        m_survivorVientDeMourrir = true;
+        StartCoroutine(mutatingSurvivor(survivorUnderMutation));
+    }
+
+    IEnumerator mutatingSurvivor(GameObject survivor)
+    {//Mutate survivor
+
+
+
+        yield return new WaitForSeconds(5);
+
+        m_survivorVientDeMourrir = false;
     }
 
     [RPC]
@@ -89,15 +137,59 @@ public class GameManagerScript : MonoBehaviour
 
     void gameFinish()
     {
-        Debug.LogError("Game is finish");
+        if (Network.isClient)
+            return;
+
+        if(m_allPlayerLoose)
+            m_gameFinishMessage = "Aucun vainqueur pour cette partie !";
+        else
+        {
+            NetworkViewID idWinner = m_playerAreDead.Where<KeyValuePair<NetworkViewID, bool>>(item => item.Value == false).First().Key;
+            string idPlayer = m_playerDatabase.Players.First<KeyValuePair<NetworkPlayer, Transform>>(item => item.Value.networkView.viewID == idWinner).Key.ToString();
+            m_gameFinishMessage = "Joueur " + idPlayer + " a Gagnée la partie !!!";
+        }
+
+        m_networkView.RPC("setGameFinish", RPCMode.AllBuffered, m_gameFinishMessage, true);
+
+        m_popZombieManager.stopManage();
+        Dictionary<NetworkPlayer, Transform> players = m_playerDatabase.Players;
+
+        foreach(KeyValuePair<NetworkPlayer, Transform> pair in players)
+            m_networkView.RPC("setActiveObject", RPCMode.All, pair.Value.networkView.viewID, false);
+
         m_lastPlayerAlive = false;
+    }
+
+    [RPC]
+    void setGameFinish(string message, bool gameFinish)
+    {
+        m_gameFinishMessage = message;
+        m_gameFinish = gameFinish;
+    }
+
+    [RPC]
+    void setActiveObject(NetworkViewID id, bool active)
+    {
+        NetworkView.Find(id).gameObject.SetActive(active);
     }
 
     void OnGUI()
     {
-        if(Network.isClient && m_lastPlayerAlive)
+        if (m_gameFinish)
+        {
+            GUI.Label(m_finishMessagePosition, m_gameFinishMessage);
+
+            if (GUI.Button(m_ButtonQuit, "Quiter le jeu"))
+                Application.Quit();
+        }
+
+        if(Network.isClient)
         {//Display time for endGame
-            GUI.Label(m_timerPosition, (m_timeOfEndGame - m_timerEndGame).ToString("F2"));
+            if (m_survivorVientDeMourrir && m_owner == Network.player)
+                    GUI.Label(m_finishMessagePosition, "Vous êtes mort !!!");
+
+            if (m_lastPlayerAlive)
+                GUI.Label(m_timerPosition, (m_timeOfEndGame - m_timerEndGame).ToString("F2"));
         }
     }
 }
