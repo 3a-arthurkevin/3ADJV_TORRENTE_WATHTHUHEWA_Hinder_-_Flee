@@ -13,6 +13,8 @@ public class GUITutorialScript : MonoBehaviour
     private Rect boxButtonLeft;
     private Rect boxButtonRight;
 
+    private Rect boxButtonReturn;
+
     private int idImage = 0;
 
     private int idMax = 3;
@@ -23,8 +25,9 @@ public class GUITutorialScript : MonoBehaviour
         m_screenWidth = Screen.width;
         m_screenHeight = Screen.height;
 
-        boxButtonLeft = new Rect(0, 0 / 2, 50, 50);
+        boxButtonLeft = new Rect(0, 0, 50, 50);
         boxButtonRight = new Rect(m_screenWidth-50, 0, 50, 50);
+        boxButtonReturn = new Rect(m_screenWidth/2, 0, 50, 50);
 	}
 	
 	// Update is called once per frame
@@ -51,6 +54,11 @@ public class GUITutorialScript : MonoBehaviour
                 idImage++;
                 m_camera.transform.position += vec;
             }
+        }
+
+        if (GUI.Button(boxButtonReturn, "Retour au lobby"))
+        {
+            Application.LoadLevel(0);
         }
     }
 }
