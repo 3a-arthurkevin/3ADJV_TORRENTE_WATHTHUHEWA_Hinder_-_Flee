@@ -14,6 +14,9 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     public PopZombiesManagerScript m_popZombieManager;
 
+    [SerializeField]
+    private GameObject m_survivorMutateWeapon;
+
     private Dictionary<NetworkViewID, int> m_playerScore;
 
     private Dictionary<NetworkViewID, bool> m_playerAreDead;
@@ -22,6 +25,9 @@ public class GameManagerScript : MonoBehaviour
     private float m_timerEndGame = 0f;
     private bool m_allPlayerLoose = false;
     private bool m_gameFinish = false;
+
+    private bool m_survivorVientDeMourrir = false;
+    private NetworkPlayer m_owner;
 
     [SerializeField]
     private float m_timeOfEndGame = 60f;
@@ -83,6 +89,7 @@ public class GameManagerScript : MonoBehaviour
         else
         {
             m_playerAreDead[survivor] = true;
+            m_networkView.RPC("mutateSurvivor", RPCMode.AllBuffered, survivor);
 
             int deadPlayer = m_playerAreDead.Where<KeyValuePair<NetworkViewID, bool>>(item => item.Value == true).Count();
 
@@ -105,7 +112,21 @@ public class GameManagerScript : MonoBehaviour
             return;
         }
 
-        GameObject mutatingSurvivor = mutatingSurvivorNetworkView.gameObject;
+        GameObject survivorUnderMutation = mutatingSurvivorNetworkView.gameObject;
+        m_owner = survivorUnderMutation.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
+
+        m_survivorVientDeMourrir = true;
+        StartCoroutine(mutatingSurvivor(survivorUnderMutation));
+    }
+
+    IEnumerator mutatingSurvivor(GameObject survivor)
+    {//Mutate survivor
+
+
+
+        yield return new WaitForSeconds(5);
+
+        m_survivorVientDeMourrir = false;
     }
 
     [RPC]
@@ -164,6 +185,8 @@ public class GameManagerScript : MonoBehaviour
 
         if(Network.isClient)
         {//Display time for endGame
+            if (m_survivorVientDeMourrir && m_owner == Network.player)
+                    GUI.Label(m_finishMessagePosition, "Vous êtes mort !!!");
 
             if (m_lastPlayerAlive)
                 GUI.Label(m_timerPosition, (m_timeOfEndGame - m_timerEndGame).ToString("F2"));

@@ -10272,6 +10272,10 @@ Prefab:
       propertyPath: m_respawnTime
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_networkView
+      value: 
+      objectReference: {fileID: 959734160}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_RootGameObject: {fileID: 959734153}
@@ -14266,6 +14270,7 @@ GameObject:
   - 114: {fileID: 959734156}
   - 114: {fileID: 959734155}
   - 114: {fileID: 959734154}
+  - 148: {fileID: 959734160}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -14285,6 +14290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5ebe5de22d6e347a80930bee663c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_networkView: {fileID: 959734160}
   m_playerDatabase: {fileID: 959734158}
   m_popZombieManager: {fileID: 959734156}
   m_timeOfEndGame: 60
@@ -14366,6 +14372,18 @@ Transform:
   m_Children:
   - {fileID: 1935050689}
   m_Father: {fileID: 0}
+--- !u!148 &959734160
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 959734153}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 959734154}
+  m_ViewID:
+    m_ID: 13
+    m_Type: 1
 --- !u!1 &963422093
 GameObject:
   m_ObjectHideFlags: 0
