@@ -146,7 +146,6 @@ public class InventoryItemScript : MonoBehaviour
         if (m_slotToUse >= 0 && m_slotToUse < m_nbSlotInventory)
         {
             m_networkView.RPC("checkItemToUse", RPCMode.Server, m_slotToUse, m_owner);
-            m_slotToUse = -1;
         }
     }
 
@@ -158,14 +157,14 @@ public class InventoryItemScript : MonoBehaviour
         if (m_inventory[slotPosition].Id >= 0 && m_inventory[slotPosition].Quantity > 0)
         {
             if (m_inventory[slotPosition].Range > 0)
-                m_networkView.RPC("setAimingTrue", RPCMode.All, owner, (m_inventory[slotPosition].Range));
+                m_networkView.RPC("setAimingTrue", RPCMode.All, owner, (m_inventory[m_slotToUse].Range));
             else
             {
-                directUseItem(m_slotToUse, owner);
+                m_networkView.RPC("directUseItem", RPCMode.Others, m_slotToUse, owner);
             }
         }
         else
-            m_networkView.RPC("stopItemUse", RPCMode.All, owner);
+            m_networkView.RPC("stopItemUse", RPCMode.All, m_slotToUse, owner);
     }
 
     [RPC]
@@ -211,9 +210,9 @@ public class InventoryItemScript : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, 100f, 1 << LayerMask.NameToLayer("Ground")))
                     m_networkView.RPC("checkCanPutItem", RPCMode.Server, hit.point, m_owner);
             }
-            else if (!(Input.GetButtonDown("MoveCharacter") || Input.GetKeyDown(KeyCode.Space)))
+            else if(!(Input.GetButtonDown("MoveCharacter") || Input.GetKeyDown(KeyCode.Space)))
             {
-                m_networkView.RPC("stopItemUse", RPCMode.All, m_owner);
+                m_networkView.RPC("stopItemUse", RPCMode.All, m_slotToUse, m_owner);
             }
         }
     }
@@ -242,15 +241,15 @@ public class InventoryItemScript : MonoBehaviour
     [RPC]
     public void directUseItem(int slotPosition, NetworkPlayer owner)
     {
-        GameObject itemPrefab = ItemFactoryScript.getItemById(m_inventory[slotPosition].Id);
+        //GameObject itemPrefab = ItemFactoryScript.getItemById(m_inventory[slotPosition].Id);
 
-        if (itemPrefab == null)
-            return;
+        //if (itemPrefab == null)
+        //    return;
 
-        Network.Instantiate(itemPrefab, Vector3.zero, m_player.transform.localRotation, 0);
+       // Network.Instantiate(itemPrefab, Vector3.zero, m_player.transform.localRotation, 0);
 
         
-        m_networkView.RPC("stopItemUse", RPCMode.All, m_owner);
+        m_networkView.RPC("stopItemUse", RPCMode.All, slotPosition, m_owner);
     }
 
 
