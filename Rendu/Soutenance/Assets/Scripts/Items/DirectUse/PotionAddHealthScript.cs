@@ -10,6 +10,8 @@ public class PotionAddHealthScript : MonoBehaviour
     [SerializeField]
     NetworkView m_netview;
 
+    bool m_isUsed = false;
+
     public void addLifePoint(GameObject player)
     {
         HealthManagerScript playerHealthManager = player.GetComponent<HealthManagerScript>();
@@ -22,14 +24,23 @@ public class PotionAddHealthScript : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void OnTriggerStay(Collider hit)
+    void OnTriggerStay(Collider hit)
     {
-        if (hit.tag == "survivor")
-        {/*
-            if (this.gameObject.GetComponent<UseItemDirectManagerScript>().getViewId())
+        Debug.LogError("trigger");
+        if (hit.tag == "Survivor")
+        {
+            Debug.LogError("Trigger survivor");
+            if (hit.gameObject.GetComponent<NetworkView>().viewID == this.gameObject.GetComponent<UseItemDirectManagerScript>().getViewId())
             {
-                hit.gameObject.GetComponent<HealthManagerScript>().AddLifePoint(m_lifePointPotion);
-            }*/
+                Debug.LogError("does item is used ?");
+                if (!m_isUsed)
+                {
+                    Debug.LogError("item used");
+                    hit.gameObject.GetComponent<HealthManagerScript>().AddLifePoint(m_lifePointPotion);
+                    m_isUsed = true;
+                    Destroy(this.gameObject);
+                }
+            }
         }
     }
 }
