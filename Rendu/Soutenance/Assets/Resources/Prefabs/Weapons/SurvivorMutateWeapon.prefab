@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400000}
+  - 148: {fileID: 14800002}
   m_Layer: 0
   m_Name: SurvivorMutateWeapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,13 +40,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70edf852690d13c428bb8a4411fac154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_name: 
+  m_name: Mutate Survivor Weapon
   m_networkView: {fileID: 14800000}
-  m_player: {fileID: 0}
+  m_weaponOwner: {fileID: 0}
   m_zombieFont: {fileID: 12800000, guid: ced2fcb1149ca984bbe842d33ef6ae4c, type: 3}
   m_viseurCursor: {fileID: 2800000, guid: 92a66af97d46e124e88f260b0204b8c3, type: 3}
   m_characterCamera: {fileID: 0}
 --- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 11400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800002
 NetworkView:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

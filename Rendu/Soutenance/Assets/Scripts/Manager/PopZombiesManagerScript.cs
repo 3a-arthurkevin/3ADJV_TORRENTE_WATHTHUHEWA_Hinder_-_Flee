@@ -102,9 +102,6 @@ public class PopZombiesManagerScript : MonoBehaviour {
 
     public void zombieDied(int level, Transform died)
     {
-        Debug.LogError("is server ? " + Network.isServer);
-        Debug.LogError("level : " + level);
-        Debug.LogError("m_list : " + m_listZombies);
 
         if (level < m_listZombies.Count)
         {

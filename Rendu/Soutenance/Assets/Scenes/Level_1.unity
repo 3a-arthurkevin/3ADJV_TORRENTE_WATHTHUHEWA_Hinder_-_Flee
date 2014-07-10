@@ -13,12 +13,12 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_AmbientLight: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 6585970}
   - 114: {fileID: 6585971}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ GameObject:
   - 4: {fileID: 18220785}
   - 114: {fileID: 18220786}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ GameObject:
   - 4: {fileID: 38441773}
   - 114: {fileID: 38441774}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +479,7 @@ GameObject:
   - 4: {fileID: 99838243}
   - 114: {fileID: 99838242}
   m_Layer: 0
-  m_Name: SurvivorSpawnPoint_Floor0
+  m_Name: SurvivorSpawnPoint_Floor0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
-      value: ZombieSpawnPoint_Floor0
+      value: ZombieSpawnPoint_Floor0_2
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: pointType
@@ -1123,7 +1123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
       propertyPath: m_Name
-      value: SurvivorSpawnPoint_Floor1
+      value: SurvivorSpawnPoint_Floor1_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
@@ -1140,7 +1140,7 @@ GameObject:
   - 4: {fileID: 203722545}
   - 114: {fileID: 203722546}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1920,6 +1920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569f1566f3a25d41ac20f173aa13938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_setupCamera: {fileID: 2005369636}
   m_configLevelManager: {fileID: 921634779}
   m_gameManager: {fileID: 280049097}
   m_guiClient: {fileID: 280049096}
@@ -1941,7 +1942,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2005369641}
   m_Father: {fileID: 0}
 --- !u!114 &280049096
 MonoBehaviour:
@@ -1967,13 +1969,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5ebe5de22d6e347a80930bee663c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_networkView: {fileID: 280049093}
   m_playerDatabase: {fileID: 280049094}
   m_popZombieManager: {fileID: 280049092}
+  m_survivorMutateWeapon: {fileID: 100000, guid: cd7bb0f353585844faeae389a4f9fb92,
+    type: 2}
   m_timeOfEndGame: 60
-  m_maxPlayers: 2
-  m_SurvivorPrefab: {fileID: 0}
-  m_CharacterCameraPrefab: {fileID: 0}
-  m_serverCamera: {fileID: 0}
 --- !u!1 &287737305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,7 +2070,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
       propertyPath: m_Name
-      value: SurvivorSpawnPoint_Floor1
+      value: SurvivorSpawnPoint_Floor1_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
@@ -2243,7 +2244,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
-      value: ZombieSpawnPoint_Floor0
+      value: ZombieSpawnPoint_Floor0_0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: pointType
@@ -3922,7 +3923,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
-      value: ZombieSpawnPoint_Floor0
+      value: ZombieSpawnPoint_Floor0_3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: pointType
@@ -4666,7 +4667,7 @@ GameObject:
   - 4: {fileID: 612449526}
   - 114: {fileID: 612449527}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4764,7 +4765,7 @@ GameObject:
   - 4: {fileID: 613151283}
   - 114: {fileID: 613151282}
   m_Layer: 0
-  m_Name: SurvivorSpawnPoint_Floor1
+  m_Name: SurvivorSpawnPoint_Floor1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5773,7 +5774,7 @@ GameObject:
   - 4: {fileID: 719666514}
   - 114: {fileID: 719666515}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5813,7 +5814,7 @@ GameObject:
   - 4: {fileID: 719894136}
   - 114: {fileID: 719894137}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5878,8 +5879,8 @@ MonoBehaviour:
   - {fileID: 613151283}
   - {fileID: 1276244286}
   m_spawnZombie:
-  - {fileID: 881009190}
   - {fileID: 1646229812}
+  - {fileID: 881009190}
 --- !u!114 &722848303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5899,9 +5900,9 @@ MonoBehaviour:
   - {fileID: 1849515711}
   m_spawnZombie:
   - {fileID: 1058682651}
-  - {fileID: 1374833949}
-  - {fileID: 1920786403}
   - {fileID: 2093333863}
+  - {fileID: 1920786403}
+  - {fileID: 1374833949}
 --- !u!4 &722848304
 Transform:
   m_ObjectHideFlags: 0
@@ -6036,6 +6037,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: m_spawnZombie.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: m_spawnSurvivor.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 11.0358973
@@ -6075,11 +6088,11 @@ Prefab:
     - target: {fileID: 11400002, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_spawnZombie.Array.data[0]
       value: 
-      objectReference: {fileID: 881009190}
+      objectReference: {fileID: 1646229812}
     - target: {fileID: 11400002, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_spawnZombie.Array.data[1]
       value: 
-      objectReference: {fileID: 1646229812}
+      objectReference: {fileID: 881009190}
     - target: {fileID: 11400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_spawnSurvivor.Array.data[0]
       value: 
@@ -6095,7 +6108,7 @@ Prefab:
     - target: {fileID: 11400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_spawnZombie.Array.data[1]
       value: 
-      objectReference: {fileID: 1374833949}
+      objectReference: {fileID: 2093333863}
     - target: {fileID: 11400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_spawnZombie.Array.data[2]
       value: 
@@ -6103,7 +6116,7 @@ Prefab:
     - target: {fileID: 11400004, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: m_spawnZombie.Array.data[3]
       value: 
-      objectReference: {fileID: 2093333863}
+      objectReference: {fileID: 1374833949}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[0]
       value: 
@@ -6115,43 +6128,43 @@ Prefab:
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[2]
       value: 
-      objectReference: {fileID: 719666514}
+      objectReference: {fileID: 2043496201}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[3]
       value: 
-      objectReference: {fileID: 719894136}
+      objectReference: {fileID: 1938666715}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[4]
       value: 
-      objectReference: {fileID: 1004226397}
+      objectReference: {fileID: 1706078331}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[5]
       value: 
-      objectReference: {fileID: 1171651353}
+      objectReference: {fileID: 1642593319}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[6]
       value: 
-      objectReference: {fileID: 1185818430}
+      objectReference: {fileID: 1543319333}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[7]
       value: 
-      objectReference: {fileID: 1543319333}
+      objectReference: {fileID: 1171651353}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[8]
       value: 
-      objectReference: {fileID: 1642593319}
+      objectReference: {fileID: 1004226397}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[9]
       value: 
-      objectReference: {fileID: 1706078331}
+      objectReference: {fileID: 719894136}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[10]
       value: 
-      objectReference: {fileID: 1938666715}
+      objectReference: {fileID: 719666514}
     - target: {fileID: 11400006, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[11]
       value: 
-      objectReference: {fileID: 2043496201}
+      objectReference: {fileID: 719666514}
     - target: {fileID: 11400008, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
       propertyPath: movePoint.Array.data[0]
       value: 
@@ -6180,7 +6193,39 @@ Prefab:
       propertyPath: movePoint.Array.data[6]
       value: 
       objectReference: {fileID: 1726855069}
-    m_RemovedComponents: []
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[0]
+      value: 
+      objectReference: {fileID: 6585970}
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[2]
+      value: 
+      objectReference: {fileID: 1486685883}
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[1]
+      value: 
+      objectReference: {fileID: 1726855069}
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[3]
+      value: 
+      objectReference: {fileID: 1438074745}
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[4]
+      value: 
+      objectReference: {fileID: 837469178}
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[5]
+      value: 
+      objectReference: {fileID: 38441773}
+    - target: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+      propertyPath: movePoint.Array.data[6]
+      value: 
+      objectReference: {fileID: 18220785}
+    m_RemovedComponents:
+    - {fileID: 11400014, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+    - {fileID: 11400012, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+    - {fileID: 11400010, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
+    - {fileID: 11400008, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 67de453a3d2a93d4d8ea8c74710013b1, type: 2}
   m_RootGameObject: {fileID: 921634778}
   m_IsPrefabParent: 0
@@ -6825,7 +6870,7 @@ GameObject:
   - 4: {fileID: 837469178}
   - 114: {fileID: 837469179}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6980,7 +7025,7 @@ GameObject:
   - 4: {fileID: 881009190}
   - 114: {fileID: 881009189}
   m_Layer: 0
-  m_Name: ZombieSpawnPoint_Floor1
+  m_Name: ZombieSpawnPoint_Floor1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7513,7 +7558,7 @@ GameObject:
   - 4: {fileID: 1004226397}
   - 114: {fileID: 1004226398}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8040,6 +8085,14 @@ Prefab:
       propertyPath: m_configLevelManager
       value: 
       objectReference: {fileID: 921634779}
+    - target: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_survivorMutateWeapon
+      value: 
+      objectReference: {fileID: 100000, guid: cd7bb0f353585844faeae389a4f9fb92, type: 2}
+    - target: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_networkView
+      value: 
+      objectReference: {fileID: 280049093}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_RootGameObject: {fileID: 280049091}
@@ -8113,7 +8166,7 @@ GameObject:
   - 4: {fileID: 1058682651}
   - 114: {fileID: 1058682650}
   m_Layer: 0
-  m_Name: ZombieSpawnPoint_Floor0
+  m_Name: ZombieSpawnPoint_Floor0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8541,7 +8594,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
-      value: ZombieSpawnPoint_Floor1
+      value: ZombieSpawnPoint_Floor1_1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: pointType
@@ -8562,7 +8615,7 @@ GameObject:
   - 4: {fileID: 1171651353}
   - 114: {fileID: 1171651354}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8688,7 +8741,7 @@ GameObject:
   - 4: {fileID: 1185818430}
   - 114: {fileID: 1185818431}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9386,7 +9439,7 @@ GameObject:
   - 4: {fileID: 1276244286}
   - 114: {fileID: 1276244285}
   m_Layer: 0
-  m_Name: SurvivorSpawnPoint_Floor1
+  m_Name: SurvivorSpawnPoint_Floor1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9832,7 +9885,7 @@ GameObject:
   - 4: {fileID: 1374833949}
   - 114: {fileID: 1374833948}
   m_Layer: 0
-  m_Name: ZombieSpawnPoint_Floor0
+  m_Name: ZombieSpawnPoint_Floor0_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10212,7 +10265,7 @@ GameObject:
   - 4: {fileID: 1438074745}
   - 114: {fileID: 1438074746}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10391,7 +10444,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
-      value: ZombieSpawnPoint_Floor0
+      value: ZombieSpawnPoint_Floor0_1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: pointType
@@ -10629,7 +10682,7 @@ GameObject:
   - 4: {fileID: 1486685883}
   - 114: {fileID: 1486685884}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10811,7 +10864,7 @@ GameObject:
   - 4: {fileID: 1543319333}
   - 114: {fileID: 1543319334}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11341,7 +11394,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: m_Name
-      value: ZombieSpawnPoint_Floor1
+      value: ZombieSpawnPoint_Floor1_0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b974fe5deedb9c54da898b6c77fccf1a, type: 2}
       propertyPath: pointType
@@ -11505,7 +11558,7 @@ GameObject:
   - 4: {fileID: 1642593319}
   - 114: {fileID: 1642593320}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11545,7 +11598,7 @@ GameObject:
   - 4: {fileID: 1646229812}
   - 114: {fileID: 1646229811}
   m_Layer: 0
-  m_Name: ZombieSpawnPoint_Floor1
+  m_Name: ZombieSpawnPoint_Floor1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11726,7 +11779,7 @@ GameObject:
   - 4: {fileID: 1706078331}
   - 114: {fileID: 1706078332}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11793,7 +11846,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
       propertyPath: m_Name
-      value: SurvivorSpawnPoint_Floor0
+      value: SurvivorSpawnPoint_Floor0_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
@@ -11994,7 +12047,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1724946971}
   - 114: {fileID: 1724946972}
-  - 114: {fileID: 1724946973}
+  - 114: {fileID: 1724946974}
   m_Layer: 0
   m_Name: MovePointManager
   m_TagString: Untagged
@@ -12029,20 +12082,19 @@ MonoBehaviour:
   movePoint:
   - {fileID: 203722545}
   - {fileID: 612449526}
-  - {fileID: 719666514}
-  - {fileID: 719894136}
-  - {fileID: 1004226397}
-  - {fileID: 1171651353}
-  - {fileID: 1185818430}
-  - {fileID: 1543319333}
-  - {fileID: 1642593319}
-  - {fileID: 1706078331}
-  - {fileID: 1938666715}
   - {fileID: 2043496201}
---- !u!114 &1724946973
+  - {fileID: 1938666715}
+  - {fileID: 1706078331}
+  - {fileID: 1642593319}
+  - {fileID: 1543319333}
+  - {fileID: 1171651353}
+  - {fileID: 1004226397}
+  - {fileID: 719894136}
+  - {fileID: 719666514}
+--- !u!114 &1724946974
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400008, guid: 67de453a3d2a93d4d8ea8c74710013b1,
+  m_PrefabParentObject: {fileID: 11400016, guid: 67de453a3d2a93d4d8ea8c74710013b1,
     type: 2}
   m_PrefabInternal: {fileID: 738851310}
   m_GameObject: {fileID: 1724946970}
@@ -12054,12 +12106,12 @@ MonoBehaviour:
   m_floor: 1
   movePoint:
   - {fileID: 6585970}
-  - {fileID: 18220785}
-  - {fileID: 38441773}
-  - {fileID: 837469178}
-  - {fileID: 1438074745}
-  - {fileID: 1486685883}
   - {fileID: 1726855069}
+  - {fileID: 1486685883}
+  - {fileID: 1438074745}
+  - {fileID: 837469178}
+  - {fileID: 38441773}
+  - {fileID: 18220785}
 --- !u!1 &1726855068
 GameObject:
   m_ObjectHideFlags: 0
@@ -12070,7 +12122,7 @@ GameObject:
   - 4: {fileID: 1726855069}
   - 114: {fileID: 1726855070}
   m_Layer: 0
-  m_Name: MovePoint_Floor1
+  m_Name: MovePoint_Floor1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12768,7 +12820,7 @@ GameObject:
   - 4: {fileID: 1849515711}
   - 114: {fileID: 1849515710}
   m_Layer: 0
-  m_Name: SurvivorSpawnPoint_Floor0
+  m_Name: SurvivorSpawnPoint_Floor0_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13154,7 +13206,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
       propertyPath: m_Name
-      value: SurvivorSpawnPoint_Floor0
+      value: SurvivorSpawnPoint_Floor0_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37b95f94696a912428c44a42ac8caa4d, type: 2}
@@ -13345,7 +13397,7 @@ GameObject:
   - 4: {fileID: 1920786403}
   - 114: {fileID: 1920786402}
   m_Layer: 0
-  m_Name: ZombieSpawnPoint_Floor0
+  m_Name: ZombieSpawnPoint_Floor0_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13498,7 +13550,7 @@ GameObject:
   - 4: {fileID: 1938666715}
   - 114: {fileID: 1938666716}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13864,6 +13916,90 @@ MeshFilter:
   m_PrefabInternal: {fileID: 715421676}
   m_GameObject: {fileID: 1998167917}
   m_Mesh: {fileID: 4300000, guid: d1a8be6ef19202b4981c5fd6f2f552fd, type: 3}
+--- !u!1 &2005369636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+  m_PrefabInternal: {fileID: 1039259630}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2005369641}
+  - 20: {fileID: 2005369640}
+  - 124: {fileID: 2005369639}
+  - 92: {fileID: 2005369638}
+  - 81: {fileID: 2005369637}
+  m_Layer: 0
+  m_Name: setupCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &2005369637
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8100000, guid: 81217154cd158d64f9e08c32a191b6eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039259630}
+  m_GameObject: {fileID: 2005369636}
+  m_Enabled: 1
+--- !u!92 &2005369638
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9200000, guid: 81217154cd158d64f9e08c32a191b6eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039259630}
+  m_GameObject: {fileID: 2005369636}
+  m_Enabled: 1
+--- !u!124 &2005369639
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 12400000, guid: 81217154cd158d64f9e08c32a191b6eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039259630}
+  m_GameObject: {fileID: 2005369636}
+  m_Enabled: 1
+--- !u!20 &2005369640
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2000000, guid: 81217154cd158d64f9e08c32a191b6eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1039259630}
+  m_GameObject: {fileID: 2005369636}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .00999999978
+  far clip plane: .0199999996
+  field of view: 1
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 0
+  m_OcclusionCulling: 1
+--- !u!4 &2005369641
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+  m_PrefabInternal: {fileID: 1039259630}
+  m_GameObject: {fileID: 2005369636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.0697403, y: 8.48497581, z: 8.91370773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 280049095}
 --- !u!1 &2012532845
 GameObject:
   m_ObjectHideFlags: 0
@@ -14092,7 +14228,7 @@ GameObject:
   - 4: {fileID: 2043496201}
   - 114: {fileID: 2043496202}
   m_Layer: 0
-  m_Name: MovePoint_Floor0
+  m_Name: MovePoint_Floor0_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14467,7 +14603,7 @@ GameObject:
   - 4: {fileID: 2093333863}
   - 114: {fileID: 2093333862}
   m_Layer: 0
-  m_Name: ZombieSpawnPoint_Floor0
+  m_Name: ZombieSpawnPoint_Floor0_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

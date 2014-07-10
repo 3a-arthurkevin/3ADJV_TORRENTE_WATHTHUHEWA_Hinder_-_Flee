@@ -13,12 +13,12 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_AmbientLight: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -5411,6 +5411,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 766312621}
   m_GameObject: {fileID: 377519764}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &381533129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 381533130}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &381533130
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381533129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.6944885, y: 1.08000004, z: 93.9140854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &384365347
 GameObject:
   m_ObjectHideFlags: 0
@@ -10276,6 +10302,10 @@ Prefab:
       propertyPath: m_networkView
       value: 
       objectReference: {fileID: 959734160}
+    - target: {fileID: 11400002, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
+      propertyPath: m_survivorMutateWeapon
+      value: 
+      objectReference: {fileID: 100000, guid: cd7bb0f353585844faeae389a4f9fb92, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81217154cd158d64f9e08c32a191b6eb, type: 2}
   m_RootGameObject: {fileID: 959734153}
@@ -14293,6 +14323,8 @@ MonoBehaviour:
   m_networkView: {fileID: 959734160}
   m_playerDatabase: {fileID: 959734158}
   m_popZombieManager: {fileID: 959734156}
+  m_survivorMutateWeapon: {fileID: 100000, guid: cd7bb0f353585844faeae389a4f9fb92,
+    type: 2}
   m_timeOfEndGame: 60
 --- !u!114 &959734155
 MonoBehaviour:

@@ -63,6 +63,15 @@ public class PlayerDataBaseScript : MonoBehaviour
         if (m_gameManager == null)
             m_gameManager = GetComponent<GameManagerScript>();
 
+        m_maxPlayers = ConnectionManagerScript.m_maxPlayers;
+        m_idAdress = ConnectionManagerScript.m_idAdress;
+
+        if (ConnectionManagerScript.m_buildServer)
+            setupServer();
+        
+        else
+            setupClient();
+
         Application.runInBackground = true;
     }
 
@@ -297,37 +306,7 @@ public class PlayerDataBaseScript : MonoBehaviour
 
     void OnGUI()
     {
-        if (!m_setupLaunch)
-        {
-            GUI.Label(m_ipAddressLabel, "Ip Address : ");
-            m_idAdress = GUI.TextField(m_ipAddressField, m_idAdress);
-            m_buildServer = GUI.Toggle(m_buildServerToggle, m_buildServer, "Build server");
-
-            if (m_buildServer)
-            {
-                GUI.Label(m_maxPlayerLabel, "Max player : ");
-                string value = GUI.TextField(m_maxPlayerField, m_maxPlayers.ToString());
-
-                try
-                {
-                    m_maxPlayers = int.Parse(value);
-                }
-                catch (System.FormatException)
-                {
-                    m_maxPlayers = 0;
-                }
-            }
-
-            if (GUI.Button(m_LaunchButton, "Launch"))
-            {
-                if (m_buildServer)
-                    setupServer();
-
-                else
-                    setupClient();
-            }
-        }
-        else if(m_setupLaunch && ! m_gameLauched)
+        if(!m_gameLauched)
             GUI.Label(m_waitMessage, "En attente d'" + (m_maxPlayers - m_currentPlayer) + " joueurs");
     }
 }

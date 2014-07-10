@@ -113,7 +113,22 @@ public class GameManagerScript : MonoBehaviour
         }
 
         GameObject survivorUnderMutation = mutatingSurvivorNetworkView.gameObject;
-        m_owner = survivorUnderMutation.GetComponent<InputManagerMoveSurvivorScript>().getNetworkPlayer();
+        InputManagerMoveSurvivorScript inManager = survivorUnderMutation.GetComponent<InputManagerMoveSurvivorScript>();
+        m_owner = inManager.getNetworkPlayer();
+
+        Transform transSurvivor = survivorUnderMutation.transform;
+
+        for (int i = 0; i < transSurvivor.childCount; ++i)
+            if (transSurvivor.GetChild(i).transform.tag == "Weapon")
+                Destroy(transSurvivor.GetChild(i).gameObject);
+
+        if(Network.isServer)
+        {
+            GameObject mutateWeapon = (GameObject)Network.Instantiate(m_survivorMutateWeapon, Vector3.zero, Quaternion.identity, 0);
+            //mutateWeapon.GetComponent<SurvivorMutateWeaponManagerScript>().setConfig(transSurvivor.GetComponent<MoveManagerSurvivorScript>().MoveData.Position.networkView.viewID);
+            mutateWeapon.GetComponent<SurvivorMutateWeaponManagerScript>().setConfig(survivorUnderMutation.networkView.viewID);
+            
+        }
 
         m_survivorVientDeMourrir = true;
         StartCoroutine(mutatingSurvivor(survivorUnderMutation));
@@ -121,8 +136,6 @@ public class GameManagerScript : MonoBehaviour
 
     IEnumerator mutatingSurvivor(GameObject survivor)
     {//Mutate survivor
-
-
 
         yield return new WaitForSeconds(5);
 
@@ -188,8 +201,13 @@ public class GameManagerScript : MonoBehaviour
             if (m_survivorVientDeMourrir && m_owner == Network.player)
                     GUI.Label(m_finishMessagePosition, "Vous êtes mort !!!");
 
+            float timer = m_timeOfEndGame - m_timerEndGame;
+
+            if (timer < 0)
+                timer = 0;
+
             if (m_lastPlayerAlive)
-                GUI.Label(m_timerPosition, (m_timeOfEndGame - m_timerEndGame).ToString("F2"));
+                GUI.Label(m_timerPosition, timer.ToString("F2"));
         }
     }
 }
