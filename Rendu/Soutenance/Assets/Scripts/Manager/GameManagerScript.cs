@@ -6,6 +6,9 @@ using System.Linq;
 public class GameManagerScript : MonoBehaviour
 {
     [SerializeField]
+    private NetworkView m_networkView;
+
+    [SerializeField]
     private PlayerDataBaseScript m_playerDatabase;
 
     [SerializeField]
@@ -21,9 +24,11 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private float m_timeOfEndGame = 60f;
 
+    /* GUI PART */
+    private Rect m_timerPosition = new Rect(Screen.width / 2, 20, 100, 25);
+
     void Start()
     {
-        Debug.LogError("START GAME MANAGER");
         m_playerAreDead = new Dictionary<NetworkViewID, bool>();
         m_playerScore = new Dictionary<NetworkViewID, int>();
 
@@ -36,11 +41,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void initGame()
     {
-        Debug.LogError("INIT");
-
-        if (m_playerAreDead == null)
-            Debug.LogError("INITNULL");
-
         Dictionary<NetworkPlayer, Transform> players = m_playerDatabase.Players;
 
         foreach (KeyValuePair<NetworkPlayer, Transform> pair in players)
@@ -64,13 +64,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void survivorDied(NetworkViewID survivor)
     {
-
-        if (m_playerAreDead == null)
-        {
-            Debug.LogError("NULL");
-            return;
-        }
-
         if(!m_playerAreDead.ContainsKey(survivor))
         {
             Debug.LogError("Survivor not in m_playerAreDead");
@@ -83,20 +76,28 @@ public class GameManagerScript : MonoBehaviour
 
         if ( deadPlayer == m_playerAreDead.Count - 1)
         {// One player stay Alive
+            m_networkView.RPC("setLastAlive", RPCMode.OthersBuffered, true);
             m_lastPlayerAlive = true;
         }
+    }
+
+    [RPC]
+    void setLastAlive(bool lastAlive)
+    {
+        m_lastPlayerAlive = lastAlive;
     }
 
     void gameFinish()
     {
         Debug.LogError("Game is finish");
+        m_lastPlayerAlive = false;
     }
 
     void OnGUI()
     {
         if(Network.isClient && m_lastPlayerAlive)
         {//Display time for endGame
-
+            GUI.Label(m_timerPosition, (m_timeOfEndGame - m_timerEndGame).ToString("F2"));
         }
     }
 }

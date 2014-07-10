@@ -10,7 +10,13 @@ public class HealthManagerScript : MonoBehaviour
     }
 
     [SerializeField]
+    private Transform m_transform;
+
     private GameManagerScript m_gameManager;
+    public GameManagerScript GameManager
+    {
+        set { m_gameManager = value; }
+    }
 
     private NetworkPlayer m_owner;
     public NetworkPlayer Owner
@@ -60,6 +66,9 @@ public class HealthManagerScript : MonoBehaviour
 
         if (m_networkView == null)
             m_networkView = networkView;
+
+        if (m_transform == null)
+            m_transform = transform;
 
         /* GUI Part */
         m_screenWidth = Screen.width;
@@ -132,7 +141,7 @@ public class HealthManagerScript : MonoBehaviour
     {
         Debug.LogError("Survivor died");
 
-        m_gameManager.survivorDied(m_networkView.viewID);
+        m_gameManager.survivorDied(m_transform.networkView.viewID);
 
         m_alreadyDied = true;
     }
